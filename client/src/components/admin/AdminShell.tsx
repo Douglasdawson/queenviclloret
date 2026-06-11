@@ -8,6 +8,7 @@ const NAV = [
   { href: "/leads", label: "Leads / CRM" },
   { href: "/events", label: "What's On" },
   { href: "/reservations", label: "Reservations" },
+  { href: "/campaigns", label: "Marketing" },
 ];
 
 export function AdminShell({ children }: { children: ReactNode }) {

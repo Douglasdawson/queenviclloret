@@ -7,6 +7,7 @@ import { reservationRequestSchema } from "@shared/validation/reservations";
 import * as leadsDao from "../dao/leads.dao";
 import * as reservationsDao from "../dao/reservations.dao";
 import * as eventsDao from "../dao/events.dao";
+import * as recipientsDao from "../dao/campaign-recipients.dao";
 import { cached, TTL } from "../cache";
 import type { ContactFormInput } from "@shared/validation/leads";
 import type { ReservationRequestInput } from "@shared/validation/reservations";
@@ -25,6 +26,22 @@ publicRouter.get("/events/:slug", async (req, res) => {
   const event = await eventsDao.getPublicEventBySlug((req.params.slug as string));
   if (!event) throw new AppError(404, "not_found", "Event not found");
   res.json({ event });
+});
+
+// One-click unsubscribe (marketing compliance). Idempotent.
+publicRouter.get("/unsubscribe/:token", async (req, res) => {
+  const recipient = await recipientsDao.findByToken(req.params.token as string);
+  if (recipient) {
+    await recipientsDao.markByToken(req.params.token as string, "unsubscribed", new Date());
+    await leadsDao.updateLead(
+      recipient.leadId,
+      { consentEmail: false, consentWhatsapp: false, consentUpdatedAt: new Date() },
+      req.audit,
+    );
+  }
+  res.type("text/html").send(
+    "<!doctype html><meta charset='utf-8'><title>Unsubscribed</title><body style='font-family:system-ui;background:#07080d;color:#f4f6fb;display:grid;place-items:center;height:100vh'><div style='text-align:center'><h1>You're unsubscribed</h1><p>You won't receive further marketing messages from Queen Vic.</p></div>",
+  );
 });
 
 publicRouter.post("/contact", publicFormLimiter, validate(contactFormSchema), async (req, res) => {

@@ -4,6 +4,7 @@ import AdminDashboard from "../pages/admin/Dashboard";
 import AdminLeads from "../pages/admin/Leads";
 import AdminEvents from "../pages/admin/Events";
 import AdminReservations from "../pages/admin/Reservations";
+import AdminCampaigns from "../pages/admin/Campaigns";
 import { AdminShell } from "../components/admin/AdminShell";
 
 export function AdminApp() {
@@ -17,6 +18,7 @@ export function AdminApp() {
             <Route path="/leads" component={AdminLeads} />
             <Route path="/events" component={AdminEvents} />
             <Route path="/reservations" component={AdminReservations} />
+            <Route path="/campaigns" component={AdminCampaigns} />
             <Route>
               <div className="p-8 text-ink-soft">Not found</div>
             </Route>

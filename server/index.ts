@@ -12,6 +12,7 @@ import { globalLimiter } from "./middlewares/rate-limit";
 import { errorHandler, notFound } from "./middlewares/error-handler";
 import { apiRouter } from "./routes";
 import { seoRouter } from "./routes/seo";
+import { webhooksRouter } from "./routes/webhooks";
 import { createSsrHandler } from "./ssr/render";
 import { DEFAULT_LOCALE, LOCALES } from "@shared/enums";
 import { registerCron } from "./cron";
@@ -59,6 +60,9 @@ async function bootstrap() {
 
   // 3. SEO endpoints (served as-is, no locale prefix)
   app.use(seoRouter);
+
+  // 3b. Provider webhooks — raw body parser inside, mounted BEFORE express.json
+  app.use("/webhooks", webhooksRouter);
 
   // 4. API: body parsing → session → audit → rate limit → routes
   //    (Webhook routes that need a raw body must mount express.raw BEFORE this.)
