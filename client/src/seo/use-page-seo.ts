@@ -18,6 +18,7 @@ export interface PageSeoInput {
   ogImage?: string;
   jsonLd?: Record<string, unknown>[];
   robots?: string;
+  preload?: { href: string; as: string; type?: string }[];
 }
 
 /** Compute canonical + hreflang alternates from the site URL and apply SEO. */
@@ -39,5 +40,6 @@ export function usePageSeo(input: PageSeoInput) {
     ogImage: input.ogImage,
     jsonLd: input.jsonLd,
     robots: input.robots,
+    preload: input.preload,
   });
 }

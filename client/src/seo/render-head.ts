@@ -25,6 +25,11 @@ export function renderHeadTags(data: SeoData): string {
     tags.push(`<link rel="alternate" hreflang="${esc(alt.lang)}" href="${esc(alt.href)}"/>`);
   }
 
+  for (const pre of data.preload ?? []) {
+    const type = pre.type ? ` type="${esc(pre.type)}"` : "";
+    tags.push(`<link rel="preload" href="${esc(pre.href)}" as="${esc(pre.as)}"${type}/>`);
+  }
+
   // Open Graph / Twitter
   tags.push(`<meta property="og:title" content="${esc(data.title)}"/>`);
   if (data.description)

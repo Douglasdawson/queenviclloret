@@ -8,6 +8,7 @@ import AboutPage from "../pages/About";
 import ReservationsPage from "../pages/Reservations";
 import ContactPage from "../pages/Contact";
 import FaqPage from "../pages/Faq";
+import { PrivacyPage, CookiesPage } from "../pages/Legal";
 import NotFoundPage from "../pages/NotFound";
 
 export function PublicApp() {
@@ -22,6 +23,8 @@ export function PublicApp() {
         <Route path="/reservations" component={ReservationsPage} />
         <Route path="/contact" component={ContactPage} />
         <Route path="/faq" component={FaqPage} />
+        <Route path="/privacy" component={PrivacyPage} />
+        <Route path="/cookies" component={CookiesPage} />
         <Route component={NotFoundPage} />
       </Switch>
     </PublicLayout>

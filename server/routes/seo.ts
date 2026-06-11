@@ -19,6 +19,8 @@ const STATIC_PATHS = [
   "reservations",
   "contact",
   "faq",
+  "privacy",
+  "cookies",
 ];
 
 seoRouter.get("/robots.txt", (_req, res) => {
