@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Queen Vic Sports Bar — Lloret de Mar. SSR public site + admin CRM.",
   "scripts": {
-    "dev": "tsx watch server/index.ts",
+    "dev": "tsx watch --ignore '*.timestamp-*' --ignore 'client/**' --ignore 'dist/**' server/index.ts",
     "build": "npm run build:client && npm run build:ssr",
     "build:client": "vite build",
     "build:ssr": "vite build --ssr",
@@ -22,6 +22,7 @@
     "i18n:validate": "tsx scripts/i18n-validate.ts"
   },
   "dependencies": {
+    "@fontsource-variable/bricolage-grotesque": "^5.2.10",
     "@hookform/resolvers": "^3.9.1",
     "@neondatabase/serverless": "^0.10.4",
     "@radix-ui/react-alert-dialog": "^1.1.4",
@@ -83,6 +84,7 @@
     "drizzle-kit": "^0.30.1",
     "eslint": "^9.17.0",
     "pino-pretty": "^13.0.0",
+    "sharp": "^0.35.1",
     "tailwindcss": "^4.0.0",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2",

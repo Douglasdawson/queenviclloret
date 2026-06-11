@@ -3,8 +3,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslation } from "react-i18next";
 import { z } from "zod";
-import { Button, Container, Kicker, Section } from "../components/ui";
-import { FieldError, FieldLabel, Honeypot, TextArea, TextInput } from "../components/Field";
+import { Button, Container, Eyebrow, LaurelSeal, Section } from "../components/ui";
+import { FieldError, FieldLabel, Honeypot, Select, TextArea, TextInput } from "../components/Field";
 import { emailSchema, phoneSchema } from "@shared/validation/common";
 import { apiPost } from "../lib/api";
 import { collectAttribution } from "../lib/attribution";
@@ -29,6 +29,7 @@ const TYPES = ["group", "match_day", "stag_hen", "birthday", "standard"] as cons
 export default function ReservationsPage() {
   const { t } = useTranslation();
   const [sent, setSent] = useState(false);
+  const [serverError, setServerError] = useState(false);
   const {
     register,
     handleSubmit,
@@ -45,29 +46,43 @@ export default function ReservationsPage() {
   });
 
   async function onSubmit(values: FormValues) {
-    await apiPost("/public/reservation", {
-      ...values,
-      timeSlot: values.timeSlot || undefined,
-      ...collectAttribution(),
-    });
-    setSent(true);
+    setServerError(false);
+    try {
+      await apiPost("/public/reservation", {
+        ...values,
+        timeSlot: values.timeSlot || undefined,
+        ...collectAttribution(),
+      });
+      setSent(true);
+    } catch {
+      setServerError(true);
+    }
   }
 
+  const todayIso = new Date().toISOString().slice(0, 10);
+
   return (
-    <Section className="pt-16">
+    <Section className="py-16 sm:py-24">
       <Container>
-        <Kicker>Groups & match days</Kicker>
-        <h1 className="font-display text-4xl font-extrabold sm:text-5xl">{t("reservations.title")}</h1>
-        <p className="mt-4 max-w-xl text-ink-soft">{t("reservations.subtitle")}</p>
+        <Eyebrow>{t("nav.reservations")}</Eyebrow>
+        <h1 className="font-display max-w-2xl text-[clamp(2.25rem,5vw,3.5rem)] font-bold leading-tight text-ink-900">
+          {t("reservations.title")}
+        </h1>
+        <p className="mt-4 max-w-xl text-[1.0625rem] leading-relaxed text-ink-600">
+          {t("reservations.subtitle")}
+        </p>
 
         {sent ? (
-          <p className="mt-10 rounded-xl border border-pitch-500/40 bg-pitch-500/10 p-5 text-pitch-400">
-            {t("reservations.form.success")}
-          </p>
+          <div className="mt-12 flex max-w-xl flex-col items-start gap-5 rounded-2xl border border-cream-200 bg-cream-100 p-8">
+            <LaurelSeal className="w-[88px]" />
+            <p className="text-[1.0625rem] leading-relaxed text-ink-900">
+              {t("reservations.form.success")}
+            </p>
+          </div>
         ) : (
-          <form onSubmit={handleSubmit(onSubmit)} className="relative mt-10 max-w-2xl space-y-5">
+          <form method="post" onSubmit={handleSubmit(onSubmit)} className="relative mt-12 max-w-2xl">
             <Honeypot register={register("company")} />
-            <div className="grid gap-5 sm:grid-cols-2">
+            <div className="grid gap-x-5 gap-y-6 sm:grid-cols-2">
               <div>
                 <FieldLabel>{t("reservations.form.name")}</FieldLabel>
                 <TextInput {...register("name")} autoComplete="name" />
@@ -90,33 +105,37 @@ export default function ReservationsPage() {
               </div>
               <div>
                 <FieldLabel>{t("reservations.form.type")}</FieldLabel>
-                <select
-                  {...register("reservationType")}
-                  className="w-full rounded-xl border border-white/15 bg-night-900/60 px-4 py-3 text-sm text-ink"
-                >
-                  {TYPES.map((ty) => (
-                    <option key={ty} value={ty}>
-                      {ty.replace("_", " / ")}
+                <Select {...register("reservationType")}>
+                  {TYPES.map((value) => (
+                    <option key={value} value={value}>
+                      {t(`reservations.occasions.${value}`)}
                     </option>
                   ))}
-                </select>
+                </Select>
               </div>
-              <div>
-                <FieldLabel>{t("reservations.form.date")}</FieldLabel>
-                <TextInput type="date" {...register("date")} />
-                <FieldError message={errors.date?.message} />
+              <div className="grid grid-cols-2 gap-5">
+                <div>
+                  <FieldLabel>{t("reservations.form.date")}</FieldLabel>
+                  <TextInput type="date" min={todayIso} {...register("date")} />
+                  <FieldError message={errors.date?.message} />
+                </div>
+                <div>
+                  <FieldLabel>{t("reservations.form.time")}</FieldLabel>
+                  <TextInput type="time" {...register("timeSlot")} />
+                </div>
               </div>
-              <div>
-                <FieldLabel>{t("reservations.form.time")}</FieldLabel>
-                <TextInput type="time" {...register("timeSlot")} />
+              <div className="sm:col-span-2">
+                <FieldLabel>{t("reservations.form.requests")}</FieldLabel>
+                <TextArea {...register("specialRequests")} />
               </div>
             </div>
-            <div>
-              <FieldLabel>{t("reservations.form.requests")}</FieldLabel>
-              <TextArea {...register("specialRequests")} />
-            </div>
-            <Button type="submit" disabled={isSubmitting}>
-              {t("reservations.form.submit")}
+            {serverError && (
+              <p className="mt-6 rounded-[10px] border border-crimson-500/40 bg-crimson-500/10 px-4 py-3 text-sm font-medium text-crimson-500">
+                {t("form.serverError")}
+              </p>
+            )}
+            <Button type="submit" disabled={isSubmitting} aria-busy={isSubmitting} className="mt-8">
+              {isSubmitting ? t("form.sending") : t("reservations.form.submit")}
             </Button>
           </form>
         )}

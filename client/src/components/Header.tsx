@@ -6,11 +6,10 @@ import { LanguageSwitcher } from "./LanguageSwitcher";
 import type { Locale } from "../lib/locale";
 
 const NAV = [
-  { href: "/sports-bar", key: "nav.sportsBar" },
   { href: "/whats-on", key: "nav.whatsOn" },
+  { href: "/sports-bar", key: "nav.sportsBar" },
   { href: "/world-cup-2026", key: "nav.worldCup" },
   { href: "/about", key: "nav.about" },
-  { href: "/reservations", key: "nav.reservations" },
   { href: "/contact", key: "nav.contact" },
 ];
 
@@ -21,51 +20,83 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-night-950/80 backdrop-blur-md">
-      <Container className="flex h-16 items-center justify-between">
-        <Link href="/" className="font-display text-xl font-extrabold tracking-tight text-ink">
-          <span className="text-gold-400">Queen</span> Vic
+    <header className="sticky top-0 z-50 border-b border-green-700/60 bg-green-900">
+      <Container className="flex h-[4.25rem] items-center justify-between gap-4">
+        <Link href="/" aria-label="Queen Vic, home" onClick={() => setOpen(false)}>
+          <img
+            src="/images/logo-alt.webp"
+            alt="Queen Vic Terrace Bar"
+            width={150}
+            height={44}
+            decoding="async"
+            className="h-9 w-auto sm:h-11"
+          />
         </Link>
 
-        <nav className="hidden items-center gap-6 lg:flex">
+        <nav className="hidden items-center gap-7 lg:flex" aria-label="Main">
           {NAV.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-ink-soft transition-colors hover:text-ink"
+              className="text-[0.9375rem] font-medium text-paper-dim transition-colors duration-200 hover:text-gold-400"
             >
               {t(item.key)}
             </Link>
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
-          <LanguageSwitcher current={locale} />
+        <div className="flex items-center gap-4">
+          <div className="hidden sm:block">
+            <LanguageSwitcher current={locale} />
+          </div>
+          <Link
+            href="/reservations"
+            className="whitespace-nowrap rounded-[10px] bg-gold-500 px-3 py-2 text-[0.8125rem] font-semibold text-ink-900 transition-colors duration-200 hover:bg-gold-600 hover:text-cream-50 sm:px-4 sm:text-sm"
+          >
+            {t("cta.bookTable")}
+          </Link>
           <button
-            className="lg:hidden rounded p-2 text-ink"
-            aria-label="Menu"
+            className="-mr-2 p-2 text-paper lg:hidden"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
           >
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M3 6h18M3 12h18M3 18h18" />
-            </svg>
+            {open ? (
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path d="M6 6l12 12M18 6L6 18" />
+              </svg>
+            ) : (
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path d="M3 6h18M3 12h18M3 18h18" />
+              </svg>
+            )}
           </button>
         </div>
       </Container>
 
       {open && (
-        <nav className="border-t border-white/10 bg-night-900 lg:hidden">
-          <Container className="flex flex-col py-3">
+        <nav className="border-t border-green-700/60 bg-green-900 lg:hidden" aria-label="Main mobile">
+          <Container className="flex flex-col gap-1 py-4">
             {NAV.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="py-2 text-sm font-medium text-ink-soft hover:text-ink"
+                className="rounded-md px-2 py-2.5 text-base font-medium text-paper-dim hover:bg-green-800 hover:text-paper"
               >
                 {t(item.key)}
               </Link>
             ))}
+            <Link
+              href="/reservations"
+              onClick={() => setOpen(false)}
+              className="mt-2 rounded-[10px] bg-gold-500 px-4 py-2.5 text-center text-sm font-semibold text-ink-900"
+            >
+              {t("cta.bookTable")}
+            </Link>
+            <div className="mt-3 px-2">
+              <LanguageSwitcher current={locale} />
+            </div>
           </Container>
         </nav>
       )}

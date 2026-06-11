@@ -26,8 +26,12 @@ export function renderHeadTags(data: SeoData): string {
   }
 
   for (const pre of data.preload ?? []) {
-    const type = pre.type ? ` type="${esc(pre.type)}"` : "";
-    tags.push(`<link rel="preload" href="${esc(pre.href)}" as="${esc(pre.as)}"${type}/>`);
+    const extra = [
+      pre.type ? ` type="${esc(pre.type)}"` : "",
+      pre.imagesrcset ? ` imagesrcset="${esc(pre.imagesrcset)}"` : "",
+      pre.imagesizes ? ` imagesizes="${esc(pre.imagesizes)}"` : "",
+    ].join("");
+    tags.push(`<link rel="preload" href="${esc(pre.href)}" as="${esc(pre.as)}"${extra}/>`);
   }
 
   // Open Graph / Twitter

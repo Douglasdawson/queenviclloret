@@ -16,16 +16,20 @@ export function CookieBanner() {
   function decide(value: "all" | "essential") {
     localStorage.setItem(KEY, JSON.stringify({ value, at: Date.now() }));
     setVisible(false);
-    // Analytics bootstrapping would key off `value === "all"` here.
+    // Analytics bootstrapping keys off `value === "all"`.
   }
 
   if (!visible) return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-[60] border-t border-white/10 bg-night-900/95 backdrop-blur">
+    <div
+      role="region"
+      aria-label="Cookie consent"
+      className="fixed inset-x-0 bottom-0 z-[60] border-t-2 border-gold-500 bg-green-950 text-paper"
+    >
       <Container className="flex flex-col items-start gap-4 py-4 sm:flex-row sm:items-center sm:justify-between">
-        <p className="max-w-2xl text-sm text-ink-soft">{t("cookies.message")}</p>
-        <div className="flex shrink-0 gap-2">
+        <p className="max-w-2xl text-sm leading-relaxed text-paper-dim">{t("cookies.message")}</p>
+        <div className="flex shrink-0 gap-2.5">
           <Button variant="outline" onClick={() => decide("essential")}>
             {t("cookies.reject")}
           </Button>

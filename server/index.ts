@@ -37,11 +37,15 @@ async function bootstrap() {
         useDefaults: true,
         directives: {
           defaultSrc: ["'self'"],
-          scriptSrc: [
-            "'self'",
-            (_req, res) => `'nonce-${(res as express.Response).locals.cspNonce}'`,
-            ...(isDev ? ["'unsafe-inline'", "'unsafe-eval'"] : []),
-          ],
+          // Dev: NO nonce — per CSP spec a nonce makes browsers ignore
+          // 'unsafe-inline', which blocks Vite's @react-refresh preamble and
+          // kills hydration. Prod: strict 'self' + per-request nonce.
+          scriptSrc: isDev
+            ? ["'self'", "'unsafe-inline'", "'unsafe-eval'"]
+            : [
+                "'self'",
+                (_req, res) => `'nonce-${(res as express.Response).locals.cspNonce}'`,
+              ],
           styleSrc: ["'self'", "'unsafe-inline'"],
           imgSrc: ["'self'", "data:", "https:"],
           connectSrc: ["'self'", ...(isDev ? ["ws:", "http:"] : [])],

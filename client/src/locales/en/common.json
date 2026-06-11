@@ -3,55 +3,111 @@
   "tagline": "Lloret de Mar's original sports bar since 1986",
   "nav": {
     "home": "Home",
-    "sportsBar": "Sports Bar",
+    "sportsBar": "The Bar",
     "whatsOn": "What's On",
     "worldCup": "World Cup 2026",
-    "about": "About",
+    "about": "Our Story",
     "reservations": "Reservations",
     "contact": "Contact",
     "faq": "FAQ"
   },
   "cta": {
-    "watchSport": "Watch Sport",
+    "watchSport": "Watch sport",
     "bookTable": "Book a table",
-    "seeWhatsOn": "See What's On",
+    "seeWhatsOn": "See what's on",
     "getInTouch": "Get in touch",
-    "viewDetails": "View details"
+    "viewDetails": "View details",
+    "fullProgramme": "Full programme"
   },
   "home": {
-    "kicker": "1986 · 40 Years & Still Going",
-    "heroTitle": "The biggest terrace in Lloret de Mar",
-    "heroSubtitle": "Giant outdoor screen, 14+ TVs and a live DJ every single night — since 1986.",
-    "stats": { "terrace": "m² terrace", "screens": "screens", "years": "years open" },
-    "whyTitle": "Why Queen Vic",
-    "whySubtitle": "A huge terrace, a giant outdoor screen for match days, and a night vibe with a live DJ. Watch sport, then stay for the night.",
-    "features": {
-      "screenTitle": "Giant Screen",
-      "screenBody": "Giant outdoor screen plus 4 outdoor TVs and 10 indoor TVs. Multiple events at the same time.",
-      "terraceTitle": "Biggest Terrace",
-      "terraceBody": "1,250 m² terrace open day and night. The perfect spot whether it's sunny or game time.",
-      "djTitle": "Live DJ",
-      "djBody": "When the final whistle blows, the night begins. Live DJ every night.",
-      "sinceTitle": "Since 1986",
-      "sinceBody": "Lloret de Mar's original sports bar. 40 years of sport, sun and good times on the Costa Brava."
+    "kicker": "The Original · Est. 1986",
+    "heroTitle": "Forty years of matchdays on the biggest terrace in Lloret",
+    "heroSubtitle": "Giant outdoor screen, 15+ TVs and a resident DJ when the whistle blows. Same terrace since 1986.",
+    "stats": {
+      "terrace": "m² of terrace",
+      "screens": "screens",
+      "years": "years pouring"
     },
-    "whatsOnTitle": "What's On",
-    "whatsOnSubtitle": "Every sport that matters, on the biggest screen in town."
+    "tonight": "Tonight at the Vic",
+    "tonightSub": "Straight from the programme board.",
+    "tonightEmpty": "Tonight's programme lands on Instagram first. Follow us, or just come down: there's always something on.",
+    "whyTitle": "Built for sport. Made for nights.",
+    "whySubtitle": "Watch the match in the sun, stay for the DJ. That's been the routine here for four decades.",
+    "features": {
+      "screenTitle": "The giant screen",
+      "screenBody": "The biggest outdoor screen in Lloret de Mar, plus 4 terrace TVs and 10 inside. Overlapping fixtures? We show them all.",
+      "terraceTitle": "1,250 m² of terrace",
+      "terraceBody": "Open day and night, under sail shades and festoon lights. There isn't a bad seat on it.",
+      "djTitle": "The night shift",
+      "djBody": "Full-time resident DJ. When the final whistle goes, the volume comes up.",
+      "sinceTitle": "Since 1986",
+      "sinceBody": "Three generations of regulars can't be wrong. The original sports bar on this coast."
+    },
+    "heritageKicker": "Our story",
+    "heritageTitle": "The Queen has kept score here since 1986",
+    "heritageBody": "Queen Vic opened when Maradona lifted the World Cup, and it hasn't missed a season since. Forty years of finals, fry-ups and last-minute winners on the same terrace in Lloret de Mar.",
+    "stampAlt": "Queen Vic's Queen Victoria postage stamp emblem, Lloret de Mar, established 1986",
+    "finalTitle": "Big match coming up?",
+    "finalBody": "Tables go fast on match days. Tell us when you're coming and we'll keep you a spot on the terrace.",
+    "nextUp": "Next up on the screen"
   },
   "whatsOn": {
-    "title": "What's On at Queen Vic",
-    "subtitle": "Live fixtures on the giant outdoor screen in Lloret de Mar.",
-    "empty": "No upcoming fixtures published right now. Follow us on Instagram for daily updates.",
-    "featured": "Featured"
+    "title": "What's on at Queen Vic",
+    "subtitle": "Every fixture on the giant outdoor screen in Lloret de Mar.",
+    "board": "The programme",
+    "empty": "Nothing published just yet",
+    "emptyNote": "The weekly programme lands on Instagram first. Follow us, or ask us to put your match on.",
+    "featured": "Featured",
+    "live": "Live now"
   },
   "worldCup": {
     "title": "Watch World Cup 2026 in Lloret de Mar",
-    "subtitle": "Every match on a giant outdoor screen and 1,250 m² of terrace. The best World Cup venue in Lloret since 1986.",
-    "facts": "104 matches · 48 teams · 39 days"
+    "subtitle": "Every match on the giant outdoor screen, with 1,250 m² of terrace to celebrate on. The best World Cup seat in Lloret, same as 1986.",
+    "facts": "104 matches · 48 teams · 39 days",
+    "p1t": "Every match, the big way",
+    "p1b": "Group stage to final on the biggest outdoor screen in town. Every goal bigger than anywhere else.",
+    "p2t": "Full English commentary",
+    "p2b": "Not a word missed from the pundits on the big fixtures.",
+    "p3t": "The away end abroad",
+    "p3b": "Queen Vic has been the home of British and Irish fans on this coast for forty years.",
+    "p4t": "Stay for the night",
+    "p4b": "When the whistle goes, the resident DJ takes over. World Cup nights here run long past 90 minutes.",
+    "tipsTitle": "Matchday form guide",
+    "tip1": "The day-by-day programme is published on Instagram during the tournament.",
+    "tip2": "Arrive 30 to 45 minutes early for the big fixtures. The terrace fills fast.",
+    "tip3": "Groups can reserve ahead for knockout nights. Use the reservations page."
+  },
+  "sportsBar": {
+    "kicker": "The setup",
+    "title": "Every seat is a good seat",
+    "intro": "We can run several fixtures at once. Wherever you sit, you'll have a screen and a cold pint within reach.",
+    "s1t": "Giant outdoor screen",
+    "s1b": "The biggest in Lloret de Mar. Built for World Cup nights and title deciders.",
+    "s2t": "Terrace TVs",
+    "s2b": "Four more screens across the terrace, so the sunny seats miss nothing.",
+    "s3t": "Screens inside",
+    "s3b": "Ten more covering every angle of the bar. Overlapping kick-offs welcome.",
+    "showTitle": "What we show",
+    "showSub": "If it matters, it's on. Tell us in advance and we'll do our best to confirm your fixture."
+  },
+  "about": {
+    "kicker": "Est. 1986 · Class of Lloret",
+    "title": "Forty years on the same terrace",
+    "p1": "Queen Vic opened in 1986, the summer Maradona lifted the World Cup, and it hasn't missed a season since. The original sports bar in Lloret de Mar.",
+    "p2": "What started as a small terrace pub is now 1,250 m² of matchday: a giant outdoor screen, fifteen more around the bar, and a resident DJ who clocks on when the commentators clock off.",
+    "tlTitle": "The story so far",
+    "tl1y": "1986",
+    "tl1t": "Doors open on the terrace. Maradona wins the World Cup; we pour our first pint.",
+    "tl2y": "1990s",
+    "tl2t": "The Premier League era. British and Irish regulars make the Vic their home ground.",
+    "tl3y": "2010s",
+    "tl3t": "The giant outdoor screen arrives. Match days move outside, under the festoon lights.",
+    "tl4y": "2026",
+    "tl4t": "Forty years young, and a World Cup summer on the way. See you on the terrace."
   },
   "reservations": {
-    "title": "Reserve for groups & match days",
-    "subtitle": "Big match coming up, stag or hen party, or a group night out? Tell us and we'll get you sorted.",
+    "title": "Reserve for groups and match days",
+    "subtitle": "Big fixture, stag or hen do, or a proper night out? Tell us when and how many, and we'll sort the rest.",
     "form": {
       "name": "Your name",
       "email": "Email",
@@ -59,38 +115,72 @@
       "partySize": "Party size",
       "date": "Date",
       "time": "Time",
-      "type": "Reservation type",
-      "requests": "Special requests",
-      "submit": "Request reservation",
-      "success": "Thanks! We've received your request and will confirm shortly."
+      "type": "Occasion",
+      "requests": "Anything we should know?",
+      "submit": "Request a table",
+      "success": "Request received. We'll confirm your table shortly, usually the same day."
+    },
+    "occasions": {
+      "group": "Group night",
+      "match_day": "Match day",
+      "stag_hen": "Stag / hen do",
+      "birthday": "Birthday",
+      "standard": "Just a table"
     }
   },
   "contact": {
-    "title": "Get in Touch",
-    "subtitle": "Questions about matches, hours or events? Send us a message and we'll reply as soon as we can.",
+    "title": "Get in touch",
+    "subtitle": "Questions about fixtures, hours or events? Send us a line and we'll come back to you fast.",
     "form": {
       "name": "Your name",
       "email": "Your email",
       "message": "Your message",
-      "consent": "I agree to be contacted about my enquiry.",
+      "consent": "I'm happy to be contacted about my enquiry.",
       "submit": "Send message",
-      "success": "Thanks! Your message is on its way."
+      "success": "Message on its way. We'll reply as soon as we can."
     }
   },
   "faq": {
-    "title": "Frequently Asked Questions"
+    "title": "Frequently asked questions"
   },
   "footer": {
-    "follow": "Follow us",
+    "follow": "Find us",
     "rights": "All rights reserved.",
     "privacy": "Privacy",
     "cookies": "Cookies",
     "address": "Lloret de Mar · Costa Brava · Spain"
   },
   "cookies": {
-    "message": "We use cookies to improve your experience and analyse traffic. You choose what to allow.",
+    "message": "We use a few cookies to make the site work and, only if you allow it, to understand our traffic. Your call.",
     "accept": "Accept all",
-    "reject": "Reject non-essential",
+    "reject": "Essential only",
     "settings": "Settings"
+  },
+  "form": {
+    "serverError": "Something went wrong sending that. Try again, or message us on Instagram.",
+    "sending": "Sending…"
+  },
+  "fixture": {
+    "sport": {
+      "football": "Football",
+      "f1": "Formula 1",
+      "motogp": "MotoGP",
+      "rugby_league": "Rugby League",
+      "gaa": "GAA",
+      "boxing": "Boxing",
+      "other": "Live sport"
+    },
+    "commentary": {
+      "en": "English commentary",
+      "es": "Spanish commentary",
+      "ca": "Catalan commentary",
+      "ga": "GAA / Irish",
+      "fr": "French commentary"
+    }
+  },
+  "notFound": {
+    "title": "Ball's gone over the fence",
+    "body": "That page doesn't exist. Back to the terrace, the match is still on.",
+    "cta": "Back home"
   }
 }

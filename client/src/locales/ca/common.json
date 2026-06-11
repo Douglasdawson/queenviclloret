@@ -3,10 +3,10 @@
   "tagline": "El sports bar original de Lloret de Mar des de 1986",
   "nav": {
     "home": "Inici",
-    "sportsBar": "Sports Bar",
+    "sportsBar": "El Bar",
     "whatsOn": "Què fem",
     "worldCup": "Mundial 2026",
-    "about": "Nosaltres",
+    "about": "La nostra història",
     "reservations": "Reserves",
     "contact": "Contacte",
     "faq": "Preguntes"
@@ -16,42 +16,98 @@
     "bookTable": "Reservar taula",
     "seeWhatsOn": "Veure què fem",
     "getInTouch": "Contacta'ns",
-    "viewDetails": "Veure detalls"
+    "viewDetails": "Veure detalls",
+    "fullProgramme": "Programa complet"
   },
   "home": {
-    "kicker": "1986 · 40 anys i continuem",
-    "heroTitle": "La terrassa més gran de Lloret de Mar",
-    "heroSubtitle": "Pantalla gegant exterior, més de 14 TVs i DJ en directe cada nit, des de 1986.",
-    "stats": { "terrace": "m² de terrassa", "screens": "pantalles", "years": "anys oberts" },
-    "whyTitle": "Per què Queen Vic",
-    "whySubtitle": "Una terrassa enorme, pantalla gegant per als partits i ambient de nit amb DJ en directe. Mira l'esport i queda't per la festa.",
-    "features": {
-      "screenTitle": "Pantalla gegant",
-      "screenBody": "Pantalla gegant exterior més 4 TVs exteriors i 10 interiors. Diversos esdeveniments alhora.",
-      "terraceTitle": "La terrassa més gran",
-      "terraceBody": "Terrassa de 1.250 m² oberta dia i nit. El lloc perfecte faci sol o sigui hora de partit.",
-      "djTitle": "DJ en directe",
-      "djBody": "Quan sona el xiulet final, comença la nit. DJ en directe cada nit.",
-      "sinceTitle": "Des de 1986",
-      "sinceBody": "El sports bar original de Lloret de Mar. 40 anys d'esport, sol i bons moments a la Costa Brava."
+    "kicker": "L'Original · Est. 1986",
+    "heroTitle": "Quaranta anys de partits a la terrassa més gran de Lloret",
+    "heroSubtitle": "Pantalla gegant exterior, més de 15 TVs i DJ resident quan sona el xiulet final. La mateixa terrassa des de 1986.",
+    "stats": {
+      "terrace": "m² de terrassa",
+      "screens": "pantalles",
+      "years": "anys servint"
     },
-    "whatsOnTitle": "Què fem",
-    "whatsOnSubtitle": "Tot l'esport que importa, a la pantalla més gran de la ciutat."
+    "tonight": "Aquesta nit al Vic",
+    "tonightSub": "Directe del tauler del programa.",
+    "tonightEmpty": "El programa d'aquesta nit surt primer a Instagram. Segueix-nos, o simplement baixa: aquí sempre hi ha alguna cosa posada.",
+    "whyTitle": "Fet per a l'esport. Pensat per a la nit.",
+    "whySubtitle": "Mira el partit al sol i queda't amb el DJ. Aquesta és la rutina de la casa des de fa quatre dècades.",
+    "features": {
+      "screenTitle": "La pantalla gegant",
+      "screenBody": "La pantalla exterior més gran de Lloret de Mar, més 4 TVs a la terrassa i 10 a dins. Partits alhora? Els fem tots.",
+      "terraceTitle": "1.250 m² de terrassa",
+      "terraceBody": "Oberta dia i nit, sota veles nàutiques i llums de revetlla. No hi ha mal lloc.",
+      "djTitle": "El torn de nit",
+      "djBody": "DJ resident a jornada completa. Quan sona el xiulet final, puja el volum.",
+      "sinceTitle": "Des de 1986",
+      "sinceBody": "Tres generacions de parroquians no es poden equivocar. El sports bar original d'aquesta costa."
+    },
+    "heritageKicker": "La nostra història",
+    "heritageTitle": "La Reina porta el marcador aquí des de 1986",
+    "heritageBody": "Queen Vic va obrir l'estiu que Maradona va aixecar el Mundial i no s'ha perdut cap temporada. Quaranta anys de finals, esmorzars anglesos i gols al descompte a la mateixa terrassa de Lloret de Mar.",
+    "stampAlt": "Emblema de segell postal de la Reina Victòria de Queen Vic, Lloret de Mar, fundat el 1986",
+    "finalTitle": "S'acosta un partit gran?",
+    "finalBody": "Els dies de partit les taules volen. Digues-nos quan véns i et guardem lloc a la terrassa.",
+    "nextUp": "Properament a pantalla"
   },
   "whatsOn": {
-    "title": "Què fem a Queen Vic",
-    "subtitle": "Partits en directe a la pantalla gegant exterior de Lloret de Mar.",
-    "empty": "Ara mateix no hi ha partits publicats. Segueix-nos a Instagram per a novetats diàries.",
-    "featured": "Destacat"
+    "title": "Què fem al Queen Vic",
+    "subtitle": "Tots els partits a la pantalla gegant exterior de Lloret de Mar.",
+    "board": "El programa",
+    "empty": "Encara no hi ha res publicat",
+    "emptyNote": "El programa setmanal surt primer a Instagram. Segueix-nos, o demana'ns que posem el teu partit.",
+    "featured": "Destacat",
+    "live": "En directe"
   },
   "worldCup": {
     "title": "On veure el Mundial 2026 a Lloret de Mar",
-    "subtitle": "Tots els partits en pantalla gegant exterior i 1.250 m² de terrassa. El millor lloc per al Mundial a Lloret des de 1986.",
-    "facts": "104 partits · 48 seleccions · 39 dies"
+    "subtitle": "Tots els partits en pantalla gegant exterior, amb 1.250 m² de terrassa per celebrar-ho. El millor seient del Mundial a Lloret, igual que el 1986.",
+    "facts": "104 partits · 48 seleccions · 39 dies",
+    "p1t": "Tots els partits, a l'engròs",
+    "p1b": "De la fase de grups a la final a la pantalla exterior més gran de la ciutat. Cada gol, més gran que enlloc.",
+    "p2t": "Comentari íntegre en anglès",
+    "p2b": "Als partits grans no es perd ni una paraula dels comentaristes.",
+    "p3t": "La grada visitant a l'estranger",
+    "p3b": "Queen Vic fa quaranta anys que és la casa dels aficionats britànics i irlandesos en aquesta costa.",
+    "p4t": "Queda't de nit",
+    "p4b": "Quan sona el xiulet, el DJ resident agafa el relleu. Les nits de Mundial aquí duren molt més de 90 minuts.",
+    "tipsTitle": "Guia del dia de partit",
+    "tip1": "El programa dia a dia es publica a Instagram durant el torneig.",
+    "tip2": "Arriba entre 30 i 45 minuts abans als partits grans. La terrassa s'omple ràpid.",
+    "tip3": "Els grups poden reservar per a les nits d'eliminatòries. Fes servir la pàgina de reserves."
+  },
+  "sportsBar": {
+    "kicker": "El muntatge",
+    "title": "Tots els seients són bons",
+    "intro": "Podem posar diversos partits alhora. T'asseguis on t'asseguis, tindràs pantalla i una canya freda a mà.",
+    "s1t": "Pantalla gegant exterior",
+    "s1b": "La més gran de Lloret de Mar. Feta per a nits de Mundial i finals de lliga.",
+    "s2t": "TVs de terrassa",
+    "s2b": "Quatre pantalles més repartides per la terrassa, perquè els seients al sol no es perdin res.",
+    "s3t": "Pantalles a dins",
+    "s3b": "Deu més cobrint cada racó del bar. Els horaris solapats són benvinguts.",
+    "showTitle": "Què fem",
+    "showSub": "Si importa, està posat. Avisa'ns amb antelació i farem el possible per confirmar el teu partit."
+  },
+  "about": {
+    "kicker": "Est. 1986 · De tota la vida a Lloret",
+    "title": "Quaranta anys a la mateixa terrassa",
+    "p1": "Queen Vic va obrir el 1986, l'estiu que Maradona va aixecar el Mundial, i no s'ha perdut cap temporada des de llavors. El sports bar original de Lloret de Mar.",
+    "p2": "El que va començar com un petit pub amb terrassa avui són 1.250 m² de dia de partit: una pantalla gegant exterior, quinze més per tot el bar i un DJ resident que fitxa quan els comentaristes pleguen.",
+    "tlTitle": "La història fins avui",
+    "tl1y": "1986",
+    "tl1t": "S'obren les portes de la terrassa. Maradona guanya el Mundial; nosaltres servim la primera pinta.",
+    "tl2y": "Anys 90",
+    "tl2t": "L'era de la Premier League. Els habituals britànics i irlandesos converteixen el Vic en el seu camp.",
+    "tl3y": "Anys 2010",
+    "tl3t": "Arriba la pantalla gegant exterior. Els dies de partit es muden a fora, sota els llums de revetlla.",
+    "tl4y": "2026",
+    "tl4t": "Quaranta anys ben portats i un estiu de Mundial per davant. Ens veiem a la terrassa."
   },
   "reservations": {
     "title": "Reserva per a grups i dies de partit",
-    "subtitle": "Gran partit, comiat de solter o sortida de grup? Digues-nos-ho i t'ho organitzem.",
+    "subtitle": "Partit gran, comiat o una bona nit en grup? Digues-nos quan i quants, i de la resta ens n'encarreguem.",
     "form": {
       "name": "El teu nom",
       "email": "Email",
@@ -59,36 +115,72 @@
       "partySize": "Nombre de persones",
       "date": "Data",
       "time": "Hora",
-      "type": "Tipus de reserva",
-      "requests": "Peticions especials",
-      "submit": "Sol·licitar reserva",
-      "success": "Gràcies! Hem rebut la teva sol·licitud i la confirmarem aviat."
+      "type": "Ocasió",
+      "requests": "Res que haguem de saber?",
+      "submit": "Sol·licitar taula",
+      "success": "Sol·licitud rebuda. Et confirmarem la taula aviat, normalment el mateix dia."
+    },
+    "occasions": {
+      "group": "Nit en grup",
+      "match_day": "Dia de partit",
+      "stag_hen": "Comiat",
+      "birthday": "Aniversari",
+      "standard": "Només una taula"
     }
   },
   "contact": {
     "title": "Contacte",
-    "subtitle": "Dubtes sobre partits, horaris o esdeveniments? Escriu-nos i et respondrem al més aviat possible.",
+    "subtitle": "Dubtes sobre partits, horaris o esdeveniments? Escriu-nos i et responem ràpid.",
     "form": {
       "name": "El teu nom",
       "email": "El teu email",
       "message": "El teu missatge",
       "consent": "Accepto que em contacteu sobre la meva consulta.",
       "submit": "Enviar missatge",
-      "success": "Gràcies! El teu missatge està en camí."
+      "success": "Missatge en camí. Et respondrem al més aviat possible."
     }
   },
-  "faq": { "title": "Preguntes freqüents" },
+  "faq": {
+    "title": "Preguntes freqüents"
+  },
   "footer": {
-    "follow": "Segueix-nos",
+    "follow": "Troba'ns",
     "rights": "Tots els drets reservats.",
     "privacy": "Privacitat",
     "cookies": "Cookies",
     "address": "Lloret de Mar · Costa Brava · Espanya"
   },
   "cookies": {
-    "message": "Fem servir cookies per millorar la teva experiència i analitzar el trànsit. Tu tries què permetre.",
+    "message": "Fem servir poques cookies perquè el web funcioni i, només si ho permets, per entendre el trànsit. Tu decideixes.",
     "accept": "Acceptar-ho tot",
-    "reject": "Rebutjar no essencials",
+    "reject": "Només essencials",
     "settings": "Configuració"
+  },
+  "form": {
+    "serverError": "Alguna cosa ha fallat en enviar-ho. Torna-ho a provar o escriu-nos per Instagram.",
+    "sending": "Enviant…"
+  },
+  "fixture": {
+    "sport": {
+      "football": "Futbol",
+      "f1": "Fórmula 1",
+      "motogp": "MotoGP",
+      "rugby_league": "Rugby League",
+      "gaa": "GAA",
+      "boxing": "Boxa",
+      "other": "Esport en directe"
+    },
+    "commentary": {
+      "en": "Comentari en anglès",
+      "es": "Comentari en castellà",
+      "ca": "Comentari en català",
+      "ga": "GAA / irlandès",
+      "fr": "Comentari en francès"
+    }
+  },
+  "notFound": {
+    "title": "La pilota ha sortit del camp",
+    "body": "Aquesta pàgina no existeix. Torna a la terrassa, que el partit continua.",
+    "cta": "Tornar a l'inici"
   }
 }

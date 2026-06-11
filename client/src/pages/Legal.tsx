@@ -6,18 +6,16 @@ import { getCookies, getPrivacy, type LegalDoc } from "../content/legal";
 function LegalPage({ doc, path }: { doc: LegalDoc; path: string }) {
   usePageSeo({ title: `${doc.title} | Queen Vic`, description: doc.intro, path });
   return (
-    <Section className="pt-16">
+    <Section className="py-16 sm:py-24">
       <Container className="max-w-3xl">
-        <h1 className="font-display text-4xl font-extrabold">{doc.title}</h1>
-        <p className="mt-2 text-xs uppercase tracking-widest text-ink-soft">
-          Updated {doc.updated}
-        </p>
-        <p className="mt-6 text-ink-soft">{doc.intro}</p>
-        <div className="mt-8 space-y-6">
+        <h1 className="font-display text-4xl font-bold text-ink-900">{doc.title}</h1>
+        <p className="label-caps mt-3 text-xs text-ink-600">Updated {doc.updated}</p>
+        <p className="mt-6 text-[1.0625rem] leading-relaxed text-ink-600">{doc.intro}</p>
+        <div className="mt-10 space-y-7">
           {doc.sections.map((s) => (
             <div key={s.h}>
-              <h2 className="font-display text-lg font-bold text-electric-400">{s.h}</h2>
-              <p className="mt-1 text-sm text-ink-soft">{s.p}</p>
+              <h2 className="font-display text-lg font-bold text-green-900">{s.h}</h2>
+              <p className="mt-1.5 max-w-2xl text-[0.9375rem] leading-relaxed text-ink-600">{s.p}</p>
             </div>
           ))}
         </div>

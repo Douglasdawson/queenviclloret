@@ -3,10 +3,10 @@
   "tagline": "Le sports bar original de Lloret de Mar depuis 1986",
   "nav": {
     "home": "Accueil",
-    "sportsBar": "Sports Bar",
+    "sportsBar": "Le Bar",
     "whatsOn": "Au programme",
     "worldCup": "Coupe du Monde 2026",
-    "about": "À propos",
+    "about": "Notre histoire",
     "reservations": "Réservations",
     "contact": "Contact",
     "faq": "FAQ"
@@ -16,79 +16,171 @@
     "bookTable": "Réserver une table",
     "seeWhatsOn": "Voir le programme",
     "getInTouch": "Contactez-nous",
-    "viewDetails": "Voir les détails"
+    "viewDetails": "Voir les détails",
+    "fullProgramme": "Programme complet"
   },
   "home": {
-    "kicker": "1986 · 40 ans et ça continue",
-    "heroTitle": "La plus grande terrasse de Lloret de Mar",
-    "heroSubtitle": "Écran géant extérieur, plus de 14 TV et un DJ live chaque soir, depuis 1986.",
-    "stats": { "terrace": "m² de terrasse", "screens": "écrans", "years": "ans d'ouverture" },
-    "whyTitle": "Pourquoi Queen Vic",
-    "whySubtitle": "Une immense terrasse, un écran géant pour les matchs et une ambiance de nuit avec DJ live. Regardez le sport, puis restez pour la fête.",
-    "features": {
-      "screenTitle": "Écran géant",
-      "screenBody": "Écran géant extérieur plus 4 TV extérieures et 10 intérieures. Plusieurs événements à la fois.",
-      "terraceTitle": "La plus grande terrasse",
-      "terraceBody": "Terrasse de 1 250 m² ouverte jour et nuit. L'endroit parfait au soleil comme à l'heure du match.",
-      "djTitle": "DJ live",
-      "djBody": "Au coup de sifflet final, la nuit commence. DJ live chaque soir.",
-      "sinceTitle": "Depuis 1986",
-      "sinceBody": "Le sports bar original de Lloret de Mar. 40 ans de sport, de soleil et de bons moments sur la Costa Brava."
+    "kicker": "L'Original · Est. 1986",
+    "heroTitle": "Quarante ans de matchs sur la plus grande terrasse de Lloret",
+    "heroSubtitle": "Écran géant extérieur, plus de 15 TV et un DJ résident au coup de sifflet final. La même terrasse depuis 1986.",
+    "stats": {
+      "terrace": "m² de terrasse",
+      "screens": "écrans",
+      "years": "ans de service"
     },
-    "whatsOnTitle": "Au programme",
-    "whatsOnSubtitle": "Tout le sport qui compte, sur le plus grand écran de la ville."
+    "tonight": "Ce soir au Vic",
+    "tonightSub": "Tout droit du tableau du programme.",
+    "tonightEmpty": "Le programme du soir sort d'abord sur Instagram. Suivez-nous, ou descendez simplement : il y a toujours quelque chose à l'écran.",
+    "whyTitle": "Fait pour le sport. Pensé pour la nuit.",
+    "whySubtitle": "Regardez le match au soleil, restez pour le DJ. C'est la routine de la maison depuis quatre décennies.",
+    "features": {
+      "screenTitle": "L'écran géant",
+      "screenBody": "Le plus grand écran extérieur de Lloret de Mar, plus 4 TV en terrasse et 10 à l'intérieur. Des matchs en même temps ? On les passe tous.",
+      "terraceTitle": "1 250 m² de terrasse",
+      "terraceBody": "Ouverte jour et nuit, sous voiles d'ombrage et guirlandes lumineuses. Aucune mauvaise place.",
+      "djTitle": "L'équipe de nuit",
+      "djBody": "DJ résident à plein temps. Au coup de sifflet final, le volume monte.",
+      "sinceTitle": "Depuis 1986",
+      "sinceBody": "Trois générations d'habitués ne peuvent pas se tromper. Le sports bar original de cette côte."
+    },
+    "heritageKicker": "Notre histoire",
+    "heritageTitle": "La Reine tient le score ici depuis 1986",
+    "heritageBody": "Le Queen Vic a ouvert l'été où Maradona soulevait la Coupe du Monde, et n'a pas manqué une saison depuis. Quarante ans de finales, de breakfasts et de buts à la dernière minute sur la même terrasse de Lloret de Mar.",
+    "stampAlt": "Emblème timbre-poste de la Reine Victoria du Queen Vic, Lloret de Mar, fondé en 1986",
+    "finalTitle": "Un grand match approche ?",
+    "finalBody": "Les jours de match, les tables partent vite. Dites-nous quand vous venez et on vous garde une place en terrasse.",
+    "nextUp": "Bientôt à l'écran"
   },
   "whatsOn": {
     "title": "Au programme au Queen Vic",
-    "subtitle": "Matchs en direct sur l'écran géant extérieur de Lloret de Mar.",
-    "empty": "Aucun match publié pour l'instant. Suivez-nous sur Instagram pour les mises à jour quotidiennes.",
-    "featured": "À la une"
+    "subtitle": "Tous les matchs sur l'écran géant extérieur de Lloret de Mar.",
+    "board": "Le programme",
+    "empty": "Rien de publié pour l'instant",
+    "emptyNote": "Le programme hebdomadaire sort d'abord sur Instagram. Suivez-nous, ou demandez-nous de passer votre match.",
+    "featured": "À la une",
+    "live": "En direct"
   },
   "worldCup": {
     "title": "Où regarder la Coupe du Monde 2026 à Lloret de Mar",
-    "subtitle": "Tous les matchs sur écran géant extérieur et 1 250 m² de terrasse. Le meilleur endroit pour la Coupe du Monde à Lloret depuis 1986.",
-    "facts": "104 matchs · 48 équipes · 39 jours"
+    "subtitle": "Chaque match sur écran géant extérieur, avec 1 250 m² de terrasse pour fêter ça. La meilleure place de la Coupe du Monde à Lloret, comme en 1986.",
+    "facts": "104 matchs · 48 équipes · 39 jours",
+    "p1t": "Chaque match, en grand",
+    "p1b": "De la phase de groupes à la finale sur le plus grand écran extérieur de la ville. Chaque but, plus grand que nulle part ailleurs.",
+    "p2t": "Commentaire intégral en anglais",
+    "p2b": "Pas un mot des commentateurs ne se perd sur les grandes affiches.",
+    "p3t": "Le parcage à l'étranger",
+    "p3b": "Le Queen Vic est la maison des supporters britanniques et irlandais sur cette côte depuis quarante ans.",
+    "p4t": "Restez pour la nuit",
+    "p4b": "Au coup de sifflet, le DJ résident prend le relais. Ici, les soirs de Coupe du Monde durent bien plus de 90 minutes.",
+    "tipsTitle": "Guide du jour de match",
+    "tip1": "Le programme jour par jour est publié sur Instagram pendant le tournoi.",
+    "tip2": "Arrivez 30 à 45 minutes en avance pour les grandes affiches. La terrasse se remplit vite.",
+    "tip3": "Les groupes peuvent réserver pour les soirées à élimination directe. Passez par la page réservations."
+  },
+  "sportsBar": {
+    "kicker": "L'installation",
+    "title": "Toutes les places sont bonnes",
+    "intro": "On peut passer plusieurs matchs à la fois. Où que vous soyez assis, vous aurez un écran et une pinte fraîche à portée de main.",
+    "s1t": "Écran géant extérieur",
+    "s1b": "Le plus grand de Lloret de Mar. Fait pour les soirs de Coupe du Monde et les finales.",
+    "s2t": "TV de terrasse",
+    "s2b": "Quatre écrans de plus répartis sur la terrasse, pour que les places au soleil ne manquent rien.",
+    "s3t": "Écrans à l'intérieur",
+    "s3b": "Dix de plus couvrant chaque angle du bar. Les coups d'envoi simultanés sont les bienvenus.",
+    "showTitle": "Ce qu'on diffuse",
+    "showSub": "Si ça compte, c'est à l'écran. Prévenez-nous à l'avance et on fera le maximum pour confirmer votre match."
+  },
+  "about": {
+    "kicker": "Est. 1986 · Une institution à Lloret",
+    "title": "Quarante ans sur la même terrasse",
+    "p1": "Le Queen Vic a ouvert en 1986, l'été où Maradona soulevait la Coupe du Monde, et n'a pas manqué une saison depuis. Le sports bar original de Lloret de Mar.",
+    "p2": "Ce qui a commencé comme un petit pub avec terrasse fait aujourd'hui 1 250 m² de jour de match : un écran géant extérieur, quinze autres dans tout le bar et un DJ résident qui embauche quand les commentateurs débauchent.",
+    "tlTitle": "L'histoire jusqu'ici",
+    "tl1y": "1986",
+    "tl1t": "Les portes de la terrasse s'ouvrent. Maradona gagne la Coupe du Monde ; nous tirons notre première pinte.",
+    "tl2y": "Années 90",
+    "tl2t": "L'ère de la Premier League. Les habitués britanniques et irlandais font du Vic leur stade.",
+    "tl3y": "Années 2010",
+    "tl3t": "L'écran géant extérieur arrive. Les jours de match passent dehors, sous les guirlandes.",
+    "tl4y": "2026",
+    "tl4t": "Quarante ans bien portés, et un été de Coupe du Monde en vue. Rendez-vous en terrasse."
   },
   "reservations": {
     "title": "Réservez pour les groupes et les jours de match",
-    "subtitle": "Grand match, enterrement de vie de garçon/jeune fille ou sortie de groupe ? Dites-le-nous et on s'occupe de tout.",
+    "subtitle": "Grande affiche, enterrement de vie de garçon ou de jeune fille, ou belle soirée de groupe ? Dites-nous quand et combien, on s'occupe du reste.",
     "form": {
       "name": "Votre nom",
-      "email": "Email",
+      "email": "E-mail",
       "phone": "Téléphone",
       "partySize": "Nombre de personnes",
       "date": "Date",
       "time": "Heure",
-      "type": "Type de réservation",
-      "requests": "Demandes spéciales",
-      "submit": "Demander une réservation",
-      "success": "Merci ! Nous avons reçu votre demande et la confirmerons rapidement."
+      "type": "Occasion",
+      "requests": "Quelque chose à savoir ?",
+      "submit": "Demander une table",
+      "success": "Demande reçue. Nous confirmerons votre table rapidement, généralement le jour même."
+    },
+    "occasions": {
+      "group": "Soirée de groupe",
+      "match_day": "Jour de match",
+      "stag_hen": "Enterrement de vie",
+      "birthday": "Anniversaire",
+      "standard": "Juste une table"
     }
   },
   "contact": {
     "title": "Contact",
-    "subtitle": "Des questions sur les matchs, les horaires ou les événements ? Écrivez-nous et nous répondrons dès que possible.",
+    "subtitle": "Des questions sur les matchs, les horaires ou les événements ? Écrivez-nous, on vous répond vite.",
     "form": {
       "name": "Votre nom",
-      "email": "Votre email",
+      "email": "Votre e-mail",
       "message": "Votre message",
       "consent": "J'accepte d'être contacté au sujet de ma demande.",
       "submit": "Envoyer le message",
-      "success": "Merci ! Votre message est en route."
+      "success": "Message en route. Nous répondrons dès que possible."
     }
   },
-  "faq": { "title": "Questions fréquentes" },
+  "faq": {
+    "title": "Questions fréquentes"
+  },
   "footer": {
-    "follow": "Suivez-nous",
+    "follow": "Retrouvez-nous",
     "rights": "Tous droits réservés.",
     "privacy": "Confidentialité",
     "cookies": "Cookies",
     "address": "Lloret de Mar · Costa Brava · Espagne"
   },
   "cookies": {
-    "message": "Nous utilisons des cookies pour améliorer votre expérience et analyser le trafic. Vous choisissez ce que vous autorisez.",
+    "message": "Nous utilisons quelques cookies pour faire fonctionner le site et, seulement si vous l'autorisez, pour comprendre le trafic. À vous de voir.",
     "accept": "Tout accepter",
-    "reject": "Refuser non essentiels",
+    "reject": "Essentiels uniquement",
     "settings": "Paramètres"
+  },
+  "form": {
+    "serverError": "Une erreur est survenue lors de l'envoi. Réessayez ou écrivez-nous sur Instagram.",
+    "sending": "Envoi…"
+  },
+  "fixture": {
+    "sport": {
+      "football": "Football",
+      "f1": "Formule 1",
+      "motogp": "MotoGP",
+      "rugby_league": "Rugby League",
+      "gaa": "GAA",
+      "boxing": "Boxe",
+      "other": "Sport en direct"
+    },
+    "commentary": {
+      "en": "Commentaire en anglais",
+      "es": "Commentaire en espagnol",
+      "ca": "Commentaire en catalan",
+      "ga": "GAA / irlandais",
+      "fr": "Commentaire en français"
+    }
+  },
+  "notFound": {
+    "title": "Le ballon est sorti du terrain",
+    "body": "Cette page n'existe pas. Retournez en terrasse, le match continue.",
+    "cta": "Retour à l'accueil"
   }
 }

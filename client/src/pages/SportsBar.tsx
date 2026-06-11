@@ -1,62 +1,100 @@
 import { useTranslation } from "react-i18next";
-import { Container, Kicker, Section } from "../components/ui";
+import { ButtonLink, Container, Eyebrow, Section } from "../components/ui";
+import { Picture } from "../components/Picture";
 import { usePageSeo } from "../seo/use-page-seo";
+
+const COMPETITIONS = [
+  { src: "/images/premier-league.webp", label: "Premier League" },
+  { src: "/images/world-cup-2026.webp", label: "World Cup 2026" },
+  { src: "/images/f1.webp", label: "Formula 1" },
+  { src: "/images/motogp.webp", label: "MotoGP" },
+  { src: "/images/rugby-league.webp", label: "Rugby League" },
+  { src: "/images/gaa.webp", label: "GAA" },
+];
 
 export default function SportsBarPage() {
   const { t } = useTranslation();
   usePageSeo({
-    title: "Sports Bar in Lloret de Mar — Premier League, F1, MotoGP | Queen Vic",
+    title: "Sports Bar in Lloret de Mar · Premier League, F1, MotoGP | Queen Vic",
     description:
-      "Every seat is a good seat. Giant outdoor screen, 4 outdoor TVs and 10 indoor screens showing Premier League, Rugby League, F1, MotoGP and more in Lloret de Mar.",
+      "Giant outdoor screen, 4 terrace TVs and 10 screens inside showing Premier League, Rugby League, F1, MotoGP and GAA in Lloret de Mar since 1986.",
     path: "/sports-bar",
   });
 
   const setup = [
-    { n: "1", title: "Giant Outdoor Screen", body: "The biggest outdoor screen in Lloret de Mar — built for big match days and World Cup nights." },
-    { n: "4", title: "Outdoor TVs", body: "Four extra TVs across the terrace so you never miss a moment." },
-    { n: "10+", title: "Indoor Screens", body: "Ten screens inside covering every angle. Multiple games at once when fixtures overlap." },
-  ];
-  const shows = ["Premier League", "Rugby League", "World Cup 2026", "F1 & MotoGP", "GAA", "Boxing"];
+    { n: "1", key: "s1" },
+    { n: "4", key: "s2" },
+    { n: "10+", key: "s3" },
+  ] as const;
 
   return (
     <>
-      <Section className="pt-16">
+      {/* The setup: screens explained in type, not cards */}
+      <Section className="py-16 sm:py-24">
         <Container>
-          <Kicker>Our setup</Kicker>
-          <h1 className="max-w-3xl font-display text-4xl font-extrabold sm:text-5xl">
-            Every seat is a good seat
+          <Eyebrow>{t("sportsBar.kicker")}</Eyebrow>
+          <h1 className="font-display max-w-2xl text-[clamp(2.25rem,5vw,3.5rem)] font-bold leading-tight text-ink-900">
+            {t("sportsBar.title")}
           </h1>
-          <p className="mt-4 max-w-2xl text-ink-soft">
-            We can show multiple events at the same time. No matter where you sit, you'll always
-            have a screen.
+          <p className="mt-4 max-w-xl text-[1.0625rem] leading-relaxed text-ink-600">
+            {t("sportsBar.intro")}
           </p>
-          <div className="mt-10 grid gap-5 sm:grid-cols-3">
+
+          <dl className="mt-14 grid gap-x-10 gap-y-10 sm:grid-cols-3">
             {setup.map((s) => (
-              <div key={s.title} className="rounded-2xl border border-white/10 bg-night-800/50 p-6">
-                <span className="font-display text-5xl font-extrabold text-gold-400">{s.n}</span>
-                <h2 className="mt-3 font-display text-lg font-bold">{s.title}</h2>
-                <p className="mt-2 text-sm text-ink-soft">{s.body}</p>
+              <div key={s.key} className="border-t-2 border-green-900 pt-5">
+                <dt className="flex items-baseline gap-3">
+                  <span className="tnum font-display text-5xl font-bold leading-none text-green-900">
+                    {s.n}
+                  </span>
+                  <span className="font-display text-lg font-bold text-ink-900">
+                    {t(`sportsBar.${s.key}t`)}
+                  </span>
+                </dt>
+                <dd className="mt-2.5 max-w-xs text-[0.9375rem] leading-relaxed text-ink-600">
+                  {t(`sportsBar.${s.key}b`)}
+                </dd>
               </div>
             ))}
-          </div>
+          </dl>
         </Container>
       </Section>
 
-      <Section className="border-t border-white/10">
+      {/* Terrace photo interlude */}
+      <Picture
+        name="terrace-screen"
+        alt="The giant outdoor screen seen across Queen Vic's terrace"
+        sizes="100vw"
+        className="block"
+        imgClassName="max-h-[60vh] w-full object-cover"
+      />
+
+      {/* What we show: competition marks on green */}
+      <Section surface="green" className="py-16 sm:py-20">
         <Container>
-          <Kicker>Every sport that matters</Kicker>
-          <h2 className="font-display text-3xl font-bold sm:text-4xl">What we show</h2>
-          <ul className="mt-8 flex flex-wrap gap-3">
-            {shows.map((s) => (
-              <li
-                key={s}
-                className="rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-ink"
-              >
-                {s}
+          <h2 className="font-display text-3xl font-bold sm:text-4xl">{t("sportsBar.showTitle")}</h2>
+          <p className="mt-3 max-w-xl text-[0.9375rem] leading-relaxed text-paper-dim">
+            {t("sportsBar.showSub")}
+          </p>
+          <ul className="mt-10 grid grid-cols-2 items-center gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-6">
+            {COMPETITIONS.map((c) => (
+              <li key={c.label} className="flex flex-col items-center gap-3">
+                <img
+                  src={c.src}
+                  alt={c.label}
+                  width={120}
+                  height={64}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-12 w-auto object-contain opacity-90 sm:h-14"
+                />
+                <span className="label-caps text-[0.625rem] text-paper-dim">{c.label}</span>
               </li>
             ))}
           </ul>
-          <p className="mt-6 max-w-2xl text-sm text-ink-soft">{t("home.whatsOnSubtitle")}</p>
+          <div className="mt-12">
+            <ButtonLink href="/whats-on">{t("cta.seeWhatsOn")}</ButtonLink>
+          </div>
         </Container>
       </Section>
     </>

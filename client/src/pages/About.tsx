@@ -1,35 +1,69 @@
 import { useTranslation } from "react-i18next";
-import { Container, Kicker, Section } from "../components/ui";
+import { ButtonLink, Container, Eyebrow, LaurelSeal, Section } from "../components/ui";
+import { Picture } from "../components/Picture";
 import { usePageSeo } from "../seo/use-page-seo";
 
 export default function AboutPage() {
   const { t } = useTranslation();
   usePageSeo({
-    title: "40 Years in Lloret de Mar — About Queen Vic Sports Bar",
+    title: "Forty years in Lloret de Mar: the Queen Vic story",
     description:
-      "Since 1986, Queen Vic has been where sport fans meet on the Costa Brava. 40 years of sport, sun and good times in Lloret de Mar.",
+      "Queen Vic opened in 1986 and never missed a season. The story of the original sports bar on the Costa Brava: the terrace, the screen, the stamp.",
     path: "/about",
   });
 
+  const timeline = ["tl1", "tl2", "tl3", "tl4"] as const;
+
   return (
-    <Section className="pt-16">
-      <Container>
-        <Kicker>Est. 1986 · Class of Lloret</Kicker>
-        <h1 className="max-w-3xl font-display text-4xl font-extrabold sm:text-5xl">
-          Celebrating 40 Years in Lloret de Mar
-        </h1>
-        <div className="mt-6 max-w-2xl space-y-4 text-ink-soft">
-          <p>
-            Since 1986, Queen Vic has been the place where sport fans meet, memories are made and
-            good times never stop. The original sports bar in Lloret de Mar.
-          </p>
-          <p>
-            A huge 1,250 m² terrace, a giant outdoor screen for the big match days, 15+ screens in
-            total and a resident DJ every night. Watch the sport, then stay for the night.
-          </p>
-          <p>{t("tagline")}.</p>
-        </div>
-      </Container>
-    </Section>
+    <>
+      <Section className="py-16 sm:py-24">
+        <Container>
+          <div className="grid items-start gap-12 lg:grid-cols-[1.2fr_auto] lg:gap-20">
+            <div>
+              <Eyebrow>{t("about.kicker")}</Eyebrow>
+              <h1 className="font-display max-w-2xl text-[clamp(2.25rem,5vw,3.5rem)] font-bold leading-tight text-ink-900">
+                {t("about.title")}
+              </h1>
+              <div className="mt-6 max-w-xl space-y-4 text-[1.0625rem] leading-relaxed text-ink-600">
+                <p>{t("about.p1")}</p>
+                <p>{t("about.p2")}</p>
+              </div>
+              <LaurelSeal className="mt-10" />
+            </div>
+
+            <div className="stamp-shadow w-56 rotate-2 justify-self-center sm:w-64 lg:mt-8">
+              <div className="stamp-frame">
+                <Picture
+                  name="victoria-stamp"
+                  alt={t("home.stampAlt")}
+                  sizes="256px"
+                  imgClassName="rounded-sm"
+                />
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Timeline as a programme list */}
+      <Section surface="green" className="py-16 sm:py-22">
+        <Container>
+          <h2 className="font-display text-3xl font-bold sm:text-4xl">{t("about.tlTitle")}</h2>
+          <ol className="mt-10 max-w-2xl space-y-0 divide-y divide-green-700">
+            {timeline.map((k) => (
+              <li key={k} className="flex gap-6 py-6 sm:gap-10">
+                <span className="tnum font-display w-24 shrink-0 text-2xl font-bold text-gold-400">
+                  {t(`about.${k}y`)}
+                </span>
+                <p className="text-[0.9375rem] leading-relaxed text-paper-dim">{t(`about.${k}t`)}</p>
+              </li>
+            ))}
+          </ol>
+          <div className="mt-12">
+            <ButtonLink href="/reservations">{t("cta.bookTable")}</ButtonLink>
+          </div>
+        </Container>
+      </Section>
+    </>
   );
 }

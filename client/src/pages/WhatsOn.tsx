@@ -1,16 +1,18 @@
 import { useTranslation } from "react-i18next";
-import { Container, Kicker, Section } from "../components/ui";
-import { FixtureCard } from "../components/FixtureCard";
+import { ButtonAnchor, ButtonLink, Container, Eyebrow, LaurelSeal, Section } from "../components/ui";
+import { FixtureTicket, groupByDay } from "../components/FixtureTicket";
 import { usePublicEvents } from "../hooks/usePublicEvents";
 import { usePageSeo } from "../seo/use-page-seo";
 import { useSite } from "../app/site-context";
 import { eventLd } from "../seo/jsonld";
+import { formatDay } from "../lib/format";
 
 export default function WhatsOnPage() {
   const { t } = useTranslation();
   const { siteUrl, locale } = useSite();
   const { data: events } = usePublicEvents();
   const list = events ?? [];
+  const days = groupByDay(list);
 
   usePageSeo({
     title: `${t("whatsOn.title")} | Queen Vic Lloret de Mar`,
@@ -28,20 +30,63 @@ export default function WhatsOnPage() {
   });
 
   return (
-    <Section className="pt-16">
+    <Section surface="green" className="min-h-[70svh] py-16 sm:py-20">
       <Container>
-        <Kicker>{t("whatsOn.subtitle")}</Kicker>
-        <h1 className="font-display text-4xl font-extrabold sm:text-5xl">{t("whatsOn.title")}</h1>
+        <Eyebrow onGreen>{t("whatsOn.board")}</Eyebrow>
+        <h1 className="font-display max-w-2xl text-[clamp(2.25rem,5vw,3.5rem)] font-bold leading-tight">
+          {t("whatsOn.title")}
+        </h1>
+        <p className="mt-3 max-w-xl text-[1.0625rem] leading-relaxed text-paper-dim">
+          {t("whatsOn.subtitle")}
+        </p>
 
-        {list.length > 0 ? (
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {list.map((e) => (
-              <FixtureCard key={e.id} event={e} />
+        {days.length > 0 ? (
+          <div className="mt-12 space-y-10">
+            {days.map((day) => (
+              <section key={day.key} aria-label={formatDay(day.first.startsAt, locale)}>
+                <h2 className="label-caps mb-4 flex items-baseline gap-3 text-sm text-gold-400">
+                  {formatDay(day.first.startsAt, locale)}
+                  <span className="h-px flex-1 bg-green-700" aria-hidden="true" />
+                </h2>
+                <div className="grid gap-3.5 lg:grid-cols-2">
+                  {day.items.map((e) => (
+                    <FixtureTicket key={e.id} event={e} />
+                  ))}
+                </div>
+              </section>
             ))}
           </div>
         ) : (
-          <p className="mt-10 max-w-xl text-ink-soft">{t("whatsOn.empty")}</p>
+          /* Dressed empty state */
+          <div className="mt-16 flex max-w-lg flex-col items-start gap-5">
+            <LaurelSeal className="w-[96px] opacity-80" />
+            <h2 className="font-display text-2xl font-bold">{t("whatsOn.empty")}</h2>
+            <p className="text-[0.9375rem] leading-relaxed text-paper-dim">{t("whatsOn.emptyNote")}</p>
+            <div className="flex flex-wrap gap-3">
+              <ButtonAnchor href="https://www.instagram.com/queenviclloret/">
+                Instagram →
+              </ButtonAnchor>
+              <ButtonLink href="/contact" variant="outline">
+                {t("cta.getInTouch")}
+              </ButtonLink>
+            </div>
+          </div>
         )}
+      </Container>
+
+      {/* Close the decision page with the action it exists for */}
+      <Container className="mt-20">
+        <div className="flex flex-col items-start justify-between gap-6 border-t border-green-700 pt-10 sm:flex-row sm:items-center">
+          <div>
+            <h2 className="font-display text-2xl font-bold">{t("home.finalTitle")}</h2>
+            <p className="mt-2 max-w-lg text-[0.9375rem] leading-relaxed text-paper-dim">
+              {t("home.finalBody")}
+            </p>
+          </div>
+          <ButtonLink href="/reservations" className="shrink-0">
+            {t("cta.bookTable")}
+          </ButtonLink>
+        </div>
       </Container>
     </Section>
   );

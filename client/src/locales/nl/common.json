@@ -3,10 +3,10 @@
   "tagline": "De originele sportsbar van Lloret de Mar sinds 1986",
   "nav": {
     "home": "Home",
-    "sportsBar": "Sports Bar",
+    "sportsBar": "De Bar",
     "whatsOn": "Programma",
     "worldCup": "WK 2026",
-    "about": "Over ons",
+    "about": "Ons verhaal",
     "reservations": "Reserveringen",
     "contact": "Contact",
     "faq": "FAQ"
@@ -16,42 +16,98 @@
     "bookTable": "Tafel reserveren",
     "seeWhatsOn": "Bekijk het programma",
     "getInTouch": "Neem contact op",
-    "viewDetails": "Details bekijken"
+    "viewDetails": "Details bekijken",
+    "fullProgramme": "Volledig programma"
   },
   "home": {
-    "kicker": "1986 · 40 jaar en we gaan door",
-    "heroTitle": "Het grootste terras van Lloret de Mar",
-    "heroSubtitle": "Reuzenscherm buiten, 14+ tv's en elke avond een live dj, sinds 1986.",
-    "stats": { "terrace": "m² terras", "screens": "schermen", "years": "jaar open" },
-    "whyTitle": "Waarom Queen Vic",
-    "whySubtitle": "Een enorm terras, een reuzenscherm voor wedstrijddagen en een avondsfeer met live dj. Kijk sport en blijf voor het feest.",
-    "features": {
-      "screenTitle": "Reuzenscherm",
-      "screenBody": "Reuzenscherm buiten plus 4 tv's buiten en 10 binnen. Meerdere evenementen tegelijk.",
-      "terraceTitle": "Grootste terras",
-      "terraceBody": "Terras van 1.250 m², dag en nacht open. De perfecte plek bij zon of wedstrijd.",
-      "djTitle": "Live dj",
-      "djBody": "Als het laatste fluitsignaal klinkt, begint de nacht. Elke avond een live dj.",
-      "sinceTitle": "Sinds 1986",
-      "sinceBody": "De originele sportsbar van Lloret de Mar. 40 jaar sport, zon en gezelligheid aan de Costa Brava."
+    "kicker": "Het Origineel · Est. 1986",
+    "heroTitle": "Veertig jaar wedstrijddagen op het grootste terras van Lloret",
+    "heroSubtitle": "Reuzenscherm buiten, 15+ tv's en een vaste dj na het laatste fluitsignaal. Hetzelfde terras sinds 1986.",
+    "stats": {
+      "terrace": "m² terras",
+      "screens": "schermen",
+      "years": "jaar aan de tap"
     },
-    "whatsOnTitle": "Programma",
-    "whatsOnSubtitle": "Alle sport die telt, op het grootste scherm van de stad."
+    "tonight": "Vanavond in de Vic",
+    "tonightSub": "Rechtstreeks van het programmabord.",
+    "tonightEmpty": "Het programma van vanavond verschijnt eerst op Instagram. Volg ons, of kom gewoon langs: er staat altijd iets op.",
+    "whyTitle": "Gebouwd voor sport. Gemaakt voor de nacht.",
+    "whySubtitle": "Kijk de wedstrijd in de zon en blijf voor de dj. Dat is hier al vier decennia de routine.",
+    "features": {
+      "screenTitle": "Het reuzenscherm",
+      "screenBody": "Het grootste buitenscherm van Lloret de Mar, plus 4 terras-tv's en 10 binnen. Wedstrijden tegelijk? We tonen ze allemaal.",
+      "terraceTitle": "1.250 m² terras",
+      "terraceBody": "Dag en nacht open, onder schaduwzeilen en lichtsnoeren. Er is geen slechte plek.",
+      "djTitle": "De nachtploeg",
+      "djBody": "Vaste dj in vaste dienst. Na het laatste fluitsignaal gaat het volume omhoog.",
+      "sinceTitle": "Sinds 1986",
+      "sinceBody": "Drie generaties stamgasten kunnen niet ongelijk hebben. De originele sportsbar aan deze kust."
+    },
+    "heritageKicker": "Ons verhaal",
+    "heritageTitle": "De Koningin houdt hier de stand bij sinds 1986",
+    "heritageBody": "Queen Vic opende in de zomer dat Maradona de wereldbeker omhoog hield en heeft sindsdien geen seizoen gemist. Veertig jaar finales, ontbijtjes en goals in blessuretijd op hetzelfde terras in Lloret de Mar.",
+    "stampAlt": "Het Queen Victoria-postzegelembleem van Queen Vic, Lloret de Mar, opgericht in 1986",
+    "finalTitle": "Grote wedstrijd op komst?",
+    "finalBody": "Op wedstrijddagen gaan de tafels snel. Laat weten wanneer je komt en we houden een plek op het terras vrij.",
+    "nextUp": "Binnenkort op het scherm"
   },
   "whatsOn": {
     "title": "Programma bij Queen Vic",
-    "subtitle": "Live wedstrijden op het reuzenscherm buiten in Lloret de Mar.",
-    "empty": "Er zijn nu geen wedstrijden gepubliceerd. Volg ons op Instagram voor dagelijkse updates.",
-    "featured": "Uitgelicht"
+    "subtitle": "Elke wedstrijd op het reuzenscherm buiten in Lloret de Mar.",
+    "board": "Het programma",
+    "empty": "Nog niets gepubliceerd",
+    "emptyNote": "Het weekprogramma verschijnt eerst op Instagram. Volg ons, of vraag ons jouw wedstrijd op te zetten.",
+    "featured": "Uitgelicht",
+    "live": "Nu live"
   },
   "worldCup": {
     "title": "Waar kijk je het WK 2026 in Lloret de Mar",
-    "subtitle": "Elke wedstrijd op een reuzenscherm buiten en 1.250 m² terras. De beste WK-locatie in Lloret sinds 1986.",
-    "facts": "104 wedstrijden · 48 teams · 39 dagen"
+    "subtitle": "Elke wedstrijd op het reuzenscherm buiten, met 1.250 m² terras om te vieren. De beste WK-plek in Lloret, net als in 1986.",
+    "facts": "104 wedstrijden · 48 teams · 39 dagen",
+    "p1t": "Elke wedstrijd, op z'n groots",
+    "p1b": "Van groepsfase tot finale op het grootste buitenscherm van de stad. Elke goal groter dan waar dan ook.",
+    "p2t": "Volledig Engels commentaar",
+    "p2b": "Bij de grote wedstrijden mis je geen woord van de commentatoren.",
+    "p3t": "Het uitvak in het buitenland",
+    "p3b": "Queen Vic is al veertig jaar het thuis van Britse en Ierse fans aan deze kust.",
+    "p4t": "Blijf voor de nacht",
+    "p4b": "Na het fluitsignaal neemt de vaste dj het over. WK-avonden duren hier veel langer dan 90 minuten.",
+    "tipsTitle": "Wedstrijddag-gids",
+    "tip1": "Het dagprogramma verschijnt tijdens het toernooi op Instagram.",
+    "tip2": "Kom 30 tot 45 minuten eerder bij grote wedstrijden. Het terras loopt snel vol.",
+    "tip3": "Groepen kunnen vooraf reserveren voor knock-outavonden. Gebruik de reserveringspagina."
+  },
+  "sportsBar": {
+    "kicker": "De opstelling",
+    "title": "Elke plek is een goede plek",
+    "intro": "We kunnen meerdere wedstrijden tegelijk draaien. Waar je ook zit, je hebt een scherm en een koud biertje binnen handbereik.",
+    "s1t": "Reuzenscherm buiten",
+    "s1b": "Het grootste van Lloret de Mar. Gemaakt voor WK-avonden en titelontknopingen.",
+    "s2t": "Terras-tv's",
+    "s2b": "Vier extra schermen verspreid over het terras, zodat de zonnige plekken niets missen.",
+    "s3t": "Schermen binnen",
+    "s3b": "Tien extra die elke hoek van de bar dekken. Overlappende aftrap? Geen probleem.",
+    "showTitle": "Wat we tonen",
+    "showSub": "Als het ertoe doet, staat het op. Laat het vooraf weten en we doen ons best jouw wedstrijd te bevestigen."
+  },
+  "about": {
+    "kicker": "Est. 1986 · Een begrip in Lloret",
+    "title": "Veertig jaar op hetzelfde terras",
+    "p1": "Queen Vic opende in 1986, de zomer dat Maradona de wereldbeker won, en heeft sindsdien geen seizoen gemist. De originele sportsbar van Lloret de Mar.",
+    "p2": "Wat begon als een kleine pub met terras is nu 1.250 m² wedstrijddag: een reuzenscherm buiten, vijftien extra schermen door de hele bar en een vaste dj die begint als de commentatoren stoppen.",
+    "tlTitle": "Het verhaal tot nu toe",
+    "tl1y": "1986",
+    "tl1t": "De terrasdeuren gaan open. Maradona wint het WK; wij tappen ons eerste biertje.",
+    "tl2y": "Jaren 90",
+    "tl2t": "Het Premier League-tijdperk. Britse en Ierse stamgasten maken van de Vic hun thuisbasis.",
+    "tl3y": "Jaren 2010",
+    "tl3t": "Het reuzenscherm buiten komt aan. Wedstrijddagen verhuizen naar buiten, onder de lichtsnoeren.",
+    "tl4y": "2026",
+    "tl4t": "Veertig jaar jong, met een WK-zomer voor de boeg. Tot op het terras."
   },
   "reservations": {
     "title": "Reserveer voor groepen en wedstrijddagen",
-    "subtitle": "Grote wedstrijd, vrijgezellenfeest of groepsuitje? Laat het ons weten en wij regelen het.",
+    "subtitle": "Grote wedstrijd, vrijgezellenfeest of een goed avondje uit? Zeg wanneer en met hoeveel, en wij regelen de rest.",
     "form": {
       "name": "Je naam",
       "email": "E-mail",
@@ -59,36 +115,72 @@
       "partySize": "Aantal personen",
       "date": "Datum",
       "time": "Tijd",
-      "type": "Type reservering",
-      "requests": "Speciale verzoeken",
-      "submit": "Reservering aanvragen",
-      "success": "Bedankt! We hebben je aanvraag ontvangen en bevestigen snel."
+      "type": "Gelegenheid",
+      "requests": "Iets dat we moeten weten?",
+      "submit": "Tafel aanvragen",
+      "success": "Aanvraag ontvangen. We bevestigen je tafel snel, meestal dezelfde dag."
+    },
+    "occasions": {
+      "group": "Groepsavond",
+      "match_day": "Wedstrijddag",
+      "stag_hen": "Vrijgezellenfeest",
+      "birthday": "Verjaardag",
+      "standard": "Gewoon een tafel"
     }
   },
   "contact": {
     "title": "Contact",
-    "subtitle": "Vragen over wedstrijden, openingstijden of evenementen? Stuur ons een bericht en we reageren zo snel mogelijk.",
+    "subtitle": "Vragen over wedstrijden, openingstijden of evenementen? Stuur een berichtje en we reageren snel.",
     "form": {
       "name": "Je naam",
       "email": "Je e-mail",
       "message": "Je bericht",
-      "consent": "Ik ga ermee akkoord om over mijn vraag gecontacteerd te worden.",
+      "consent": "Ik ga ermee akkoord dat jullie contact opnemen over mijn vraag.",
       "submit": "Bericht versturen",
-      "success": "Bedankt! Je bericht is onderweg."
+      "success": "Bericht onderweg. We antwoorden zo snel mogelijk."
     }
   },
-  "faq": { "title": "Veelgestelde vragen" },
+  "faq": {
+    "title": "Veelgestelde vragen"
+  },
   "footer": {
-    "follow": "Volg ons",
+    "follow": "Vind ons",
     "rights": "Alle rechten voorbehouden.",
     "privacy": "Privacy",
     "cookies": "Cookies",
     "address": "Lloret de Mar · Costa Brava · Spanje"
   },
   "cookies": {
-    "message": "We gebruiken cookies om je ervaring te verbeteren en verkeer te analyseren. Jij kiest wat je toestaat.",
+    "message": "We gebruiken een paar cookies om de site te laten werken en, alleen als jij het toestaat, om ons verkeer te begrijpen. Jij beslist.",
     "accept": "Alles accepteren",
-    "reject": "Niet-essentiële weigeren",
+    "reject": "Alleen essentieel",
     "settings": "Instellingen"
+  },
+  "form": {
+    "serverError": "Er ging iets mis bij het versturen. Probeer opnieuw of stuur ons een bericht op Instagram.",
+    "sending": "Versturen…"
+  },
+  "fixture": {
+    "sport": {
+      "football": "Voetbal",
+      "f1": "Formule 1",
+      "motogp": "MotoGP",
+      "rugby_league": "Rugby League",
+      "gaa": "GAA",
+      "boxing": "Boksen",
+      "other": "Live sport"
+    },
+    "commentary": {
+      "en": "Engels commentaar",
+      "es": "Spaans commentaar",
+      "ca": "Catalaans commentaar",
+      "ga": "GAA / Iers",
+      "fr": "Frans commentaar"
+    }
+  },
+  "notFound": {
+    "title": "De bal is over het hek",
+    "body": "Die pagina bestaat niet. Terug naar het terras, de wedstrijd is nog bezig.",
+    "cta": "Terug naar home"
   }
 }

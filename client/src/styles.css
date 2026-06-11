@@ -1,72 +1,221 @@
 @import "tailwindcss";
+@import "@fontsource-variable/bricolage-grotesque";
 
+/* ────────────────────────────────────────────────────────────────────────────
+   Queen Vic "Heritage Audaz" tokens
+   Bottle green is the brand surface, gold is the signal, cream is the paper,
+   charcoal-green is the ink. OKLCH, every neutral tinted toward the brand hue.
+   ──────────────────────────────────────────────────────────────────────────── */
 @theme {
-  /* Brand palette — late-night sports bar, electric and premium */
-  --color-night-950: #07080d;
-  --color-night-900: #0c0e16;
-  --color-night-800: #141826;
-  --color-night-700: #1e2336;
-  --color-night-600: #2b3350;
+  /* Bottle greens (brand surfaces) */
+  --color-green-950: oklch(0.22 0.04 165);
+  --color-green-900: oklch(0.27 0.05 163);
+  --color-green-800: oklch(0.33 0.055 162);
+  --color-green-700: oklch(0.4 0.06 160);
+  --color-green-600: oklch(0.48 0.065 158);
 
-  --color-gold-400: #ffd24a;
-  --color-gold-500: #f6b700;
-  --color-gold-600: #d99e00;
+  /* Gold (CTAs, times, heritage devices) */
+  --color-gold-400: oklch(0.82 0.12 92);
+  --color-gold-500: oklch(0.75 0.13 90);
+  --color-gold-600: oklch(0.62 0.115 86);
+  --color-gold-700: oklch(0.5 0.1 84); /* gold text on cream (AA) */
 
-  --color-electric-400: #38e1ff;
-  --color-electric-500: #00c2ff;
+  /* Cream paper */
+  --color-cream-50: oklch(0.97 0.012 90);
+  --color-cream-100: oklch(0.945 0.018 88);
+  --color-cream-200: oklch(0.9 0.025 87);
+  --color-cream-300: oklch(0.84 0.03 86);
 
-  --color-pitch-400: #34e07b;
-  --color-pitch-500: #12c463;
+  /* Ink (green-tinted charcoal) */
+  --color-ink-900: oklch(0.25 0.015 160);
+  --color-ink-700: oklch(0.35 0.015 160);
+  --color-ink-600: oklch(0.45 0.015 160);
 
-  --color-crimson-500: #ff2d55;
+  /* Text on green surfaces */
+  --color-paper: oklch(0.95 0.02 90);
+  --color-paper-dim: oklch(0.82 0.03 95);
 
-  --color-ink: #f4f6fb;
-  --color-ink-soft: #aab2c8;
+  /* Festoon amber (sparingly: live dots, glows) */
+  --color-dusk-400: oklch(0.72 0.11 45);
+  --color-dusk-500: oklch(0.65 0.12 42);
 
-  --font-display: "Archivo", "Arial Narrow", system-ui, sans-serif;
-  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  /* ── Legacy aliases (admin panel only; public site uses heritage names) ── */
+  --color-night-950: oklch(0.2 0.025 165);
+  --color-night-900: oklch(0.24 0.03 163);
+  --color-night-800: oklch(0.3 0.04 162);
+  --color-night-700: oklch(0.38 0.045 160);
+  --color-electric-400: oklch(0.82 0.12 92);
+  --color-electric-500: oklch(0.75 0.13 90);
+  --color-pitch-400: oklch(0.78 0.14 150);
+  --color-pitch-500: oklch(0.68 0.14 152);
+  --color-crimson-500: oklch(0.6 0.21 25);
+  --color-ink: oklch(0.95 0.02 90);
+  --color-ink-soft: oklch(0.78 0.03 110);
 
-  --radius-xl: 1.25rem;
-  --radius-2xl: 1.75rem;
+  /* Type */
+  --font-display: "Bricolage Grotesque Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Bricolage Grotesque Variable", ui-sans-serif, system-ui, sans-serif;
+
+  /* Motion */
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --radius-btn: 10px;
 }
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 html {
   scroll-behavior: smooth;
+  /* anchor jumps land below the sticky header */
+  scroll-padding-top: 5rem;
+}
+
+::selection {
+  background: var(--color-gold-500);
+  color: var(--color-ink-900);
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
-  background-color: var(--color-night-950);
-  color: var(--color-ink);
+  background-color: var(--color-cream-50);
+  color: var(--color-ink-900);
   font-family: var(--font-sans);
+  font-optical-sizing: auto;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-/* Display headings */
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
 .font-display {
   font-family: var(--font-display);
   letter-spacing: -0.02em;
-  text-transform: uppercase;
 }
 
-/* Stadium-light gradient utility */
-.bg-stadium {
+/* Short all-caps labels (tickets, eyebrows) */
+.label-caps {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+/* Fixture times and dates align like a programme table */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Signature devices ──────────────────────────────────────────────────── */
+
+/* Postage-stamp perforated edge: solid interior, semicircle notches punched
+   along the four edges only (union of a center rect + four notched strips). */
+/* Apply on the PARENT of .stamp-frame: filter runs before mask in the paint
+   order, so the shadow only follows the punched edge from a wrapper. */
+.stamp-shadow {
+  filter: drop-shadow(0 12px 24px oklch(0.25 0.02 160 / 0.22))
+    drop-shadow(0 2px 5px oklch(0.25 0.02 160 / 0.14));
+}
+
+.stamp-frame {
+  --d: 13px; /* notch spacing */
+  --r: 4px; /* notch radius */
+  background: var(--color-cream-50);
+  padding: 12px;
+  -webkit-mask-image:
+    linear-gradient(#000 0 0),
+    radial-gradient(circle at calc(var(--d) / 2) 0, transparent var(--r), #000 calc(var(--r) + 0.5px)),
+    radial-gradient(circle at calc(var(--d) / 2) 100%, transparent var(--r), #000 calc(var(--r) + 0.5px)),
+    radial-gradient(circle at 0 calc(var(--d) / 2), transparent var(--r), #000 calc(var(--r) + 0.5px)),
+    radial-gradient(circle at 100% calc(var(--d) / 2), transparent var(--r), #000 calc(var(--r) + 0.5px));
+  mask-image:
+    linear-gradient(#000 0 0),
+    radial-gradient(circle at calc(var(--d) / 2) 0, transparent var(--r), #000 calc(var(--r) + 0.5px)),
+    radial-gradient(circle at calc(var(--d) / 2) 100%, transparent var(--r), #000 calc(var(--r) + 0.5px)),
+    radial-gradient(circle at 0 calc(var(--d) / 2), transparent var(--r), #000 calc(var(--r) + 0.5px)),
+    radial-gradient(circle at 100% calc(var(--d) / 2), transparent var(--r), #000 calc(var(--r) + 0.5px));
+  -webkit-mask-size:
+    calc(100% - 2 * var(--r)) calc(100% - 2 * var(--r)),
+    var(--d) var(--r),
+    var(--d) var(--r),
+    var(--r) var(--d),
+    var(--r) var(--d);
+  mask-size:
+    calc(100% - 2 * var(--r)) calc(100% - 2 * var(--r)),
+    var(--d) var(--r),
+    var(--d) var(--r),
+    var(--r) var(--d),
+    var(--r) var(--d);
+  -webkit-mask-position: center, left top, left bottom, left top, right top;
+  mask-position: center, left top, left bottom, left top, right top;
+  -webkit-mask-repeat: no-repeat, repeat-x, repeat-x, repeat-y, repeat-y;
+  mask-repeat: no-repeat, repeat-x, repeat-x, repeat-y, repeat-y;
+}
+
+/* Ticket perforation divider (vertical dashed line between stub and body) */
+.ticket-perf {
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-green-700) 0 6px,
+    transparent 6px 12px
+  );
+  background-size: 1.5px 12px;
+  background-repeat: repeat-y;
+  width: 1.5px;
+}
+
+/* Festoon dusk glow over deep green sections */
+.bg-dusk {
   background:
-    radial-gradient(80% 60% at 50% -10%, rgba(56, 225, 255, 0.18), transparent 60%),
-    radial-gradient(60% 50% at 90% 10%, rgba(255, 210, 74, 0.12), transparent 60%),
-    var(--color-night-950);
+    radial-gradient(52% 38% at 18% 0%, oklch(0.65 0.12 42 / 0.16), transparent 70%),
+    radial-gradient(45% 32% at 78% 4%, oklch(0.75 0.13 90 / 0.12), transparent 70%),
+    var(--color-green-900);
+}
+.bg-dusk-deep {
+  background:
+    radial-gradient(60% 40% at 50% 0%, oklch(0.65 0.12 42 / 0.1), transparent 75%),
+    var(--color-green-950);
 }
 
 .text-balance {
   text-wrap: balance;
 }
 
-/* focus ring */
-:where(a, button, input, textarea, select):focus-visible {
-  outline: 2px solid var(--color-electric-400);
+/* Focus ring: gold, visible on both cream and green */
+:where(a, button, input, textarea, select, summary):focus-visible {
+  outline: 2px solid var(--color-gold-500);
   outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Entrance reveal (orchestrated once per page, gated by reduced-motion) */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    animation: rise 0.7s var(--ease-out-expo) both;
+  }
+  .reveal-2 {
+    animation: rise 0.7s var(--ease-out-expo) 0.08s both;
+  }
+  .reveal-3 {
+    animation: rise 0.7s var(--ease-out-expo) 0.16s both;
+  }
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }

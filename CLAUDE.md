@@ -55,11 +55,29 @@ extension issues on Replit.
 3. `npm run db:push` then `npm run db:seed`.
 4. `npm run dev` → http://localhost:3000 (public) and /admin (CRM).
 
+## Design system ("Heritage Audaz")
+Direction and tokens live in `PRODUCT.md` + `DESIGN.md` (impeccable context files; keep them
+updated). Bottle green surfaces + cream paper + gold accents (OKLCH, in `client/src/styles.css`
+@theme); one type family (Bricolage Grotesque Variable, self-hosted); signature devices:
+perforated `.stamp-frame` (+ `.stamp-shadow` wrapper — filter must sit on the parent of the
+mask), programme-ticket fixtures (`FixtureTicket`), laurel seal. Brand photos optimized via
+`node scripts/optimize-images.mjs` (sources in `assets-src/`, output + manifest in
+`client/public/images/`, typed manifest in `client/src/lib/image-manifest.ts`, consumed by
+`<Picture/>`). Legacy `night-*`/`electric-*` tokens remain as aliases for the admin SPA only.
+
+⚠️ CSP gotcha: in dev the CSP must NOT include a script nonce (a nonce makes browsers ignore
+'unsafe-inline', which blocks Vite's react preamble and kills hydration). Prod uses the nonce.
+
+⚠️ Local ports: 3000 AND 3100 are used by other projects on this machine (one binds IPv6, so
+lsof may show two listeners). Local dev for this repo uses **PORT=3186** in `.env`.
+
 ## Status
-Foundation complete: SSR + i18n + SEO/GEO, schema, DAO/auth/leads/events/reservations routes,
-public site (Home/SportsBar/WhatsOn/WorldCup/About/Reservations/Contact/FAQ), admin shell +
-Dashboard/Leads/Events/Reservations, AI layer (noop), cron skeleton.
+Foundation + full heritage redesign complete: SSR + i18n (5 locales) + SEO/GEO, CRM modules
+(leads/events/reservations/campaigns + providers + crons), public site redesigned via the full
+impeccable cycle (shape → craft → critique ×2 agents → audit → polish). Lighthouse mobile:
+A11y 100 · Best Practices 100 · SEO 100. Anti-slop verdict: pass.
 
 ## Next
-Campaigns + campaign_recipients module & send cron; email (Resend) + WhatsApp (Cloud API)
-providers + webhooks; capacity slots logic; privacy/cookies pages; image pipeline; enable AI provider.
+Real address/phone/hours in footer + LocalBusiness JSON-LD when the owner provides them;
+transparent World Cup logo asset; capacity slots logic; enable AI provider; migrate remaining
+WP photos.

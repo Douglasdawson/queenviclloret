@@ -1,8 +1,9 @@
 import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
-import { Container } from "./ui";
+import { Container, LaurelSeal } from "./ui";
 
 const SOCIAL = [
+  { href: "https://maps.google.com/?q=Queen+Vic+Sports+Bar+Lloret+de+Mar", label: "Google Maps" },
   { href: "https://www.instagram.com/queenviclloret/", label: "Instagram" },
   { href: "https://www.facebook.com/QueenVicLloretdemar/", label: "Facebook" },
   {
@@ -16,56 +17,66 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-white/10 bg-night-900">
-      <Container className="grid gap-8 py-12 sm:grid-cols-3">
+    <footer className="bg-dusk-deep text-paper">
+      <Container className="grid gap-10 py-14 sm:grid-cols-[1.4fr_1fr_1fr] sm:gap-8">
         <div>
-          <p className="font-display text-lg font-extrabold">
-            <span className="text-gold-400">Queen</span> Vic
-          </p>
-          <p className="mt-2 text-sm text-ink-soft">{t("tagline")}</p>
-          <p className="mt-2 text-xs text-ink-soft">{t("footer.address")}</p>
+          <img
+            src="/images/logo-alt.webp"
+            alt="Queen Vic Terrace Bar"
+            width={180}
+            height={53}
+            loading="lazy"
+            decoding="async"
+            className="h-12 w-auto"
+          />
+          <p className="mt-4 max-w-xs text-sm leading-relaxed text-paper-dim">{t("tagline")}.</p>
+          <p className="mt-2 text-sm text-paper-dim">{t("footer.address")}</p>
         </div>
 
-        <div>
-          <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-ink-soft">
-            {t("footer.follow")}
-          </p>
-          <ul className="space-y-2 text-sm">
+        <nav aria-label="Footer">
+          <p className="label-caps mb-4 text-xs text-gold-400">{t("footer.follow")}</p>
+          <ul className="space-y-2.5 text-[0.9375rem]">
             {SOCIAL.map((s) => (
               <li key={s.label}>
-                <a href={s.href} className="text-ink-soft hover:text-ink" rel="noopener noreferrer">
+                <a
+                  href={s.href}
+                  rel="noopener noreferrer"
+                  className="text-paper-dim transition-colors hover:text-gold-400"
+                >
                   {s.label}
                 </a>
               </li>
             ))}
           </ul>
-        </div>
+        </nav>
 
-        <div className="text-sm">
-          <ul className="space-y-2">
-            <li>
-              <Link href="/faq" className="text-ink-soft hover:text-ink">
-                {t("nav.faq")}
-              </Link>
-            </li>
-            <li>
-              <Link href="/privacy" className="text-ink-soft hover:text-ink">
-                {t("footer.privacy")}
-              </Link>
-            </li>
-            <li>
-              <Link href="/cookies" className="text-ink-soft hover:text-ink">
-                {t("footer.cookies")}
-              </Link>
-            </li>
+        <div className="flex flex-col justify-between gap-6">
+          <ul className="space-y-2.5 text-[0.9375rem]">
+            {[
+              { href: "/reservations", key: "nav.reservations" },
+              { href: "/faq", key: "nav.faq" },
+              { href: "/privacy", key: "footer.privacy" },
+              { href: "/cookies", key: "footer.cookies" },
+            ].map((l) => (
+              <li key={l.href}>
+                <Link href={l.href} className="text-paper-dim transition-colors hover:text-gold-400">
+                  {t(l.key)}
+                </Link>
+              </li>
+            ))}
           </ul>
+          <LaurelSeal className="w-[96px] opacity-90" />
         </div>
       </Container>
-      <Container className="border-t border-white/5 py-5">
-        <p className="text-xs text-ink-soft">
-          © {year} Queen Vic Sports Bar · Lloret de Mar. {t("footer.rights")}
-        </p>
-      </Container>
+
+      <div className="border-t border-green-800">
+        <Container className="flex flex-wrap items-center justify-between gap-2 py-5">
+          <p className="text-xs text-paper-dim">
+            © {year} Queen Vic Sports Bar · Lloret de Mar. {t("footer.rights")}
+          </p>
+          <p className="label-caps text-[0.625rem] text-paper-dim/80">The Original · Est. 1986</p>
+        </Container>
+      </div>
     </footer>
   );
 }

@@ -24,7 +24,7 @@ export default function AdminLogin() {
   }
 
   return (
-    <div className="grid min-h-screen place-items-center bg-stadium px-4">
+    <div className="bg-dusk-deep grid min-h-screen place-items-center px-4">
       <form
         onSubmit={onSubmit}
         className="w-full max-w-sm rounded-2xl border border-white/10 bg-night-800/70 p-8 backdrop-blur"
