@@ -1,0 +1,94 @@
+{
+  "brand": "Queen Vic",
+  "tagline": "Le sports bar original de Lloret de Mar depuis 1986",
+  "nav": {
+    "home": "Accueil",
+    "sportsBar": "Sports Bar",
+    "whatsOn": "Au programme",
+    "worldCup": "Coupe du Monde 2026",
+    "about": "À propos",
+    "reservations": "Réservations",
+    "contact": "Contact",
+    "faq": "FAQ"
+  },
+  "cta": {
+    "watchSport": "Voir le sport",
+    "bookTable": "Réserver une table",
+    "seeWhatsOn": "Voir le programme",
+    "getInTouch": "Contactez-nous",
+    "viewDetails": "Voir les détails"
+  },
+  "home": {
+    "kicker": "1986 · 40 ans et ça continue",
+    "heroTitle": "La plus grande terrasse de Lloret de Mar",
+    "heroSubtitle": "Écran géant extérieur, plus de 14 TV et un DJ live chaque soir, depuis 1986.",
+    "stats": { "terrace": "m² de terrasse", "screens": "écrans", "years": "ans d'ouverture" },
+    "whyTitle": "Pourquoi Queen Vic",
+    "whySubtitle": "Une immense terrasse, un écran géant pour les matchs et une ambiance de nuit avec DJ live. Regardez le sport, puis restez pour la fête.",
+    "features": {
+      "screenTitle": "Écran géant",
+      "screenBody": "Écran géant extérieur plus 4 TV extérieures et 10 intérieures. Plusieurs événements à la fois.",
+      "terraceTitle": "La plus grande terrasse",
+      "terraceBody": "Terrasse de 1 250 m² ouverte jour et nuit. L'endroit parfait au soleil comme à l'heure du match.",
+      "djTitle": "DJ live",
+      "djBody": "Au coup de sifflet final, la nuit commence. DJ live chaque soir.",
+      "sinceTitle": "Depuis 1986",
+      "sinceBody": "Le sports bar original de Lloret de Mar. 40 ans de sport, de soleil et de bons moments sur la Costa Brava."
+    },
+    "whatsOnTitle": "Au programme",
+    "whatsOnSubtitle": "Tout le sport qui compte, sur le plus grand écran de la ville."
+  },
+  "whatsOn": {
+    "title": "Au programme au Queen Vic",
+    "subtitle": "Matchs en direct sur l'écran géant extérieur de Lloret de Mar.",
+    "empty": "Aucun match publié pour l'instant. Suivez-nous sur Instagram pour les mises à jour quotidiennes.",
+    "featured": "À la une"
+  },
+  "worldCup": {
+    "title": "Où regarder la Coupe du Monde 2026 à Lloret de Mar",
+    "subtitle": "Tous les matchs sur écran géant extérieur et 1 250 m² de terrasse. Le meilleur endroit pour la Coupe du Monde à Lloret depuis 1986.",
+    "facts": "104 matchs · 48 équipes · 39 jours"
+  },
+  "reservations": {
+    "title": "Réservez pour les groupes et les jours de match",
+    "subtitle": "Grand match, enterrement de vie de garçon/jeune fille ou sortie de groupe ? Dites-le-nous et on s'occupe de tout.",
+    "form": {
+      "name": "Votre nom",
+      "email": "Email",
+      "phone": "Téléphone",
+      "partySize": "Nombre de personnes",
+      "date": "Date",
+      "time": "Heure",
+      "type": "Type de réservation",
+      "requests": "Demandes spéciales",
+      "submit": "Demander une réservation",
+      "success": "Merci ! Nous avons reçu votre demande et la confirmerons rapidement."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Des questions sur les matchs, les horaires ou les événements ? Écrivez-nous et nous répondrons dès que possible.",
+    "form": {
+      "name": "Votre nom",
+      "email": "Votre email",
+      "message": "Votre message",
+      "consent": "J'accepte d'être contacté au sujet de ma demande.",
+      "submit": "Envoyer le message",
+      "success": "Merci ! Votre message est en route."
+    }
+  },
+  "faq": { "title": "Questions fréquentes" },
+  "footer": {
+    "follow": "Suivez-nous",
+    "rights": "Tous droits réservés.",
+    "privacy": "Confidentialité",
+    "cookies": "Cookies",
+    "address": "Lloret de Mar · Costa Brava · Espagne"
+  },
+  "cookies": {
+    "message": "Nous utilisons des cookies pour améliorer votre expérience et analyser le trafic. Vous choisissez ce que vous autorisez.",
+    "accept": "Tout accepter",
+    "reject": "Refuser non essentiels",
+    "settings": "Paramètres"
+  }
+}

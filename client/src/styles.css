@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette — late-night sports bar, electric and premium */
+  --color-night-950: #07080d;
+  --color-night-900: #0c0e16;
+  --color-night-800: #141826;
+  --color-night-700: #1e2336;
+  --color-night-600: #2b3350;
+
+  --color-gold-400: #ffd24a;
+  --color-gold-500: #f6b700;
+  --color-gold-600: #d99e00;
+
+  --color-electric-400: #38e1ff;
+  --color-electric-500: #00c2ff;
+
+  --color-pitch-400: #34e07b;
+  --color-pitch-500: #12c463;
+
+  --color-crimson-500: #ff2d55;
+
+  --color-ink: #f4f6fb;
+  --color-ink-soft: #aab2c8;
+
+  --font-display: "Archivo", "Arial Narrow", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.75rem;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-night-950);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Display headings */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+/* Stadium-light gradient utility */
+.bg-stadium {
+  background:
+    radial-gradient(80% 60% at 50% -10%, rgba(56, 225, 255, 0.18), transparent 60%),
+    radial-gradient(60% 50% at 90% 10%, rgba(255, 210, 74, 0.12), transparent 60%),
+    var(--color-night-950);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* focus ring */
+:where(a, button, input, textarea, select):focus-visible {
+  outline: 2px solid var(--color-electric-400);
+  outline-offset: 2px;
+}

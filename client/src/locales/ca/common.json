@@ -1,0 +1,94 @@
+{
+  "brand": "Queen Vic",
+  "tagline": "El sports bar original de Lloret de Mar des de 1986",
+  "nav": {
+    "home": "Inici",
+    "sportsBar": "Sports Bar",
+    "whatsOn": "Què fem",
+    "worldCup": "Mundial 2026",
+    "about": "Nosaltres",
+    "reservations": "Reserves",
+    "contact": "Contacte",
+    "faq": "Preguntes"
+  },
+  "cta": {
+    "watchSport": "Veure esport",
+    "bookTable": "Reservar taula",
+    "seeWhatsOn": "Veure què fem",
+    "getInTouch": "Contacta'ns",
+    "viewDetails": "Veure detalls"
+  },
+  "home": {
+    "kicker": "1986 · 40 anys i continuem",
+    "heroTitle": "La terrassa més gran de Lloret de Mar",
+    "heroSubtitle": "Pantalla gegant exterior, més de 14 TVs i DJ en directe cada nit, des de 1986.",
+    "stats": { "terrace": "m² de terrassa", "screens": "pantalles", "years": "anys oberts" },
+    "whyTitle": "Per què Queen Vic",
+    "whySubtitle": "Una terrassa enorme, pantalla gegant per als partits i ambient de nit amb DJ en directe. Mira l'esport i queda't per la festa.",
+    "features": {
+      "screenTitle": "Pantalla gegant",
+      "screenBody": "Pantalla gegant exterior més 4 TVs exteriors i 10 interiors. Diversos esdeveniments alhora.",
+      "terraceTitle": "La terrassa més gran",
+      "terraceBody": "Terrassa de 1.250 m² oberta dia i nit. El lloc perfecte faci sol o sigui hora de partit.",
+      "djTitle": "DJ en directe",
+      "djBody": "Quan sona el xiulet final, comença la nit. DJ en directe cada nit.",
+      "sinceTitle": "Des de 1986",
+      "sinceBody": "El sports bar original de Lloret de Mar. 40 anys d'esport, sol i bons moments a la Costa Brava."
+    },
+    "whatsOnTitle": "Què fem",
+    "whatsOnSubtitle": "Tot l'esport que importa, a la pantalla més gran de la ciutat."
+  },
+  "whatsOn": {
+    "title": "Què fem a Queen Vic",
+    "subtitle": "Partits en directe a la pantalla gegant exterior de Lloret de Mar.",
+    "empty": "Ara mateix no hi ha partits publicats. Segueix-nos a Instagram per a novetats diàries.",
+    "featured": "Destacat"
+  },
+  "worldCup": {
+    "title": "On veure el Mundial 2026 a Lloret de Mar",
+    "subtitle": "Tots els partits en pantalla gegant exterior i 1.250 m² de terrassa. El millor lloc per al Mundial a Lloret des de 1986.",
+    "facts": "104 partits · 48 seleccions · 39 dies"
+  },
+  "reservations": {
+    "title": "Reserva per a grups i dies de partit",
+    "subtitle": "Gran partit, comiat de solter o sortida de grup? Digues-nos-ho i t'ho organitzem.",
+    "form": {
+      "name": "El teu nom",
+      "email": "Email",
+      "phone": "Telèfon",
+      "partySize": "Nombre de persones",
+      "date": "Data",
+      "time": "Hora",
+      "type": "Tipus de reserva",
+      "requests": "Peticions especials",
+      "submit": "Sol·licitar reserva",
+      "success": "Gràcies! Hem rebut la teva sol·licitud i la confirmarem aviat."
+    }
+  },
+  "contact": {
+    "title": "Contacte",
+    "subtitle": "Dubtes sobre partits, horaris o esdeveniments? Escriu-nos i et respondrem al més aviat possible.",
+    "form": {
+      "name": "El teu nom",
+      "email": "El teu email",
+      "message": "El teu missatge",
+      "consent": "Accepto que em contacteu sobre la meva consulta.",
+      "submit": "Enviar missatge",
+      "success": "Gràcies! El teu missatge està en camí."
+    }
+  },
+  "faq": { "title": "Preguntes freqüents" },
+  "footer": {
+    "follow": "Segueix-nos",
+    "rights": "Tots els drets reservats.",
+    "privacy": "Privacitat",
+    "cookies": "Cookies",
+    "address": "Lloret de Mar · Costa Brava · Espanya"
+  },
+  "cookies": {
+    "message": "Fem servir cookies per millorar la teva experiència i analitzar el trànsit. Tu tries què permetre.",
+    "accept": "Acceptar-ho tot",
+    "reject": "Rebutjar no essencials",
+    "settings": "Configuració"
+  }
+}

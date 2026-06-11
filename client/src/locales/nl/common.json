@@ -1,0 +1,94 @@
+{
+  "brand": "Queen Vic",
+  "tagline": "De originele sportsbar van Lloret de Mar sinds 1986",
+  "nav": {
+    "home": "Home",
+    "sportsBar": "Sports Bar",
+    "whatsOn": "Programma",
+    "worldCup": "WK 2026",
+    "about": "Over ons",
+    "reservations": "Reserveringen",
+    "contact": "Contact",
+    "faq": "FAQ"
+  },
+  "cta": {
+    "watchSport": "Sport kijken",
+    "bookTable": "Tafel reserveren",
+    "seeWhatsOn": "Bekijk het programma",
+    "getInTouch": "Neem contact op",
+    "viewDetails": "Details bekijken"
+  },
+  "home": {
+    "kicker": "1986 · 40 jaar en we gaan door",
+    "heroTitle": "Het grootste terras van Lloret de Mar",
+    "heroSubtitle": "Reuzenscherm buiten, 14+ tv's en elke avond een live dj, sinds 1986.",
+    "stats": { "terrace": "m² terras", "screens": "schermen", "years": "jaar open" },
+    "whyTitle": "Waarom Queen Vic",
+    "whySubtitle": "Een enorm terras, een reuzenscherm voor wedstrijddagen en een avondsfeer met live dj. Kijk sport en blijf voor het feest.",
+    "features": {
+      "screenTitle": "Reuzenscherm",
+      "screenBody": "Reuzenscherm buiten plus 4 tv's buiten en 10 binnen. Meerdere evenementen tegelijk.",
+      "terraceTitle": "Grootste terras",
+      "terraceBody": "Terras van 1.250 m², dag en nacht open. De perfecte plek bij zon of wedstrijd.",
+      "djTitle": "Live dj",
+      "djBody": "Als het laatste fluitsignaal klinkt, begint de nacht. Elke avond een live dj.",
+      "sinceTitle": "Sinds 1986",
+      "sinceBody": "De originele sportsbar van Lloret de Mar. 40 jaar sport, zon en gezelligheid aan de Costa Brava."
+    },
+    "whatsOnTitle": "Programma",
+    "whatsOnSubtitle": "Alle sport die telt, op het grootste scherm van de stad."
+  },
+  "whatsOn": {
+    "title": "Programma bij Queen Vic",
+    "subtitle": "Live wedstrijden op het reuzenscherm buiten in Lloret de Mar.",
+    "empty": "Er zijn nu geen wedstrijden gepubliceerd. Volg ons op Instagram voor dagelijkse updates.",
+    "featured": "Uitgelicht"
+  },
+  "worldCup": {
+    "title": "Waar kijk je het WK 2026 in Lloret de Mar",
+    "subtitle": "Elke wedstrijd op een reuzenscherm buiten en 1.250 m² terras. De beste WK-locatie in Lloret sinds 1986.",
+    "facts": "104 wedstrijden · 48 teams · 39 dagen"
+  },
+  "reservations": {
+    "title": "Reserveer voor groepen en wedstrijddagen",
+    "subtitle": "Grote wedstrijd, vrijgezellenfeest of groepsuitje? Laat het ons weten en wij regelen het.",
+    "form": {
+      "name": "Je naam",
+      "email": "E-mail",
+      "phone": "Telefoon",
+      "partySize": "Aantal personen",
+      "date": "Datum",
+      "time": "Tijd",
+      "type": "Type reservering",
+      "requests": "Speciale verzoeken",
+      "submit": "Reservering aanvragen",
+      "success": "Bedankt! We hebben je aanvraag ontvangen en bevestigen snel."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Vragen over wedstrijden, openingstijden of evenementen? Stuur ons een bericht en we reageren zo snel mogelijk.",
+    "form": {
+      "name": "Je naam",
+      "email": "Je e-mail",
+      "message": "Je bericht",
+      "consent": "Ik ga ermee akkoord om over mijn vraag gecontacteerd te worden.",
+      "submit": "Bericht versturen",
+      "success": "Bedankt! Je bericht is onderweg."
+    }
+  },
+  "faq": { "title": "Veelgestelde vragen" },
+  "footer": {
+    "follow": "Volg ons",
+    "rights": "Alle rechten voorbehouden.",
+    "privacy": "Privacy",
+    "cookies": "Cookies",
+    "address": "Lloret de Mar · Costa Brava · Spanje"
+  },
+  "cookies": {
+    "message": "We gebruiken cookies om je ervaring te verbeteren en verkeer te analyseren. Jij kiest wat je toestaat.",
+    "accept": "Alles accepteren",
+    "reject": "Niet-essentiële weigeren",
+    "settings": "Instellingen"
+  }
+}

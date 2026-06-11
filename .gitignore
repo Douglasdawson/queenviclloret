@@ -1,0 +1,12 @@
+node_modules
+dist
+drizzle/meta
+*.log
+.DS_Store
+coverage
+playwright-report
+test-results
+.env
+.env.*
+!.env.example
+.vite
