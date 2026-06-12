@@ -58,6 +58,15 @@ interface LeadDetail {
 }
 
 const STATUSES = ["new", "contacted", "qualified", "won", "lost"] as const;
+type LeadStatus = (typeof STATUSES)[number];
+
+const STATUS_LABELS: Record<LeadStatus, string> = {
+  new: "New",
+  contacted: "Contacted",
+  qualified: "Qualified",
+  won: "Won",
+  lost: "Lost",
+};
 
 const ACTION_LABELS: Record<string, string> = {
   "lead.create": "Lead created",
@@ -84,21 +93,48 @@ function diffSummary(diff: Activity["diff"]) {
 
 export default function AdminLeads() {
   const qc = useQueryClient();
+  // Guarded: /admin can pass through the SSR renderer (no window there).
+  const [view, setView] = useState<"table" | "board">(() =>
+    typeof window === "undefined"
+      ? "table"
+      : (localStorage.getItem("leads-view") as "table" | "board") || "table",
+  );
   const [status, setStatus] = useState<string>("");
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
+  const switchView = (v: "table" | "board") => {
+    setView(v);
+    localStorage.setItem("leads-view", v);
+  };
+
   const { data, isLoading } = useQuery({
-    queryKey: ["admin-leads", status],
+    queryKey: ["admin-leads", "table", status],
     queryFn: () =>
       apiGet<{ rows: Lead[]; total: number }>(
         `/leads?limit=50${status ? `&status=${status}` : ""}`,
       ),
+    enabled: view === "table",
   });
 
   const setStatusMut = useMutation({
     mutationFn: ({ id, status }: { id: string; status: string }) =>
       apiPatch(`/leads/${id}/status`, { status }),
-    onSuccess: () => {
+    // Optimistic move so a dropped card lands instantly.
+    onMutate: async ({ id, status }) => {
+      await qc.cancelQueries({ queryKey: ["admin-leads", "board"] });
+      const prev = qc.getQueryData<{ rows: Lead[]; total: number }>(["admin-leads", "board"]);
+      if (prev) {
+        qc.setQueryData(["admin-leads", "board"], {
+          ...prev,
+          rows: prev.rows.map((l) => (l.id === id ? { ...l, status } : l)),
+        });
+      }
+      return { prev };
+    },
+    onError: (_err, _vars, ctx) => {
+      if (ctx?.prev) qc.setQueryData(["admin-leads", "board"], ctx.prev);
+    },
+    onSettled: () => {
       qc.invalidateQueries({ queryKey: ["admin-leads"] });
       qc.invalidateQueries({ queryKey: ["admin-lead"] });
     },
@@ -106,23 +142,50 @@ export default function AdminLeads() {
 
   return (
     <div className="p-6 sm:p-10">
-      <div className="flex items-center justify-between gap-4">
+      <div className="flex flex-wrap items-center justify-between gap-4">
         <h1 className="font-display text-2xl font-bold">Leads / CRM</h1>
-        <select
-          value={status}
-          onChange={(e) => setStatus(e.target.value)}
-          className="rounded-lg border border-cream-300 bg-cream-100 px-3 py-2 text-sm text-ink-900"
-        >
-          <option value="">All statuses</option>
-          {STATUSES.map((s) => (
-            <option key={s} value={s}>
-              {s}
-            </option>
-          ))}
-        </select>
+        <div className="flex items-center gap-3">
+          <div className="flex rounded-lg border border-cream-300 bg-cream-100 p-0.5 text-xs font-semibold">
+            {(["table", "board"] as const).map((v) => (
+              <button
+                key={v}
+                onClick={() => switchView(v)}
+                aria-pressed={view === v}
+                className={`rounded-md px-3 py-1.5 capitalize ${
+                  view === v ? "bg-green-900 text-paper" : "text-ink-600 hover:text-ink-900"
+                }`}
+              >
+                {v}
+              </button>
+            ))}
+          </div>
+          {view === "table" && (
+            <select
+              value={status}
+              onChange={(e) => setStatus(e.target.value)}
+              className="rounded-lg border border-cream-300 bg-cream-100 px-3 py-2 text-sm text-ink-900"
+            >
+              <option value="">All statuses</option>
+              {STATUSES.map((s) => (
+                <option key={s} value={s}>
+                  {s}
+                </option>
+              ))}
+            </select>
+          )}
+        </div>
       </div>
 
-      <div className="mt-6 overflow-x-auto rounded-2xl border border-cream-200 bg-cream-50">
+      {view === "board" && (
+        <LeadsBoard
+          onSelect={setSelectedId}
+          onMove={(id, status) => setStatusMut.mutate({ id, status })}
+        />
+      )}
+
+      <div
+        className={`mt-6 overflow-x-auto rounded-2xl border border-cream-200 bg-cream-50 ${view === "board" ? "hidden" : ""}`}
+      >
         <table className="w-full text-left text-sm">
           <thead className="bg-green-900 text-xs uppercase tracking-wide text-paper-dim">
             <tr>
@@ -187,6 +250,94 @@ export default function AdminLeads() {
           onStatusChange={(s) => setStatusMut.mutate({ id: selectedId, status: s })}
         />
       )}
+    </div>
+  );
+}
+
+function LeadsBoard({
+  onSelect,
+  onMove,
+}: {
+  onSelect: (id: string) => void;
+  onMove: (id: string, status: LeadStatus) => void;
+}) {
+  const { data, isLoading } = useQuery({
+    queryKey: ["admin-leads", "board"],
+    // 100 is the API's max page size; the board shows the most recent 100 leads.
+    queryFn: () => apiGet<{ rows: Lead[]; total: number }>(`/leads?limit=100`),
+  });
+  const [dragOver, setDragOver] = useState<LeadStatus | null>(null);
+
+  if (isLoading) return <p className="mt-6 text-ink-600">Loading…</p>;
+
+  const byStatus = (s: LeadStatus) => (data?.rows ?? []).filter((l) => l.status === s);
+
+  return (
+    <div className="mt-6 grid gap-3 lg:grid-cols-5">
+      {STATUSES.map((s) => {
+        const column = byStatus(s);
+        return (
+          <section
+            key={s}
+            aria-label={`${STATUS_LABELS[s]} column`}
+            onDragOver={(e) => {
+              e.preventDefault();
+              e.dataTransfer.dropEffect = "move";
+              setDragOver(s);
+            }}
+            onDragLeave={(e) => {
+              if (!e.currentTarget.contains(e.relatedTarget as Node)) setDragOver(null);
+            }}
+            onDrop={(e) => {
+              e.preventDefault();
+              setDragOver(null);
+              const id = e.dataTransfer.getData("text/plain");
+              if (id) onMove(id, s);
+            }}
+            className={`flex min-h-64 flex-col rounded-2xl border p-3 transition-colors ${
+              dragOver === s
+                ? "border-gold-600 bg-gold-500/10"
+                : "border-cream-200 bg-cream-50"
+            }`}
+          >
+            <header className="flex items-baseline justify-between px-1 pb-3">
+              <h2 className="text-xs font-semibold uppercase tracking-wide text-ink-600">
+                {STATUS_LABELS[s]}
+              </h2>
+              <span className="text-xs font-medium text-ink-600">{column.length}</span>
+            </header>
+            <ul className="flex-1 space-y-2">
+              {column.map((lead) => (
+                <li key={lead.id}>
+                  <button
+                    type="button"
+                    draggable
+                    onDragStart={(e) => {
+                      e.dataTransfer.setData("text/plain", lead.id);
+                      e.dataTransfer.effectAllowed = "move";
+                    }}
+                    onClick={() => onSelect(lead.id)}
+                    className="w-full cursor-grab rounded-xl border border-cream-200 bg-cream-100 px-3 py-2.5 text-left text-sm shadow-sm hover:border-green-800/40 active:cursor-grabbing"
+                  >
+                    <p className="font-medium text-ink-900">{leadName(lead)}</p>
+                    <p className="mt-0.5 truncate text-xs text-ink-600">
+                      {lead.email ?? lead.phone ?? "no contact"}
+                    </p>
+                    <p className="mt-1 flex items-center gap-2 text-xs text-ink-600">
+                      <span>{lead.source}</span>
+                      {lead.partySize ? (
+                        <span className="rounded-full bg-green-900/10 px-1.5 py-0.5 font-medium text-green-900">
+                          ×{lead.partySize}
+                        </span>
+                      ) : null}
+                    </p>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </section>
+        );
+      })}
     </div>
   );
 }
