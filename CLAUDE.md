@@ -100,8 +100,11 @@ heritage admin re-skin; fixtures auto-import verified against the live API.
    attribution, tags (chips + inline create via `GET/POST /api/leads/tags` — create is
    case-insensitive idempotent), pinned notes, audit_log activity timeline with actor names,
    AI summary button (501 until enabled).
-3. Kanban pipeline view (new → contacted → qualified → won).
-4. Activate real email via Resend (owner must create account + provide API key).
+3. ~~Kanban pipeline view~~ ✅ table/board toggle in /admin/leads (persisted in localStorage);
+   native HTML5 drag & drop between the 5 status columns, optimistic move with rollback,
+   board fetches `limit=100` (the API's max page size). Card click opens the detail panel.
+4. Activate real email via Resend (owner must create account, verify the domain's DNS
+   records, and provide the API key for `.env` + Replit Secrets).
 
 Later: capacity slots logic; enable AI provider (`AI_PROVIDER=anthropic`); TheSportsDB Patreon
 key for full fixture lists; production deploy (Replit secrets, db:push, db:seed, 301s from old
