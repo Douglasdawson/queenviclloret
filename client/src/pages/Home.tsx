@@ -41,7 +41,7 @@ export default function HomePage() {
   return (
     <>
       {/* ── Hero: the real terrace at dusk ─────────────────────────────── */}
-      <section className="relative isolate flex min-h-[88svh] items-end overflow-hidden bg-green-950 text-paper">
+      <section className="relative isolate mx-2 mt-2 flex min-h-[88svh] items-end overflow-hidden rounded-[1.75rem] bg-green-950 text-paper sm:mx-4 sm:mt-3 sm:rounded-[2.5rem]">
         <Picture
           name="terrace-dusk"
           alt="Queen Vic's packed terrace at dusk in Lloret de Mar, giant screen showing the match under festoon lights"

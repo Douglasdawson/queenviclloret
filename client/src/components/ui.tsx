@@ -7,10 +7,13 @@ export function Container({ className, children }: { className?: string; childre
 }
 
 type Surface = "paper" | "green" | "deep";
+/* Green surfaces float as rounded panels on the cream canvas (the paper IS the
+   page background, so it stays full-bleed). */
+const panel = "mx-2 my-2 rounded-[1.75rem] sm:mx-4 sm:my-3 sm:rounded-[2.5rem]";
 const surfaceClass: Record<Surface, string> = {
   paper: "bg-cream-50 text-ink-900",
-  green: "bg-dusk text-paper",
-  deep: "bg-dusk-deep text-paper",
+  green: `bg-dusk text-paper ${panel}`,
+  deep: `bg-dusk-deep text-paper ${panel}`,
 };
 
 export function Section({

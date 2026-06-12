@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link, useRouter } from "wouter";
 import { useTranslation } from "react-i18next";
-import { Container } from "./ui";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import type { Locale } from "../lib/locale";
 
@@ -20,8 +19,9 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-green-700/60 bg-green-900">
-      <Container className="flex h-[4.25rem] items-center justify-between gap-4">
+    <header className="sticky top-2 z-50 px-2 sm:top-4 sm:px-4">
+      <div className="mx-auto w-full max-w-6xl rounded-2xl border border-green-700/60 bg-green-900 shadow-[0_10px_30px_oklch(0.25_0.02_160/0.16),0_2px_6px_oklch(0.25_0.02_160/0.1)]">
+        <div className="flex h-16 items-center justify-between gap-4 px-4 sm:px-6">
         <Link href="/" aria-label="Queen Vic, home" onClick={() => setOpen(false)}>
           <img
             src="/images/logo-alt.webp"
@@ -71,35 +71,36 @@ export function Header() {
               </svg>
             )}
           </button>
+          </div>
         </div>
-      </Container>
 
-      {open && (
-        <nav className="border-t border-green-700/60 bg-green-900 lg:hidden" aria-label="Main mobile">
-          <Container className="flex flex-col gap-1 py-4">
-            {NAV.map((item) => (
+        {open && (
+          <nav className="border-t border-green-700/60 lg:hidden" aria-label="Main mobile">
+            <div className="flex flex-col gap-1 px-4 py-4">
+              {NAV.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="rounded-md px-2 py-2.5 text-base font-medium text-paper-dim hover:bg-green-800 hover:text-paper"
+                >
+                  {t(item.key)}
+                </Link>
+              ))}
               <Link
-                key={item.href}
-                href={item.href}
+                href="/reservations"
                 onClick={() => setOpen(false)}
-                className="rounded-md px-2 py-2.5 text-base font-medium text-paper-dim hover:bg-green-800 hover:text-paper"
+                className="mt-2 rounded-[10px] bg-gold-500 px-4 py-2.5 text-center text-sm font-semibold text-ink-900"
               >
-                {t(item.key)}
+                {t("cta.bookTable")}
               </Link>
-            ))}
-            <Link
-              href="/reservations"
-              onClick={() => setOpen(false)}
-              className="mt-2 rounded-[10px] bg-gold-500 px-4 py-2.5 text-center text-sm font-semibold text-ink-900"
-            >
-              {t("cta.bookTable")}
-            </Link>
-            <div className="mt-3 px-2">
-              <LanguageSwitcher current={locale} />
+              <div className="mt-3 px-2">
+                <LanguageSwitcher current={locale} />
+              </div>
             </div>
-          </Container>
-        </nav>
-      )}
+          </nav>
+        )}
+      </div>
     </header>
   );
 }

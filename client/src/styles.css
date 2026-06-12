@@ -69,8 +69,8 @@
 
 html {
   scroll-behavior: smooth;
-  /* anchor jumps land below the sticky header */
-  scroll-padding-top: 5rem;
+  /* anchor jumps land below the floating header (h-16 + top gap) */
+  scroll-padding-top: 5.5rem;
 }
 
 ::selection {
