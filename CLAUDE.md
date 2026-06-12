@@ -72,7 +72,11 @@ Direction and tokens live in `PRODUCT.md` + `DESIGN.md` (impeccable context file
 updated). Bottle green surfaces + cream paper + gold accents (OKLCH, in `client/src/styles.css`
 @theme); one type family (Bricolage Grotesque Variable, self-hosted); signature devices:
 perforated `.stamp-frame` (+ `.stamp-shadow` wrapper — filter must sit on the parent of the
-mask), programme-ticket fixtures (`FixtureTicket`), laurel seal. Brand photos optimized via
+mask), programme-ticket fixtures (`FixtureTicket`), laurel seal, **floating panels**: cream is
+the page paper; the header is a sticky rounded pill and every green/deep `Section` surface
+(heroes, footer, Home hero) floats as a rounded panel (radii/gutters defined in `ui.tsx`
+`panel` const). Client-side route changes scroll to top (`ScrollToTop` in `PublicLayout`).
+Brand photos optimized via
 `node scripts/optimize-images.mjs` (sources in `assets-src/`, output + manifest in
 `client/public/images/`, typed manifest in `client/src/lib/image-manifest.ts`, consumed by
 `<Picture/>`). Legacy `night-*`/`electric-*` tokens remain as aliases for the admin SPA only.

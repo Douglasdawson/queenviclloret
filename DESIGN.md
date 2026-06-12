@@ -40,13 +40,20 @@ Voice words: warm, weathered, convivial (a hand-painted 1986 terrace sign; a mat
 - **Laurel seal**: the 40 · Est. 1986 mark used as a quiet badge, not a hero metric.
 - **Match programme ticket**: fixtures rendered as tickets — left column time block (gold on green), dashed perforation divider, competition + matchup, commentary-language tag. No identical card grids.
 - **Festoon glow**: subtle radial warm glows over green dusk sections (background, not blur/glass).
+- **Floating panels**: the cream is the page paper; every green/deep surface (heroes, What's On
+  blocks, CTA bands, footer) floats on it as a rounded panel (28px radius mobile / 40px desktop,
+  `mx-2 sm:mx-4` gutters). Same cut-paper logic as the stamp and tickets — nothing full-bleed
+  rectangular except the cream itself.
 - **Bunting rule**: at most one decorative flourish per viewport.
 
 ## Components
 
 - Buttons: gold fill, ink text, slightly rounded (10px), firm hover (darken + 1px lift); secondary = cream/green outline. No pill-everything.
 - Inputs on cream: cream-100 fill, cream-200 border, ink text, gold focus ring.
-- Sections: cream paper default; green blocks for hero/What's On/footer; vary padding rhythm (not uniform py-24).
+- Sections: cream paper default; green blocks for hero/What's On/footer render as floating
+  rounded panels (see Floating panels device); vary padding rhythm (not uniform py-24).
+- Header: floating green pill card (rounded-2xl, sticky with a top gap, solid — no glass),
+  full panel width; mobile menu folds inside the same card.
 - Motion: ease-out-quart/expo 150–350ms; transform/opacity only; `prefers-reduced-motion` respected everywhere.
 
 ## Theme scene
