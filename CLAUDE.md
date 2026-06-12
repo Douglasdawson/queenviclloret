@@ -82,6 +82,8 @@ mask), programme-ticket fixtures (`FixtureTicket`), laurel seal. Brand photos op
 
 ⚠️ Local ports: 3000 AND 3100 are used by other projects on this machine (one binds IPv6, so
 lsof may show two listeners). Local dev for this repo uses **PORT=3186** in `.env`.
+`playwright.config.ts` reads PORT from the env too — e2e spawns its own server, so stop any
+running dev server before `npm run test:e2e`.
 
 ## Status
 Foundation + full heritage redesign complete: SSR + i18n (5 locales) + SEO/GEO, CRM modules
@@ -94,7 +96,10 @@ heritage admin re-skin; fixtures auto-import verified against the live API.
 
 ## Next (CRM, agreed punto-por-punto sequence)
 1. ~~Load real fixtures~~ ✅ automated (TheSportsDB sync).
-2. Lead detail view — notes, tags, activity timeline (audit_log), visible UTM attribution.
+2. ~~Lead detail view~~ ✅ slide-over in /admin/leads: contact + GDPR consent badges, UTM
+   attribution, tags (chips + inline create via `GET/POST /api/leads/tags` — create is
+   case-insensitive idempotent), pinned notes, audit_log activity timeline with actor names,
+   AI summary button (501 until enabled).
 3. Kanban pipeline view (new → contacted → qualified → won).
 4. Activate real email via Resend (owner must create account + provide API key).
 
