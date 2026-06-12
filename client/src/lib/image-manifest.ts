@@ -67,6 +67,100 @@ export const IMAGES = {
       "webp"
     ]
   },
+  "night-party": {
+    "aspect": 1,
+    "widths": [
+      640,
+      1280
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ]
+  },
+  "dancefloor": {
+    "aspect": 1,
+    "widths": [
+      266
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ]
+  },
+  "match-night": {
+    "aspect": 1,
+    "widths": [
+      640,
+      1280
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ]
+  },
+  "world-cup-night": {
+    "aspect": 0.6666666666666666,
+    "widths": [
+      640,
+      1280
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ]
+  },
+  "motogp-night": {
+    "aspect": 1,
+    "widths": [
+      552
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ]
+  },
+  "rugby-night": {
+    "aspect": 1,
+    "widths": [
+      640
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ]
+  },
+  "party": {
+    "aspect": 0.6666666666666666,
+    "widths": [
+      640,
+      1280
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ]
+  },
+  "night-terrace": {
+    "aspect": 1,
+    "widths": [
+      640
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ]
+  },
+  "foam-party": {
+    "aspect": 1,
+    "widths": [
+      465
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ]
+  },
   "logo": {
     "aspect": 3.3575129533678756,
     "widths": [
@@ -150,6 +244,15 @@ export const IMAGES = {
   },
   "gaa": {
     "aspect": 2.5594262295081966,
+    "widths": [
+      480
+    ],
+    "formats": [
+      "webp"
+    ]
+  },
+  "world-cup-2026-white": {
+    "aspect": 1.4255765199161425,
     "widths": [
       480
     ],

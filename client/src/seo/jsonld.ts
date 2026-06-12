@@ -19,6 +19,14 @@ export function barOrPubLd(siteUrl: string) {
       addressCountry: "ES",
     },
     telephone: "+34674461220",
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        opens: "19:00",
+        closes: "03:00",
+      },
+    ],
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: 4.1,

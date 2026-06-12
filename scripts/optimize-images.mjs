@@ -28,6 +28,16 @@ const PHOTOS = {
   "27ZAPM.jpg": "victoria-stamp",
   "lloret-sports-bar-terrace.jpg": "terrace-screen",
   "SOR07244.webp": "fans",
+  // Venue's own event photos (their photographer @zalophotos / own IG feed)
+  "night-party.jpg": "night-party",
+  "dancefloor.jpg": "dancefloor",
+  "match-night.jpg": "match-night",
+  "world-cup-night.jpg": "world-cup-night",
+  "motogp-night.jpg": "motogp-night",
+  "rugby-night.jpg": "rugby-night",
+  "party.jpg": "party",
+  "night-terrace.jpg": "night-terrace",
+  "foam-party.jpg": "foam-party",
   // NOTE: press/stock photos from the old WP site (Getty, Shutterstock previews,
   // BBC uuid-named crowd shot) are intentionally NOT migrated — licensing risk.
 };
@@ -77,6 +87,23 @@ for (const [file, { name, width }] of Object.entries(MARKS)) {
   await sharp(src).resize(w).webp({ quality: 88, alphaQuality: 95 }).toFile(path.join(OUT, `${name}.webp`));
   manifest[name] = { aspect: meta.width / meta.height, widths: [w], formats: ["webp"] };
   console.log(`mark ${name}: ${w}px (webp)`);
+}
+
+// White silhouette of the WC mark (dark art is invisible on green surfaces).
+{
+  const src = path.join(RAW, "football-world-cup-2026-e1774444864283.png");
+  if (fs.existsSync(src)) {
+    const { data, info } = await sharp(src).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+    for (let i = 0; i < data.length; i += 4) {
+      data[i] = 247; data[i + 1] = 244; data[i + 2] = 235;
+    }
+    await sharp(data, { raw: info })
+      .resize(480)
+      .webp({ quality: 90, alphaQuality: 95 })
+      .toFile(path.join(OUT, "world-cup-2026-white.webp"));
+    manifest["world-cup-2026-white"] = { aspect: info.width / info.height, widths: [480], formats: ["webp"] };
+    console.log("mark world-cup-2026-white: 480px (webp, silhouette)");
+  }
 }
 
 fs.writeFileSync(

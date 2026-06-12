@@ -6,7 +6,7 @@ import { faqLd } from "../seo/jsonld";
 const FAQ = [
   {
     q: "What time do you open?",
-    a: "Hours vary with the season and the fixture list. Check our Instagram and Facebook for this week's schedule.",
+    a: "Daily from 19:00 till 03:00, and earlier on big match days. Check our Instagram and Facebook for this week's programme.",
   },
   {
     q: "Do I need to reserve a table?",

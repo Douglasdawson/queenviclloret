@@ -48,7 +48,9 @@ export default function AboutPage() {
       {/* Timeline as a programme list */}
       <Section surface="green" className="py-16 sm:py-22">
         <Container>
-          <h2 className="font-display text-3xl font-bold sm:text-4xl">{t("about.tlTitle")}</h2>
+          <div className="grid items-start gap-10 lg:grid-cols-[1fr_auto]">
+            <div>
+              <h2 className="font-display text-3xl font-bold sm:text-4xl">{t("about.tlTitle")}</h2>
           <ol className="mt-10 max-w-2xl space-y-0 divide-y divide-green-700">
             {timeline.map((k) => (
               <li key={k} className="flex gap-6 py-6 sm:gap-10">
@@ -59,8 +61,16 @@ export default function AboutPage() {
               </li>
             ))}
           </ol>
-          <div className="mt-12">
-            <ButtonLink href="/reservations">{t("cta.bookTable")}</ButtonLink>
+              <div className="mt-12">
+                <ButtonLink href="/reservations">{t("cta.bookTable")}</ButtonLink>
+              </div>
+            </div>
+            <Picture
+              name="night-party"
+              alt="Queen Vic barman pouring a pint under the terrace neon lights at night"
+              sizes="(min-width:1024px) 360px, 100vw"
+              className="hidden w-[360px] overflow-hidden rounded-2xl lg:block"
+            />
           </div>
         </Container>
       </Section>

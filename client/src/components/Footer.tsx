@@ -46,6 +46,7 @@ export function Footer() {
                 +34 674 46 12 20
               </a>
             </p>
+            <p className="tnum pt-1 text-paper-dim/90">{t("footer.hours")}</p>
           </address>
         </div>
 
