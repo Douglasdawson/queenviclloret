@@ -36,8 +36,20 @@ extension issues on Replit.
 - Pino with redact of credentials + PII.
 - Rate limiting dual-layer (global 60/min, auth 20/15min, public forms 10/10min).
 - Cron jobs wrapped in `withAdvisoryLock` (Postgres advisory locks) — safe across Autoscale instances.
-- Provider abstractions: `server/services/providers/{email,whatsapp}` and `server/ai/` (selected by env).
+- Provider abstractions: `server/services/providers/{email,whatsapp,fixtures}` and `server/ai/` (selected by env).
 - AI is **noop** today: endpoints `/leads/:id/summary`, `/events/:id/translate` return 501 until `AI_PROVIDER=anthropic`.
+
+## Fixtures auto-import
+TheSportsDB feed (`FIXTURES_PROVIDER=thesportsdb`) pulls upcoming World Cup / Premier League /
+F1 / MotoGP / Super League fixtures (league ids in `thesportsdb.provider.ts` — note 4415 is
+Super League; 4414 is rugby *union*). Cron every 6h (`15 */6 * * *`) + `POST /api/events/sync`
++ "Sync fixtures" button in admin. Idempotent upsert keyed on `externalRef` (`tsdb:<idEvent>`):
+inserts as **draft** (publish is 1 click; `FIXTURES_AUTO_PUBLISH=true` to skip review), updates
+title/teams/startsAt if upstream changes, never touches rows an admin edited (`updatedBy` set).
+Free community key returns only ~1 upcoming event per league; a TheSportsDB Patreon key in
+`FIXTURES_API_KEY` unlocks full lists (recommended for the World Cup).
+⚠️ zod footgun: `z.coerce.boolean()` is `Boolean("false") === true` — booleans from env use a
+string transform (see `FIXTURES_AUTO_PUBLISH` in `server/env.ts`).
 
 ## Commands
 - `npm run dev` — single Express process with Vite SSR middleware (http://localhost:3000)
@@ -75,9 +87,17 @@ lsof may show two listeners). Local dev for this repo uses **PORT=3186** in `.en
 Foundation + full heritage redesign complete: SSR + i18n (5 locales) + SEO/GEO, CRM modules
 (leads/events/reservations/campaigns + providers + crons), public site redesigned via the full
 impeccable cycle (shape → craft → critique ×2 agents → audit → polish). Lighthouse mobile:
-A11y 100 · Best Practices 100 · SEO 100. Anti-slop verdict: pass.
+A11y 100 · Best Practices 100 · SEO 100. Anti-slop verdict: pass. Real venue data live
+(Carrer de la Costa de Carbonell 1 · +34 674 46 12 20 · daily 19:00–03:00) in footer,
+BarOrPub JSON-LD and llms.txt; venue-own WP photos migrated (press/stock excluded — licensing);
+heritage admin re-skin; fixtures auto-import verified against the live API.
 
-## Next
-Real address/phone/hours in footer + LocalBusiness JSON-LD when the owner provides them;
-transparent World Cup logo asset; capacity slots logic; enable AI provider; migrate remaining
-WP photos.
+## Next (CRM, agreed punto-por-punto sequence)
+1. ~~Load real fixtures~~ ✅ automated (TheSportsDB sync).
+2. Lead detail view — notes, tags, activity timeline (audit_log), visible UTM attribution.
+3. Kanban pipeline view (new → contacted → qualified → won).
+4. Activate real email via Resend (owner must create account + provide API key).
+
+Later: capacity slots logic; enable AI provider (`AI_PROVIDER=anthropic`); TheSportsDB Patreon
+key for full fixture lists; production deploy (Replit secrets, db:push, db:seed, 301s from old
+WP URLs).
