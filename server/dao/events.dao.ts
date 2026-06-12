@@ -132,6 +132,72 @@ export async function setEventFeatured(id: string, isFeatured: boolean, ctx: Aud
   return updateEvent(id, { isFeatured }, ctx);
 }
 
+/**
+ * Idempotent import from a fixtures feed, keyed by externalRef.
+ * - New fixture → insert (draft, or published when autoPublish).
+ * - Existing machine-managed fixture → refresh time/teams/title.
+ * - Admin-edited fixtures (updatedBy set) are never overwritten.
+ * Returns "inserted" | "updated" | "skipped".
+ */
+export async function upsertFromFeed(
+  f: {
+    externalRef: string;
+    title: string;
+    sport: Event["sport"];
+    competition: string;
+    homeTeam: string | null;
+    awayTeam: string | null;
+    startsAt: Date;
+  },
+  autoPublish: boolean,
+): Promise<"inserted" | "updated" | "skipped"> {
+  const existing = await db
+    .select()
+    .from(events)
+    .where(and(eq(events.externalRef, f.externalRef), eq(events.isDeleted, false)))
+    .limit(1);
+
+  if (!existing[0]) {
+    const slug = await uniqueSlug(slugify(f.title));
+    await db.insert(events).values({
+      externalRef: f.externalRef,
+      title: f.title,
+      slug,
+      sport: f.sport,
+      competition: f.competition,
+      homeTeam: f.homeTeam,
+      awayTeam: f.awayTeam,
+      startsAt: f.startsAt,
+      commentaryLang: "en",
+      status: autoPublish ? "published" : "draft",
+    });
+    cacheInvalidate(PUBLIC_KEY);
+    return "inserted";
+  }
+
+  const row = existing[0];
+  if (row.updatedBy) return "skipped"; // an admin touched it — hands off
+  const changed =
+    row.startsAt.getTime() !== f.startsAt.getTime() ||
+    row.title !== f.title ||
+    row.homeTeam !== f.homeTeam ||
+    row.awayTeam !== f.awayTeam;
+  if (!changed) return "skipped";
+
+  await db
+    .update(events)
+    .set({
+      title: f.title,
+      homeTeam: f.homeTeam,
+      awayTeam: f.awayTeam,
+      startsAt: f.startsAt,
+      updatedAt: new Date(),
+    })
+    .where(eq(events.id, row.id));
+  cacheInvalidate(PUBLIC_KEY);
+  return "updated";
+}
+
 export async function removeEvent(id: string, ctx: AuditContext): Promise<boolean> {
   const ok = await db.transaction(async (tx) => {
     const done = await softDelete(tx, events, id, ctx.actorId);

@@ -5,6 +5,7 @@ import { AppError } from "../middlewares/error-handler";
 import { listEventsQuerySchema, upsertEventSchema } from "@shared/validation/events";
 import * as eventsDao from "../dao/events.dao";
 import { ai, AINotImplementedError } from "../ai";
+import { runSyncFixtures } from "../cron/sync-fixtures.job";
 
 export const eventsRouter: Router = Router();
 
@@ -18,6 +19,12 @@ eventsRouter.get("/:id", async (req, res) => {
   const event = await eventsDao.getEventById((req.params.id as string));
   if (!event) throw new AppError(404, "not_found", "Event not found");
   res.json({ event });
+});
+
+/** Pull fixtures from the configured feed on demand. */
+eventsRouter.post("/sync", requireRole("manager"), async (_req, res) => {
+  const counts = await runSyncFixtures();
+  res.json(counts);
 });
 
 eventsRouter.post("/", requireRole("manager"), validate(upsertEventSchema), async (req, res) => {

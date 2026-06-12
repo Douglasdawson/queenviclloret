@@ -19,6 +19,15 @@ const schema = z.object({
   RESEND_WEBHOOK_SECRET: z.string().optional(),
 
   WHATSAPP_PROVIDER: z.enum(["cloud", "noop"]).default("noop"),
+
+  FIXTURES_PROVIDER: z.enum(["thesportsdb", "noop"]).default("noop"),
+  FIXTURES_API_KEY: z.string().optional(),
+  /** "true" → imported fixtures publish straight to the site (skip admin review).
+   *  NOTE: not z.coerce.boolean() — Boolean("false") is true. */
+  FIXTURES_AUTO_PUBLISH: z
+    .string()
+    .optional()
+    .transform((v) => v === "true"),
   WHATSAPP_PHONE_NUMBER_ID: z.string().optional(),
   WHATSAPP_ACCESS_TOKEN: z.string().optional(),
   WHATSAPP_VERIFY_TOKEN: z.string().optional(),

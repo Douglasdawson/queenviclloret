@@ -45,9 +45,22 @@ export default function AdminEvents() {
     onSuccess: () => qc.invalidateQueries({ queryKey: ["admin-events"] }),
   });
 
+  const sync = useMutation({
+    mutationFn: () => apiPost<{ inserted: number; updated: number; skipped: number }>("/events/sync"),
+    onSuccess: (r) => {
+      qc.invalidateQueries({ queryKey: ["admin-events"] });
+      alert(`Fixtures sync: ${r.inserted} new, ${r.updated} updated, ${r.skipped} unchanged`);
+    },
+  });
+
   return (
     <div className="p-6 sm:p-10">
-      <h1 className="font-display text-2xl font-bold">What's On</h1>
+      <div className="flex items-center justify-between gap-4">
+        <h1 className="font-display text-2xl font-bold">What's On</h1>
+        <Button variant="outline-green" onClick={() => sync.mutate()} disabled={sync.isPending}>
+          {sync.isPending ? "Syncing…" : "Sync fixtures"}
+        </Button>
+      </div>
 
       <form
         onSubmit={(e) => {
