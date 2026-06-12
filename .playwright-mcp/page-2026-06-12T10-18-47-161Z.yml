@@ -1,0 +1,35 @@
+- generic [ref=e15]:
+  - complementary [ref=e16]:
+    - link "Queen Vic CRM" [ref=e17] [cursor=pointer]:
+      - /url: /admin/
+      - img "Queen Vic" [ref=e18]
+      - generic [ref=e19]: CRM
+    - navigation [ref=e20]:
+      - link "Dashboard" [ref=e21] [cursor=pointer]:
+        - /url: /admin/
+      - link "Leads / CRM" [ref=e22] [cursor=pointer]:
+        - /url: /admin/leads
+      - link "What's On" [ref=e23] [cursor=pointer]:
+        - /url: /admin/events
+      - link "Reservations" [ref=e24] [cursor=pointer]:
+        - /url: /admin/reservations
+      - link "Marketing" [ref=e25] [cursor=pointer]:
+        - /url: /admin/campaigns
+    - generic [ref=e26]:
+      - paragraph [ref=e27]: Queen Vic Owner
+      - paragraph [ref=e28]: owner
+      - button "Log out" [ref=e29]
+  - main [ref=e30]:
+    - generic [ref=e31]:
+      - heading "Dashboard" [level=1] [ref=e32]
+      - paragraph [ref=e33]: Overview of leads, events and reservations.
+      - generic [ref=e34]:
+        - generic [ref=e35]:
+          - paragraph [ref=e36]: Total leads
+          - paragraph [ref=e37]: "2"
+        - generic [ref=e38]:
+          - paragraph [ref=e39]: Upcoming events
+          - paragraph [ref=e40]: "5"
+        - generic [ref=e41]:
+          - paragraph [ref=e42]: Pending reservations
+          - paragraph [ref=e43]: "1"

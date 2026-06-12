@@ -1,0 +1,43 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - link "Queen Vic CRM" [ref=e5] [cursor=pointer]:
+      - /url: /admin/
+      - img "Queen Vic" [ref=e6]
+      - generic [ref=e7]: CRM
+    - navigation [ref=e8]:
+      - link "Dashboard" [ref=e9] [cursor=pointer]:
+        - /url: /admin/
+      - link "Leads / CRM" [ref=e10] [cursor=pointer]:
+        - /url: /admin/leads
+      - link "What's On" [ref=e11] [cursor=pointer]:
+        - /url: /admin/events
+      - link "Reservations" [ref=e12] [cursor=pointer]:
+        - /url: /admin/reservations
+      - link "Marketing" [ref=e13] [cursor=pointer]:
+        - /url: /admin/campaigns
+    - generic [ref=e14]:
+      - paragraph [ref=e15]: Queen Vic Owner
+      - paragraph [ref=e16]: owner
+      - button "Log out" [ref=e17]
+  - main [ref=e18]:
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - heading "Leads / CRM" [level=1] [ref=e21]
+        - combobox [ref=e22]:
+          - option "All statuses" [selected]
+          - option "new"
+          - option "contacted"
+          - option "qualified"
+          - option "won"
+          - option "lost"
+      - table [ref=e24]:
+        - rowgroup [ref=e25]:
+          - row "Name Contact Source Party Status" [ref=e26]:
+            - columnheader "Name" [ref=e27]
+            - columnheader "Contact" [ref=e28]
+            - columnheader "Source" [ref=e29]
+            - columnheader "Party" [ref=e30]
+            - columnheader "Status" [ref=e31]
+        - rowgroup [ref=e32]:
+          - row "Loading…" [ref=e33]:
+            - cell "Loading…" [ref=e34]

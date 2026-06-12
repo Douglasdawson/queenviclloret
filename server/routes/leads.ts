@@ -4,6 +4,7 @@ import { requireRole } from "../middlewares/auth";
 import { AppError } from "../middlewares/error-handler";
 import {
   addNoteSchema,
+  createTagSchema,
   listLeadsQuerySchema,
   updateLeadSchema,
   updateLeadStatusSchema,
@@ -19,14 +20,25 @@ leadsRouter.get("/", validate(listLeadsQuerySchema, "query"), async (req, res) =
   res.json(await leadsDao.listLeads(req.query as never));
 });
 
+// Registered before /:id so the literal path wins over the param route.
+leadsRouter.get("/tags", async (_req, res) => {
+  res.json({ tags: await leadsDao.listTags() });
+});
+
+leadsRouter.post("/tags", validate(createTagSchema), async (req, res) => {
+  const tag = await leadsDao.createTag(req.body.name, req.body.color, "lead", req.audit);
+  res.status(201).json({ tag });
+});
+
 leadsRouter.get("/:id", async (req, res) => {
   const lead = await leadsDao.getLead((req.params.id as string));
   if (!lead) throw new AppError(404, "not_found", "Lead not found");
-  const [tags, notes] = await Promise.all([
+  const [tags, notes, activity] = await Promise.all([
     leadsDao.listLeadTags(lead.id),
     leadsDao.listLeadNotes(lead.id),
+    leadsDao.listLeadActivity(lead.id),
   ]);
-  res.json({ lead, tags, notes });
+  res.json({ lead, tags, notes, activity });
 });
 
 leadsRouter.patch("/:id", validate(updateLeadSchema), async (req, res) => {

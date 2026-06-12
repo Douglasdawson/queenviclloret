@@ -1,6 +1,6 @@
-import { and, desc, eq, ilike, or, sql } from "drizzle-orm";
+import { and, asc, desc, eq, ilike, or, sql } from "drizzle-orm";
 import { db } from "../db";
-import { leads, leadTags, notes, tags, type Lead, type NewLead } from "@shared/schema";
+import { auditLog, leads, leadTags, notes, tags, users, type Lead, type NewLead } from "@shared/schema";
 import type { AuditContext } from "../middlewares/audit-context";
 import { pageParams, softDelete, withCreate, withUpdate, writeAudit, type PageParams } from "./base.dao";
 
@@ -125,4 +125,49 @@ export async function addLeadNote(
     .values(withCreate({ entityType: "lead", entityId: leadId, body, pinned, authorId: ctx.actorId }, ctx.actorId))
     .returning();
   return row;
+}
+
+/** Audit trail for one lead, oldest first, with the actor's display name resolved. */
+export async function listLeadActivity(leadId: string, limit = 100) {
+  return db
+    .select({
+      id: auditLog.id,
+      action: auditLog.action,
+      diff: auditLog.diff,
+      createdAt: auditLog.createdAt,
+      actorName: users.name,
+    })
+    .from(auditLog)
+    .leftJoin(users, eq(auditLog.actorId, users.id))
+    .where(and(eq(auditLog.entityType, "lead"), eq(auditLog.entityId, leadId)))
+    .orderBy(asc(auditLog.createdAt))
+    .limit(limit);
+}
+
+export async function listTags(kind?: string) {
+  const conds = [eq(tags.isDeleted, false)];
+  if (kind) conds.push(eq(tags.kind, kind));
+  return db
+    .select({ id: tags.id, name: tags.name, color: tags.color, kind: tags.kind })
+    .from(tags)
+    .where(and(...conds))
+    .orderBy(asc(tags.name));
+}
+
+/** Create a tag, or return the existing one with the same name (case-insensitive). */
+export async function createTag(name: string, color: string, kind: string, ctx: AuditContext) {
+  return db.transaction(async (tx) => {
+    const existing = await tx
+      .select({ id: tags.id, name: tags.name, color: tags.color, kind: tags.kind })
+      .from(tags)
+      .where(and(eq(tags.isDeleted, false), sql`lower(${tags.name}) = lower(${name})`))
+      .limit(1);
+    if (existing[0]) return existing[0];
+    const [row] = await tx
+      .insert(tags)
+      .values(withCreate({ name, color, kind }, ctx.actorId))
+      .returning({ id: tags.id, name: tags.name, color: tags.color, kind: tags.kind });
+    await writeAudit(tx, ctx, { action: "tag.create", entityType: "tag", entityId: row.id });
+    return row;
+  });
 }
