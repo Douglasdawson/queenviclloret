@@ -27,11 +27,17 @@ export default function AdminLogin() {
     <div className="bg-dusk-deep grid min-h-screen place-items-center px-4">
       <form
         onSubmit={onSubmit}
-        className="w-full max-w-sm rounded-2xl border border-white/10 bg-night-800/70 p-8 backdrop-blur"
+        className="w-full max-w-sm rounded-2xl border border-cream-200 bg-cream-50 p-8 text-ink-900 shadow-[0_24px_60px_oklch(0.12_0.03_165/0.5)]"
       >
-        <p className="mb-6 font-display text-2xl font-extrabold">
-          <span className="text-gold-400">Queen</span> Vic CRM
-        </p>
+        <img
+          src="/images/logo.webp"
+          alt="Queen Vic"
+          width={140}
+          height={41}
+          decoding="async"
+          className="mb-1 h-9 w-auto"
+        />
+        <p className="label-caps mb-6 text-[0.625rem] text-gold-700">Terrace Bar · CRM</p>
         <div className="space-y-4">
           <div>
             <FieldLabel>Email</FieldLabel>

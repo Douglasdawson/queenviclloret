@@ -21,28 +21,37 @@ export function AdminShell({ children }: { children: ReactNode }) {
   }, [isError, navigate]);
 
   if (isLoading) {
-    return <div className="grid min-h-screen place-items-center bg-night-950 text-ink-soft">Loading…</div>;
+    return (
+      <div className="grid min-h-screen place-items-center bg-cream-50 text-ink-600">Loading…</div>
+    );
   }
   if (!me) return null;
 
   return (
-    <div className="flex min-h-screen bg-night-950 text-ink">
-      <aside className="hidden w-60 shrink-0 flex-col border-r border-white/10 bg-night-900 p-4 lg:flex">
-        <p className="mb-6 px-2 font-display text-lg font-extrabold">
-          <span className="text-gold-400">Queen</span> Vic
-          <span className="ml-1 text-xs font-normal text-ink-soft">CRM</span>
-        </p>
+    <div className="flex min-h-screen bg-cream-50 text-ink-900">
+      <aside className="bg-dusk-deep hidden w-60 shrink-0 flex-col p-4 text-paper lg:flex">
+        <Link href="/" className="mb-7 block px-2">
+          <img
+            src="/images/logo-alt.webp"
+            alt="Queen Vic"
+            width={120}
+            height={35}
+            decoding="async"
+            className="h-8 w-auto"
+          />
+          <span className="label-caps mt-1.5 block text-[0.625rem] text-gold-400">CRM</span>
+        </Link>
         <nav className="flex flex-col gap-1">
           {NAV.map((item) => (
             <NavLink key={item.href} href={item.href} label={item.label} />
           ))}
         </nav>
-        <div className="mt-auto border-t border-white/10 pt-4 text-sm">
-          <p className="px-2 text-ink">{me.name}</p>
-          <p className="px-2 text-xs text-ink-soft">{me.role}</p>
+        <div className="mt-auto border-t border-green-800 pt-4 text-sm">
+          <p className="px-2 text-paper">{me.name}</p>
+          <p className="label-caps px-2 text-[0.625rem] text-paper-dim">{me.role}</p>
           <button
             onClick={() => logout.mutate(undefined, { onSuccess: () => navigate("/login") })}
-            className="mt-2 px-2 text-xs text-crimson-500 hover:underline"
+            className="mt-2 px-2 text-xs font-medium text-gold-400 hover:underline"
           >
             Log out
           </button>
@@ -61,8 +70,10 @@ function NavLink({ href, label }: { href: string; label: string }) {
     <Link
       href={href}
       className={cn(
-        "rounded-lg px-3 py-2 text-sm font-medium transition-colors",
-        isActive ? "bg-white/10 text-ink" : "text-ink-soft hover:bg-white/5 hover:text-ink",
+        "rounded-lg px-3 py-2 text-sm font-medium transition-colors duration-150",
+        isActive
+          ? "bg-green-800 text-gold-400"
+          : "text-paper-dim hover:bg-green-800/60 hover:text-paper",
       )}
     >
       {label}

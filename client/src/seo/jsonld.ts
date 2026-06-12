@@ -12,13 +12,23 @@ export function barOrPubLd(siteUrl: string) {
     servesCuisine: "Bar food",
     address: {
       "@type": "PostalAddress",
+      streetAddress: "Carrer de la Costa de Carbonell, 1",
+      postalCode: "17310",
       addressLocality: "Lloret de Mar",
       addressRegion: "Girona",
       addressCountry: "ES",
     },
+    telephone: "+34674461220",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: 4.1,
+      reviewCount: 116,
+      url: "https://www.tripadvisor.es/Attraction_Review-g494960-d5907912-Reviews-Queen_Vic_Lloret_de_mar-Lloret_de_Mar_Costa_Brava_Province_of_Girona_Catalonia.html",
+    },
     sameAs: [
       "https://www.instagram.com/queenviclloret/",
       "https://www.facebook.com/QueenVicLloretdemar/",
+      "https://www.tripadvisor.es/Attraction_Review-g494960-d5907912-Reviews-Queen_Vic_Lloret_de_mar-Lloret_de_Mar_Costa_Brava_Province_of_Girona_Catalonia.html",
     ],
     amenityFeature: [
       { "@type": "LocationFeatureSpecification", name: "Giant outdoor screen", value: true },

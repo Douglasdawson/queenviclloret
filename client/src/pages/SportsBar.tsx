@@ -5,7 +5,7 @@ import { usePageSeo } from "../seo/use-page-seo";
 
 const COMPETITIONS = [
   { src: "/images/premier-league.webp", label: "Premier League" },
-  { src: "/images/world-cup-2026.webp", label: "World Cup 2026" },
+  { src: "/images/world-cup-2026-white.webp", label: "World Cup 2026" },
   { src: "/images/f1.webp", label: "Formula 1" },
   { src: "/images/motogp.webp", label: "MotoGP" },
   { src: "/images/rugby-league.webp", label: "Rugby League" },

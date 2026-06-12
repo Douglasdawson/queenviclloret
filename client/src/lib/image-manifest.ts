@@ -67,16 +67,6 @@ export const IMAGES = {
       "webp"
     ]
   },
-  "crowd-cheer": {
-    "aspect": 1.7777777777777777,
-    "widths": [
-      480
-    ],
-    "formats": [
-      "avif",
-      "webp"
-    ]
-  },
   "logo": {
     "aspect": 3.3575129533678756,
     "widths": [

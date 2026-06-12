@@ -22,12 +22,12 @@ export default function AdminDashboard() {
   return (
     <div className="p-6 sm:p-10">
       <h1 className="font-display text-2xl font-bold">Dashboard</h1>
-      <p className="mt-1 text-sm text-ink-soft">Overview of leads, events and reservations.</p>
+      <p className="mt-1 text-sm text-ink-600">Overview of leads, events and reservations.</p>
       <div className="mt-8 grid gap-5 sm:grid-cols-3">
         {cards.map((c) => (
-          <div key={c.label} className="rounded-2xl border border-white/10 bg-night-800/60 p-6">
-            <p className="text-xs uppercase tracking-widest text-ink-soft">{c.label}</p>
-            <p className="mt-2 font-display text-4xl font-extrabold text-gold-400">
+          <div key={c.label} className="rounded-2xl border border-cream-200 bg-cream-100 p-6">
+            <p className="text-xs uppercase tracking-widest text-ink-600">{c.label}</p>
+            <p className="mt-2 font-display text-4xl font-extrabold text-green-900">
               {c.value ?? "—"}
             </p>
           </div>

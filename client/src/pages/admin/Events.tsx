@@ -54,7 +54,7 @@ export default function AdminEvents() {
           e.preventDefault();
           create.mutate();
         }}
-        className="mt-6 grid gap-4 rounded-2xl border border-white/10 bg-night-800/60 p-5 sm:grid-cols-5"
+        className="mt-6 grid gap-4 rounded-2xl border border-cream-200 bg-cream-100 p-5 sm:grid-cols-5"
       >
         <div className="sm:col-span-2">
           <FieldLabel>Title</FieldLabel>
@@ -65,7 +65,7 @@ export default function AdminEvents() {
           <select
             value={form.sport}
             onChange={(e) => setForm({ ...form, sport: e.target.value })}
-            className="w-full rounded-xl border border-white/15 bg-night-900 px-3 py-3 text-sm"
+            className="w-full rounded-xl border border-cream-300 bg-cream-100 px-3 py-3 text-sm text-ink-900"
           >
             {SPORTS.map((s) => (
               <option key={s} value={s}>
@@ -97,9 +97,9 @@ export default function AdminEvents() {
         </div>
       </form>
 
-      <div className="mt-6 overflow-x-auto rounded-2xl border border-white/10">
+      <div className="mt-6 overflow-x-auto rounded-2xl border border-cream-200 bg-cream-50">
         <table className="w-full text-left text-sm">
-          <thead className="bg-night-900 text-xs uppercase tracking-wide text-ink-soft">
+          <thead className="bg-green-900 text-xs uppercase tracking-wide text-paper-dim">
             <tr>
               <th className="px-4 py-3">Title</th>
               <th className="px-4 py-3">Sport</th>
@@ -108,29 +108,29 @@ export default function AdminEvents() {
               <th className="px-4 py-3"></th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-white/5">
+          <tbody className="divide-y divide-cream-200">
             {isLoading && (
               <tr>
-                <td colSpan={5} className="px-4 py-6 text-ink-soft">
+                <td colSpan={5} className="px-4 py-6 text-ink-600">
                   Loading…
                 </td>
               </tr>
             )}
             {data?.rows.map((ev) => (
-              <tr key={ev.id} className="hover:bg-white/5">
+              <tr key={ev.id} className="hover:bg-cream-100">
                 <td className="px-4 py-3 font-medium">{ev.title}</td>
-                <td className="px-4 py-3 text-ink-soft">{ev.sport}</td>
-                <td className="px-4 py-3 text-ink-soft">
+                <td className="px-4 py-3 text-ink-600">{ev.sport}</td>
+                <td className="px-4 py-3 text-ink-600">
                   {new Date(ev.startsAt).toLocaleString("en-GB")}
                 </td>
                 <td className="px-4 py-3">
-                  <span className="rounded-full bg-white/10 px-2 py-1 text-xs">{ev.status}</span>
+                  <span className="rounded-full bg-green-900/10 px-2 py-1 text-xs font-medium text-green-900">{ev.status}</span>
                 </td>
                 <td className="px-4 py-3 text-right">
                   {ev.status !== "published" && (
                     <button
                       onClick={() => publish.mutate(ev.id)}
-                      className="text-xs font-semibold text-electric-400 hover:underline"
+                      className="text-xs font-semibold text-gold-700 hover:underline"
                     >
                       Publish
                     </button>

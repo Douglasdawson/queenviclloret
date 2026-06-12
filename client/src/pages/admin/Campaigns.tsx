@@ -49,7 +49,7 @@ export default function AdminCampaigns() {
           e.preventDefault();
           create.mutate();
         }}
-        className="mt-6 grid gap-4 rounded-2xl border border-white/10 bg-night-800/60 p-5 sm:grid-cols-4"
+        className="mt-6 grid gap-4 rounded-2xl border border-cream-200 bg-cream-100 p-5 sm:grid-cols-4"
       >
         <div className="sm:col-span-2">
           <FieldLabel>Name</FieldLabel>
@@ -60,7 +60,7 @@ export default function AdminCampaigns() {
           <select
             value={form.channel}
             onChange={(e) => setForm({ ...form, channel: e.target.value })}
-            className="w-full rounded-xl border border-white/15 bg-night-900 px-3 py-3 text-sm"
+            className="w-full rounded-xl border border-cream-300 bg-cream-100 px-3 py-3 text-sm text-ink-900"
           >
             <option value="email">Email</option>
             <option value="whatsapp">WhatsApp</option>
@@ -75,7 +75,7 @@ export default function AdminCampaigns() {
           <textarea
             value={form.bodyHtml}
             onChange={(e) => setForm({ ...form, bodyHtml: e.target.value })}
-            className="min-h-24 w-full rounded-xl border border-white/15 bg-night-900 px-4 py-3 text-sm"
+            className="min-h-24 w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-sm text-ink-900"
           />
         </div>
         <div className="sm:col-span-4">
@@ -85,9 +85,9 @@ export default function AdminCampaigns() {
         </div>
       </form>
 
-      <div className="mt-6 overflow-x-auto rounded-2xl border border-white/10">
+      <div className="mt-6 overflow-x-auto rounded-2xl border border-cream-200 bg-cream-50">
         <table className="w-full text-left text-sm">
-          <thead className="bg-night-900 text-xs uppercase tracking-wide text-ink-soft">
+          <thead className="bg-green-900 text-xs uppercase tracking-wide text-paper-dim">
             <tr>
               <th className="px-4 py-3">Name</th>
               <th className="px-4 py-3">Channel</th>
@@ -95,20 +95,20 @@ export default function AdminCampaigns() {
               <th className="px-4 py-3"></th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-white/5">
+          <tbody className="divide-y divide-cream-200">
             {isLoading && (
               <tr>
-                <td colSpan={4} className="px-4 py-6 text-ink-soft">
+                <td colSpan={4} className="px-4 py-6 text-ink-600">
                   Loading…
                 </td>
               </tr>
             )}
             {data?.rows.map((c) => (
-              <tr key={c.id} className="hover:bg-white/5">
+              <tr key={c.id} className="hover:bg-cream-100">
                 <td className="px-4 py-3 font-medium">{c.name}</td>
-                <td className="px-4 py-3 text-ink-soft">{c.channel}</td>
+                <td className="px-4 py-3 text-ink-600">{c.channel}</td>
                 <td className="px-4 py-3">
-                  <span className="rounded-full bg-white/10 px-2 py-1 text-xs">{c.status}</span>
+                  <span className="rounded-full bg-green-900/10 px-2 py-1 text-xs font-medium text-green-900">{c.status}</span>
                 </td>
                 <td className="px-4 py-3 text-right">
                   <button
@@ -117,7 +117,7 @@ export default function AdminCampaigns() {
                         onSuccess: (r) => alert(`Matched ${r.matched}, enqueued ${r.enqueued}`),
                       })
                     }
-                    className="text-xs font-semibold text-electric-400 hover:underline"
+                    className="text-xs font-semibold text-gold-700 hover:underline"
                   >
                     Enqueue recipients
                   </button>

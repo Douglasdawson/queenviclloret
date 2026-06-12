@@ -28,7 +28,8 @@ const PHOTOS = {
   "27ZAPM.jpg": "victoria-stamp",
   "lloret-sports-bar-terrace.jpg": "terrace-screen",
   "SOR07244.webp": "fans",
-  "e6d076b0-4216-11ef-84b7-39eb66fe642b.jpg.webp": "crowd-cheer",
+  // NOTE: press/stock photos from the old WP site (Getty, Shutterstock previews,
+  // BBC uuid-named crowd shot) are intentionally NOT migrated — licensing risk.
 };
 
 const MARKS = {

@@ -30,7 +30,23 @@ export function Footer() {
             className="h-12 w-auto"
           />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-paper-dim">{t("tagline")}.</p>
-          <p className="mt-2 text-sm text-paper-dim">{t("footer.address")}</p>
+          <address className="mt-4 space-y-1 text-sm not-italic text-paper-dim">
+            <p>
+              <a
+                href="https://maps.google.com/?q=Queen+Vic+Sports+Bar+Lloret+de+Mar"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-gold-400"
+              >
+                Carrer de la Costa de Carbonell, 1
+              </a>
+            </p>
+            <p>17310 Lloret de Mar · Costa Brava</p>
+            <p>
+              <a href="tel:+34674461220" className="tnum transition-colors hover:text-gold-400">
+                +34 674 46 12 20
+              </a>
+            </p>
+          </address>
         </div>
 
         <nav aria-label="Footer">

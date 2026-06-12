@@ -105,7 +105,10 @@ Queen Vic has shown live sport in Lloret de Mar for 40 years. It is the home of 
 - Live resident DJ after the final whistle
 
 ## Practical
-- Location: Lloret de Mar, Costa Brava, Girona, Catalonia, Spain
+- Address: Carrer de la Costa de Carbonell 1, 17310 Lloret de Mar, Costa Brava, Girona, Catalonia, Spain
+- Phone: +34 674 46 12 20
+- Hours: vary with the season and the fixture list (evenings till late; earlier on big match days)
+- Rating: 4.1/5 on Tripadvisor (116 reviews)
 - Languages: English, Spanish, Catalan, French, Dutch
 - Reservations: groups and match days recommended to book ahead
 - Schedule & fixtures: ${BASE}/en/whats-on
