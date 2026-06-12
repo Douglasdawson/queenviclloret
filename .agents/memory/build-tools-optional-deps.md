@@ -1,20 +1,18 @@
 ---
-name: Build tools in optionalDependencies
-description: Why vite, tsx, tailwindcss etc. must be in optionalDependencies, not devDependencies, for this project.
+name: Build tools deployment fix
+description: How to get vite/tsx/tailwindcss to work during the deployment build despite NODE_ENV=production.
 ---
 
-The rule: `NODE_ENV=production` in `.replit [env]` causes `npm install` to skip `devDependencies` entirely — even during the build phase. This breaks `vite build` and `tsx` at runtime.
+**The problem:** `.replit` sets `NODE_ENV=production` globally. This causes `npm install` to skip `devDependencies` even during the build phase, so `vite: command not found` at publish time.
 
-**Fix:** Move all build-time and SSR-runtime tools to `optionalDependencies`:
-- `vite`
-- `tsx` (used by both `dev` and `start` scripts)
-- `tailwindcss`
-- `@vitejs/plugin-react`
-- `@tailwindcss/vite`
-- `typescript`
+**Failed approach — optionalDependencies:** Moving build tools to `optionalDependencies` in `package.json` does NOT work on its own. The `package-lock.json` records each package's original classification (`"dev": true`), and `npm install` honours the lockfile flags, not just `package.json`. Any `installLanguagePackages` call also reverts `package.json` back, undoing the change.
 
-`npm install` always installs `optionalDependencies` regardless of `NODE_ENV`.
+**The working fix:** Prefix the `build` script in `package.json` with `npm install --include=dev --include=optional`. The `--include` flag overrides `NODE_ENV` and `--omit` flags, so dev deps are always installed before the build runs:
 
-**Why:** Cannot edit `.replit` to remove the `NODE_ENV = "production"` env var — it controls the deployment target. `optionalDependencies` is the sanctioned workaround.
+```json
+"build": "npm install --include=dev --include=optional && npm run build:client && npm run build:ssr"
+```
 
-**How to apply:** Any new build tool or SSR runtime dependency should go in `optionalDependencies`, not `devDependencies`.
+**Why this works:** On Cloud Run (autoscale), the build step and run step share the same container image. Dev deps installed during build are present when `npm run start` executes (needed for `tsx`).
+
+**How to apply:** Keep build tools in `devDependencies` as normal. Do not move them to `optionalDependencies`. The build script handles installation.

@@ -6,7 +6,7 @@
   "description": "Queen Vic Sports Bar — Lloret de Mar. SSR public site + admin CRM.",
   "scripts": {
     "dev": "tsx watch --ignore '*.timestamp-*' --ignore 'client/**' --ignore 'dist/**' server/index.ts",
-    "build": "npm run build:client && npm run build:ssr",
+    "build": "npm install --include=dev --include=optional && npm run build:client && npm run build:ssr",
     "build:client": "vite build",
     "build:ssr": "vite build --ssr",
     "start": "NODE_ENV=production tsx server/index.ts",
