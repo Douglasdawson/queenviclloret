@@ -1,0 +1,2 @@
+- [Build tools in optionalDependencies](build-tools-optional-deps.md) — NODE_ENV=production skips devDependencies; vite/tsx/tailwindcss must be in optionalDependencies to build in prod.
+- [Replit DB only](replit-db-only.md) — User wants Replit built-in PostgreSQL, not Neon/Supabase. Schema applied via executeSql from drizzle/0000_cultured_dark_beast.sql.
