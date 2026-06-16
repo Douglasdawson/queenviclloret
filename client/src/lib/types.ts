@@ -6,6 +6,9 @@ export interface PublicEvent {
   competition: string | null;
   homeTeam: string | null;
   awayTeam: string | null;
+  homeScore: number | null;
+  awayScore: number | null;
+  scoreStatus: string | null;
   startsAt: string;
   endsAt: string | null;
   commentaryLang: string;

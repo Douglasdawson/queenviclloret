@@ -75,7 +75,10 @@
     "tipsTitle": "Matchday form guide",
     "tip1": "The day-by-day programme is published on Instagram during the tournament.",
     "tip2": "Arrive 30 to 45 minutes early for the big fixtures. The terrace fills fast.",
-    "tip3": "Groups can reserve ahead for knockout nights. Use the reservations page."
+    "tip3": "Groups can reserve ahead for knockout nights. Use the reservations page.",
+    "scheduleTitle": "Schedule & results",
+    "scheduleSub": "Every match, kept live",
+    "empty": "Fixtures appear as soon as they're confirmed. Check back, or follow us on Instagram."
   },
   "sportsBar": {
     "kicker": "The setup",
@@ -177,7 +180,10 @@
       "ca": "Catalan commentary",
       "ga": "GAA / Irish",
       "fr": "French commentary"
-    }
+    },
+    "ft": "FT",
+    "ht": "HT",
+    "live": "LIVE"
   },
   "notFound": {
     "title": "Ball's gone over the fence",

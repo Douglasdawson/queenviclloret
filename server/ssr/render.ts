@@ -46,14 +46,20 @@ export function createSsrHandler(vite: ViteDevServer | null) {
     const cacheKey = `ssr:${lang}:${url}`;
 
     try {
-      let rendered = cacheGet<RenderedDoc>(cacheKey);
+      // In dev, always re-render: the in-memory cache would otherwise serve a
+      // stale render after an HMR edit, causing client/server hydration
+      // mismatches. Prod builds are atomic, so caching is safe there.
+      let rendered = isProd ? cacheGet<RenderedDoc>(cacheKey) : undefined;
+      let template = isProd ? cacheGet<string>(`tpl:${lang}:${url}`) : undefined;
 
-      if (!rendered) {
+      if (!rendered || !template) {
         // Server-side data the public pages need (cheap + cached at DAO level).
-        const events = await eventsDao.listPublicUpcoming(50);
-        const initialData = { events };
+        const [events, worldCup] = await Promise.all([
+          eventsDao.listPublicUpcoming(50),
+          eventsDao.listWorldCup(),
+        ]);
+        const initialData = { events, worldCup };
 
-        let template: string;
         let render: RenderFn;
         if (isProd) {
           ({ template, render } = await loadProd());
@@ -70,12 +76,13 @@ export function createSsrHandler(vite: ViteDevServer | null) {
           dehydratedState: out.dehydratedState,
           lang,
         };
-        // Store the React render + the (already transformed) template together.
-        cacheSet(cacheKey, rendered, isEventPage ? TTL.SHORT : TTL.MEDIUM);
-        cacheSet(`tpl:${lang}:${url}`, template, isEventPage ? TTL.SHORT : TTL.MEDIUM);
+        // Store the React render + the (already transformed) template together (prod only).
+        if (isProd) {
+          cacheSet(cacheKey, rendered, isEventPage ? TTL.SHORT : TTL.MEDIUM);
+          cacheSet(`tpl:${lang}:${url}`, template, isEventPage ? TTL.SHORT : TTL.MEDIUM);
+        }
       }
 
-      const template = cacheGet<string>(`tpl:${lang}:${url}`)!;
       const html = buildDocument(template, rendered, nonce);
       res
         .status(200)

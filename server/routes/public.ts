@@ -22,6 +22,12 @@ publicRouter.get("/events", async (_req, res) => {
   res.json({ events });
 });
 
+/** World Cup schedule + live results. Polled by the client (near-live). */
+publicRouter.get("/world-cup", async (_req, res) => {
+  const events = await cached("api:public:worldcup", TTL.SHORT, () => eventsDao.listWorldCup());
+  res.json({ events });
+});
+
 publicRouter.get("/events/:slug", async (req, res) => {
   const event = await eventsDao.getPublicEventBySlug((req.params.slug as string));
   if (!event) throw new AppError(404, "not_found", "Event not found");

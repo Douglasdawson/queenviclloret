@@ -174,6 +174,10 @@ export const events = pgTable(
     awayTeam: text(),
     startsAt: timestamp({ withTimezone: true }).notNull(),
     endsAt: timestamp({ withTimezone: true }),
+    // Live result from the fixtures feed (factual, refreshed even on admin-edited rows).
+    homeScore: integer(),
+    awayScore: integer(),
+    scoreStatus: text(), // normalized: "FT" | "HT" | "LIVE" | null (not started)
     commentaryLang: commentaryLang().notNull().default("en"),
     isFeatured: boolean().notNull().default(false),
     status: eventStatus().notNull().default("draft"),

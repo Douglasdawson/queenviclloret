@@ -14,6 +14,7 @@ export function makeQueryClient(): QueryClient {
 
 export const queryKeys = {
   publicEvents: ["public", "events"] as const,
+  worldCup: ["public", "world-cup"] as const,
   me: ["auth", "me"] as const,
   leads: (filter?: unknown) => ["leads", filter] as const,
   events: (filter?: unknown) => ["events", filter] as const,

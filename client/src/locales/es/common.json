@@ -75,7 +75,10 @@
     "tipsTitle": "Guía del día de partido",
     "tip1": "El programa día a día se publica en Instagram durante el torneo.",
     "tip2": "Llega entre 30 y 45 minutos antes en los partidos grandes. La terraza se llena rápido.",
-    "tip3": "Los grupos pueden reservar para las noches de eliminatorias. Usa la página de reservas."
+    "tip3": "Los grupos pueden reservar para las noches de eliminatorias. Usa la página de reservas.",
+    "scheduleTitle": "Calendario y resultados",
+    "scheduleSub": "Cada partido, en directo",
+    "empty": "Los partidos aparecen en cuanto se confirman. Vuelve pronto o síguenos en Instagram."
   },
   "sportsBar": {
     "kicker": "El montaje",
@@ -177,7 +180,10 @@
       "ca": "Comentario en catalán",
       "ga": "GAA / irlandés",
       "fr": "Comentario en francés"
-    }
+    },
+    "ft": "Final",
+    "ht": "Desc.",
+    "live": "EN VIVO"
   },
   "notFound": {
     "title": "El balón se fue de campo",

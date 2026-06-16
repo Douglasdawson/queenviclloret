@@ -1,7 +1,12 @@
 import { useTranslation } from "react-i18next";
+import { formatInTimeZone } from "date-fns-tz";
 import { ButtonLink, Container, Eyebrow, Section } from "../components/ui";
 import { Picture } from "../components/Picture";
+import { FixtureTicket, groupByDay } from "../components/FixtureTicket";
+import { useWorldCupEvents } from "../hooks/useWorldCupEvents";
 import { usePageSeo } from "../seo/use-page-seo";
+
+const TZ = "Europe/Madrid";
 
 export default function WorldCupPage() {
   const { t } = useTranslation();
@@ -10,6 +15,10 @@ export default function WorldCupPage() {
     description: t("worldCup.subtitle"),
     path: "/world-cup-2026",
   });
+
+  const { data: wcEvents } = useWorldCupEvents();
+  const fixtures = wcEvents ?? [];
+  const days = groupByDay(fixtures);
 
   const points = ["p1", "p2", "p3", "p4"] as const;
   const tips = ["tip1", "tip2", "tip3"] as const;
@@ -55,6 +64,32 @@ export default function WorldCupPage() {
           sizes="(min-width:1152px) 1104px, 100vw"
           className="overflow-hidden rounded-2xl"
         />
+      </Container>
+
+      {/* Schedule & live results — unified calendar grouped by day */}
+      <Container className="mt-20">
+        <Eyebrow onGreen>{t("worldCup.scheduleSub")}</Eyebrow>
+        <h2 className="font-display text-3xl font-bold sm:text-4xl">{t("worldCup.scheduleTitle")}</h2>
+        {days.length === 0 ? (
+          <p className="mt-6 max-w-xl text-[0.9375rem] leading-relaxed text-paper-dim">
+            {t("worldCup.empty")}
+          </p>
+        ) : (
+          <div className="mt-8 space-y-10">
+            {days.map((g) => (
+              <div key={g.key}>
+                <h3 className="label-caps mb-4 text-xs text-gold-400">
+                  {formatInTimeZone(new Date(g.first.startsAt), TZ, "EEEE d MMM")}
+                </h3>
+                <div className="grid gap-3.5 lg:grid-cols-2">
+                  {g.items.map((e) => (
+                    <FixtureTicket key={e.id} event={e} />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </Container>
 
       {/* Why here: numbered programme list, not cards */}

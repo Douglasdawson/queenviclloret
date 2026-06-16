@@ -1,4 +1,4 @@
-import { and, asc, desc, eq, gte, inArray, sql } from "drizzle-orm";
+import { and, asc, desc, eq, gte, ilike, inArray, sql } from "drizzle-orm";
 import { db } from "../db";
 import { events, type Event, type NewEvent } from "@shared/schema";
 import type { AuditContext } from "../middlewares/audit-context";
@@ -38,6 +38,27 @@ export async function listPublicUpcoming(limitN = 50): Promise<Event[]> {
         eq(events.isDeleted, false),
         inArray(events.status, ["published", "live"]),
         gte(events.startsAt, new Date(Date.now() - 6 * 3600_000)),
+      ),
+    )
+    .orderBy(asc(events.startsAt))
+    .limit(limitN);
+}
+
+/**
+ * World Cup schedule + results for the public page: published/live/finished
+ * matches in the FIFA World Cup, chronological. Includes scores so already-played
+ * games render their result. (Filter by competition string the feed sets for
+ * league 4429 — verify it matches "%World Cup%" after the first sync.)
+ */
+export async function listWorldCup(limitN = 130): Promise<Event[]> {
+  return db
+    .select()
+    .from(events)
+    .where(
+      and(
+        eq(events.isDeleted, false),
+        inArray(events.status, ["published", "live", "finished"]),
+        ilike(events.competition, "%World Cup%"),
       ),
     )
     .orderBy(asc(events.startsAt))
@@ -148,9 +169,16 @@ export async function upsertFromFeed(
     homeTeam: string | null;
     awayTeam: string | null;
     startsAt: Date;
+    homeScore?: number | null;
+    awayScore?: number | null;
+    scoreStatus?: string | null;
   },
   autoPublish: boolean,
 ): Promise<"inserted" | "updated" | "skipped"> {
+  const homeScore = f.homeScore ?? null;
+  const awayScore = f.awayScore ?? null;
+  const scoreStatus = f.scoreStatus ?? null;
+
   const existing = await db
     .select()
     .from(events)
@@ -168,6 +196,9 @@ export async function upsertFromFeed(
       homeTeam: f.homeTeam,
       awayTeam: f.awayTeam,
       startsAt: f.startsAt,
+      homeScore,
+      awayScore,
+      scoreStatus,
       commentaryLang: "en",
       status: autoPublish ? "published" : "draft",
     });
@@ -176,23 +207,26 @@ export async function upsertFromFeed(
   }
 
   const row = existing[0];
-  if (row.updatedBy) return "skipped"; // an admin touched it — hands off
-  const changed =
-    row.startsAt.getTime() !== f.startsAt.getTime() ||
-    row.title !== f.title ||
-    row.homeTeam !== f.homeTeam ||
-    row.awayTeam !== f.awayTeam;
-  if (!changed) return "skipped";
+  const patch: Partial<NewEvent> = {};
+
+  // Scores are factual — refresh them even on admin-edited rows.
+  if (row.homeScore !== homeScore) patch.homeScore = homeScore;
+  if (row.awayScore !== awayScore) patch.awayScore = awayScore;
+  if (row.scoreStatus !== scoreStatus) patch.scoreStatus = scoreStatus;
+
+  // Editorial fields: only the machine-managed rows (no admin touch) follow the feed.
+  if (!row.updatedBy) {
+    if (row.title !== f.title) patch.title = f.title;
+    if (row.homeTeam !== f.homeTeam) patch.homeTeam = f.homeTeam;
+    if (row.awayTeam !== f.awayTeam) patch.awayTeam = f.awayTeam;
+    if (row.startsAt.getTime() !== f.startsAt.getTime()) patch.startsAt = f.startsAt;
+  }
+
+  if (Object.keys(patch).length === 0) return "skipped";
 
   await db
     .update(events)
-    .set({
-      title: f.title,
-      homeTeam: f.homeTeam,
-      awayTeam: f.awayTeam,
-      startsAt: f.startsAt,
-      updatedAt: new Date(),
-    })
+    .set({ ...patch, updatedAt: new Date() })
     .where(eq(events.id, row.id));
   cacheInvalidate(PUBLIC_KEY);
   return "updated";

@@ -75,7 +75,10 @@
     "tipsTitle": "Wedstrijddag-gids",
     "tip1": "Het dagprogramma verschijnt tijdens het toernooi op Instagram.",
     "tip2": "Kom 30 tot 45 minuten eerder bij grote wedstrijden. Het terras loopt snel vol.",
-    "tip3": "Groepen kunnen vooraf reserveren voor knock-outavonden. Gebruik de reserveringspagina."
+    "tip3": "Groepen kunnen vooraf reserveren voor knock-outavonden. Gebruik de reserveringspagina.",
+    "scheduleTitle": "Programma & uitslagen",
+    "scheduleSub": "Elke wedstrijd, live",
+    "empty": "Wedstrijden verschijnen zodra ze bevestigd zijn. Kom terug of volg ons op Instagram."
   },
   "sportsBar": {
     "kicker": "De opstelling",
@@ -177,7 +180,10 @@
       "ca": "Catalaans commentaar",
       "ga": "GAA / Iers",
       "fr": "Frans commentaar"
-    }
+    },
+    "ft": "Einde",
+    "ht": "Rust",
+    "live": "LIVE"
   },
   "notFound": {
     "title": "De bal is over het hek",

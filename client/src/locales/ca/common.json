@@ -75,7 +75,10 @@
     "tipsTitle": "Guia del dia de partit",
     "tip1": "El programa dia a dia es publica a Instagram durant el torneig.",
     "tip2": "Arriba entre 30 i 45 minuts abans als partits grans. La terrassa s'omple ràpid.",
-    "tip3": "Els grups poden reservar per a les nits d'eliminatòries. Fes servir la pàgina de reserves."
+    "tip3": "Els grups poden reservar per a les nits d'eliminatòries. Fes servir la pàgina de reserves.",
+    "scheduleTitle": "Calendari i resultats",
+    "scheduleSub": "Cada partit, en directe",
+    "empty": "Els partits apareixen tan bon punt es confirmen. Torna aviat o segueix-nos a Instagram."
   },
   "sportsBar": {
     "kicker": "El muntatge",
@@ -177,7 +180,10 @@
       "ca": "Comentari en català",
       "ga": "GAA / irlandès",
       "fr": "Comentari en francès"
-    }
+    },
+    "ft": "Final",
+    "ht": "Desc.",
+    "live": "EN DIRECTE"
   },
   "notFound": {
     "title": "La pilota ha sortit del camp",

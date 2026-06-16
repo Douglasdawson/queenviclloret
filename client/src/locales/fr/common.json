@@ -75,7 +75,10 @@
     "tipsTitle": "Guide du jour de match",
     "tip1": "Le programme jour par jour est publié sur Instagram pendant le tournoi.",
     "tip2": "Arrivez 30 à 45 minutes en avance pour les grandes affiches. La terrasse se remplit vite.",
-    "tip3": "Les groupes peuvent réserver pour les soirées à élimination directe. Passez par la page réservations."
+    "tip3": "Les groupes peuvent réserver pour les soirées à élimination directe. Passez par la page réservations.",
+    "scheduleTitle": "Calendrier et résultats",
+    "scheduleSub": "Chaque match, en direct",
+    "empty": "Les matchs s'affichent dès qu'ils sont confirmés. Revenez bientôt ou suivez-nous sur Instagram."
   },
   "sportsBar": {
     "kicker": "L'installation",
@@ -177,7 +180,10 @@
       "ca": "Commentaire en catalan",
       "ga": "GAA / irlandais",
       "fr": "Commentaire en français"
-    }
+    },
+    "ft": "Fini",
+    "ht": "Mi-tps",
+    "live": "EN DIRECT"
   },
   "notFound": {
     "title": "Le ballon est sorti du terrain",

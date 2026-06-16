@@ -7,6 +7,10 @@ export interface NormalizedFixture {
   homeTeam: string | null;
   awayTeam: string | null;
   startsAt: Date;
+  /** Live result, when the feed has played/in-progress data. */
+  homeScore?: number | null;
+  awayScore?: number | null;
+  scoreStatus?: string | null; // "FT" | "HT" | "LIVE" | null
 }
 
 export interface FixturesProvider {

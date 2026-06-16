@@ -36,6 +36,10 @@ export function FixtureTicket({ event }: { event: PublicEvent }) {
   // from the dehydrated state. Render the same ISO on both to avoid mismatch.
   const startsIso = new Date(event.startsAt).toISOString();
   const time = formatInTimeZone(new Date(event.startsAt), TZ, "HH:mm");
+  // A played/in-progress match carries a score → the stub shows the result.
+  const hasScore = event.homeScore != null && event.awayScore != null;
+  const scoreLabelKey =
+    event.scoreStatus === "FT" ? "fixture.ft" : event.scoreStatus === "HT" ? "fixture.ht" : "fixture.live";
 
   return (
     <article
@@ -44,20 +48,38 @@ export function FixtureTicket({ event }: { event: PublicEvent }) {
         event.isFeatured ? "border-gold-500/70" : "border-green-700 hover:border-green-600",
       )}
     >
-      {/* Time stub */}
+      {/* Time stub — or the score once the match is played/live */}
       <div className="flex w-[5.25rem] shrink-0 flex-col items-center justify-center gap-1 bg-green-950/60 px-2 py-4">
-        <time dateTime={startsIso} className="tnum font-display text-2xl font-bold text-gold-400">
-          {time}
-        </time>
-        {live ? (
-          <span className="flex items-center gap-1 text-[0.625rem] font-bold uppercase tracking-wider text-dusk-400">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-dusk-400 motion-reduce:animate-none" aria-hidden="true" />
-            {t("whatsOn.live")}
-          </span>
+        {hasScore ? (
+          <>
+            <span className="tnum font-display text-2xl font-bold text-gold-400">
+              {event.homeScore}–{event.awayScore}
+            </span>
+            <span
+              className={cn(
+                "label-caps text-[0.625rem]",
+                event.scoreStatus === "LIVE" ? "text-dusk-400" : "text-paper-dim/70",
+              )}
+            >
+              {t(scoreLabelKey)}
+            </span>
+          </>
         ) : (
-          <span className="label-caps text-[0.625rem] text-paper-dim/70">
-            {formatInTimeZone(new Date(event.startsAt), TZ, "EEE d")}
-          </span>
+          <>
+            <time dateTime={startsIso} className="tnum font-display text-2xl font-bold text-gold-400">
+              {time}
+            </time>
+            {live ? (
+              <span className="flex items-center gap-1 text-[0.625rem] font-bold uppercase tracking-wider text-dusk-400">
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-dusk-400 motion-reduce:animate-none" aria-hidden="true" />
+                {t("whatsOn.live")}
+              </span>
+            ) : (
+              <span className="label-caps text-[0.625rem] text-paper-dim/70">
+                {formatInTimeZone(new Date(event.startsAt), TZ, "EEE d")}
+              </span>
+            )}
+          </>
         )}
       </div>
 

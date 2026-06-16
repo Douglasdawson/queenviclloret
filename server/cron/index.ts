@@ -29,5 +29,10 @@ export function registerCron() {
   schedule("15 */6 * * *", "sync-fixtures", async () => {
     await runSyncFixtures();
   });
+  // Near-live results refresh (scores update mid-tournament). Reuses the
+  // "sync-fixtures" advisory lock so a 6h run and a 20-min run never overlap.
+  schedule("*/20 * * * *", "sync-fixtures", async () => {
+    await runSyncFixtures();
+  });
   logger.info("cron jobs registered");
 }

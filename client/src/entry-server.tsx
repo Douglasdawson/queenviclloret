@@ -22,6 +22,9 @@ export async function render(url: string, ctx: RenderContext) {
   if (ctx.initialData?.events) {
     queryClient.setQueryData(queryKeys.publicEvents, ctx.initialData.events);
   }
+  if (ctx.initialData?.worldCup) {
+    queryClient.setQueryData(queryKeys.worldCup, ctx.initialData.worldCup);
+  }
 
   const i18n = createI18n(ctx.lang ?? DEFAULT_LOCALE);
   const seoCollector: SeoCollector = { isServer: true, current: null };
