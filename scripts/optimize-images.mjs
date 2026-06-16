@@ -35,6 +35,18 @@ const PHOTOS = {
   "world-cup-night.jpg": "world-cup-night",
   "motogp-night.jpg": "motogp-night",
   "rugby-night.jpg": "rugby-night",
+  // F1 night-broadcast on the terrace screen (AI-generated, no licensable F1 photo)
+  "f1-night.jpg": "f1-night",
+  // Aerial night sports (AI-generated) — kept available, not currently used
+  "football-aerial.jpg": "football-aerial",
+  "rugby-aerial.jpg": "rugby-aerial",
+  "f1-aerial.jpg": "f1-aerial",
+  "motogp-aerial.jpg": "motogp-aerial",
+  // Detail action shots for the home "Tonight" montage (AI-generated)
+  "football-detail.jpg": "football-detail",
+  "rugby-detail.jpg": "rugby-detail",
+  "f1-detail.jpg": "f1-detail",
+  "motogp-detail.jpg": "motogp-detail",
   "party.jpg": "party",
   "night-terrace.jpg": "night-terrace",
   "foam-party.jpg": "foam-party",

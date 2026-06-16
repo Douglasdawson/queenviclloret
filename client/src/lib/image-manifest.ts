@@ -130,6 +130,105 @@ export const IMAGES = {
       "webp"
     ]
   },
+  "f1-night": {
+    "aspect": 0.7465753424657534,
+    "widths": [
+      640,
+      1280
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ]
+  },
+  "football-aerial": {
+    "aspect": 0.7465753424657534,
+    "widths": [
+      640,
+      1280
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ]
+  },
+  "rugby-aerial": {
+    "aspect": 0.7465753424657534,
+    "widths": [
+      640,
+      1280
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ]
+  },
+  "f1-aerial": {
+    "aspect": 0.7465753424657534,
+    "widths": [
+      640,
+      1280
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ]
+  },
+  "motogp-aerial": {
+    "aspect": 0.7465753424657534,
+    "widths": [
+      640,
+      1280
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ]
+  },
+  "football-detail": {
+    "aspect": 0.7465753424657534,
+    "widths": [
+      640,
+      1280
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ]
+  },
+  "rugby-detail": {
+    "aspect": 0.7465753424657534,
+    "widths": [
+      640,
+      1280
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ]
+  },
+  "f1-detail": {
+    "aspect": 0.7465753424657534,
+    "widths": [
+      640,
+      1280
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ]
+  },
+  "motogp-detail": {
+    "aspect": 0.7465753424657534,
+    "widths": [
+      640,
+      1280
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ]
+  },
   "party": {
     "aspect": 0.6666666666666666,
     "widths": [

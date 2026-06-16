@@ -4,6 +4,7 @@ import { formatInTimeZone } from "date-fns-tz";
 import { ButtonLink, Container, Eyebrow, LaurelSeal, Section } from "../components/ui";
 import { FixtureTicket } from "../components/FixtureTicket";
 import { Picture, imagePreload } from "../components/Picture";
+import { SportsMontage } from "../components/SportsMontage";
 import { usePublicEvents } from "../hooks/usePublicEvents";
 import { usePageSeo } from "../seo/use-page-seo";
 import { useSite } from "../app/site-context";
@@ -78,7 +79,14 @@ export default function HomePage() {
       </section>
 
       {/* ── Tonight at the Vic: the product, immediately ───────────────── */}
-      <Section surface="green" className="py-16 sm:py-20">
+      <Section surface="green" className="relative isolate overflow-hidden py-16 sm:py-20">
+        {/* Aerial sports montage — responsive diagonal broadcast-channel strips */}
+        <SportsMontage />
+        {/* Green scrim: deepens the edges, lets the centre breathe, keeps text legible */}
+        <div
+          className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,oklch(0.27_0.045_165/0.5)_0%,oklch(0.27_0.045_165/0.04)_36%,oklch(0.27_0.045_165/0.04)_64%,oklch(0.27_0.045_165/0.58)_100%)]"
+          aria-hidden="true"
+        />
         <Container>
           <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-4">
             <div>
@@ -101,7 +109,7 @@ export default function HomePage() {
             </div>
           ) : (
             <>
-              <div className="mt-8 flex flex-col items-start gap-4 rounded-xl border border-green-700 bg-green-800/50 p-6 sm:flex-row sm:items-center">
+              <div className="mt-8 flex flex-col items-start gap-4 rounded-xl border border-green-700 bg-green-900 p-6 sm:flex-row sm:items-center">
                 <p className="max-w-xl text-[0.9375rem] leading-relaxed text-paper-dim">
                   {t("home.tonightEmpty")}
                 </p>
@@ -137,7 +145,7 @@ export default function HomePage() {
                 name="terrace-crowd"
                 alt="Full terrace at Queen Vic under sail shades, crowd watching the giant screen"
                 sizes="(min-width:1024px) 50vw, 100vw"
-                className="overflow-hidden rounded-2xl"
+                className="overflow-hidden rounded-[1.75rem] sm:rounded-[2.5rem]"
               />
             </div>
             <div className="order-1 lg:order-2">

@@ -19,7 +19,7 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-2 z-50 px-2 sm:top-4 sm:px-4">
+    <header className="sticky top-2 z-50 mb-2 px-2 sm:top-4 sm:mb-3 sm:px-4">
       <div className="w-full rounded-2xl border border-green-700/60 bg-green-900 shadow-[0_10px_30px_oklch(0.25_0.02_160/0.16),0_2px_6px_oklch(0.25_0.02_160/0.1)]">
         <div className="flex h-16 items-center justify-between gap-4 px-4 sm:px-6">
         <Link href="/" aria-label="Queen Vic, home" onClick={() => setOpen(false)}>
