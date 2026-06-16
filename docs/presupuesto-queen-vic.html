@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presupuesto — Queen Vic Sports Bar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green-950:oklch(0.22 0.04 165);
+    --green-900:oklch(0.27 0.05 163);
+    --green-800:oklch(0.33 0.055 162);
+    --green-700:oklch(0.40 0.06 160);
+    --gold-400:oklch(0.82 0.12 92);
+    --gold-500:oklch(0.75 0.13 90);
+    --gold-600:oklch(0.62 0.115 86);
+    --gold-700:oklch(0.50 0.10 84);
+    --cream-50:oklch(0.97 0.012 90);
+    --cream-100:oklch(0.945 0.018 88);
+    --cream-200:oklch(0.90 0.025 87);
+    --cream-300:oklch(0.84 0.03 86);
+    --ink-900:oklch(0.25 0.015 160);
+    --ink-700:oklch(0.35 0.015 160);
+    --ink-600:oklch(0.45 0.015 160);
+    --paper:oklch(0.95 0.02 90);
+    --paper-dim:oklch(0.82 0.03 95);
+    --font:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{font-family:var(--font);color:var(--ink-900);background:var(--cream-200);
+    -webkit-font-smoothing:antialiased;font-optical-sizing:auto}
+  body{display:flex;flex-direction:column;align-items:center;gap:18px;padding:26px 16px 60px}
+  .num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+
+  .page{
+    width:210mm;min-height:297mm;background:var(--cream-50);
+    padding:16mm 16mm 14mm;position:relative;
+    box-shadow:0 24px 60px -28px oklch(0.22 0.04 165 / .45);
+    display:flex;flex-direction:column;
+  }
+
+  /* ---------- Header ---------- */
+  .masthead{
+    background:var(--green-900);color:var(--paper);border-radius:18px;
+    padding:22px 26px;display:flex;justify-content:space-between;align-items:flex-start;
+    position:relative;overflow:hidden;
+  }
+  .masthead::after{ /* perforation hairline, brand stamp device */
+    content:"";position:absolute;left:26px;right:26px;bottom:14px;height:1px;
+    background:repeating-linear-gradient(90deg,var(--gold-500) 0 5px,transparent 5px 11px);opacity:.55}
+  .brand-eyebrow{font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--gold-400);font-weight:600}
+  .brand-name{font-size:27px;font-weight:700;line-height:1.02;letter-spacing:-.01em;margin-top:7px}
+  .brand-sub{font-size:11px;color:var(--paper-dim);margin-top:6px;max-width:42ch;line-height:1.45}
+  .seal{
+    flex:none;width:74px;height:74px;border-radius:50%;border:1.5px solid var(--gold-500);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+    color:var(--gold-400)}
+  .seal b{font-size:21px;font-weight:800;line-height:1}
+  .seal span{font-size:7px;letter-spacing:.18em;text-transform:uppercase;margin-top:3px}
+
+  /* ---------- Meta strip ---------- */
+  .meta{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--cream-300);
+    border:1px solid var(--cream-300);border-radius:12px;overflow:hidden;margin-top:14px}
+  .meta div{background:var(--cream-50);padding:9px 12px}
+  .meta dt{font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-600)}
+  .meta dd{font-size:12px;font-weight:600;margin-top:3px;color:var(--ink-900)}
+
+  h2{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-700);
+    font-weight:700;margin:20px 0 9px;display:flex;align-items:center;gap:10px}
+  h2::after{content:"";flex:1;height:1px;background:var(--cream-300)}
+  .lead{font-size:12.5px;line-height:1.55;color:var(--ink-700);max-width:66ch}
+  .lead b{color:var(--ink-900)}
+
+  /* ---------- Scope table ---------- */
+  table{width:100%;border-collapse:collapse;margin-top:4px}
+  th,td{text-align:left;padding:8px 10px;font-size:11px;vertical-align:top}
+  thead th{font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-600);
+    border-bottom:1.5px solid var(--green-900);font-weight:600}
+  tbody tr+tr td{border-top:1px solid var(--cream-200)}
+  .scope-name{font-weight:600;color:var(--ink-900);font-size:11.5px}
+  .scope-detail{color:var(--ink-600);font-size:10px;line-height:1.4;margin-top:2px;max-width:62ch}
+  td.price{text-align:right;font-weight:600;white-space:nowrap;color:var(--ink-900)}
+  tr.total td{border-top:1.5px solid var(--green-900)!important;font-size:12.5px;font-weight:700;
+    padding-top:10px}
+  tr.total .price{color:var(--green-900)}
+
+  /* ---------- Applied price band ---------- */
+  .applied{
+    margin-top:18px;background:var(--green-900);color:var(--paper);border-radius:16px;
+    padding:18px 24px;display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:24px}
+  .applied .label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-400);
+    font-weight:600}
+  .applied .label small{display:block;color:var(--paper-dim);font-size:10px;letter-spacing:.04em;
+    text-transform:none;margin-top:5px;font-weight:400;line-height:1.4;max-width:34ch}
+  .applied .strike{text-align:right}
+  .applied .strike s{color:var(--paper-dim);font-size:14px;text-decoration-color:var(--gold-600)}
+  .applied .strike em{display:block;font-style:normal;font-size:8.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--gold-400);margin-top:3px}
+  .applied .big{font-size:34px;font-weight:800;line-height:.95;color:#fff;text-align:right}
+  .applied .big span{display:block;font-size:9px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--gold-400);font-weight:600;margin-top:5px}
+
+  /* ---------- Plans ---------- */
+  .plans{width:100%;border-collapse:collapse;margin-top:4px}
+  .plans th,.plans td{padding:7px 12px;font-size:11px;border-bottom:1px solid var(--cream-200)}
+  .plans thead th{text-align:center;border-bottom:1.5px solid var(--green-900)}
+  .plans thead th.feat{text-align:left}
+  .plans .pname{font-size:14px;font-weight:700;color:var(--ink-900)}
+  .plans .pprice{font-size:11px;font-weight:600;color:var(--gold-700)}
+  .plans .pname.alt{color:var(--green-900)}
+  .plans td.c{text-align:center;font-weight:700;color:var(--green-700);width:90px}
+  .plans td.x{text-align:center;color:var(--cream-300)}
+  .plans td.note{text-align:center;font-size:9.5px;color:var(--ink-600);font-weight:500;white-space:nowrap}
+  .plans td.feat{color:var(--ink-700)}
+
+  /* ---------- Totals + terms ---------- */
+  .grid2{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;margin-top:6px}
+  .totals .row{display:flex;justify-content:space-between;align-items:baseline;
+    padding:7px 0;border-bottom:1px solid var(--cream-200);font-size:11.5px}
+  .totals .row b{font-weight:600}
+  .totals .row .v{font-weight:700}
+  .totals .iva{font-size:9.5px;color:var(--ink-600);margin-top:8px;line-height:1.5}
+  .terms li{font-size:10px;color:var(--ink-700);line-height:1.5;margin:0 0 6px 16px;
+    position:relative;list-style:none}
+  .terms li::before{content:"";position:absolute;left:-13px;top:6px;width:5px;height:5px;
+    background:var(--gold-600);border-radius:50%}
+
+  /* ---------- Tech credentials ---------- */
+  .tech{margin-top:18px;background:var(--cream-100);border:1px solid var(--cream-200);
+    border-radius:14px;padding:14px 18px}
+  .tech h3{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-700);
+    font-weight:700;margin-bottom:9px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px}
+  .chips span{font-size:9px;font-weight:500;color:var(--ink-700);background:var(--cream-50);
+    border:1px solid var(--cream-300);border-radius:999px;padding:3px 9px}
+
+  .foot{margin-top:auto;padding-top:14px;border-top:1px solid var(--cream-200);
+    display:flex;justify-content:space-between;align-items:center;font-size:9.5px;color:var(--ink-600)}
+  .foot b{color:var(--ink-900)}
+  .pageno{font-variant-numeric:tabular-nums}
+
+  .paybox{margin-top:10px;background:var(--cream-100);border:1px solid var(--cream-200);
+    border-radius:10px;padding:10px 13px;font-size:10px;color:var(--ink-700);line-height:1.7}
+  .paybox b{color:var(--ink-900)}
+  .legal{font-size:9px;color:var(--ink-600);line-height:1.55;margin-top:2px}
+  .sign{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:26px}
+  .sign>div{font-size:10px;color:var(--ink-700)}
+  .sign .cap{font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-600)}
+  .sign .line{height:36px;border-bottom:1px solid var(--ink-600);margin:4px 0 7px}
+
+  .addon{margin-top:12px;display:flex;justify-content:space-between;align-items:center;gap:18px;
+    background:var(--cream-100);border:1px solid var(--cream-200);border-left:3px solid var(--gold-600);
+    border-radius:10px;padding:11px 15px}
+  .addon b{color:var(--ink-900);font-size:11.5px}
+  .addon p{font-size:9.5px;color:var(--ink-600);line-height:1.5;margin-top:3px;max-width:64ch}
+  .addon-price{text-align:right;white-space:nowrap}
+  .addon-price .v{font-size:19px;font-weight:800;color:var(--green-900)}
+  .addon-price span{display:block;font-size:8px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink-600);margin-top:3px}
+
+  .print-bar{position:fixed;top:14px;right:16px;z-index:10}
+  .print-bar button{font-family:var(--font);font-size:12px;font-weight:600;cursor:pointer;
+    background:var(--green-900);color:var(--paper);border:0;border-radius:999px;padding:9px 18px;
+    box-shadow:0 8px 22px -8px oklch(0.22 0.04 165 / .6)}
+
+  @media print{
+    @page{size:A4;margin:0}
+    html,body{background:#fff}
+    body{padding:0;gap:0}
+    .print-bar{display:none}
+    .page{box-shadow:none;margin:0}
+  }
+</style>
+</head>
+<body>
+
+<div class="print-bar"><button onclick="window.print()">Descargar PDF</button></div>
+
+<!-- ============ PAGE 1 ============ -->
+<section class="page">
+  <header class="masthead">
+    <div>
+      <div class="brand-eyebrow">Presupuesto · QV-2026-001</div>
+      <div class="brand-name">Queen Vic Sports Bar</div>
+      <div class="brand-sub">Sitio web a medida optimizado para
+        <b style="color:var(--gold-400)">motores de IA (GEO)</b> — renderizado en servidor (SSR),
+        5 idiomas y contenido deportivo en vivo.</div>
+    </div>
+    <div class="seal"><b>40</b><span>Años</span></div>
+  </header>
+
+  <dl class="meta">
+    <div><dt>Cliente</dt><dd>Ryan — Queen Vic</dd></div>
+    <div><dt>Local</dt><dd>Lloret de Mar</dd></div>
+    <div><dt>Fecha</dt><dd class="num">16 · 06 · 2026</dd></div>
+    <div><dt>Validez</dt><dd>30 días</dd></div>
+  </dl>
+
+  <h2>Resumen</h2>
+  <p class="lead" style="max-width:none">Sitio web a medida con <b>enfoque GEO</b> (Generative Engine Optimization):
+    diseñado para que el Queen Vic aparezca en las respuestas de <b>ChatGPT, Perplexity, Google AI
+    y Gemini</b> cuando alguien pregunta dónde ver el partido en Lloret. Renderizado en servidor
+    (SSR), <b>10 páginas</b>, <b>5 idiomas</b> (EN/ES/CA/FR/NL), diseño propio "Heritage&nbsp;Audaz",
+    contenido deportivo en vivo —incluido el <b>Mundial 2026</b>— y formularios de contacto y
+    reservas. Rendimiento <b>Lighthouse 100 / 100 / 100</b>.</p>
+
+  <h2>Alcance y valor de mercado</h2>
+  <table>
+    <thead><tr><th>Bloque</th><th style="text-align:right">Valor</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><div class="scope-name">Web pública multiidioma (SSR)</div>
+          <div class="scope-detail">10 páginas · 5 idiomas · diseño a medida · <b>GEO: llms.txt,
+            datos estructurados JSON-LD, acceso para GPTBot/ClaudeBot/PerplexityBot, HTML semántico
+            SSR</b> · SEO clásico (sitemap hreflang, robots) · imágenes AVIF/WebP · Lighthouse 100</div></td>
+        <td class="price num">3.200&nbsp;€</td>
+      </tr>
+      <tr>
+        <td><div class="scope-name">Contenido deportivo dinámico</div>
+          <div class="scope-detail">Feed de eventos + Mundial 2026 en vivo · importación automática
+            desde TheSportsDB con auto-publicación · tareas programadas</div></td>
+        <td class="price num">1.200&nbsp;€</td>
+      </tr>
+      <tr>
+        <td><div class="scope-name">Formularios públicos</div>
+          <div class="scope-detail">Contacto + peticiones de reserva con consentimiento GDPR y
+            notificación por WhatsApp al local</div></td>
+        <td class="price num">500&nbsp;€</td>
+      </tr>
+      <tr>
+        <td><div class="scope-name">Infraestructura, seguridad y puesta en marcha</div>
+          <div class="scope-detail">SSR · CSP/Helmet · rate limiting · despliegue Replit + BD Neon ·
+            configuración de producción</div></td>
+        <td class="price num">700&nbsp;€</td>
+      </tr>
+      <tr class="total"><td>Valor de mercado total</td><td class="price num">5.600&nbsp;€</td></tr>
+    </tbody>
+  </table>
+
+  <div class="applied">
+    <div class="label">Precio aplicado</div>
+    <div class="strike"><s class="num">5.600&nbsp;€</s><em>Valor de mercado</em></div>
+    <div class="big"><span>Pago único</span>1.200&nbsp;€<span style="color:var(--gold-400)">Ahorro 4.400&nbsp;€</span></div>
+  </div>
+
+  <div class="foot">
+    <span><b>Dawson Webs</b> · Creación y mantenimiento de webs · dawsonwebs.com · ivanrd9@me.com</span>
+    <span class="pageno">1 / 3</span>
+  </div>
+</section>
+
+<!-- ============ PAGE 2 ============ -->
+<section class="page">
+  <h2 style="margin-top:0">Mantenimiento mensual — elige plan</h2>
+  <p class="lead" style="margin-bottom:6px">El sitio es <b>dinámico</b> (base de datos, tareas
+    automáticas de fixtures, formularios, datos en vivo): necesita supervisión continua para seguir
+    online, seguro y al día.</p>
+  <table class="plans">
+    <thead>
+      <tr>
+        <th class="feat">Servicio</th>
+        <th><div class="pname">Básico</div><div class="pprice num">40 €/mes</div></th>
+        <th><div class="pname alt">Completo</div><div class="pprice num">80 €/mes</div></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="feat">Dominio, HTTPS y hosting gestionado (Replit + Neon)</td><td class="c">✓</td><td class="c">✓</td></tr>
+      <tr><td class="feat">Monitorización (web, BD y crons de fixtures)</td><td class="c">✓</td><td class="c">✓</td></tr>
+      <tr><td class="feat">Parches de seguridad críticos + SSL</td><td class="c">✓</td><td class="c">✓</td></tr>
+      <tr><td class="feat">Copia de seguridad de la base de datos</td><td class="c">✓</td><td class="c">✓</td></tr>
+      <tr><td class="feat">Continuidad del feed deportivo en vivo</td><td class="c">✓</td><td class="c">✓</td></tr>
+      <tr><td class="feat">Soporte ante incidencias (WhatsApp)</td><td class="note">respuesta &lt; 48 h</td><td class="note">respuesta &lt; 12 h</td></tr>
+      <tr><td class="feat">Cambios de contenido (textos, fotos, horarios, precios)</td><td class="x">—</td><td class="note">~2 h/mes</td></tr>
+      <tr><td class="feat">Actualización proactiva de dependencias y mejoras</td><td class="x">—</td><td class="c">✓</td></tr>
+      <tr><td class="feat">Informe automatizado de visibilidad en IA (GEO)</td><td class="x">—</td><td class="note">trimestral</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:9.5px;color:var(--ink-600);margin-top:8px;line-height:1.5">
+    <b style="color:var(--gold-700)">Nota:</b> estas tarifas aplican al <b>sitio público actual</b>
+    (sin panel de administración). A medida que se activen e incorporen módulos del CRM
+    —ver ampliación futura—, el alcance del mantenimiento aumenta y la cuota mensual se revisará
+    al alza en consecuencia.</p>
+
+  <div class="grid2">
+    <div>
+      <h2>Totales</h2>
+      <div class="totals">
+        <div class="row"><b>Desarrollo del sitio público — pago único</b><span class="v num">1.200&nbsp;€</span></div>
+        <div class="row"><b>Mantenimiento — Básico</b><span class="v num">40&nbsp;€/mes</span></div>
+        <div class="row"><b>Mantenimiento — Completo</b><span class="v num">80&nbsp;€/mes</span></div>
+        <p class="iva">Importes sin IVA. Con 21 % IVA: pago único <b class="num">1.452 €</b> ·
+          mantenimiento <b class="num">48,40 €/mes</b> (Básico) · <b class="num">96,80 €/mes</b> (Completo).</p>
+      </div>
+    </div>
+    <div>
+      <h2>Condiciones</h2>
+      <ul class="terms">
+        <li>Pago: 50 % a la aceptación · 50 % a la publicación. Mantenimiento por adelantado.</li>
+        <li>Validez de la oferta: 30 días. Detalle de pago y datos en la página siguiente.</li>
+        <li>Garantía: 30 días de corrección de errores sin coste tras el lanzamiento.</li>
+        <li>El código y los contenidos pasan a ser propiedad del cliente liquidado el pago único.</li>
+        <li>Dominio, HTTPS y hosting incluidos en el mantenimiento.</li>
+        <li>Servicios externos opcionales (facturados aparte): clave Patreon de TheSportsDB
+          (~9 €/mes, listas completas de fixtures) · WhatsApp Business de Meta (coste mínimo por
+          conversación según volumen, con franja mensual gratuita) · APIs de IA del monitor GEO
+          (coste por ejecución).</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tech">
+    <h3>GEO + stack técnico</h3>
+    <div class="chips">
+      <span>GEO · llms.txt</span>
+      <span>Datos estructurados JSON-LD (BarOrPub + eventos)</span>
+      <span>Acceso a IA: GPTBot · ClaudeBot · PerplexityBot · Google-Extended</span>
+      <span>HTML semántico SSR (no SPA vacío)</span>
+      <span>i18n 5 idiomas (≈845 cadenas)</span>
+      <span>SEO · sitemap hreflang · robots</span>
+      <span>SSR · React + Express + TypeScript</span>
+      <span>PostgreSQL (Neon) + Drizzle ORM</span>
+      <span>TheSportsDB · sync automático</span>
+      <span>Tareas programadas (cron + advisory locks)</span>
+      <span>Helmet/CSP · rate limiting · sesiones</span>
+      <span>Imágenes AVIF/WebP · Tests Vitest + Playwright</span>
+      <span>Deploy Replit Autoscale</span>
+      <span>Lighthouse 100/100/100</span>
+    </div>
+  </div>
+
+  <p class="lead" style="font-size:10px;color:var(--ink-600);margin-top:14px">
+    <b>Ampliación futura (ya desarrollada):</b> panel de administración / CRM —leads con tablero
+    kanban y ficha detallada, eventos, reservas, campañas, dashboard y acceso por roles—.
+    Valor de mercado de referencia desde 8.000 €. Se presupuesta por separado al activarlo.</p>
+
+  <div class="foot">
+    <span><b>Dawson Webs</b> · dawsonwebs.com · presupuesto válido 30 días · <b>gracias</b></span>
+    <span class="pageno">2 / 3</span>
+  </div>
+</section>
+
+<!-- ============ PAGE 3 ============ -->
+<section class="page">
+  <h2 style="margin-top:0">Resumen de inversión — primer año</h2>
+  <table>
+    <thead><tr><th>Concepto</th><th style="text-align:right">Pago único</th><th style="text-align:right">Cuota anual</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><div class="scope-name">Desarrollo del sitio público</div>
+          <div class="scope-detail">Entrega completa, llave en mano (5 idiomas)</div></td>
+        <td class="price num">1.200&nbsp;€</td><td class="price num">—</td>
+      </tr>
+      <tr>
+        <td><div class="scope-name">Mantenimiento — Básico</div>
+          <div class="scope-detail">40 €/mes · dominio + HTTPS + hosting + monitorización + soporte</div></td>
+        <td class="price num">—</td><td class="price num">480&nbsp;€</td>
+      </tr>
+      <tr>
+        <td><div class="scope-name">Mantenimiento — Completo <span style="font-weight:400;color:var(--ink-600)">(alternativa)</span></div>
+          <div class="scope-detail">80 €/mes · lo anterior + cambios de contenido y mejoras</div></td>
+        <td class="price num">—</td><td class="price num">960&nbsp;€</td>
+      </tr>
+      <tr class="total"><td>Total primer año · con plan Básico</td>
+        <td class="price num">1.200&nbsp;€</td><td class="price num">480&nbsp;€</td></tr>
+    </tbody>
+  </table>
+  <p class="iva">Importes sin IVA. Con 21 % IVA (plan Básico): pago único <b class="num">1.452 €</b> ·
+    mantenimiento <b class="num">580,80 €/año</b> (<b class="num">48,40 €/mes</b>).</p>
+
+  <div class="addon">
+    <div>
+      <b>Add-on opcional · GEO Monitor automatizado</b>
+      <p>Consultas periódicas a Perplexity y Claude/OpenAI en los 5 idiomas, detección de menciones
+        y citas, histórico e informe automático por email/WhatsApp. El informe queda incluido en el
+        plan Completo. Requiere las APIs de IA como servicio externo (coste por ejecución).</p>
+    </div>
+    <div class="addon-price"><span class="v num">450&nbsp;€</span><span>pago único</span></div>
+  </div>
+
+  <div class="grid2">
+    <div>
+      <h2>Forma de pago</h2>
+      <ul class="terms">
+        <li>50 % a la aceptación del presupuesto y 50 % a la publicación en producción.</li>
+        <li>Mantenimiento por adelantado (mensual o trimestral) desde la entrega, por transferencia
+          o recibo bancario.</li>
+        <li>Renovación automática. Baja por escrito con 30 días de antelación antes del siguiente
+          vencimiento.</li>
+        <li>Validez de la oferta: 30 días. Cualquier cambio implica un nuevo presupuesto.</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Garantía y soporte</h2>
+      <ul class="terms">
+        <li>30 días de corrección de errores sin coste tras el lanzamiento.</li>
+        <li>Soporte continuo por WhatsApp mientras el mantenimiento esté activo.</li>
+        <li>Dominio, HTTPS y hosting de alto rendimiento con copias de seguridad incluidos en la
+          cuota mensual.</li>
+        <li>El código y los contenidos pasan a ser propiedad del cliente una vez liquidado el pago único.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Protección de datos</h2>
+  <p class="legal">En cumplimiento del Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018, de
+    5 de diciembre (LOPDGDD), le informamos de que los datos personales facilitados mediante el
+    presente documento serán tratados por <b>Dawson Webs</b> con la finalidad de gestionar esta
+    propuesta y la relación comercial derivada. Podrá ejercer los derechos de acceso, rectificación,
+    supresión, oposición y portabilidad escribiendo a <b>ivanrd9@me.com</b>. Los datos se conservarán
+    con carácter confidencial y no se cederán a terceros salvo obligación legal.</p>
+
+  <div class="sign">
+    <div><div class="cap">Por Dawson Webs</div><div class="line"></div>
+      <b>Dawson Webs</b> · 16/06/2026</div>
+    <div><div class="cap">Aceptación del cliente</div><div class="line"></div>
+      Queen Vic Sports Bar · Fecha y firma</div>
+  </div>
+
+  <div class="foot">
+    <span><b>Dawson Webs</b> · dawsonwebs.com · ivanrd9@me.com</span>
+    <span class="pageno">3 / 3</span>
+  </div>
+</section>
+
+</body>
+</html>
