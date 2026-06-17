@@ -62,7 +62,7 @@
   },
   "worldCup": {
     "title": "Waar kijk je het WK 2026 in Lloret de Mar",
-    "subtitle": "Elke wedstrijd op het reuzenscherm buiten, met 1.250 m² terras om te vieren. De beste WK-plek in Lloret, net als in 1986.",
+    "subtitle": "Elke wedstrijd op het grootste buitenscherm van Lloret, met 1.250 m² terras en plek voor 700+ fans. De beste WK-plek in Lloret, net als in 1986.",
     "facts": "104 wedstrijden · 48 teams · 39 dagen",
     "p1t": "Elke wedstrijd, op z'n groots",
     "p1b": "Van groepsfase tot finale op het grootste buitenscherm van de stad. Elke goal groter dan waar dan ook.",
@@ -78,7 +78,16 @@
     "tip3": "Groepen kunnen vooraf reserveren voor knock-outavonden. Gebruik de reserveringspagina.",
     "scheduleTitle": "Programma & uitslagen",
     "scheduleSub": "Elke wedstrijd, live",
-    "empty": "Wedstrijden verschijnen zodra ze bevestigd zijn. Kom terug of volg ons op Instagram."
+    "empty": "Wedstrijden verschijnen zodra ze bevestigd zijn. Kom terug of volg ons op Instagram.",
+    "faqTitle": "Vragen",
+    "faqHeading": "Waar kijk je het WK in Lloret de Mar",
+    "faq": [
+      { "q": "Waar kan ik het WK 2026 kijken in Lloret de Mar?", "a": "Bij Queen Vic Sports Bar, Carrer de la Costa de Carbonell 1. Elke WK-wedstrijd van 2026 is live te zien op het grootste buitenscherm van de stad, op een terras van 1.250 m² met plek voor 700+ fans." },
+      { "q": "Laat Queen Vic elke WK-wedstrijd zien?", "a": "Ja, alle WK-wedstrijden van 2026 live, met volledig Engels commentaar bij de grote wedstrijden." },
+      { "q": "Hoe laat opent Queen Vic op wedstrijddagen?", "a": "Dagelijks vanaf 19:00, en eerder bij grote wedstrijden. Bekijk de Programma-pagina voor het weekprogramma." },
+      { "q": "Moet ik een tafel reserveren voor het WK?", "a": "Voor grote wedstrijden en groepen raden we aan vooraf te reserveren. Reserveer via de reserveringspagina." },
+      { "q": "Hoeveel mensen kunnen er in Queen Vic?", "a": "700+ tussen de binnenbar en het buitenterras van 1.250 m², een van de grootste sportsbar-capaciteiten in Lloret de Mar." }
+    ]
   },
   "sportsBar": {
     "kicker": "De opstelling",

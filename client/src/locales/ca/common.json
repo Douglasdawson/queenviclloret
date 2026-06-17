@@ -62,7 +62,7 @@
   },
   "worldCup": {
     "title": "On veure el Mundial 2026 a Lloret de Mar",
-    "subtitle": "Tots els partits en pantalla gegant exterior, amb 1.250 m² de terrassa per celebrar-ho. El millor seient del Mundial a Lloret, igual que el 1986.",
+    "subtitle": "Tots els partits a la pantalla exterior més gran de Lloret, amb 1.250 m² de terrassa i aforament per a 700+ persones. El millor seient del Mundial a Lloret, igual que el 1986.",
     "facts": "104 partits · 48 seleccions · 39 dies",
     "p1t": "Tots els partits, a l'engròs",
     "p1b": "De la fase de grups a la final a la pantalla exterior més gran de la ciutat. Cada gol, més gran que enlloc.",
@@ -78,7 +78,16 @@
     "tip3": "Els grups poden reservar per a les nits d'eliminatòries. Fes servir la pàgina de reserves.",
     "scheduleTitle": "Calendari i resultats",
     "scheduleSub": "Cada partit, en directe",
-    "empty": "Els partits apareixen tan bon punt es confirmen. Torna aviat o segueix-nos a Instagram."
+    "empty": "Els partits apareixen tan bon punt es confirmen. Torna aviat o segueix-nos a Instagram.",
+    "faqTitle": "Preguntes",
+    "faqHeading": "On veure el Mundial a Lloret de Mar",
+    "faq": [
+      { "q": "On puc veure el Mundial 2026 a Lloret de Mar?", "a": "Al Queen Vic Sports Bar, Carrer de la Costa de Carbonell 1. Tots els partits del Mundial 2026 es veuen en directe a la pantalla exterior més gran de la ciutat, en una terrassa de 1.250 m² amb aforament per a 700+ persones." },
+      { "q": "El Queen Vic posa tots els partits del Mundial?", "a": "Sí, tots els partits del Mundial 2026 en directe, amb comentari íntegre en anglès als partits grans." },
+      { "q": "A quina hora obre el Queen Vic els dies de partit?", "a": "Cada dia des de les 19:00, i abans en els partits grans. Consulta la pàgina Què hi ha per al programa de la setmana." },
+      { "q": "Cal reservar taula per al Mundial?", "a": "Recomanem reservar amb antelació per als partits grans i els grups. Reserva des de la pàgina de reserves." },
+      { "q": "Quanta gent cap al Queen Vic?", "a": "700+ persones entre l'interior i la terrassa exterior de 1.250 m², un dels aforaments de sports bar més grans de Lloret de Mar." }
+    ]
   },
   "sportsBar": {
     "kicker": "El muntatge",

@@ -5,15 +5,20 @@ import { Picture } from "../components/Picture";
 import { FixtureTicket, groupByDay } from "../components/FixtureTicket";
 import { useWorldCupEvents } from "../hooks/useWorldCupEvents";
 import { usePageSeo } from "../seo/use-page-seo";
+import { useSite } from "../app/site-context";
+import { barOrPubLd, faqLd } from "../seo/jsonld";
 
 const TZ = "Europe/Madrid";
 
 export default function WorldCupPage() {
   const { t } = useTranslation();
+  const { siteUrl } = useSite();
+  const faq = t("worldCup.faq", { returnObjects: true }) as unknown as { q: string; a: string }[];
   usePageSeo({
     title: `${t("worldCup.title")} | Queen Vic`,
     description: t("worldCup.subtitle"),
     path: "/world-cup-2026",
+    jsonLd: [barOrPubLd(siteUrl), faqLd(faq)],
   });
 
   const { data: wcEvents } = useWorldCupEvents();
@@ -123,6 +128,30 @@ export default function WorldCupPage() {
               </li>
             ))}
           </ul>
+        </div>
+      </Container>
+
+      {/* GEO Q&A — answers the literal "where to watch the World Cup in Lloret" queries */}
+      <Container className="mt-20">
+        <Eyebrow onGreen>{t("worldCup.faqTitle")}</Eyebrow>
+        <h2 className="font-display text-3xl font-bold sm:text-4xl">{t("worldCup.faqHeading")}</h2>
+        <div className="mt-8 max-w-2xl divide-y divide-green-700">
+          {faq.map((item) => (
+            <details key={item.q} className="group py-5">
+              <summary className="flex cursor-pointer list-none items-baseline justify-between gap-4 font-display text-lg font-bold marker:hidden [&::-webkit-details-marker]:hidden">
+                {item.q}
+                <span
+                  aria-hidden="true"
+                  className="tnum select-none text-xl font-medium text-gold-400 transition-transform duration-200 group-open:rotate-45 motion-reduce:transition-none"
+                >
+                  +
+                </span>
+              </summary>
+              <p className="mt-2.5 max-w-xl text-[0.9375rem] leading-relaxed text-paper-dim">
+                {item.a}
+              </p>
+            </details>
+          ))}
         </div>
       </Container>
     </Section>

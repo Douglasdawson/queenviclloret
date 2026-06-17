@@ -62,7 +62,7 @@
   },
   "worldCup": {
     "title": "Watch World Cup 2026 in Lloret de Mar",
-    "subtitle": "Every match on the giant outdoor screen, with 1,250 m² of terrace to celebrate on. The best World Cup seat in Lloret, same as 1986.",
+    "subtitle": "Every match on Lloret's biggest outdoor screen, with a 1,250 m² terrace and room for 700+ fans. The best World Cup seat in Lloret, same as 1986.",
     "facts": "104 matches · 48 teams · 39 days",
     "p1t": "Every match, the big way",
     "p1b": "Group stage to final on the biggest outdoor screen in town. Every goal bigger than anywhere else.",
@@ -78,7 +78,16 @@
     "tip3": "Groups can reserve ahead for knockout nights. Use the reservations page.",
     "scheduleTitle": "Schedule & results",
     "scheduleSub": "Every match, kept live",
-    "empty": "Fixtures appear as soon as they're confirmed. Check back, or follow us on Instagram."
+    "empty": "Fixtures appear as soon as they're confirmed. Check back, or follow us on Instagram.",
+    "faqTitle": "Questions",
+    "faqHeading": "Where to watch the World Cup in Lloret",
+    "faq": [
+      { "q": "Where can I watch the World Cup 2026 in Lloret de Mar?", "a": "At Queen Vic Sports Bar, Carrer de la Costa de Carbonell 1. Every FIFA World Cup 2026 match is shown live on the biggest outdoor screen in town, on a 1,250 m² terrace with room for 700+ fans." },
+      { "q": "Does Queen Vic show every World Cup match?", "a": "Yes — all FIFA World Cup 2026 matches, live, with full English commentary on the major fixtures." },
+      { "q": "What time does Queen Vic open on match days?", "a": "Daily from 19:00, and earlier on big match days. Check What's On for the weekly programme." },
+      { "q": "Do I need to book a table for the World Cup?", "a": "Booking ahead is recommended for big match days and groups. Reserve via the reservations page." },
+      { "q": "How many people does Queen Vic hold?", "a": "700+ across the indoor bar and the 1,250 m² outdoor terrace — one of the largest sports-bar capacities in Lloret de Mar." }
+    ]
   },
   "sportsBar": {
     "kicker": "The setup",

@@ -5,6 +5,14 @@ import { faqLd } from "../seo/jsonld";
 
 const FAQ = [
   {
+    q: "Where can I watch the World Cup 2026 in Lloret de Mar?",
+    a: "Right here at Queen Vic. Every FIFA World Cup 2026 match is shown live on the biggest outdoor screen in town, on our 1,250 m² terrace with room for 700+ fans.",
+  },
+  {
+    q: "How many people does Queen Vic hold?",
+    a: "700+ across the bar and the 1,250 m² outdoor terrace — one of the largest sports-bar capacities in Lloret de Mar.",
+  },
+  {
     q: "What time do you open?",
     a: "Daily from 19:00 till 03:00, and earlier on big match days. Check our Instagram and Facebook for this week's programme.",
   },

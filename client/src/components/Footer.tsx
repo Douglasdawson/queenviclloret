@@ -1,9 +1,10 @@
 import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
+import { VENUE } from "@shared/venue";
 import { Container, LaurelSeal } from "./ui";
 
 const SOCIAL = [
-  { href: "https://maps.google.com/?q=Queen+Vic+Sports+Bar+Lloret+de+Mar", label: "Google Maps" },
+  { href: VENUE.mapUrl, label: "Google Maps" },
   { href: "https://www.instagram.com/queenviclloret/", label: "Instagram" },
   { href: "https://www.facebook.com/QueenVicLloretdemar/", label: "Facebook" },
   {
@@ -33,17 +34,22 @@ export function Footer() {
           <address className="mt-4 space-y-1 text-sm not-italic text-paper-dim">
             <p>
               <a
-                href="https://maps.google.com/?q=Queen+Vic+Sports+Bar+Lloret+de+Mar"
+                href={VENUE.mapUrl}
                 rel="noopener noreferrer"
                 className="transition-colors hover:text-gold-400"
               >
-                Carrer de la Costa de Carbonell, 1
+                {VENUE.address.streetAddress}
               </a>
             </p>
-            <p>17310 Lloret de Mar · Costa Brava</p>
             <p>
-              <a href="tel:+34674461220" className="tnum transition-colors hover:text-gold-400">
-                +34 674 46 12 20
+              {VENUE.address.postalCode} {VENUE.address.addressLocality} · Costa Brava
+            </p>
+            <p>
+              <a
+                href={`tel:${VENUE.phoneE164}`}
+                className="tnum transition-colors hover:text-gold-400"
+              >
+                {VENUE.phoneDisplay}
               </a>
             </p>
             <p className="tnum pt-1 text-paper-dim/90">{t("footer.hours")}</p>

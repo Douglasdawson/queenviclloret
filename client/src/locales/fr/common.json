@@ -62,7 +62,7 @@
   },
   "worldCup": {
     "title": "Où regarder la Coupe du Monde 2026 à Lloret de Mar",
-    "subtitle": "Chaque match sur écran géant extérieur, avec 1 250 m² de terrasse pour fêter ça. La meilleure place de la Coupe du Monde à Lloret, comme en 1986.",
+    "subtitle": "Chaque match sur le plus grand écran extérieur de Lloret, avec 1 250 m² de terrasse et de la place pour 700+ personnes. La meilleure place de la Coupe du Monde à Lloret, comme en 1986.",
     "facts": "104 matchs · 48 équipes · 39 jours",
     "p1t": "Chaque match, en grand",
     "p1b": "De la phase de groupes à la finale sur le plus grand écran extérieur de la ville. Chaque but, plus grand que nulle part ailleurs.",
@@ -78,7 +78,16 @@
     "tip3": "Les groupes peuvent réserver pour les soirées à élimination directe. Passez par la page réservations.",
     "scheduleTitle": "Calendrier et résultats",
     "scheduleSub": "Chaque match, en direct",
-    "empty": "Les matchs s'affichent dès qu'ils sont confirmés. Revenez bientôt ou suivez-nous sur Instagram."
+    "empty": "Les matchs s'affichent dès qu'ils sont confirmés. Revenez bientôt ou suivez-nous sur Instagram.",
+    "faqTitle": "Questions",
+    "faqHeading": "Où regarder la Coupe du Monde à Lloret de Mar",
+    "faq": [
+      { "q": "Où puis-je regarder la Coupe du Monde 2026 à Lloret de Mar ?", "a": "Au Queen Vic Sports Bar, Carrer de la Costa de Carbonell 1. Chaque match de la Coupe du Monde 2026 est diffusé en direct sur le plus grand écran extérieur de la ville, sur une terrasse de 1 250 m² pouvant accueillir 700+ personnes." },
+      { "q": "Le Queen Vic diffuse-t-il tous les matchs de la Coupe du Monde ?", "a": "Oui, tous les matchs de la Coupe du Monde 2026 en direct, avec commentaire intégral en anglais sur les grandes affiches." },
+      { "q": "À quelle heure ouvre le Queen Vic les jours de match ?", "a": "Tous les jours dès 19h00, et plus tôt pour les grandes affiches. Consultez la page Au programme pour le programme de la semaine." },
+      { "q": "Faut-il réserver une table pour la Coupe du Monde ?", "a": "Nous recommandons de réserver à l'avance pour les grandes affiches et les groupes. Réservez via la page réservations." },
+      { "q": "Combien de personnes le Queen Vic peut-il accueillir ?", "a": "700+ personnes entre l'intérieur et la terrasse extérieure de 1 250 m², l'une des plus grandes capacités de sports bar à Lloret de Mar." }
+    ]
   },
   "sportsBar": {
     "kicker": "L'installation",
