@@ -344,7 +344,7 @@ const ACCESSIBILITY: Record<Locale, LegalDoc> = {
     sections: [
       { h: "Our commitment", p: "We design and build the site to be perceivable, operable and understandable: semantic structure, keyboard navigation, sufficient colour contrast and text alternatives for images." },
       { h: "Conformance status", p: "The site targets WCAG 2.2 level AA. Automated mobile accessibility checks currently score 100/100, and we review accessibility as part of each significant change." },
-      { h: "Feedback", p: `If you find a barrier or have trouble using any part of the site, tell us via the contact form or at ${L.contactEmail} and we will do our best to fix it.` },
+      { h: "Feedback", p: `If you find a barrier or have trouble using any part of the site, tell us via the contact form or at ${L.commercialEmail} and we will do our best to fix it.` },
       { h: "Last reviewed", p: `This statement was last reviewed on ${UPDATED}.` },
     ],
   },
@@ -356,7 +356,7 @@ const ACCESSIBILITY: Record<Locale, LegalDoc> = {
     sections: [
       { h: "Nuestro compromiso", p: "Diseñamos y construimos el sitio para que sea perceptible, operable y comprensible: estructura semántica, navegación por teclado, contraste de color suficiente y alternativas de texto para las imágenes." },
       { h: "Grado de conformidad", p: "El sitio tiene como objetivo el nivel AA de las WCAG 2.2. Las comprobaciones automáticas de accesibilidad móvil obtienen actualmente 100/100, y revisamos la accesibilidad en cada cambio significativo." },
-      { h: "Contacto", p: `Si detectas una barrera o tienes dificultades para usar alguna parte del sitio, comunícanoslo mediante el formulario de contacto o en ${L.contactEmail} y haremos lo posible por solucionarlo.` },
+      { h: "Contacto", p: `Si detectas una barrera o tienes dificultades para usar alguna parte del sitio, comunícanoslo mediante el formulario de contacto o en ${L.commercialEmail} y haremos lo posible por solucionarlo.` },
       { h: "Última revisión", p: `Esta declaración se revisó por última vez el ${UPDATED}.` },
     ],
   },
@@ -368,7 +368,7 @@ const ACCESSIBILITY: Record<Locale, LegalDoc> = {
     sections: [
       { h: "El nostre compromís", p: "Dissenyem i construïm el lloc perquè sigui perceptible, operable i comprensible: estructura semàntica, navegació per teclat, contrast de color suficient i alternatives de text per a les imatges." },
       { h: "Grau de conformitat", p: "El lloc té com a objectiu el nivell AA de les WCAG 2.2. Les comprovacions automàtiques d'accessibilitat mòbil obtenen actualment 100/100, i revisem l'accessibilitat a cada canvi significatiu." },
-      { h: "Contacte", p: `Si detectes una barrera o tens dificultats per usar alguna part del lloc, comunica-ho mitjançant el formulari de contacte o a ${L.contactEmail} i farem el possible per solucionar-ho.` },
+      { h: "Contacte", p: `Si detectes una barrera o tens dificultats per usar alguna part del lloc, comunica-ho mitjançant el formulari de contacte o a ${L.commercialEmail} i farem el possible per solucionar-ho.` },
       { h: "Última revisió", p: `Aquesta declaració es va revisar per última vegada el ${UPDATED}.` },
     ],
   },
@@ -380,7 +380,7 @@ const ACCESSIBILITY: Record<Locale, LegalDoc> = {
     sections: [
       { h: "Notre engagement", p: "Nous concevons et développons le site pour qu'il soit perceptible, utilisable et compréhensible : structure sémantique, navigation au clavier, contraste de couleur suffisant et alternatives textuelles pour les images." },
       { h: "Niveau de conformité", p: "Le site vise le niveau AA des WCAG 2.2. Les contrôles automatiques d'accessibilité mobile obtiennent actuellement 100/100, et nous examinons l'accessibilité à chaque changement important." },
-      { h: "Retour", p: `Si vous rencontrez un obstacle ou des difficultés à utiliser une partie du site, signalez-le via le formulaire de contact ou à ${L.contactEmail} et nous ferons de notre mieux pour le corriger.` },
+      { h: "Retour", p: `Si vous rencontrez un obstacle ou des difficultés à utiliser une partie du site, signalez-le via le formulaire de contact ou à ${L.commercialEmail} et nous ferons de notre mieux pour le corriger.` },
       { h: "Dernière révision", p: `Cette déclaration a été révisée pour la dernière fois le ${UPDATED}.` },
     ],
   },
@@ -392,7 +392,7 @@ const ACCESSIBILITY: Record<Locale, LegalDoc> = {
     sections: [
       { h: "Onze toezegging", p: "We ontwerpen en bouwen de site zodat deze waarneembaar, bedienbaar en begrijpelijk is: semantische structuur, toetsenbordnavigatie, voldoende kleurcontrast en tekstalternatieven voor afbeeldingen." },
       { h: "Mate van conformiteit", p: "De site streeft naar WCAG 2.2 niveau AA. Geautomatiseerde mobiele toegankelijkheidscontroles scoren momenteel 100/100, en we beoordelen de toegankelijkheid bij elke belangrijke wijziging." },
-      { h: "Feedback", p: `Als u een drempel ervaart of moeite hebt met een deel van de site, laat het ons weten via het contactformulier of op ${L.contactEmail}, dan doen we ons best om het op te lossen.` },
+      { h: "Feedback", p: `Als u een drempel ervaart of moeite hebt met een deel van de site, laat het ons weten via het contactformulier of op ${L.commercialEmail}, dan doen we ons best om het op te lossen.` },
       { h: "Laatst herzien", p: `Deze verklaring is voor het laatst herzien op ${UPDATED}.` },
     ],
   },

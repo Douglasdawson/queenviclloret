@@ -49,17 +49,17 @@ export const VENUE = {
   images: ["/images/terrace-dusk-1280.webp", "/images/terrace-night-1280.webp"],
 
   // Fiscal/legal identity for the Aviso Legal (LSSI-CE) + legal notices.
-  // ⚠️ PLACEHOLDERS — Ryan must provide the real values before publishing. An Aviso
-  // Legal is not valid without the titular's tax ID and legal name.
+  // Provided by the owner (TURALIA SL) on 2026-06-19.
   legal: {
-    businessName: "[RAZÓN SOCIAL / NOMBRE COMPLETO DEL TITULAR]",
-    tradeName: "Queen Vic Sports Bar",
-    taxId: "[NIF/CIF]",
-    legalForm: "[Autónomo / S.L. / S.L.U.]",
-    // Registered office — confirm whether it differs from the operating address above.
-    registeredAddress: "Carrer de la Costa de Carbonell 1, 17310 Lloret de Mar, Girona, España",
-    contactEmail: "hello@queenviclloret.es",
-    // Production host — confirm Replit vs. LucusHost before publishing.
+    businessName: "TURALIA SL",
+    tradeName: "Queen Vic Terrace Bar",
+    taxId: "B17113374",
+    legalForm: "Sociedad Limitada (S.L.)",
+    // Registered (fiscal) office — differs from the establishment address (VENUE.address).
+    registeredAddress: "Paseo Agustí Font 12, 17310 Lloret de Mar, Girona, España",
+    contactEmail: "administracion@turalia.org", // legal / data-protection contact
+    commercialEmail: "queenviclloret@gmail.com", // customer-facing contact
+    // DNS is at LucusHost; the site itself is served by Replit.
     hostingProvider: "Replit, Inc. (https://replit.com)",
   },
 } as const;
