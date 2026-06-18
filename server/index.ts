@@ -62,6 +62,19 @@ async function bootstrap() {
 
   app.use(compression());
 
+  // 2b. Canonical host: 301 www.* → apex (and force https), preserving path + query.
+  // Domain-agnostic (works for .es or .com); strips only a leading "www.". No-op on
+  // localhost (dev/e2e) and for apex hosts, so it can never loop. Runs before SEO/api/SSR
+  // so every route is canonicalized; relies on `trust proxy` for the original Host.
+  app.use((req, res, next) => {
+    const host = (req.headers.host ?? "").toLowerCase();
+    if (host.startsWith("www.")) {
+      res.redirect(301, `https://${host.slice(4)}${req.originalUrl}`);
+      return;
+    }
+    next();
+  });
+
   // 3. SEO endpoints (served as-is, no locale prefix)
   app.use(seoRouter);
 
