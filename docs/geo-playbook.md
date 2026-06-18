@@ -126,11 +126,19 @@ La IA y Google AI Overviews tiran masivamente de la ficha de Google para consult
       equipos `team/{england|spain×2|brazil}`, partidos `england-vs-ghana` (es/en) y
       `brazil-vs-haiti`. *(La herramienta bulk "Submit URLs" aún no estaba activa por sitio recién
       verificado; Request indexing hace lo mismo.)*
-- [ ] **Google Search Console** *(siguiente paso)*: verificar `queenviclloret.es`. Lo más limpio =
-      **TXT en la misma zona DNS del cPanel** (igual que el CNAME de Bing). Luego enviar
-      `sitemap.xml` e *Inspección de URL* de las páginas top. Bonus: una vez GSC verificado, Bing
-      permite *Import from GSC*. *(Nota: el commit `2012901` ya añade el meta-tag de verificación
-      GSC como método alternativo, pero requiere Republish — el método DNS no.)*
+- [x] **Google Search Console** ✅ *(19/06/2026)* — propiedad **prefijo de URL**
+      `https://queenviclloret.es` **verificada** por **meta-tag HTML** (commit `2012901`:
+      env `GSC_VERIFICATION` → `<meta name="google-site-verification">` en todas las páginas).
+      `sitemap.xml` enviado (estado **Correcto**, 235 páginas descubiertas). *Inspección de URL +
+      Solicitar indexación* de `/es`, `/es/world-cup-2026`, `/en/world-cup-2026`. ⚠️ Cuenta usada:
+      **`ivanramirezdawson@gmail.com`** (distinta de la de Bing `queenviclloret@gmail.com`).
+      Bonus pendiente: *Import from GSC* en Bing. *(Se usó meta-tag, no DNS TXT: el meta ya estaba
+      desplegado y la verificación fue inmediata.)*
+- [x] **Google Analytics 4** ✅ *(19/06/2026)* — propiedad "Queen Vic Lloret" (`G-RB2T3WBR6X`,
+      Europe/Madrid · EUR) bajo `ivanramirezdawson@gmail.com`. gtag.js **gated por consentimiento**
+      (`qv.consent === "all"`), solo en prod, nunca en `/admin` (commit `2012901`, env
+      `GA4_MEASUREMENT_ID`). ⚠️ Login a consolas Google **bloqueado en el navegador automatizado**
+      ("navegador no seguro") → el alta se hizo con prompts de **Claude para Chrome**.
 - El `sitemap.xml` ya incluye estas URLs con `<lastmod>` (señal de frescura) — solo hay que
   reenviarlo en Bing/GSC tras cada redeploy que cambie fixtures.
 
