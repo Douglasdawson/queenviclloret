@@ -7,6 +7,7 @@ import { env, isProd } from "../env";
 import { cacheGet, cacheSet, TTL } from "../cache";
 import { buildDocument, type RenderedDoc } from "./html-template";
 import * as eventsDao from "../dao/events.dao";
+import { logger } from "../lib/logger";
 import { DEFAULT_LOCALE, LOCALES, type Locale } from "@shared/enums";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -54,10 +55,20 @@ export function createSsrHandler(vite: ViteDevServer | null) {
 
       if (!rendered || !template) {
         // Server-side data the public pages need (cheap + cached at DAO level).
-        const [events, worldCup] = await Promise.all([
-          eventsDao.listPublicUpcoming(50),
-          eventsDao.listWorldCup(),
-        ]);
+        // Degrade gracefully: a transient DB hiccup (cold start, connection
+        // limit, network blip) must NOT turn the whole public site into a blank
+        // 500. Render with no fixtures instead — every page handles an empty
+        // list — and log it loudly so the outage is still visible.
+        let events: Awaited<ReturnType<typeof eventsDao.listPublicUpcoming>> = [];
+        let worldCup: Awaited<ReturnType<typeof eventsDao.listWorldCup>> = [];
+        try {
+          [events, worldCup] = await Promise.all([
+            eventsDao.listPublicUpcoming(50),
+            eventsDao.listWorldCup(),
+          ]);
+        } catch (err) {
+          logger.error({ err, url }, "[ssr] fixture fetch failed — rendering page without fixtures");
+        }
         const initialData = { events, worldCup };
 
         let render: RenderFn;
