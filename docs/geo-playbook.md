@@ -34,25 +34,31 @@ Orden de impacto para un local en buscadores de IA (aprox., síntesis de la inve
 
 | Palanca | Peso aprox. | Estado hoy |
 |---|---|---|
-| **Bing indexado** (alimenta ChatGPT) | *gating* | ❓ sin verificar → **si no estás en Bing, ChatGPT no te cita** |
-| **Google Business Profile** completo | ~30% | ⚠️ incompleto |
+| **Bing indexado** (alimenta ChatGPT) | *gating* | ✅ **verificado 18/06** (CNAME) + sitemap enviado + 13 URLs a indexar (ver §3) |
+| **Google Business Profile** completo | ~30% | ✅ optimizado 18/06 (categoría/tel/horario/desc/post); falta web + fotos |
 | **Reseñas** (volumen + recientes + responder) | ~20% | ⚠️ pocas vs Piccadilly/El Pirata |
 | **Citas externas + NAP consistente** (TripAdvisor, Yelp, Reddit) | ~15% | 🔴 teléfono mal en Yelp |
-| **On-site** (schema, contenido, FAQ, llms.txt) | ~25–30% | ✅ hecho (2 rondas) |
+| **On-site** (schema, contenido, FAQ, llms.txt) | ~25–30% | ✅ hecho (2 rondas + fixtures reales + llms.txt dinámico) |
 
-**Conclusión:** el on-site ya está. Las 4 primeras filas son tuyas (Ryan) y son lo decisivo.
-Empieza por **Bing + GBP + corregir el teléfono de Yelp** esta semana.
+**Conclusión:** el on-site ya está y Bing está verificado. Quedan **Google Search Console**,
+las **reseñas** y **corregir el teléfono de Yelp** (filas de Ryan), que son lo decisivo.
 
 ---
 
-## 1. Desplegar (hecho a medias)
-- ✅ Cambios en `main` (`3c09156`).
-- 🔴 **Verificado 18/06/2026: `queenviclloret.com` da 404 — el sitio nuevo NO está desplegado.**
-  La web viva sigue siendo la antigua de WordPress en `queenviclloret.es` (200). Hasta desplegar,
-  **no apuntar el GBP ni los directorios a .com** (enlazaría a una página rota).
-- ⏳ **Tú:** Replit → Pull → Deployments → Redeploy. Decidir dominio definitivo (.com vs .es) y 301s.
-- Tras desplegar, comprobar en producción: `/_robots.txt_`, `/llms.txt`, y la ficha de
-  `/en/world-cup-2026` (debe contener el JSON-LD BarOrPub + FAQPage).
+## 1. Desplegar — ✅ vivo en `queenviclloret.es`
+- ✅ **Corregido 18/06/2026: el sitio nuevo (SSR) ESTÁ vivo en `queenviclloret.es`**, servido
+  por **Replit** (no WordPress). El dominio definitivo es **`.es` sin www** (`queenviclloret.com`
+  no está desplegado — da 404; no usar). DNS en LucusHost; apex → IP de Replit. Ver memoria
+  `queenvic-deploy-domain`.
+- ✅ En producción ya responden: `/robots.txt` (con bots de IA), `/sitemap.xml` (**105 URLs** de
+  partido + equipos + deportes, con `<lastmod>`), `/llms.txt`, y las fichas `/{lang}/world-cup-2026`
+  + páginas por partido (`SportsEvent` JSON-LD) gracias a los **155 fixtures** importados.
+- ⚠️ **`PUBLIC_BASE_URL=https://queenviclloret.es` debe estar en los Secrets de Replit** o todo el
+  SEO/GEO emite `localhost`.
+- ⏳ **Pendiente de Republish en Replit** (el push a GitHub no despliega solo): `llms.txt` dinámico
+  con los partidos reales + `ItemList` del hub (`786fe1f`) y **GA4 + meta de verificación GSC**
+  (`2012901`). Hasta el Republish, el `llms.txt` vivo aún muestra el placeholder genérico.
+- Flujo: Replit → Git tab → Pull → Deployments → Redeploy.
 
 ---
 
@@ -110,16 +116,23 @@ La IA y Google AI Overviews tiran masivamente de la ficha de Google para consult
 
 ---
 
-## 3. Indexación rápida (Bing alimenta ChatGPT) — **empieza por aquí**
-- [ ] **Bing Webmaster Tools** (gating de ChatGPT): verificar, enviar `sitemap.xml`, *Submit
-      URLs*. **Si no estás indexado en Bing, ChatGPT no te puede citar.**
-- [ ] **Google Search Console**: verificar dominio, enviar `sitemap.xml`, *Inspección de URL*.
-- [ ] Solicitar indexación de las páginas nuevas de alto valor (en `/en` y un par de locales):
-      - `/world-cup-2026` y partidos clave `/world-cup-2026/{equipo-v-equipo}`
-      - equipos `/world-cup-2026/team/{england|spain|netherlands|france}`
-      - deportes evergreen `/watch/{premier-league|formula-1|motogp|rugby-league}`
+## 3. Indexación rápida (Bing alimenta ChatGPT)
+- [x] **Bing Webmaster Tools** ✅ *(18/06/2026)* — verificado con la cuenta Google
+      `queenviclloret@gmail.com`. **Método CNAME** (sin tocar código ni depender del deploy):
+      `d7574e70ecbf7d47faa322ecb014b8fc.queenviclloret.es → verify.bing.com.`, añadido en la
+      **zona DNS del cPanel** del hosting (no en el panel WHMCS — ver §1 / memoria). `sitemap.xml`
+      enviado. **13 URLs forzadas a indexar** vía *URL Inspection → Request indexing* (cuota
+      100/día): hubs `/es` + `/en` de `/world-cup-2026`, home `/es` `/en`, `/es/whats-on`,
+      equipos `team/{england|spain×2|brazil}`, partidos `england-vs-ghana` (es/en) y
+      `brazil-vs-haiti`. *(La herramienta bulk "Submit URLs" aún no estaba activa por sitio recién
+      verificado; Request indexing hace lo mismo.)*
+- [ ] **Google Search Console** *(siguiente paso)*: verificar `queenviclloret.es`. Lo más limpio =
+      **TXT en la misma zona DNS del cPanel** (igual que el CNAME de Bing). Luego enviar
+      `sitemap.xml` e *Inspección de URL* de las páginas top. Bonus: una vez GSC verificado, Bing
+      permite *Import from GSC*. *(Nota: el commit `2012901` ya añade el meta-tag de verificación
+      GSC como método alternativo, pero requiere Republish — el método DNS no.)*
 - El `sitemap.xml` ya incluye estas URLs con `<lastmod>` (señal de frescura) — solo hay que
-  reenviarlo tras cada redeploy.
+  reenviarlo en Bing/GSC tras cada redeploy que cambie fixtures.
 
 ---
 
