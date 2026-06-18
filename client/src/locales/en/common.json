@@ -198,5 +198,46 @@
     "title": "Ball's gone over the fence",
     "body": "That page doesn't exist. Back to the terrace, the match is still on.",
     "cta": "Back home"
+  },
+  "wcMatch": {
+    "eyebrow": "World Cup 2026 · Where to watch",
+    "h1": "Where to watch {{home}} v {{away}} in Lloret de Mar",
+    "lead": "Watch {{home}} v {{away}} live at Queen Vic — on Lloret's biggest outdoor screen, a 1,250 m² terrace with room for 700+ fans and full English commentary on the big games.",
+    "kickoff": "Kick-off {{date}} at {{time}}, Lloret de Mar time · {{commentary}}",
+    "metaTitle": "{{home}} v {{away}} — Watch in Lloret de Mar | Queen Vic",
+    "metaDescription": "Where to watch {{home}} v {{away}} at the World Cup 2026 in Lloret de Mar: live on the biggest outdoor screen at Queen Vic Sports Bar, terrace for 700+.",
+    "followSub": "Following one of these teams?",
+    "followTeam": "All {{team}} matches",
+    "otherTodaySub": "Same day",
+    "otherToday": "Other matches today",
+    "faqHeading": "{{home}} v {{away}} — your questions",
+    "backToHub": "All World Cup fixtures",
+    "notFoundTitle": "We couldn't find that match",
+    "notFoundBody": "That fixture isn't on our schedule. See the full World Cup programme and find your match.",
+    "faq": [
+      { "q": "Where can I watch {{home}} v {{away}} in Lloret de Mar?", "a": "At Queen Vic Sports Bar, Carrer de la Costa de Carbonell 1. The match is live on the biggest outdoor screen in town, on a 1,250 m² terrace with room for 700+ fans." },
+      { "q": "What time is {{home}} v {{away}}?", "a": "Kick-off is {{date}} at {{time}}, Lloret de Mar time, with {{commentary}}. Doors open daily from 19:00, earlier on big match days." },
+      { "q": "Do I need to book for {{home}} v {{away}}?", "a": "Booking ahead is recommended for big fixtures and groups. Reserve via the reservations page; otherwise it's first come, first served." }
+    ]
+  },
+  "wcTeam": {
+    "eyebrow": "World Cup 2026 · Where to watch",
+    "hubSub": "Follow your nation",
+    "hubTitle": "Where to watch your team in Lloret",
+    "h1": "Where to watch {{team}} in Lloret de Mar",
+    "lead": "Every {{team}} match at the World Cup 2026, live at Queen Vic — Lloret's biggest outdoor screen, a 1,250 m² terrace for 700+ fans, with full English commentary on the big games.",
+    "nextFixture": "Next up: {{match}} · {{date}} at {{time}}, Lloret de Mar time",
+    "metaTitle": "Watch {{team}} in Lloret de Mar — World Cup 2026 | Queen Vic",
+    "metaDescription": "Where to watch {{team}} at the World Cup 2026 in Lloret de Mar: every match live on the biggest outdoor screen at Queen Vic Sports Bar, terrace for 700+.",
+    "scheduleSub": "{{team}} at the World Cup",
+    "scheduleTitle": "Fixtures & results",
+    "faqHeading": "Watching {{team}} — your questions",
+    "notFoundTitle": "We couldn't find that team",
+    "notFoundBody": "That team isn't on our World Cup schedule. See the full programme and find your nation.",
+    "faq": [
+      { "q": "Where can I watch {{team}} in Lloret de Mar?", "a": "At Queen Vic Sports Bar. Every {{team}} match is shown live on the biggest outdoor screen in town, on a 1,250 m² terrace with room for 700+ fans." },
+      { "q": "Does Queen Vic show every {{team}} match?", "a": "Yes — every {{team}} fixture at the World Cup 2026, live, with full English commentary on the major games." },
+      { "q": "Do I need to book to watch {{team}}?", "a": "For big {{team}} matches and groups we recommend booking ahead via the reservations page. Otherwise it's first come, first served." }
+    ]
   }
 }

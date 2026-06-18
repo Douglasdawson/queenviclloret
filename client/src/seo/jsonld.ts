@@ -62,9 +62,12 @@ export interface EventLdInput {
   endsAt?: string | Date | null;
   slug: string;
   description?: string | null;
+  /** Path (without locale prefix) the event is canonically reachable at. */
+  urlPath?: string;
 }
 
 export function eventLd(siteUrl: string, locale: string, e: EventLdInput) {
+  const path = e.urlPath ?? `/events/${e.slug}`;
   return {
     "@context": "https://schema.org",
     "@type": "Event",
@@ -74,7 +77,46 @@ export function eventLd(siteUrl: string, locale: string, e: EventLdInput) {
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     eventStatus: "https://schema.org/EventScheduled",
     description: e.description ?? undefined,
-    url: `${siteUrl}/${locale}/events/${e.slug}`,
+    url: `${siteUrl}/${locale}${path}`,
+    location: { "@id": `${siteUrl}/#business` },
+    organizer: { "@id": `${siteUrl}/#business` },
+  };
+}
+
+export interface MatchLdInput {
+  home: string;
+  away: string;
+  startsAt: string | Date;
+  endsAt?: string | Date | null;
+  slug: string;
+  description?: string;
+}
+
+/**
+ * A World Cup fixture as a SportsEvent that takes place — for viewing — at the
+ * venue (`location` → the BarOrPub entity). This is the strongest structured
+ * signal for "where to watch {Home} v {Away} in Lloret de Mar" queries.
+ */
+export function matchEventLd(siteUrl: string, locale: string, e: MatchLdInput) {
+  const name = `${e.home} v ${e.away}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    name,
+    sport: "Association football",
+    startDate: new Date(e.startsAt).toISOString(),
+    ...(e.endsAt ? { endDate: new Date(e.endsAt).toISOString() } : {}),
+    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+    eventStatus: "https://schema.org/EventScheduled",
+    competitor: [
+      { "@type": "SportsTeam", name: e.home },
+      { "@type": "SportsTeam", name: e.away },
+    ],
+    superEvent: { "@type": "SportsEvent", name: "FIFA World Cup 2026" },
+    description:
+      e.description ??
+      `Watch ${name} live at Queen Vic Sports Bar in Lloret de Mar — on the biggest outdoor screen in town, a 1,250 m² terrace with room for 700+ fans.`,
+    url: `${siteUrl}/${locale}/world-cup-2026/${e.slug}`,
     location: { "@id": `${siteUrl}/#business` },
     organizer: { "@id": `${siteUrl}/#business` },
   };

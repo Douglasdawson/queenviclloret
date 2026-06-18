@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "wouter";
 import { formatInTimeZone } from "date-fns-tz";
 import { cn } from "../lib/cn";
 import type { PublicEvent } from "../lib/types";
@@ -27,7 +28,7 @@ function useIsLive(e: PublicEvent): boolean {
  * A fixture as a matchday-programme ticket: gold time stub on green, dashed
  * perforation, then the matchup. Featured fixtures get the gold edge.
  */
-export function FixtureTicket({ event }: { event: PublicEvent }) {
+export function FixtureTicket({ event, href }: { event: PublicEvent; href?: string }) {
   const { t } = useTranslation();
   const live = useIsLive(event);
   const matchup =
@@ -41,7 +42,7 @@ export function FixtureTicket({ event }: { event: PublicEvent }) {
   const scoreLabelKey =
     event.scoreStatus === "FT" ? "fixture.ft" : event.scoreStatus === "HT" ? "fixture.ht" : "fixture.live";
 
-  return (
+  const card = (
     <article
       className={cn(
         "group flex overflow-hidden rounded-xl border bg-green-800/70 transition-[transform,box-shadow,border-color] duration-200 ease-out hover:-translate-y-0.5 hover:shadow-[0_10px_28px_oklch(0.15_0.03_165/0.45)] motion-reduce:transition-none motion-reduce:hover:translate-y-0",
@@ -106,6 +107,18 @@ export function FixtureTicket({ event }: { event: PublicEvent }) {
       </div>
     </article>
   );
+
+  if (href) {
+    return (
+      <Link
+        href={href}
+        className="block rounded-xl outline-none focus-visible:ring-2 focus-visible:ring-gold-400 focus-visible:ring-offset-2 focus-visible:ring-offset-green-900"
+      >
+        {card}
+      </Link>
+    );
+  }
+  return card;
 }
 
 /** Group fixtures by Europe/Madrid calendar day, preserving order. */

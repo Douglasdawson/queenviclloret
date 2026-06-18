@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { Link } from "wouter";
 import { formatInTimeZone } from "date-fns-tz";
 import { ButtonLink, Container, Eyebrow, Section } from "../components/ui";
 import { Picture } from "../components/Picture";
@@ -7,6 +8,7 @@ import { useWorldCupEvents } from "../hooks/useWorldCupEvents";
 import { usePageSeo } from "../seo/use-page-seo";
 import { useSite } from "../app/site-context";
 import { barOrPubLd, faqLd } from "../seo/jsonld";
+import { indexableTeamLinks } from "../lib/wc-teams";
 
 const TZ = "Europe/Madrid";
 
@@ -24,6 +26,7 @@ export default function WorldCupPage() {
   const { data: wcEvents } = useWorldCupEvents();
   const fixtures = wcEvents ?? [];
   const days = groupByDay(fixtures);
+  const teamLinks = indexableTeamLinks(fixtures);
 
   const points = ["p1", "p2", "p3", "p4"] as const;
   const tips = ["tip1", "tip2", "tip3"] as const;
@@ -88,7 +91,7 @@ export default function WorldCupPage() {
                 </h3>
                 <div className="grid gap-3.5 lg:grid-cols-2">
                   {g.items.map((e) => (
-                    <FixtureTicket key={e.id} event={e} />
+                    <FixtureTicket key={e.id} event={e} href={`/world-cup-2026/${e.slug}`} />
                   ))}
                 </div>
               </div>
@@ -96,6 +99,27 @@ export default function WorldCupPage() {
           </div>
         )}
       </Container>
+
+      {/* Follow your team — internal links to the per-nation pages */}
+      {teamLinks.length > 0 && (
+        <Container className="mt-16">
+          <Eyebrow onGreen>{t("wcTeam.hubSub")}</Eyebrow>
+          <h2 className="font-display text-3xl font-bold sm:text-4xl">
+            {t("wcTeam.hubTitle")}
+          </h2>
+          <div className="mt-6 flex flex-wrap gap-2.5">
+            {teamLinks.map((tm) => (
+              <Link
+                key={tm.slug}
+                href={`/world-cup-2026/team/${tm.slug}`}
+                className="rounded-full border border-green-700 px-4 py-1.5 text-sm font-medium text-paper transition-colors hover:border-gold-400 hover:text-gold-400"
+              >
+                {tm.name}
+              </Link>
+            ))}
+          </div>
+        </Container>
+      )}
 
       {/* Why here: numbered programme list, not cards */}
       <Container className="mt-16">

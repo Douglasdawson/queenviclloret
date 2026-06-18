@@ -198,5 +198,46 @@
     "title": "El balón se fue de campo",
     "body": "Esa página no existe. Vuelve a la terraza, que el partido sigue.",
     "cta": "Volver al inicio"
+  },
+  "wcMatch": {
+    "eyebrow": "Mundial 2026 · Dónde ver",
+    "h1": "Dónde ver {{home}} v {{away}} en Lloret de Mar",
+    "lead": "Mira {{home}} v {{away}} en directo en el Queen Vic, en la mayor pantalla exterior de Lloret: 1.250 m² de terraza con aforo para 700+ y comentarios en inglés en los partidos grandes.",
+    "kickoff": "Empieza el {{date}} a las {{time}}, hora de Lloret de Mar · {{commentary}}",
+    "metaTitle": "{{home}} v {{away}} — Dónde ver en Lloret de Mar | Queen Vic",
+    "metaDescription": "Dónde ver {{home}} v {{away}} del Mundial 2026 en Lloret de Mar: en directo en la mayor pantalla exterior del Queen Vic Sports Bar, terraza para 700+.",
+    "followSub": "¿Sigues a alguno de estos equipos?",
+    "followTeam": "Todos los partidos de {{team}}",
+    "otherTodaySub": "El mismo día",
+    "otherToday": "Otros partidos de hoy",
+    "faqHeading": "{{home}} v {{away}} — tus preguntas",
+    "backToHub": "Todos los partidos del Mundial",
+    "notFoundTitle": "No encontramos ese partido",
+    "notFoundBody": "Ese partido no está en nuestro calendario. Mira el programa completo del Mundial y encuentra tu partido.",
+    "faq": [
+      { "q": "¿Dónde puedo ver {{home}} v {{away}} en Lloret de Mar?", "a": "En el Queen Vic Sports Bar, Carrer de la Costa de Carbonell 1. El partido en directo en la mayor pantalla exterior de la ciudad, en una terraza de 1.250 m² con aforo para 700+." },
+      { "q": "¿A qué hora es {{home}} v {{away}}?", "a": "El partido empieza el {{date}} a las {{time}}, hora de Lloret de Mar, con {{commentary}}. Abrimos cada día desde las 19:00, antes en días de partido grande." },
+      { "q": "¿Hay que reservar para {{home}} v {{away}}?", "a": "Recomendamos reservar para los partidos grandes y los grupos. Reserva en la página de reservas; si no, por orden de llegada." }
+    ]
+  },
+  "wcTeam": {
+    "eyebrow": "Mundial 2026 · Dónde ver",
+    "hubSub": "Sigue a tu selección",
+    "hubTitle": "Dónde ver a tu equipo en Lloret",
+    "h1": "Dónde ver a {{team}} en Lloret de Mar",
+    "lead": "Todos los partidos de {{team}} en el Mundial 2026, en directo en el Queen Vic: la mayor pantalla exterior de Lloret, 1.250 m² de terraza para 700+ y comentarios en inglés en los partidos grandes.",
+    "nextFixture": "Próximo: {{match}} · {{date}} a las {{time}}, hora de Lloret de Mar",
+    "metaTitle": "Dónde ver a {{team}} en Lloret de Mar — Mundial 2026 | Queen Vic",
+    "metaDescription": "Dónde ver a {{team}} en el Mundial 2026 en Lloret de Mar: todos los partidos en directo en la mayor pantalla exterior del Queen Vic Sports Bar, terraza para 700+.",
+    "scheduleSub": "{{team}} en el Mundial",
+    "scheduleTitle": "Partidos y resultados",
+    "faqHeading": "Ver a {{team}} — tus preguntas",
+    "notFoundTitle": "No encontramos esa selección",
+    "notFoundBody": "Esa selección no está en nuestro calendario del Mundial. Mira el programa completo y encuentra tu selección.",
+    "faq": [
+      { "q": "¿Dónde puedo ver a {{team}} en Lloret de Mar?", "a": "En el Queen Vic Sports Bar. Todos los partidos de {{team}} en directo en la mayor pantalla exterior de la ciudad, en una terraza de 1.250 m² con aforo para 700+." },
+      { "q": "¿El Queen Vic pone todos los partidos de {{team}}?", "a": "Sí — todos los partidos de {{team}} del Mundial 2026, en directo, con comentarios en inglés en los grandes." },
+      { "q": "¿Hay que reservar para ver a {{team}}?", "a": "Para los partidos grandes de {{team}} y los grupos recomendamos reservar en la página de reservas. Si no, por orden de llegada." }
+    ]
   }
 }

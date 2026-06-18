@@ -3,6 +3,7 @@ import { env } from "../env";
 import { cached, TTL } from "../cache";
 import { LOCALES } from "@shared/enums";
 import { VENUE } from "@shared/venue";
+import { teamSlug, isIndexableTeam } from "@shared/wc-slug";
 import * as eventsDao from "../dao/events.dao";
 
 export const seoRouter: Router = Router();
@@ -15,7 +16,6 @@ const STATIC_PATHS = [
   "sports-bar",
   "whats-on",
   "world-cup-2026",
-  "events",
   "about",
   "reservations",
   "contact",
@@ -67,16 +67,32 @@ seoRouter.get("/robots.txt", (_req, res) => {
 
 seoRouter.get("/sitemap.xml", async (_req, res) => {
   const xml = await cached("seo:sitemap", TTL.MEDIUM, async () => {
-    const events = await eventsDao.listPublicUpcoming(200);
+    const wc = await eventsDao.listWorldCup();
+    const now = Date.now();
     const urls: { loc: string }[] = [];
     for (const p of STATIC_PATHS) {
       for (const lang of LOCALES) {
         urls.push({ loc: `${BASE}/${lang}${p ? "/" + p : ""}` });
       }
     }
-    for (const e of events) {
+    // Per-match pages — only future/live fixtures (played matches are noindex,
+    // so omit them to keep the sitemap and crawl budget lean mid-tournament).
+    for (const e of wc) {
+      if (new Date(e.startsAt).getTime() < now - 3 * 3600_000) continue;
       for (const lang of LOCALES) {
-        urls.push({ loc: `${BASE}/${lang}/events/${e.slug}` });
+        urls.push({ loc: `${BASE}/${lang}/world-cup-2026/${e.slug}` });
+      }
+    }
+    // Per-team pages — curated indexable nations that appear in the fixtures.
+    const teamSlugs = new Set<string>();
+    for (const e of wc) {
+      for (const name of [e.homeTeam, e.awayTeam]) {
+        if (name && isIndexableTeam(name)) teamSlugs.add(teamSlug(name));
+      }
+    }
+    for (const slug of teamSlugs) {
+      for (const lang of LOCALES) {
+        urls.push({ loc: `${BASE}/${lang}/world-cup-2026/team/${slug}` });
       }
     }
 
@@ -121,6 +137,18 @@ A: 700+ across the indoor bar and the 1,250 m² outdoor terrace.
 
 Q: Do I need to book for World Cup match days?
 A: Booking ahead is recommended for big match days and groups: ${BASE}/en/reservations
+
+Q: Where can I watch England at the World Cup in Lloret de Mar?
+A: At Queen Vic Sports Bar. Every England match is shown live on the biggest outdoor screen in town, with full English commentary. Fixtures and times: ${BASE}/en/world-cup-2026/team/england
+
+Q: Where can I watch Spain (España) at the World Cup in Lloret de Mar?
+A: At Queen Vic Sports Bar — todos los partidos de España en directo en la mayor pantalla exterior de Lloret. Fixtures and times: ${BASE}/en/world-cup-2026/team/spain
+
+## Match & team pages
+Every fixture has its own "where to watch" page, and each major nation has a team page:
+- A single match: ${BASE}/en/world-cup-2026/{home}-v-{away} (e.g. .../world-cup-2026/england-v-spain)
+- A national team's fixtures: ${BASE}/en/world-cup-2026/team/{team} (e.g. .../world-cup-2026/team/england, /team/spain, /team/netherlands, /team/france)
+All pages exist in five languages under /en, /es, /ca, /fr, /nl.
 
 ## What we show
 - Football: Premier League and FIFA World Cup 2026 (every match)
