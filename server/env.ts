@@ -13,6 +13,11 @@ const schema = z.object({
   AI_PROVIDER: z.enum(["noop", "anthropic"]).default("noop"),
   ANTHROPIC_API_KEY: z.string().optional(),
 
+  // Analytics & Search Console (optional). GA4 only loads in prod, after the
+  // visitor opts into analytics cookies, and never on /admin (see client/analytics).
+  GA4_MEASUREMENT_ID: z.string().optional(), // "G-XXXXXXXXXX"
+  GSC_VERIFICATION: z.string().optional(), // google-site-verification meta token
+
   EMAIL_PROVIDER: z.enum(["resend", "noop"]).default("noop"),
   RESEND_API_KEY: z.string().optional(),
   EMAIL_FROM: z.string().default("Queen Vic <hello@queenviclloret.es>"),

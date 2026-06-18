@@ -44,11 +44,20 @@ async function bootstrap() {
             ? ["'self'", "'unsafe-inline'", "'unsafe-eval'"]
             : [
                 "'self'",
+                "https://www.googletagmanager.com", // GA4 gtag.js loader
                 (_req, res) => `'nonce-${(res as express.Response).locals.cspNonce}'`,
               ],
           styleSrc: ["'self'", "'unsafe-inline'"],
           imgSrc: ["'self'", "data:", "https:"],
-          connectSrc: ["'self'", ...(isDev ? ["ws:", "http:"] : [])],
+          connectSrc: [
+            "'self'",
+            // GA4 telemetry endpoints (consent-gated; only fired after opt-in)
+            "https://www.googletagmanager.com",
+            "https://www.google-analytics.com",
+            "https://*.google-analytics.com",
+            "https://*.analytics.google.com",
+            ...(isDev ? ["ws:", "http:"] : []),
+          ],
           fontSrc: ["'self'", "data:"],
           objectSrc: ["'none'"],
           baseUri: ["'self'"],

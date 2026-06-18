@@ -16,7 +16,9 @@ export function CookieBanner() {
   function decide(value: "all" | "essential") {
     localStorage.setItem(KEY, JSON.stringify({ value, at: Date.now() }));
     setVisible(false);
-    // Analytics bootstrapping keys off `value === "all"`.
+    // Notify the analytics loader in the same tab (the `storage` event does not
+    // fire in the tab that wrote the value). It boots GA4 when value === "all".
+    window.dispatchEvent(new CustomEvent("qv:consent", { detail: { value } }));
   }
 
   if (!visible) return null;

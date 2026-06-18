@@ -94,7 +94,7 @@ export function createSsrHandler(vite: ViteDevServer | null) {
         }
       }
 
-      const html = buildDocument(template, rendered, nonce);
+      const html = buildDocument(template, rendered, nonce, { isAdmin: url.startsWith("/admin") });
       res
         .status(200)
         .set("Content-Type", "text/html; charset=utf-8")
