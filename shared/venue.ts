@@ -47,4 +47,19 @@ export const VENUE = {
 
   // Relative paths; prefixed with the site URL where absolute URLs are required.
   images: ["/images/terrace-dusk-1280.webp", "/images/terrace-night-1280.webp"],
+
+  // Fiscal/legal identity for the Aviso Legal (LSSI-CE) + legal notices.
+  // ⚠️ PLACEHOLDERS — Ryan must provide the real values before publishing. An Aviso
+  // Legal is not valid without the titular's tax ID and legal name.
+  legal: {
+    businessName: "[RAZÓN SOCIAL / NOMBRE COMPLETO DEL TITULAR]",
+    tradeName: "Queen Vic Sports Bar",
+    taxId: "[NIF/CIF]",
+    legalForm: "[Autónomo / S.L. / S.L.U.]",
+    // Registered office — confirm whether it differs from the operating address above.
+    registeredAddress: "Carrer de la Costa de Carbonell 1, 17310 Lloret de Mar, Girona, España",
+    contactEmail: "hello@queenviclloret.es",
+    // Production host — confirm Replit vs. LucusHost before publishing.
+    hostingProvider: "Replit, Inc. (https://replit.com)",
+  },
 } as const;

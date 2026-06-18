@@ -11,7 +11,13 @@ import AboutPage from "../pages/About";
 import ReservationsPage from "../pages/Reservations";
 import ContactPage from "../pages/Contact";
 import FaqPage from "../pages/Faq";
-import { PrivacyPage, CookiesPage } from "../pages/Legal";
+import {
+  PrivacyPage,
+  CookiesPage,
+  LegalNoticePage,
+  TermsPage,
+  AccessibilityPage,
+} from "../pages/Legal";
 import NotFoundPage from "../pages/NotFound";
 
 export function PublicApp() {
@@ -31,6 +37,9 @@ export function PublicApp() {
         <Route path="/faq" component={FaqPage} />
         <Route path="/privacy" component={PrivacyPage} />
         <Route path="/cookies" component={CookiesPage} />
+        <Route path="/legal-notice" component={LegalNoticePage} />
+        <Route path="/terms" component={TermsPage} />
+        <Route path="/accessibility" component={AccessibilityPage} />
         <Route component={NotFoundPage} />
       </Switch>
     </PublicLayout>

@@ -23,6 +23,9 @@ const STATIC_PATHS = [
   "faq",
   "privacy",
   "cookies",
+  "legal-notice",
+  "terms",
+  "accessibility",
 ];
 
 // AI / answer-engine crawlers we explicitly welcome (GEO). Both training bots

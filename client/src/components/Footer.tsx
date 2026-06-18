@@ -80,6 +80,9 @@ export function Footer() {
               { href: "/faq", key: "nav.faq" },
               { href: "/privacy", key: "footer.privacy" },
               { href: "/cookies", key: "footer.cookies" },
+              { href: "/legal-notice", key: "footer.legalNotice" },
+              { href: "/terms", key: "footer.terms" },
+              { href: "/accessibility", key: "footer.accessibility" },
             ].map((l) => (
               <li key={l.href}>
                 <Link href={l.href} className="text-paper-dim transition-colors hover:text-gold-400">

@@ -1,7 +1,14 @@
 import { Container, Section } from "../components/ui";
 import { useSite } from "../app/site-context";
 import { usePageSeo } from "../seo/use-page-seo";
-import { getCookies, getPrivacy, type LegalDoc } from "../content/legal";
+import {
+  getAccessibility,
+  getCookies,
+  getLegalNotice,
+  getPrivacy,
+  getTerms,
+  type LegalDoc,
+} from "../content/legal";
 
 function LegalPage({ doc, path }: { doc: LegalDoc; path: string }) {
   usePageSeo({ title: `${doc.title} | Queen Vic`, description: doc.intro, path });
@@ -32,4 +39,19 @@ export function PrivacyPage() {
 export function CookiesPage() {
   const { locale } = useSite();
   return <LegalPage doc={getCookies(locale)} path="/cookies" />;
+}
+
+export function LegalNoticePage() {
+  const { locale } = useSite();
+  return <LegalPage doc={getLegalNotice(locale)} path="/legal-notice" />;
+}
+
+export function TermsPage() {
+  const { locale } = useSite();
+  return <LegalPage doc={getTerms(locale)} path="/terms" />;
+}
+
+export function AccessibilityPage() {
+  const { locale } = useSite();
+  return <LegalPage doc={getAccessibility(locale)} path="/accessibility" />;
 }
