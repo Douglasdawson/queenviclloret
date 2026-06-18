@@ -239,5 +239,38 @@
       { "q": "El Queen Vic posa tots els partits de {{team}}?", "a": "Sí — tots els partits de {{team}} del Mundial 2026, en directe, amb comentaris en anglès als grans." },
       { "q": "Cal reservar per veure {{team}}?", "a": "Per als partits grans de {{team}} i els grups recomanem reservar a la pàgina de reserves. Si no, per ordre d'arribada." }
     ]
+  },
+  "watchSport": {
+    "eyebrow": "Esport en directe · On veure",
+    "crumb": "Esport en directe",
+    "h1": "On veure {{competition}} a Lloret de Mar",
+    "lead": "Mira {{competition}} en directe al Queen Vic, a la pantalla exterior més gran de Lloret: 1.250 m² de terrassa amb aforament per a 700+ i comentaris en anglès als partits grans.",
+    "scheduleSub": "{{competition}} al Vic",
+    "scheduleTitle": "Pròxims partits",
+    "empty": "Ara mateix no hi ha partits de {{competition}} carregats. Mira la programació completa a Què fem, o segueix-nos a Instagram.",
+    "faqHeading": "Veure {{competition}} — les teves preguntes",
+    "metaTitle": "On veure {{competition}} a Lloret de Mar | Queen Vic",
+    "metaDescription": "On veure {{competition}} a Lloret de Mar: en directe a la pantalla exterior més gran del Queen Vic Sports Bar, terrassa de 1.250 m² amb aforament per a 700+.",
+    "notFoundTitle": "No hem trobat aquesta competició",
+    "notFoundBody": "Aquesta competició no és de les nostres. Mira tot el que posem a la pàgina del sports bar.",
+    "backToSports": "El que posem",
+    "faq": [
+      { "q": "On puc veure {{competition}} a Lloret de Mar?", "a": "Al Queen Vic Sports Bar. {{competition}} en directe a la pantalla exterior més gran de la ciutat, en una terrassa de 1.250 m² amb aforament per a 700+." },
+      { "q": "El Queen Vic posa {{competition}}?", "a": "Sí — posem els partits grans de {{competition}} en directe, amb comentaris en anglès als més importants." },
+      { "q": "Cal reservar per veure {{competition}}?", "a": "Per als partits grans i els grups recomanem reservar a la pàgina de reserves. Si no, per ordre d'arribada." }
+    ]
+  },
+  "faqPage": {
+    "metaDescription": "Horari, reserves, quins partits posem, el DJ i més: tot el que necessites saber sobre el Queen Vic Sports Bar a Lloret de Mar.",
+    "items": [
+      { "q": "On puc veure el Mundial 2026 a Lloret de Mar?", "a": "Aquí mateix, al Queen Vic. Tots els partits del Mundial 2026 en directe a la pantalla exterior més gran de la ciutat, a la nostra terrassa de 1.250 m² amb aforament per a 700+." },
+      { "q": "Quanta gent hi cap, al Queen Vic?", "a": "700+ entre el bar i la terrassa exterior de 1.250 m² — un dels aforaments de sports bar més grans de Lloret de Mar." },
+      { "q": "A quina hora obriu?", "a": "Cada dia de 19:00 a 03:00, i abans en dies de partit gran. Mira el nostre Instagram i Facebook per a la programació de la setmana." },
+      { "q": "Cal reservar taula?", "a": "Per als partits grans i els grups recomanem reservar a la pàgina de reserves. Si no, per ordre d'arribada. Arriba aviat per a les finals." },
+      { "q": "Podeu posar un partit concret?", "a": "Digues-nos-ho amb antelació i farem el possible per confirmar-ho. Escriu-nos per Instagram o fes servir el formulari de contacte." },
+      { "q": "Hi ha DJ en directe?", "a": "Cada nit. Quan acaba el partit, el DJ resident pren el relleu." },
+      { "q": "On sou?", "a": "A Lloret de Mar, a la Costa Brava (Girona, Catalunya, Espanya). El sports bar original de la ciutat, des de 1986." },
+      { "q": "Quins idiomes parleu?", "a": "L'equip i el públic són internacionals: anglès, espanyol, català, francès i neerlandès són habituals al Vic." }
+    ]
   }
 }

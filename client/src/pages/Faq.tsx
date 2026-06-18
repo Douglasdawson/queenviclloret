@@ -3,47 +3,12 @@ import { Container, Eyebrow, Section } from "../components/ui";
 import { usePageSeo } from "../seo/use-page-seo";
 import { faqLd } from "../seo/jsonld";
 
-const FAQ = [
-  {
-    q: "Where can I watch the World Cup 2026 in Lloret de Mar?",
-    a: "Right here at Queen Vic. Every FIFA World Cup 2026 match is shown live on the biggest outdoor screen in town, on our 1,250 m² terrace with room for 700+ fans.",
-  },
-  {
-    q: "How many people does Queen Vic hold?",
-    a: "700+ across the bar and the 1,250 m² outdoor terrace — one of the largest sports-bar capacities in Lloret de Mar.",
-  },
-  {
-    q: "What time do you open?",
-    a: "Daily from 19:00 till 03:00, and earlier on big match days. Check our Instagram and Facebook for this week's programme.",
-  },
-  {
-    q: "Do I need to reserve a table?",
-    a: "For big match days and groups we recommend booking ahead via the reservations page. Otherwise it's first come, first served. Arrive early for finals.",
-  },
-  {
-    q: "Can you show a specific game?",
-    a: "Tell us in advance and we'll do our best to confirm it. Message us on Instagram or use the contact form.",
-  },
-  {
-    q: "Is there a live DJ?",
-    a: "Every night. When the game ends, the resident DJ takes over.",
-  },
-  {
-    q: "Where are you located?",
-    a: "In Lloret de Mar, on the Costa Brava (Girona, Catalonia, Spain). The original sports bar in town, since 1986.",
-  },
-  {
-    q: "What languages do you speak?",
-    a: "The team and the crowd are international: English, Spanish, Catalan, French and Dutch are all common at the Vic.",
-  },
-];
-
 export default function FaqPage() {
   const { t } = useTranslation();
+  const FAQ = t("faqPage.items", { returnObjects: true }) as unknown as { q: string; a: string }[];
   usePageSeo({
     title: `${t("faq.title")} | Queen Vic Lloret de Mar`,
-    description:
-      "Opening hours, reservations, which matches we show, the DJ and more: everything you need to know about Queen Vic Sports Bar in Lloret de Mar.",
+    description: t("faqPage.metaDescription"),
     path: "/faq",
     jsonLd: [faqLd(FAQ)],
   });

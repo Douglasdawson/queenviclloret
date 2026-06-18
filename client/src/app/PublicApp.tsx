@@ -6,6 +6,7 @@ import WhatsOnPage from "../pages/WhatsOn";
 import WorldCupPage from "../pages/WorldCup";
 import WorldCupTeamPage from "../pages/WorldCupTeam";
 import WorldCupMatchPage from "../pages/WorldCupMatch";
+import WatchSportPage from "../pages/WatchSport";
 import AboutPage from "../pages/About";
 import ReservationsPage from "../pages/Reservations";
 import ContactPage from "../pages/Contact";
@@ -23,6 +24,7 @@ export function PublicApp() {
         <Route path="/world-cup-2026" component={WorldCupPage} />
         <Route path="/world-cup-2026/team/:teamSlug" component={WorldCupTeamPage} />
         <Route path="/world-cup-2026/:matchSlug" component={WorldCupMatchPage} />
+        <Route path="/watch/:competitionSlug" component={WatchSportPage} />
         <Route path="/about" component={AboutPage} />
         <Route path="/reservations" component={ReservationsPage} />
         <Route path="/contact" component={ContactPage} />

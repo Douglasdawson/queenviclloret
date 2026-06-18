@@ -8,7 +8,7 @@ import { SportsMontage } from "../components/SportsMontage";
 import { usePublicEvents } from "../hooks/usePublicEvents";
 import { usePageSeo } from "../seo/use-page-seo";
 import { useSite } from "../app/site-context";
-import { barOrPubLd } from "../seo/jsonld";
+import { barOrPubLd, websiteLd } from "../seo/jsonld";
 
 const TZ = "Europe/Madrid";
 
@@ -34,7 +34,7 @@ export default function HomePage() {
     path: "/",
     ogImage: `${siteUrl}/images/terrace-dusk-1280.webp`,
     preload: [imagePreload("terrace-dusk")],
-    jsonLd: [barOrPubLd(siteUrl)],
+    jsonLd: [barOrPubLd(siteUrl), websiteLd(siteUrl)],
   });
 
   const features = ["screen", "terrace", "dj", "since"] as const;

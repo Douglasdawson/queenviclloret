@@ -239,5 +239,38 @@
       { "q": "Le Queen Vic diffuse-t-il tous les matchs de {{team}} ?", "a": "Oui — tous les matchs de {{team}} à la Coupe du monde 2026, en direct, avec commentaire anglais sur les grands matchs." },
       { "q": "Faut-il réserver pour regarder {{team}} ?", "a": "Pour les grands matchs de {{team}} et les groupes, nous conseillons de réserver via la page réservations. Sinon, premier arrivé, premier servi." }
     ]
+  },
+  "watchSport": {
+    "eyebrow": "Sport en direct · Où regarder",
+    "crumb": "Sport en direct",
+    "h1": "Où regarder {{competition}} à Lloret de Mar",
+    "lead": "Regardez {{competition}} en direct au Queen Vic, sur le plus grand écran extérieur de Lloret : une terrasse de 1 250 m² pouvant accueillir plus de 700 personnes, avec commentaire anglais sur les grands matchs.",
+    "scheduleSub": "{{competition}} au Vic",
+    "scheduleTitle": "Prochains matchs",
+    "empty": "Aucun match de {{competition}} chargé pour le moment. Consultez le programme complet sur À l'affiche, ou suivez-nous sur Instagram.",
+    "faqHeading": "Regarder {{competition}} — vos questions",
+    "metaTitle": "Où regarder {{competition}} à Lloret de Mar | Queen Vic",
+    "metaDescription": "Où regarder {{competition}} à Lloret de Mar : en direct sur le plus grand écran extérieur du Queen Vic Sports Bar, terrasse de 1 250 m² pour plus de 700 personnes.",
+    "notFoundTitle": "Compétition introuvable",
+    "notFoundBody": "Cette compétition n'est pas l'une des nôtres. Découvrez tout ce que nous diffusons sur la page du sports bar.",
+    "backToSports": "Ce que nous diffusons",
+    "faq": [
+      { "q": "Où puis-je regarder {{competition}} à Lloret de Mar ?", "a": "Au Queen Vic Sports Bar. {{competition}} en direct sur le plus grand écran extérieur de la ville, sur une terrasse de 1 250 m² pouvant accueillir plus de 700 personnes." },
+      { "q": "Le Queen Vic diffuse-t-il {{competition}} ?", "a": "Oui — nous diffusons les grands matchs de {{competition}} en direct, avec commentaire anglais sur les plus importants." },
+      { "q": "Faut-il réserver pour regarder {{competition}} ?", "a": "Pour les grands matchs et les groupes, nous conseillons de réserver via la page réservations. Sinon, premier arrivé, premier servi." }
+    ]
+  },
+  "faqPage": {
+    "metaDescription": "Horaires, réservations, quels matchs nous diffusons, le DJ et plus : tout ce qu'il faut savoir sur le Queen Vic Sports Bar à Lloret de Mar.",
+    "items": [
+      { "q": "Où puis-je regarder la Coupe du monde 2026 à Lloret de Mar ?", "a": "Ici même, au Queen Vic. Tous les matchs de la Coupe du monde 2026 en direct sur le plus grand écran extérieur de la ville, sur notre terrasse de 1 250 m² pouvant accueillir plus de 700 personnes." },
+      { "q": "Combien de personnes le Queen Vic peut-il accueillir ?", "a": "Plus de 700 entre le bar et la terrasse extérieure de 1 250 m² — l'une des plus grandes capacités de sports bar à Lloret de Mar." },
+      { "q": "À quelle heure ouvrez-vous ?", "a": "Tous les jours de 19h00 à 03h00, et plus tôt les jours de grand match. Consultez notre Instagram et Facebook pour le programme de la semaine." },
+      { "q": "Faut-il réserver une table ?", "a": "Pour les grands matchs et les groupes, nous conseillons de réserver via la page réservations. Sinon, premier arrivé, premier servi. Arrivez tôt pour les finales." },
+      { "q": "Pouvez-vous diffuser un match précis ?", "a": "Dites-le-nous à l'avance et nous ferons de notre mieux pour le confirmer. Écrivez-nous sur Instagram ou utilisez le formulaire de contact." },
+      { "q": "Y a-t-il un DJ en direct ?", "a": "Tous les soirs. Quand le match se termine, le DJ résident prend le relais." },
+      { "q": "Où êtes-vous situés ?", "a": "À Lloret de Mar, sur la Costa Brava (Gérone, Catalogne, Espagne). Le sports bar original de la ville, depuis 1986." },
+      { "q": "Quelles langues parlez-vous ?", "a": "L'équipe et le public sont internationaux : anglais, espagnol, catalan, français et néerlandais sont courants au Vic." }
+    ]
   }
 }

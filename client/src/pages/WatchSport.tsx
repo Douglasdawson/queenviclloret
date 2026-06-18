@@ -3,116 +3,103 @@ import { useParams } from "wouter";
 import { formatInTimeZone } from "date-fns-tz";
 import { ButtonLink, Container, Eyebrow, Section } from "../components/ui";
 import { FixtureTicket, groupByDay } from "../components/FixtureTicket";
-import { useWorldCupEvents } from "../hooks/useWorldCupEvents";
+import { usePublicEvents } from "../hooks/usePublicEvents";
 import { usePageSeo } from "../seo/use-page-seo";
 import { useSite } from "../app/site-context";
 import { barOrPubLd, breadcrumbLd, faqLd } from "../seo/jsonld";
-import { fixturesForTeam, isIndexableTeam, teamFromSlug } from "../lib/wc-teams";
+import { competitionFromSlug, eventMatchesCompetition } from "@shared/competitions";
 
 const TZ = "Europe/Madrid";
 
-export default function WorldCupTeamPage() {
+export default function WatchSportPage() {
   const { t } = useTranslation();
   const { siteUrl, locale } = useSite();
   const params = useParams();
-  const teamSlugParam = params.teamSlug ?? "";
+  const slug = params.competitionSlug ?? "";
+  const comp = competitionFromSlug(slug);
+  const name = comp?.name ?? "";
+  const path = `/watch/${slug}`;
 
-  const { data: wcEvents } = useWorldCupEvents();
-  const fixtures = wcEvents ?? [];
-  const team = teamFromSlug(fixtures, teamSlugParam);
-  const teamFixtures = team ? fixturesForTeam(fixtures, teamSlugParam) : [];
+  const { data: events } = usePublicEvents();
+  const fixtures = (events ?? []).filter((e) => (comp ? eventMatchesCompetition(comp, e) : false));
 
-  const path = `/world-cup-2026/team/${teamSlugParam}`;
-  const indexable = team ? isIndexableTeam(team) : false;
-
-  const faq = team
+  const faq = comp
     ? [
-        { q: t("wcTeam.faq.0.q", { team }), a: t("wcTeam.faq.0.a", { team }) },
-        { q: t("wcTeam.faq.1.q", { team }), a: t("wcTeam.faq.1.a", { team }) },
-        { q: t("wcTeam.faq.2.q", { team }), a: t("wcTeam.faq.2.a", { team }) },
+        { q: t("watchSport.faq.0.q", { competition: name }), a: t("watchSport.faq.0.a", { competition: name }) },
+        { q: t("watchSport.faq.1.q", { competition: name }), a: t("watchSport.faq.1.a", { competition: name }) },
+        { q: t("watchSport.faq.2.q", { competition: name }), a: t("watchSport.faq.2.a", { competition: name }) },
       ]
     : [];
 
   usePageSeo(
-    team
+    comp
       ? {
-          title: t("wcTeam.metaTitle", { team }),
-          description: t("wcTeam.metaDescription", { team }),
+          title: t("watchSport.metaTitle", { competition: name }),
+          description: t("watchSport.metaDescription", { competition: name }),
           path,
           jsonLd: [
             barOrPubLd(siteUrl),
             breadcrumbLd(siteUrl, locale, [
               { name: t("nav.home"), path: "/" },
-              { name: t("nav.worldCup"), path: "/world-cup-2026" },
-              { name: team, path },
+              { name: t("watchSport.crumb"), path: "/sports-bar" },
+              { name, path },
             ]),
             faqLd(faq),
           ],
-          ...(indexable ? {} : { robots: "noindex, follow" }),
         }
-      : { title: `${t("wcTeam.notFoundTitle")} | Queen Vic`, path, robots: "noindex, follow" },
+      : { title: `${t("watchSport.notFoundTitle")} | Queen Vic`, path, robots: "noindex, follow" },
   );
 
-  if (!team) {
+  if (!comp) {
     return (
       <Section surface="green" className="py-24 sm:py-32">
         <Container>
-          <Eyebrow onGreen>{t("worldCup.facts")}</Eyebrow>
+          <Eyebrow onGreen>{t("watchSport.crumb")}</Eyebrow>
           <h1 className="font-display text-3xl font-bold sm:text-4xl">
-            {t("wcTeam.notFoundTitle")}
+            {t("watchSport.notFoundTitle")}
           </h1>
           <p className="mt-3 max-w-md text-[0.9375rem] leading-relaxed text-paper-dim">
-            {t("wcTeam.notFoundBody")}
+            {t("watchSport.notFoundBody")}
           </p>
-          <ButtonLink href="/world-cup-2026" className="mt-8">
-            {t("wcMatch.backToHub")}
+          <ButtonLink href="/sports-bar" className="mt-8">
+            {t("watchSport.backToSports")}
           </ButtonLink>
         </Container>
       </Section>
     );
   }
 
-  const days = groupByDay(teamFixtures);
-  const next = teamFixtures.find((e) => new Date(e.startsAt).getTime() >= Date.now());
+  const days = groupByDay(fixtures);
 
   return (
     <Section surface="green" className="pb-20">
       <Container className="pt-16 sm:pt-24">
         <Eyebrow onGreen className="mb-0">
-          {t("wcTeam.eyebrow")}
+          {t("watchSport.eyebrow")}
         </Eyebrow>
         <h1 className="font-display mt-5 max-w-3xl text-[clamp(2.25rem,6vw,4.25rem)] font-bold leading-[1.05]">
-          {t("wcTeam.h1", { team })}
+          {t("watchSport.h1", { competition: name })}
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-paper-dim">
-          {t("wcTeam.lead", { team })}
+          {t("watchSport.lead", { competition: name })}
         </p>
-        {next && (
-          <p className="mt-4 max-w-2xl text-[0.9375rem] leading-relaxed text-gold-400">
-            {t("wcTeam.nextFixture", {
-              match: `${next.homeTeam} v ${next.awayTeam}`,
-              date: formatInTimeZone(new Date(next.startsAt), TZ, "EEEE d MMMM"),
-              time: formatInTimeZone(new Date(next.startsAt), TZ, "HH:mm"),
-            })}
-          </p>
-        )}
         <div className="mt-8 flex flex-wrap gap-3">
           <ButtonLink href="/reservations">{t("cta.bookTable")}</ButtonLink>
-          <ButtonLink href="/world-cup-2026" variant="outline">
-            {t("wcMatch.backToHub")}
+          <ButtonLink href="/whats-on" variant="outline">
+            {t("cta.seeWhatsOn")}
           </ButtonLink>
         </div>
       </Container>
 
-      {/* This team's fixtures, linking to each match page */}
+      {/* Upcoming fixtures for this competition */}
       <Container className="mt-14">
-        <Eyebrow onGreen>{t("wcTeam.scheduleSub", { team })}</Eyebrow>
+        <Eyebrow onGreen>{t("watchSport.scheduleSub", { competition: name })}</Eyebrow>
         <h2 className="font-display text-3xl font-bold sm:text-4xl">
-          {t("wcTeam.scheduleTitle")}
+          {t("watchSport.scheduleTitle")}
         </h2>
         {days.length === 0 ? (
           <p className="mt-6 max-w-xl text-[0.9375rem] leading-relaxed text-paper-dim">
-            {t("worldCup.empty")}
+            {t("watchSport.empty", { competition: name })}
           </p>
         ) : (
           <div className="mt-8 space-y-10">
@@ -123,7 +110,7 @@ export default function WorldCupTeamPage() {
                 </h3>
                 <div className="grid gap-3.5 lg:grid-cols-2">
                   {g.items.map((e) => (
-                    <FixtureTicket key={e.id} event={e} href={`/world-cup-2026/${e.slug}`} />
+                    <FixtureTicket key={e.id} event={e} />
                   ))}
                 </div>
               </div>
@@ -132,11 +119,11 @@ export default function WorldCupTeamPage() {
         )}
       </Container>
 
-      {/* GEO Q&A for this team */}
+      {/* GEO Q&A for this competition */}
       <Container className="mt-16">
         <Eyebrow onGreen>{t("worldCup.faqTitle")}</Eyebrow>
         <h2 className="font-display text-3xl font-bold sm:text-4xl">
-          {t("wcTeam.faqHeading", { team })}
+          {t("watchSport.faqHeading", { competition: name })}
         </h2>
         <div className="mt-8 max-w-2xl divide-y divide-green-700">
           {faq.map((item) => (

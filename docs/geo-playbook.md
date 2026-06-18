@@ -1,8 +1,13 @@
 # Queen Vic — Playbook GEO (Mundial 2026)
 
 Acciones para posicionar al Queen Vic en buscadores de IA (ChatGPT, Perplexity, Google AI,
-Gemini) y en búsqueda local. La parte **on-site** ya está hecha y desplegada (commit
-`3c09156`). Este documento cubre lo que **da más resultado y vive fuera del código**.
+Gemini) y en búsqueda local. La parte **on-site** está hecha y desplegada en dos rondas
+(commit `3c09156` y la ronda de páginas por partido/equipo/deporte + schema + sitemap con
+freshness). Este documento cubre lo que **da más resultado y vive fuera del código**.
+
+> ⚠️ **La verdad incómoda:** para un local, ~**60–70%** de que una IA te cite es **off-site**
+> (lo de este documento). La web ya es muy fuerte, pero el código es solo el ~25–30% — necesario
+> pero **no suficiente** para ser top-1. Lo de abajo es lo que de verdad mueve la aguja.
 
 ---
 
@@ -20,6 +25,23 @@ fútbol en Lloret… pantalla grande"*:
 
 > Conclusión: hueco abierto. Tras desplegar + ejecutar este playbook, repetir la medición
 > (es la versión manual del GEO Monitor automatizado del presupuesto).
+
+---
+
+## 0.5 Dónde está la palanca (prioriza por peso)
+
+Orden de impacto para un local en buscadores de IA (aprox., síntesis de la investigación):
+
+| Palanca | Peso aprox. | Estado hoy |
+|---|---|---|
+| **Bing indexado** (alimenta ChatGPT) | *gating* | ❓ sin verificar → **si no estás en Bing, ChatGPT no te cita** |
+| **Google Business Profile** completo | ~30% | ⚠️ incompleto |
+| **Reseñas** (volumen + recientes + responder) | ~20% | ⚠️ pocas vs Piccadilly/El Pirata |
+| **Citas externas + NAP consistente** (TripAdvisor, Yelp, Reddit) | ~15% | 🔴 teléfono mal en Yelp |
+| **On-site** (schema, contenido, FAQ, llms.txt) | ~25–30% | ✅ hecho (2 rondas) |
+
+**Conclusión:** el on-site ya está. Las 4 primeras filas son tuyas (Ryan) y son lo decisivo.
+Empieza por **Bing + GBP + corregir el teléfono de Yelp** esta semana.
 
 ---
 
@@ -72,11 +94,16 @@ La IA y Google AI Overviews tiran masivamente de la ficha de Google para consult
 
 ---
 
-## 3. Indexación rápida (Bing alimenta ChatGPT)
-- [ ] **Google Search Console**: verificar dominio, enviar `sitemap.xml`, *Inspección de URL*
-      → Solicitar indexación de `/` y `/en/world-cup-2026` (y un par de locales).
-- [ ] **Bing Webmaster Tools**: verificar, enviar `sitemap.xml`, *Submit URLs*. (Bing potencia
-      la búsqueda de ChatGPT → doble beneficio GEO.)
+## 3. Indexación rápida (Bing alimenta ChatGPT) — **empieza por aquí**
+- [ ] **Bing Webmaster Tools** (gating de ChatGPT): verificar, enviar `sitemap.xml`, *Submit
+      URLs*. **Si no estás indexado en Bing, ChatGPT no te puede citar.**
+- [ ] **Google Search Console**: verificar dominio, enviar `sitemap.xml`, *Inspección de URL*.
+- [ ] Solicitar indexación de las páginas nuevas de alto valor (en `/en` y un par de locales):
+      - `/world-cup-2026` y partidos clave `/world-cup-2026/{equipo-v-equipo}`
+      - equipos `/world-cup-2026/team/{england|spain|netherlands|france}`
+      - deportes evergreen `/watch/{premier-league|formula-1|motogp|rugby-league}`
+- El `sitemap.xml` ya incluye estas URLs con `<lastmod>` (señal de frescura) — solo hay que
+  reenviarlo tras cada redeploy.
 
 ---
 
@@ -111,6 +138,12 @@ de reseña de Google** (GBP → "Pide reseñas" da un enlace corto).
 ---
 
 ## 6. Re-medir (cerrar el bucle)
-A las ~2-4 semanas del despliegue + GBP, repetir las consultas del baseline en ChatGPT,
-Perplexity y Google. Objetivo: que el Queen Vic aparezca citado para *"dónde ver el Mundial en
-Lloret de Mar"*. Esto es exactamente lo que automatiza el **GEO Monitor** del presupuesto.
+A las ~2-4 semanas del despliegue + GBP, repetir las consultas en ChatGPT, Perplexity, Google
+AI y Claude. Además del baseline, probar las nuevas intenciones que ahora cubre la web:
+- **EN:** "where to watch the football / Premier League in Lloret de Mar", "where to watch
+  England v {rival} in Lloret", "sports bar Lloret big screen tonight".
+- **ES:** "dónde ver el fútbol / la Premier en Lloret de Mar", "dónde ver a España en Lloret".
+- **NL:** "waar voetbal kijken Lloret de Mar"; **FR:** "où regarder le foot à Lloret de Mar".
+
+Objetivo: que el Queen Vic aparezca citado en ≥50% de las consultas relevantes. Esto es
+exactamente lo que automatiza el **GEO Monitor** del presupuesto.

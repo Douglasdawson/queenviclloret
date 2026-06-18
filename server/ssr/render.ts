@@ -42,7 +42,7 @@ export function createSsrHandler(vite: ViteDevServer | null) {
     const url = req.originalUrl;
     const lang = localeFromPath(url);
     const nonce = (res.locals.cspNonce as string) ?? "";
-    const isEventPage = /\/(whats-on|events?|world-cup)/.test(url);
+    const isEventPage = /\/(whats-on|events?|world-cup|watch)/.test(url);
     const cacheKey = `ssr:${lang}:${url}`;
 
     try {

@@ -239,5 +239,38 @@
       { "q": "Does Queen Vic show every {{team}} match?", "a": "Yes — every {{team}} fixture at the World Cup 2026, live, with full English commentary on the major games." },
       { "q": "Do I need to book to watch {{team}}?", "a": "For big {{team}} matches and groups we recommend booking ahead via the reservations page. Otherwise it's first come, first served." }
     ]
+  },
+  "watchSport": {
+    "eyebrow": "Live sport · Where to watch",
+    "crumb": "Live sport",
+    "h1": "Where to watch {{competition}} in Lloret de Mar",
+    "lead": "Watch {{competition}} live at Queen Vic — on Lloret's biggest outdoor screen, a 1,250 m² terrace with room for 700+ fans and full English commentary on the big games.",
+    "scheduleSub": "{{competition}} at the Vic",
+    "scheduleTitle": "Upcoming fixtures",
+    "empty": "No {{competition}} fixtures loaded right now. Check What's On for the full programme, or follow us on Instagram.",
+    "faqHeading": "Watching {{competition}} — your questions",
+    "metaTitle": "Where to watch {{competition}} in Lloret de Mar | Queen Vic",
+    "metaDescription": "Where to watch {{competition}} in Lloret de Mar: live on the biggest outdoor screen at Queen Vic Sports Bar, a 1,250 m² terrace with room for 700+.",
+    "notFoundTitle": "We couldn't find that competition",
+    "notFoundBody": "That competition isn't one of ours. See everything we show on the sports bar page.",
+    "backToSports": "What we show",
+    "faq": [
+      { "q": "Where can I watch {{competition}} in Lloret de Mar?", "a": "At Queen Vic Sports Bar. {{competition}} is shown live on the biggest outdoor screen in town, on a 1,250 m² terrace with room for 700+ fans." },
+      { "q": "Does Queen Vic show {{competition}}?", "a": "Yes — we show the big {{competition}} fixtures live, with full English commentary on the major games." },
+      { "q": "Do I need to book to watch {{competition}}?", "a": "For big fixtures and groups we recommend booking ahead via the reservations page. Otherwise it's first come, first served." }
+    ]
+  },
+  "faqPage": {
+    "metaDescription": "Opening hours, reservations, which matches we show, the DJ and more: everything you need to know about Queen Vic Sports Bar in Lloret de Mar.",
+    "items": [
+      { "q": "Where can I watch the World Cup 2026 in Lloret de Mar?", "a": "Right here at Queen Vic. Every FIFA World Cup 2026 match is shown live on the biggest outdoor screen in town, on our 1,250 m² terrace with room for 700+ fans." },
+      { "q": "How many people does Queen Vic hold?", "a": "700+ across the bar and the 1,250 m² outdoor terrace — one of the largest sports-bar capacities in Lloret de Mar." },
+      { "q": "What time do you open?", "a": "Daily from 19:00 till 03:00, and earlier on big match days. Check our Instagram and Facebook for this week's programme." },
+      { "q": "Do I need to reserve a table?", "a": "For big match days and groups we recommend booking ahead via the reservations page. Otherwise it's first come, first served. Arrive early for finals." },
+      { "q": "Can you show a specific game?", "a": "Tell us in advance and we'll do our best to confirm it. Message us on Instagram or use the contact form." },
+      { "q": "Is there a live DJ?", "a": "Every night. When the game ends, the resident DJ takes over." },
+      { "q": "Where are you located?", "a": "In Lloret de Mar, on the Costa Brava (Girona, Catalonia, Spain). The original sports bar in town, since 1986." },
+      { "q": "What languages do you speak?", "a": "The team and the crowd are international: English, Spanish, Catalan, French and Dutch are all common at the Vic." }
+    ]
   }
 }

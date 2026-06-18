@@ -37,7 +37,8 @@ export function usePageSeo(input: PageSeoInput) {
     canonical,
     locale: OG_LOCALE[locale],
     alternates,
-    ogImage: input.ogImage,
+    // Every page gets a share/preview image; pages may override with a more specific one.
+    ogImage: input.ogImage ?? `${siteUrl}/images/terrace-dusk-1280.webp`,
     jsonLd: input.jsonLd,
     robots: input.robots,
     preload: input.preload,

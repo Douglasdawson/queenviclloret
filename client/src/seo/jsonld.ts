@@ -1,5 +1,14 @@
 import { VENUE } from "@shared/venue";
 
+// Captions keyed by the venue image path, so AI image crawlers get a described
+// visual entity rather than a bare URL.
+const IMAGE_CAPTIONS: Record<string, string> = {
+  "/images/terrace-dusk-1280.webp":
+    "Queen Vic's terrace at dusk in Lloret de Mar, the 200-inch outdoor screen lit up",
+  "/images/terrace-night-1280.webp":
+    "World Cup night on Queen Vic's 1,250 m² terrace, a packed crowd under the giant screen",
+};
+
 export function barOrPubLd(siteUrl: string) {
   return {
     "@context": "https://schema.org",
@@ -12,7 +21,11 @@ export function barOrPubLd(siteUrl: string) {
     foundingDate: VENUE.foundingDate,
     priceRange: "€€",
     servesCuisine: "Bar food",
-    image: VENUE.images.map((p) => (p.startsWith("http") ? p : `${siteUrl}${p}`)),
+    image: VENUE.images.map((p) => ({
+      "@type": "ImageObject",
+      url: p.startsWith("http") ? p : `${siteUrl}${p}`,
+      caption: IMAGE_CAPTIONS[p] ?? "Queen Vic Sports Bar, Lloret de Mar",
+    })),
     address: {
       "@type": "PostalAddress",
       streetAddress: VENUE.address.streetAddress,
@@ -41,6 +54,8 @@ export function barOrPubLd(siteUrl: string) {
       "@type": "AggregateRating",
       ratingValue: VENUE.rating.value,
       reviewCount: VENUE.rating.count,
+      bestRating: 5,
+      worstRating: 1,
       url: VENUE.rating.url,
     },
     sameAs: [...VENUE.socials],
@@ -67,7 +82,8 @@ export interface EventLdInput {
 }
 
 export function eventLd(siteUrl: string, locale: string, e: EventLdInput) {
-  const path = e.urlPath ?? `/events/${e.slug}`;
+  // Only emit a url when the event has a real detail page (urlPath). General
+  // fixtures have no detail route, so we omit url rather than point at a 404.
   return {
     "@context": "https://schema.org",
     "@type": "Event",
@@ -77,9 +93,39 @@ export function eventLd(siteUrl: string, locale: string, e: EventLdInput) {
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     eventStatus: "https://schema.org/EventScheduled",
     description: e.description ?? undefined,
-    url: `${siteUrl}/${locale}${path}`,
+    url: e.urlPath ? `${siteUrl}/${locale}${e.urlPath}` : undefined,
     location: { "@id": `${siteUrl}/#business` },
     organizer: { "@id": `${siteUrl}/#business` },
+  };
+}
+
+export function breadcrumbLd(
+  siteUrl: string,
+  locale: string,
+  items: { name: string; path: string }[],
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((it, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: it.name,
+      item: `${siteUrl}/${locale}${it.path === "/" ? "" : it.path}`,
+    })),
+  };
+}
+
+/** Minimal WebSite node for the brand entity (no SearchAction — there is no site search). */
+export function websiteLd(siteUrl: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${siteUrl}/#website`,
+    name: VENUE.name,
+    url: siteUrl,
+    inLanguage: ["en", "es", "ca", "fr", "nl"],
+    publisher: { "@id": `${siteUrl}/#business` },
   };
 }
 

@@ -6,7 +6,7 @@ import { FixtureTicket } from "../components/FixtureTicket";
 import { useWorldCupEvents } from "../hooks/useWorldCupEvents";
 import { usePageSeo } from "../seo/use-page-seo";
 import { useSite } from "../app/site-context";
-import { barOrPubLd, faqLd, matchEventLd } from "../seo/jsonld";
+import { barOrPubLd, breadcrumbLd, faqLd, matchEventLd } from "../seo/jsonld";
 import { teamSlug } from "../lib/wc-teams";
 
 const TZ = "Europe/Madrid";
@@ -63,6 +63,11 @@ export default function WorldCupMatchPage() {
               endsAt: match.endsAt,
               slug: match.slug,
             }),
+            breadcrumbLd(siteUrl, locale, [
+              { name: t("nav.home"), path: "/" },
+              { name: t("nav.worldCup"), path: "/world-cup-2026" },
+              { name: `${home} v ${away}`, path },
+            ]),
             faqLd(faq),
           ],
           ...(finished ? { robots: "noindex, follow" } : {}),

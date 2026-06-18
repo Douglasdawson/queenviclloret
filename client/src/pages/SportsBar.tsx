@@ -1,15 +1,16 @@
+import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
 import { ButtonLink, Container, Eyebrow, Section } from "../components/ui";
 import { Picture } from "../components/Picture";
 import { usePageSeo } from "../seo/use-page-seo";
 
 const COMPETITIONS = [
-  { src: "/images/premier-league.webp", label: "Premier League" },
-  { src: "/images/world-cup-2026-white.webp", label: "World Cup 2026" },
-  { src: "/images/f1.webp", label: "Formula 1" },
-  { src: "/images/motogp.webp", label: "MotoGP" },
-  { src: "/images/rugby-league.webp", label: "Rugby League" },
-  { src: "/images/gaa.webp", label: "GAA" },
+  { src: "/images/premier-league.webp", label: "Premier League", href: "/watch/premier-league" },
+  { src: "/images/world-cup-2026-white.webp", label: "World Cup 2026", href: "/world-cup-2026" },
+  { src: "/images/f1.webp", label: "Formula 1", href: "/watch/formula-1" },
+  { src: "/images/motogp.webp", label: "MotoGP", href: "/watch/motogp" },
+  { src: "/images/rugby-league.webp", label: "Rugby League", href: "/watch/rugby-league" },
+  { src: "/images/gaa.webp", label: "GAA", href: "/watch/gaa" },
 ];
 
 export default function SportsBarPage() {
@@ -78,17 +79,24 @@ export default function SportsBarPage() {
           </p>
           <ul className="mt-10 grid grid-cols-2 items-center gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-6">
             {COMPETITIONS.map((c) => (
-              <li key={c.label} className="flex flex-col items-center gap-3">
-                <img
-                  src={c.src}
-                  alt={c.label}
-                  width={120}
-                  height={64}
-                  loading="lazy"
-                  decoding="async"
-                  className="h-12 w-auto object-contain opacity-90 sm:h-14"
-                />
-                <span className="label-caps text-[0.625rem] text-paper-dim">{c.label}</span>
+              <li key={c.label}>
+                <Link
+                  href={c.href}
+                  className="group flex flex-col items-center gap-3 rounded-xl p-2 outline-none transition-colors focus-visible:ring-2 focus-visible:ring-gold-400"
+                >
+                  <img
+                    src={c.src}
+                    alt={c.label}
+                    width={120}
+                    height={64}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-12 w-auto object-contain opacity-90 transition-opacity group-hover:opacity-100 sm:h-14"
+                  />
+                  <span className="label-caps text-[0.625rem] text-paper-dim transition-colors group-hover:text-gold-400">
+                    {c.label}
+                  </span>
+                </Link>
               </li>
             ))}
           </ul>

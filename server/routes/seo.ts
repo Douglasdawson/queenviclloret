@@ -4,6 +4,7 @@ import { cached, TTL } from "../cache";
 import { LOCALES } from "@shared/enums";
 import { VENUE } from "@shared/venue";
 import { teamSlug, isIndexableTeam } from "@shared/wc-slug";
+import { COMPETITIONS } from "@shared/competitions";
 import * as eventsDao from "../dao/events.dao";
 
 export const seoRouter: Router = Router();
@@ -67,20 +68,43 @@ seoRouter.get("/robots.txt", (_req, res) => {
 
 seoRouter.get("/sitemap.xml", async (_req, res) => {
   const xml = await cached("seo:sitemap", TTL.MEDIUM, async () => {
-    const wc = await eventsDao.listWorldCup();
+    const [wc, pub] = await Promise.all([
+      eventsDao.listWorldCup(),
+      eventsDao.listPublicUpcoming(200),
+    ]);
     const now = Date.now();
-    const urls: { loc: string }[] = [];
+    // Freshness signal: only emit <lastmod> where we have a real one (the most
+    // recently updated underlying fixture) — never stamp an always-current date
+    // on a static page (search engines distrust that).
+    const isoMaxUpdated = (rows: { updatedAt: Date | null }[]): string | undefined => {
+      let m = 0;
+      for (const r of rows) {
+        const ts = r.updatedAt ? new Date(r.updatedAt).getTime() : 0;
+        if (ts > m) m = ts;
+      }
+      return m ? new Date(m).toISOString() : undefined;
+    };
+    const wcMod = isoMaxUpdated(wc);
+    const pubMod = isoMaxUpdated(pub);
+
+    type Entry = { loc: string; lastmod?: string; changefreq?: string; priority?: string };
+    const urls: Entry[] = [];
+
     for (const p of STATIC_PATHS) {
+      const lastmod = p === "whats-on" ? pubMod : p === "world-cup-2026" ? wcMod : undefined;
+      const changefreq = p === "" || p === "whats-on" || p === "world-cup-2026" ? "daily" : "weekly";
+      const priority = p === "" ? "1.0" : p === "world-cup-2026" ? "0.9" : "0.7";
       for (const lang of LOCALES) {
-        urls.push({ loc: `${BASE}/${lang}${p ? "/" + p : ""}` });
+        urls.push({ loc: `${BASE}/${lang}${p ? "/" + p : ""}`, lastmod, changefreq, priority });
       }
     }
     // Per-match pages — only future/live fixtures (played matches are noindex,
     // so omit them to keep the sitemap and crawl budget lean mid-tournament).
     for (const e of wc) {
       if (new Date(e.startsAt).getTime() < now - 3 * 3600_000) continue;
+      const lastmod = e.updatedAt ? new Date(e.updatedAt).toISOString() : undefined;
       for (const lang of LOCALES) {
-        urls.push({ loc: `${BASE}/${lang}/world-cup-2026/${e.slug}` });
+        urls.push({ loc: `${BASE}/${lang}/world-cup-2026/${e.slug}`, lastmod, changefreq: "daily", priority: "0.6" });
       }
     }
     // Per-team pages — curated indexable nations that appear in the fixtures.
@@ -92,7 +116,13 @@ seoRouter.get("/sitemap.xml", async (_req, res) => {
     }
     for (const slug of teamSlugs) {
       for (const lang of LOCALES) {
-        urls.push({ loc: `${BASE}/${lang}/world-cup-2026/team/${slug}` });
+        urls.push({ loc: `${BASE}/${lang}/world-cup-2026/team/${slug}`, lastmod: wcMod, changefreq: "daily", priority: "0.6" });
+      }
+    }
+    // Per-sport evergreen pages — curated competitions (Premier League, F1, …).
+    for (const c of COMPETITIONS) {
+      for (const lang of LOCALES) {
+        urls.push({ loc: `${BASE}/${lang}/watch/${c.slug}`, lastmod: pubMod, changefreq: "weekly", priority: "0.7" });
       }
     }
 
@@ -105,7 +135,14 @@ seoRouter.get("/sitemap.xml", async (_req, res) => {
           return `    <xhtml:link rel="alternate" hreflang="${lang}" href="${href}"/>`;
         }).join("\n");
         const xdefault = `    <xhtml:link rel="alternate" hreflang="x-default" href="${u.loc.replace(/\/(en|es|ca|fr|nl)(\/|$)/, "/en$2")}"/>`;
-        return `  <url>\n    <loc>${u.loc}</loc>\n${alternates}\n${xdefault}\n  </url>`;
+        const meta = [
+          u.lastmod ? `    <lastmod>${u.lastmod}</lastmod>` : "",
+          u.changefreq ? `    <changefreq>${u.changefreq}</changefreq>` : "",
+          u.priority ? `    <priority>${u.priority}</priority>` : "",
+        ]
+          .filter(Boolean)
+          .join("\n");
+        return `  <url>\n    <loc>${u.loc}</loc>\n${meta ? meta + "\n" : ""}${alternates}\n${xdefault}\n  </url>`;
       })
       .join("\n");
 
@@ -150,6 +187,26 @@ Every fixture has its own "where to watch" page, and each major nation has a tea
 - A national team's fixtures: ${BASE}/en/world-cup-2026/team/{team} (e.g. .../world-cup-2026/team/england, /team/spain, /team/netherlands, /team/france)
 All pages exist in five languages under /en, /es, /ca, /fr, /nl.
 
+## Watch live (per sport)
+Beyond the World Cup, each competition has its own "where to watch in Lloret de Mar" page:
+- Premier League: ${BASE}/en/watch/premier-league
+- Champions League: ${BASE}/en/watch/champions-league
+- Formula 1: ${BASE}/en/watch/formula-1
+- MotoGP: ${BASE}/en/watch/motogp
+- Rugby League: ${BASE}/en/watch/rugby-league
+- GAA: ${BASE}/en/watch/gaa
+
+Q: Where can I watch the Premier League in Lloret de Mar?
+A: At Queen Vic Sports Bar. Every big Premier League fixture is shown live on the biggest outdoor screen in town, with full English commentary. Fixtures: ${BASE}/en/watch/premier-league
+
+## Q&A (Español / Français / Nederlands)
+Q: ¿Dónde ver el fútbol en Lloret de Mar?
+A: En el Queen Vic Sports Bar, ${VENUE.address.streetAddress}. Todos los partidos en directo en la mayor pantalla exterior de Lloret, en una terraza de 1.250 m² con aforo para 700+.
+Q: Où regarder le football à Lloret de Mar ?
+A: Au Queen Vic Sports Bar. Tous les matchs en direct sur le plus grand écran extérieur de Lloret, sur une terrasse de 1 250 m² pour plus de 700 personnes.
+Q: Waar kun je voetbal kijken in Lloret de Mar?
+A: Bij Queen Vic Sports Bar. Elke wedstrijd live op het grootste buitenscherm van Lloret, op een terras van 1.250 m² met plaats voor 700+ fans.
+
 ## What we show
 - Football: Premier League and FIFA World Cup 2026 (every match)
 - Formula 1 and MotoGP (selected races)
@@ -168,6 +225,7 @@ All pages exist in five languages under /en, /es, /ca, /fr, /nl.
 ## Key pages
 - Home: ${BASE}/en
 - World Cup 2026: ${BASE}/en/world-cup-2026
+- Watch Premier League: ${BASE}/en/watch/premier-league
 - What's On (fixtures): ${BASE}/en/whats-on
 - Reservations: ${BASE}/en/reservations
 - Contact: ${BASE}/en/contact

@@ -239,5 +239,38 @@
       { "q": "Laat Queen Vic elke wedstrijd van {{team}} zien?", "a": "Ja — elke wedstrijd van {{team}} op het WK 2026, live, met Engels commentaar bij de grote wedstrijden." },
       { "q": "Moet ik reserveren om {{team}} te kijken?", "a": "Voor grote wedstrijden van {{team}} en groepen raden we aan te reserveren via de reserveringspagina. Anders geldt: vol is vol." }
     ]
+  },
+  "watchSport": {
+    "eyebrow": "Live sport · Waar te kijken",
+    "crumb": "Live sport",
+    "h1": "Waar kun je {{competition}} kijken in Lloret de Mar",
+    "lead": "Kijk {{competition}} live bij Queen Vic, op het grootste buitenscherm van Lloret: een terras van 1.250 m² met plaats voor 700+ fans en Engels commentaar bij de grote wedstrijden.",
+    "scheduleSub": "{{competition}} bij de Vic",
+    "scheduleTitle": "Komende wedstrijden",
+    "empty": "Er zijn nu geen {{competition}}-wedstrijden geladen. Bekijk het volledige programma op Wat er speelt, of volg ons op Instagram.",
+    "faqHeading": "{{competition}} kijken — jouw vragen",
+    "metaTitle": "Waar je {{competition}} kunt kijken in Lloret de Mar | Queen Vic",
+    "metaDescription": "Waar je {{competition}} kunt kijken in Lloret de Mar: live op het grootste buitenscherm bij Queen Vic Sports Bar, terras van 1.250 m² met plaats voor 700+.",
+    "notFoundTitle": "We konden die competitie niet vinden",
+    "notFoundBody": "Die competitie is niet een van de onze. Bekijk alles wat we laten zien op de sports bar-pagina.",
+    "backToSports": "Wat we laten zien",
+    "faq": [
+      { "q": "Waar kan ik {{competition}} kijken in Lloret de Mar?", "a": "Bij Queen Vic Sports Bar. {{competition}} live op het grootste buitenscherm van de stad, op een terras van 1.250 m² met plaats voor 700+ fans." },
+      { "q": "Laat Queen Vic {{competition}} zien?", "a": "Ja — we laten de grote {{competition}}-wedstrijden live zien, met Engels commentaar bij de belangrijkste." },
+      { "q": "Moet ik reserveren om {{competition}} te kijken?", "a": "Voor grote wedstrijden en groepen raden we aan te reserveren via de reserveringspagina. Anders geldt: vol is vol." }
+    ]
+  },
+  "faqPage": {
+    "metaDescription": "Openingstijden, reserveringen, welke wedstrijden we laten zien, de DJ en meer: alles wat je moet weten over Queen Vic Sports Bar in Lloret de Mar.",
+    "items": [
+      { "q": "Waar kan ik het WK 2026 kijken in Lloret de Mar?", "a": "Hier bij Queen Vic. Elke WK 2026-wedstrijd live op het grootste buitenscherm van de stad, op ons terras van 1.250 m² met plaats voor 700+ fans." },
+      { "q": "Hoeveel mensen kunnen er in Queen Vic?", "a": "700+ verdeeld over de bar en het buitenterras van 1.250 m² — een van de grootste sports bar-capaciteiten in Lloret de Mar." },
+      { "q": "Hoe laat openen jullie?", "a": "Dagelijks van 19:00 tot 03:00, en eerder op grote wedstrijddagen. Bekijk onze Instagram en Facebook voor het programma van deze week." },
+      { "q": "Moet ik een tafel reserveren?", "a": "Voor grote wedstrijddagen en groepen raden we aan vooraf te reserveren via de reserveringspagina. Anders geldt: vol is vol. Kom vroeg voor de finales." },
+      { "q": "Kunnen jullie een specifieke wedstrijd laten zien?", "a": "Laat het ons op tijd weten en we doen ons best om het te bevestigen. Stuur ons een bericht op Instagram of gebruik het contactformulier." },
+      { "q": "Is er een live DJ?", "a": "Elke avond. Als de wedstrijd is afgelopen, neemt de vaste DJ het over." },
+      { "q": "Waar zijn jullie gevestigd?", "a": "In Lloret de Mar, aan de Costa Brava (Girona, Catalonië, Spanje). De originele sports bar van de stad, sinds 1986." },
+      { "q": "Welke talen spreken jullie?", "a": "Het team en het publiek zijn internationaal: Engels, Spaans, Catalaans, Frans en Nederlands zijn allemaal gangbaar in de Vic." }
+    ]
   }
 }
