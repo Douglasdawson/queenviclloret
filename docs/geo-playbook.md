@@ -132,8 +132,10 @@ La IA y Google AI Overviews tiran masivamente de la ficha de Google para consult
       `sitemap.xml` enviado (estado **Correcto**, 235 páginas descubiertas). *Inspección de URL +
       Solicitar indexación* de `/es`, `/es/world-cup-2026`, `/en/world-cup-2026`. ⚠️ Cuenta usada:
       **`ivanramirezdawson@gmail.com`** (distinta de la de Bing `queenviclloret@gmail.com`).
-      Bonus pendiente: *Import from GSC* en Bing. *(Se usó meta-tag, no DNS TXT: el meta ya estaba
-      desplegado y la verificación fue inmediata.)*
+      *(Se usó meta-tag, no DNS TXT: el meta ya estaba desplegado y la verificación fue inmediata.)*
+      *Import from GSC* en Bing **evaluado y descartado** *(19/06)*: el sitio ya existía en Bing
+      (verificado por CNAME), así que el import no aportaba nada y habría obligado a meter la 2ª
+      cuenta Google en el OAuth. No se importó.
 - [x] **Google Analytics 4** ✅ *(19/06/2026)* — propiedad "Queen Vic Lloret" (`G-RB2T3WBR6X`,
       Europe/Madrid · EUR) bajo `ivanramirezdawson@gmail.com`. gtag.js **gated por consentimiento**
       (`qv.consent === "all"`), solo en prod, nunca en `/admin` (commit `2012901`, env
