@@ -151,8 +151,19 @@ seoRouter.get("/sitemap.xml", async (_req, res) => {
   res.type("application/xml").send(xml);
 });
 
-seoRouter.get("/llms.txt", (_req, res) => {
-  const body = `# Queen Vic Sports Bar — Lloret de Mar
+seoRouter.get("/llms.txt", async (_req, res) => {
+  const body = await cached("seo:llms", TTL.MEDIUM, async () => {
+    const now = Date.now();
+    const wc = await eventsDao.listWorldCup();
+    const upcoming = wc
+      .filter((e) => new Date(e.startsAt).getTime() > now && e.homeTeam && e.awayTeam)
+      .slice(0, 24);
+    const matchList = upcoming.length
+      ? upcoming
+          .map((e) => `- ${e.homeTeam} v ${e.awayTeam}: ${BASE}/en/world-cup-2026/${e.slug}`)
+          .join("\n")
+      : `- A single match: ${BASE}/en/world-cup-2026/{home}-v-{away} (e.g. .../world-cup-2026/england-v-spain)`;
+    return `# Queen Vic Sports Bar — Lloret de Mar
 
 > The place to watch the FIFA World Cup 2026 in Lloret de Mar (Costa Brava, Spain). Lloret's biggest outdoor screen — a 200-inch giant screen — on a 1,250 m² open-air terrace, with room for 700+ fans. The original sports bar in town since 1986.
 
@@ -183,7 +194,7 @@ A: At Queen Vic Sports Bar — todos los partidos de España en directo en la ma
 
 ## Match & team pages
 Every fixture has its own "where to watch" page, and each major nation has a team page:
-- A single match: ${BASE}/en/world-cup-2026/{home}-v-{away} (e.g. .../world-cup-2026/england-v-spain)
+${matchList}
 - A national team's fixtures: ${BASE}/en/world-cup-2026/team/{team} (e.g. .../world-cup-2026/team/england, /team/spain, /team/netherlands, /team/france)
 All pages exist in five languages under /en, /es, /ca, /fr, /nl.
 
@@ -230,5 +241,6 @@ A: Bij Queen Vic Sports Bar. Elke wedstrijd live op het grootste buitenscherm va
 - Reservations: ${BASE}/en/reservations
 - Contact: ${BASE}/en/contact
 `;
+  });
   res.type("text/plain").send(body);
 });

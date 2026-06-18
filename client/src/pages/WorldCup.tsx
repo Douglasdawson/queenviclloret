@@ -7,24 +7,30 @@ import { FixtureTicket, groupByDay } from "../components/FixtureTicket";
 import { useWorldCupEvents } from "../hooks/useWorldCupEvents";
 import { usePageSeo } from "../seo/use-page-seo";
 import { useSite } from "../app/site-context";
-import { barOrPubLd, faqLd } from "../seo/jsonld";
+import { barOrPubLd, faqLd, worldCupItemListLd } from "../seo/jsonld";
 import { indexableTeamLinks } from "../lib/wc-teams";
 
 const TZ = "Europe/Madrid";
 
 export default function WorldCupPage() {
   const { t } = useTranslation();
-  const { siteUrl } = useSite();
+  const { siteUrl, locale } = useSite();
   const faq = t("worldCup.faq", { returnObjects: true }) as unknown as { q: string; a: string }[];
+
+  const { data: wcEvents } = useWorldCupEvents();
+  const fixtures = wcEvents ?? [];
+
   usePageSeo({
     title: `${t("worldCup.title")} | Queen Vic`,
     description: t("worldCup.subtitle"),
     path: "/world-cup-2026",
-    jsonLd: [barOrPubLd(siteUrl), faqLd(faq)],
+    jsonLd: [
+      barOrPubLd(siteUrl),
+      faqLd(faq),
+      ...(fixtures.length ? [worldCupItemListLd(siteUrl, locale, fixtures)] : []),
+    ],
   });
 
-  const { data: wcEvents } = useWorldCupEvents();
-  const fixtures = wcEvents ?? [];
   const days = groupByDay(fixtures);
   const teamLinks = indexableTeamLinks(fixtures);
 

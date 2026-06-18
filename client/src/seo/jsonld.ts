@@ -168,6 +168,29 @@ export function matchEventLd(siteUrl: string, locale: string, e: MatchLdInput) {
   };
 }
 
+/**
+ * ItemList of the upcoming World Cup fixtures shown on the hub (/world-cup-2026).
+ * Each item points to that match's own "where to watch" page. Aggregates the
+ * links for Google; the per-match pages carry the full SportsEvent markup.
+ */
+export function worldCupItemListLd(
+  siteUrl: string,
+  locale: string,
+  fixtures: { homeTeam?: string | null; awayTeam?: string | null; slug: string }[],
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "FIFA World Cup 2026 fixtures — watch live at Queen Vic Sports Bar, Lloret de Mar",
+    itemListElement: fixtures.map((e, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      ...(e.homeTeam && e.awayTeam ? { name: `${e.homeTeam} v ${e.awayTeam}` } : {}),
+      url: `${siteUrl}/${locale}/world-cup-2026/${e.slug}`,
+    })),
+  };
+}
+
 export function faqLd(items: { q: string; a: string }[]) {
   return {
     "@context": "https://schema.org",
