@@ -97,6 +97,11 @@ A11y 100 · Best Practices 100 · SEO 100. Anti-slop verdict: pass. Real venue d
 (Carrer de la Costa de Carbonell 1 · +34 674 46 12 20 · daily 19:00–03:00) in footer,
 BarOrPub JSON-LD and llms.txt; venue-own WP photos migrated (press/stock excluded — licensing);
 heritage admin re-skin; fixtures auto-import verified against the live API.
+Legal pages complete (5 locales, in footer + sitemap): Privacy + Cookie policies, plus Aviso
+Legal (LSSI-CE), Terms of Use and Accessibility statement. Content lives in
+`client/src/content/legal.ts`; fiscal identity (TURALIA SL · CIF B17113374 · S.L. · fiscal
+domicile Paseo Agustí Font 12 · legal contact administracion@turalia.org) is the single source
+of truth in `shared/venue.ts` `legal` block, hosted on Replit (LucusHost = DNS only).
 
 ## Next (CRM, agreed punto-por-punto sequence)
 1. ~~Load real fixtures~~ ✅ automated (TheSportsDB sync).
