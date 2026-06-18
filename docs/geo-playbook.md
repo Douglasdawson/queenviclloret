@@ -47,7 +47,10 @@ Empieza por **Bing + GBP + corregir el teléfono de Yelp** esta semana.
 
 ## 1. Desplegar (hecho a medias)
 - ✅ Cambios en `main` (`3c09156`).
-- ⏳ **Tú:** Replit → Pull → Deployments → Redeploy.
+- 🔴 **Verificado 18/06/2026: `queenviclloret.com` da 404 — el sitio nuevo NO está desplegado.**
+  La web viva sigue siendo la antigua de WordPress en `queenviclloret.es` (200). Hasta desplegar,
+  **no apuntar el GBP ni los directorios a .com** (enlazaría a una página rota).
+- ⏳ **Tú:** Replit → Pull → Deployments → Redeploy. Decidir dominio definitivo (.com vs .es) y 301s.
 - Tras desplegar, comprobar en producción: `/_robots.txt_`, `/llms.txt`, y la ficha de
   `/en/world-cup-2026` (debe contener el JSON-LD BarOrPub + FAQPage).
 
@@ -55,6 +58,20 @@ Empieza por **Bing + GBP + corregir el teléfono de Yelp** esta semana.
 
 ## 2. Google Business Profile (GBP) — el mayor multiplicador
 La IA y Google AI Overviews tiran masivamente de la ficha de Google para consultas locales.
+
+> **Auditoría de la ficha pública (18/06/2026) — el "antes" real.** Ficha = "Queen Vic Terrace Pub",
+> **4,3★ · 471 reseñas** (el dueño responde). Hallazgos críticos:
+> - 🔴 **Categoría = "Pub"** (única). Competidores como *El Pub* y *Piccadilly Sports Bar* sí están
+>   como **Bar deportivo** → el Queen Vic no compite por "dónde ver el fútbol/Mundial en Lloret".
+> - 🔴 **Sin teléfono** ("Añadir número de teléfono del sitio").
+> - 🔴 **Sin horario** ("Añadir horario") → tampoco hay horas especiales de día de partido.
+> - ⚠️ **Web = `queenviclloret.es`** (WP antiguo); la nueva `.com` da 404 (ver §1).
+> - ⚠️ **Nombre** "Terrace Pub" ≠ marca "Sports Bar" → decisión: usar el nombre del rótulo real
+>   (cambiar a "Sports Bar" sin rótulo que lo respalde puede suspender la ficha).
+> - ✅ Atributos ya muy completos (terraza, deportes, música/actuaciones en directo, karaoke, WiFi
+>   gratis, grupos, turistas, reservas, accesible, pagos con tarjeta/NFC).
+> Detalle completo y valores para aplicar en `docs/informe-gbp-ryan.md`. Evidencia en
+> `docs/_gbp-evidence/`.
 
 **Checklist:**
 - [ ] Categoría principal: **Sports bar** (secundaria: Bar, Pub).
