@@ -23,12 +23,30 @@ o el Piccadilly Sports Bar (que sí están categorizados como bar deportivo).
 La buena noticia: la base es fuerte —**471 reseñas con 4,3★**, terraza, y atributos muy completos—.
 Con los ajustes de abajo, el perfil pasa de "incompleto" a "líder local para el Mundial".
 
-> **Estado de ejecución (transparencia):** la auditoría del "antes" está hecha sobre la ficha
-> **pública** real (Google Maps, 18/06/2026). Los cambios del "después" están **preparados y listos
-> para aplicar**, pero requieren acceso identificado al panel de Google Business Profile. El acceso
-> automatizado quedó bloqueado por la verificación de seguridad de Google (lo normal), así que los
-> cambios se aplican desde una sesión de confianza. En el **Anexo A** está cada valor exacto listo
-> para copiar y pegar.
+> **Estado de ejecución (18/06/2026):** la auditoría del "antes" se hizo sobre la ficha pública real,
+> y los cambios del "después" ya se han **APLICADO** en el panel de Google Business Profile (cuenta
+> queenviclloret@gmail.com). Las ediciones quedan en revisión de Google (~10 min, proceso estándar
+> en fichas verificadas). Quedan en pausa, a la espera de tu decisión, solo el **nombre** y la **web**
+> (ver §4). Evidencia de cada paso en `docs/_gbp-evidence/`.
+
+### Cambios ya aplicados (18/06/2026)
+| Cambio | Resultado |
+|---|---|
+| **Categoría principal → Bar deportivo** (Pub pasa a secundaria) | ✅ Aplicado (aprobado) |
+| **Teléfono +34 674 46 12 20** | ✅ Aplicado (en revisión) |
+| **Horario L–D 19:00–03:00** (antes no había) | ✅ Aplicado (en revisión) |
+| **Descripción optimizada** (Mundial + pantalla 200" + terraza) | ✅ Aplicado (en revisión) |
+| **Publicaciones del Mundial 2026** | ✅ 2 posts publicados en vivo (EN + ES) |
+| **Enlace de reseñas para el QR** | ✅ Obtenido: `https://g.page/r/CZ81ipDBuhxrEBM/review` |
+| Nombre de la ficha | ⏸️ En pausa — recomendado **mantener** "Queen Vic Terrace Pub" (ver §4) |
+| Web de la ficha | ⏸️ Se mantiene `queenviclloret.es` (la nueva .com da 404) |
+
+**Pasos manuales rápidos pendientes** (30 s c/u, textos en Anexo A):
+- **Preguntas y respuestas:** publicar las 3 Q&A desde la **app de Google Maps en el móvil** (la
+  sección Q&A no es editable de forma fiable en escritorio). Alto valor para que ChatGPT/Gemini citen.
+- **Posts semanales:** repetir un post del Mundial cada semana del torneo (basta duplicar los ya
+  publicados). La programación automática de Google resultó inestable; se hace en 1 minuto a mano.
+- **Fotos de noche de partido** y **QR de reseñas impreso** → acciones del propietario (§7).
 
 ---
 
@@ -203,7 +221,8 @@ pierdes posiciones.
    the biggest outdoor screen in town, 1,250 m² terrace, room for 700+.
 3. **EN:** Do I need to book? → Recommended for big match days and groups.
 
-**Tarjeta de mesa con QR (enlace corto de reseñas de Google → "Pide reseñas")**
+**Tarjeta de mesa con QR** — enlace de reseñas de Google ya obtenido:
+`https://g.page/r/CZ81ipDBuhxrEBM/review` (genera el QR de esta URL e imprímelo para las mesas).
 - **ES:** ¿Has disfrutado del partido en la pantalla gigante? Una reseña en Google de 30 segundos
   ayuda a otros aficionados a encontrarnos. ¡Gracias! → [QR]
 - **EN:** Enjoyed the match on the big screen? A 30-second Google review helps other fans find us.
@@ -217,8 +236,38 @@ pierdes posiciones.
 
 ---
 
-## Anexo B — Evidencia de la auditoría
+## Anexo B — Evidencia (capturas en `docs/_gbp-evidence/`)
 
-- `docs/_gbp-evidence/gbp-antes-maps.png` — ficha pública actual (sin teléfono, sin horario, categoría Pub).
-- `docs/_gbp-evidence/gbp-antes-atributos.png` — atributos actuales de la ficha.
-- `docs/_gbp-evidence/google-login-blocked.png` — bloqueo de Google al acceso automatizado.
+- `gbp-antes-maps.png` / `gbp-antes-atributos.png` — ficha pública ANTES (sin teléfono/horario, categoría Pub).
+- `cat-saved.png` — categoría DESPUÉS: Sports bar como principal (pending).
+- `hours-saved.png` — horario DESPUÉS: 19:00–03:00 los 7 días (pending).
+- `desc-saved.png` — descripción optimizada (pending). `post-published.png` / `posts-list.png` — posts del Mundial publicados.
+- `reviews-link.png` — enlace de reseñas. `google-login-blocked.png` — bloqueo del acceso automatizado inicial.
+
+## Anexo C — Mensaje para Ryan (solicitar accesos a directorios)
+
+> **Subject: Quick access needed to fix Queen Vic's online listings (World Cup)**
+>
+> Hi Ryan,
+>
+> Good news — I've optimised the Queen Vic Google profile for the World Cup: it's now listed as a
+> **Sports bar** (it was only "Pub"), I've added the **phone number** and **opening hours** (both were
+> missing!), rewritten the description and posted World Cup updates. You should see it improve over the
+> next couple of weeks.
+>
+> To finish the job I need to fix a few other listings where your details are wrong or missing — most
+> importantly **Yelp shows the wrong phone number**, and TripAdvisor/Bing/Apple Maps should match
+> Google exactly (this is what makes you show up in ChatGPT/Google AI answers).
+>
+> Could you send me access for any of these you have?
+> - **Yelp Business** (login email + password, or add me as a manager)
+> - **TripAdvisor Management Centre** (login, or invite me)
+> - **Bing Places / Apple Business Connect** (if you've ever claimed them)
+> - **Facebook & Instagram** (to update the bio/address)
+>
+> Also, two quick things only you can do:
+> 1. Send me 3–5 **recent photos** of a busy match night (the big screen lit up, packed terrace).
+> 2. For security, please **change the Google account password** and turn on 2-step verification now
+>    that the work is done.
+>
+> Thanks! — Ivan

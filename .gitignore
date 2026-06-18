@@ -11,3 +11,7 @@ test-results
 !.env.example
 .vite
 .playwright-mcp/
+
+# Working artifacts — operational screenshots & intermediate HTML (keep out of public repo)
+docs/_gbp-evidence/
+docs/*.html

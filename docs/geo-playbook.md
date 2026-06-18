@@ -73,18 +73,17 @@ La IA y Google AI Overviews tiran masivamente de la ficha de Google para consult
 > Detalle completo y valores para aplicar en `docs/informe-gbp-ryan.md`. Evidencia en
 > `docs/_gbp-evidence/`.
 
-**Checklist:**
-- [ ] Categoría principal: **Sports bar** (secundaria: Bar, Pub).
-- [ ] NAP EXACTO igual que el sitio: `Carrer de la Costa de Carbonell, 1 · 17310 Lloret de Mar`
-      · `+34 674 46 12 20`.
-- [ ] Horario: a diario 19:00–03:00 (ajustar días de partido).
-- [ ] Atributos: asiento exterior / terraza, deportes en directo en TV, pantalla grande,
-      apto para grupos, accesible.
-- [ ] Web: enlazar a `https://queenviclloret.com/`.
-- [ ] Fotos recientes: terraza llena en noche de partido, la pantalla gigante encendida.
-- [ ] **Post** (repetir semanal durante el torneo) — ver textos abajo.
-- [ ] **Sección Preguntas y respuestas**: publicar tú mismo las 2-3 preguntas clave con su
-      respuesta (ver abajo). Se puede preguntar y autorresponder.
+**Checklist:** *(aplicado 18/06/2026 vía panel GBP, en revisión de Google ~10 min)*
+- [x] Categoría principal: **Sports bar** ✅ (Pub pasa a secundaria). Antes: solo "Pub".
+- [x] Teléfono **+34 674 46 12 20** ✅ (antes: ausente). NAP dirección ya correcta.
+- [x] Horario: a diario **19:00–03:00** ✅ (antes: ausente). Falta: horas especiales de día de partido.
+- [x] Atributos ✅ ya muy completos (terraza, deportes, música en directo, WiFi, grupos, reservas…).
+- [ ] Web: ⏸️ en pausa — `queenviclloret.com` da 404; la ficha sigue en `queenviclloret.es` (vivo).
+- [ ] Fotos recientes de noche de partido / pantalla gigante → **acción de Ryan** (aportar material).
+- [x] Descripción optimizada ✅ (antes: nota operativa pobre). **Post del Mundial** publicado ✅.
+- [ ] **Sección Preguntas y respuestas**: pendiente (autorrespuesta; opcional).
+- [x] Enlace de reseñas para el QR ✅ → `https://g.page/r/CZ81ipDBuhxrEBM/review`
+- [ ] Nombre de la ficha: ⏸️ "Queen Vic Terrace Pub" — decidir según rótulo real (no forzar "Sports Bar").
 
 ### Texto de Post GBP (5 idiomas)
 - **EN:** Watch every FIFA World Cup 2026 match LIVE at Queen Vic — Lloret's biggest outdoor
