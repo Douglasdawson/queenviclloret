@@ -40,8 +40,8 @@ Orden de impacto para un local en buscadores de IA (aprox., síntesis de la inve
 | **Citas externas + NAP consistente** (TripAdvisor, Yelp, Reddit) | ~15% | 🔴 teléfono mal en Yelp |
 | **On-site** (schema, contenido, FAQ, llms.txt) | ~25–30% | ✅ hecho (2 rondas + fixtures reales + llms.txt dinámico) |
 
-**Conclusión:** el on-site ya está y Bing está verificado. Quedan **Google Search Console**,
-las **reseñas** y **corregir el teléfono de Yelp** (filas de Ryan), que son lo decisivo.
+**Conclusión:** el on-site ya está y **Bing + GSC + GA4 verificados**. Quedan las **reseñas**
+y **corregir el teléfono de Yelp** (filas de Ryan), que son ahora lo decisivo.
 
 ---
 
@@ -130,7 +130,11 @@ La IA y Google AI Overviews tiran masivamente de la ficha de Google para consult
       `https://queenviclloret.es` **verificada** por **meta-tag HTML** (commit `2012901`:
       env `GSC_VERIFICATION` → `<meta name="google-site-verification">` en todas las páginas).
       `sitemap.xml` enviado (estado **Correcto**, 235 páginas descubiertas). *Inspección de URL +
-      Solicitar indexación* de `/es`, `/es/world-cup-2026`, `/en/world-cup-2026`. ⚠️ Cuenta usada:
+      Solicitar indexación* de **8 URLs** *(19/06, hasta agotar la cuota diaria ~10/propiedad)*:
+      `/es`, `/en`, `/es/world-cup-2026`, `/en/world-cup-2026`, `/es/whats-on`,
+      `team/{spain,england}`, `brazil-vs-haiti`. **2 quedaron pendientes por cuota** (reintentar
+      cuando se libere la ventana ~24h): `team/brazil` y `england-vs-ghana`. *(No bloqueante: ya
+      están en el sitemap; Solicitar indexación solo adelanta la cola.)* ⚠️ Cuenta usada:
       **`ivanramirezdawson@gmail.com`** (distinta de la de Bing `queenviclloret@gmail.com`).
       *(Se usó meta-tag, no DNS TXT: el meta ya estaba desplegado y la verificación fue inmediata.)*
       *Import from GSC* en Bing **evaluado y descartado** *(19/06)*: el sitio ya existía en Bing
