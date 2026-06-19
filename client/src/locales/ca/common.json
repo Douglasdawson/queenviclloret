@@ -158,13 +158,13 @@
       "phonePrefix": "Prefix"
     },
     "occasions": {
-      "group": "Nit en grup",
-      "match_day": "Dia de partit",
+      "group": "Grup",
+      "match_day": "Partit",
       "stag_hen": "Comiat",
       "birthday": "Aniversari",
-      "standard": "Només una taula"
+      "standard": "Una taula"
     },
-    "modalTitle": "Consultar disponibilitat de taula",
+    "modalTitle": "Pregunta'ns",
     "wa": {
       "message": "Hola Queen Vic 👋 Vull consultar disponibilitat de taula:\n• Nom: {{name}}\n• Persones: {{partySize}}\n• Dia: {{date}}{{time}}\n• Ocasió: {{occasion}}{{requests}}",
       "notice": "En enviar s'obre WhatsApp amb la teva sol·licitud llesta per enviar. Allà confirmem la disponibilitat.",

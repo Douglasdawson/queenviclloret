@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useId, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslation } from "react-i18next";
 import { z } from "zod";
 import { Button, LaurelSeal } from "./ui";
-import { FieldError, FieldLabel, Honeypot, Select, TextArea, TextInput } from "./Field";
+import { DateTimeInput, FieldError, FieldLabel, Honeypot, Select, TextArea, TextInput } from "./Field";
 import { emailSchema } from "@shared/validation/common";
 import { apiPost } from "../lib/api";
 import { collectAttribution } from "../lib/attribution";
@@ -57,6 +57,7 @@ const TYPES = ["group", "match_day", "stag_hen", "birthday", "standard"] as cons
 export function ReservationForm({ onSuccess }: { onSuccess?: () => void }) {
   const { t } = useTranslation();
   const { locale } = useSite();
+  const uid = useId();
   const [sent, setSent] = useState(false);
   const [waUrl, setWaUrl] = useState<string | null>(null);
   const {
@@ -144,14 +145,20 @@ export function ReservationForm({ onSuccess }: { onSuccess?: () => void }) {
   return (
     <form method="post" onSubmit={handleSubmit(onSubmit)} className="relative">
       <Honeypot register={register("company")} />
-      <div className="grid grid-cols-2 gap-x-4 gap-y-5">
+      <div className="grid grid-cols-2 gap-x-4 gap-y-4">
         <div className="col-span-2">
-          <FieldLabel>{t("reservations.form.name")}</FieldLabel>
-          <TextInput {...register("name")} autoComplete="name" />
-          <FieldError message={errors.name?.message} />
+          <FieldLabel htmlFor={`${uid}-name`}>{t("reservations.form.name")}</FieldLabel>
+          <TextInput
+            id={`${uid}-name`}
+            autoComplete="name"
+            aria-invalid={!!errors.name || undefined}
+            aria-describedby={errors.name ? `${uid}-name-err` : undefined}
+            {...register("name")}
+          />
+          <FieldError id={`${uid}-name-err`} message={errors.name?.message} />
         </div>
         <div className="col-span-2">
-          <FieldLabel>{`${t("reservations.form.phone")} ${t("form.optional")}`}</FieldLabel>
+          <FieldLabel htmlFor={`${uid}-phone`}>{`${t("reservations.form.phone")} ${t("form.optional")}`}</FieldLabel>
           <div className="flex gap-2">
             <Select
               {...register("phonePrefix")}
@@ -165,22 +172,30 @@ export function ReservationForm({ onSuccess }: { onSuccess?: () => void }) {
               ))}
             </Select>
             <TextInput
-              {...register("phoneLocal")}
+              id={`${uid}-phone`}
               type="tel"
               inputMode="tel"
               autoComplete="tel-national"
               className="flex-1"
+              {...register("phoneLocal")}
             />
           </div>
         </div>
         <div>
-          <FieldLabel>{t("reservations.form.partySize")}</FieldLabel>
-          <TextInput type="number" min={1} {...register("partySize")} />
-          <FieldError message={errors.partySize?.message} />
+          <FieldLabel htmlFor={`${uid}-party`}>{t("reservations.form.partySize")}</FieldLabel>
+          <TextInput
+            id={`${uid}-party`}
+            type="number"
+            min={1}
+            aria-invalid={!!errors.partySize || undefined}
+            aria-describedby={errors.partySize ? `${uid}-party-err` : undefined}
+            {...register("partySize")}
+          />
+          <FieldError id={`${uid}-party-err`} message={errors.partySize?.message} />
         </div>
         <div>
-          <FieldLabel>{t("reservations.form.type")}</FieldLabel>
-          <Select {...register("reservationType")}>
+          <FieldLabel htmlFor={`${uid}-type`}>{t("reservations.form.type")}</FieldLabel>
+          <Select id={`${uid}-type`} {...register("reservationType")}>
             {TYPES.map((value) => (
               <option key={value} value={value}>
                 {t(`reservations.occasions.${value}`)}
@@ -189,22 +204,37 @@ export function ReservationForm({ onSuccess }: { onSuccess?: () => void }) {
           </Select>
         </div>
         <div>
-          <FieldLabel>{t("reservations.form.date")}</FieldLabel>
-          <TextInput type="date" min={todayIso} {...register("date")} />
-          <FieldError message={errors.date?.message} />
+          <FieldLabel htmlFor={`${uid}-date`}>{t("reservations.form.date")}</FieldLabel>
+          <DateTimeInput
+            id={`${uid}-date`}
+            icon="calendar"
+            type="date"
+            min={todayIso}
+            aria-invalid={!!errors.date || undefined}
+            aria-describedby={errors.date ? `${uid}-date-err` : undefined}
+            {...register("date")}
+          />
+          <FieldError id={`${uid}-date-err`} message={errors.date?.message} />
         </div>
         <div>
-          <FieldLabel>{`${t("reservations.form.time")} ${t("form.optional")}`}</FieldLabel>
-          <TextInput type="time" {...register("timeSlot")} />
+          <FieldLabel htmlFor={`${uid}-time`}>{`${t("reservations.form.time")} ${t("form.optional")}`}</FieldLabel>
+          <DateTimeInput id={`${uid}-time`} icon="clock" type="time" {...register("timeSlot")} />
         </div>
         <div className="col-span-2">
-          <FieldLabel>{`${t("reservations.form.email")} ${t("form.optional")}`}</FieldLabel>
-          <TextInput type="email" {...register("email")} autoComplete="email" />
-          <FieldError message={errors.email?.message} />
+          <FieldLabel htmlFor={`${uid}-email`}>{`${t("reservations.form.email")} ${t("form.optional")}`}</FieldLabel>
+          <TextInput
+            id={`${uid}-email`}
+            type="email"
+            autoComplete="email"
+            aria-invalid={!!errors.email || undefined}
+            aria-describedby={errors.email ? `${uid}-email-err` : undefined}
+            {...register("email")}
+          />
+          <FieldError id={`${uid}-email-err`} message={errors.email?.message} />
         </div>
         <div className="col-span-2">
-          <FieldLabel>{t("reservations.form.requests")}</FieldLabel>
-          <TextArea {...register("specialRequests")} className="min-h-24" />
+          <FieldLabel htmlFor={`${uid}-notes`}>{t("reservations.form.requests")}</FieldLabel>
+          <TextArea id={`${uid}-notes`} className="min-h-20" {...register("specialRequests")} />
         </div>
       </div>
       <p className="mt-4 text-xs leading-relaxed text-ink-600">{t("reservations.wa.notice")}</p>

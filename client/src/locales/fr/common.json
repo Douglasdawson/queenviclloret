@@ -158,13 +158,13 @@
       "phonePrefix": "Indicatif"
     },
     "occasions": {
-      "group": "Soirée de groupe",
-      "match_day": "Jour de match",
-      "stag_hen": "Enterrement de vie",
+      "group": "Groupe",
+      "match_day": "Match",
+      "stag_hen": "EVG / EVJF",
       "birthday": "Anniversaire",
-      "standard": "Juste une table"
+      "standard": "Une table"
     },
-    "modalTitle": "Vérifier la disponibilité d'une table",
+    "modalTitle": "Demande-nous",
     "wa": {
       "message": "Bonjour Queen Vic 👋 Je voudrais vérifier la disponibilité d'une table :\n• Nom : {{name}}\n• Personnes : {{partySize}}\n• Jour : {{date}}{{time}}\n• Occasion : {{occasion}}{{requests}}",
       "notice": "L'envoi ouvre WhatsApp avec votre demande prête à envoyer. Nous y confirmons la disponibilité.",

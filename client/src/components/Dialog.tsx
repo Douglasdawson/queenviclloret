@@ -22,15 +22,15 @@ export function Dialog({
       <RadixDialog.Portal>
         <RadixDialog.Overlay className="fixed inset-0 z-[80] bg-ink-900/60 backdrop-blur-sm" />
         <RadixDialog.Content
-          className="fixed left-1/2 top-1/2 z-[81] max-h-[90vh] w-[calc(100vw-1.5rem)] max-w-2xl -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-[1.5rem] border border-cream-200 bg-cream-50 p-6 shadow-[0_24px_60px_oklch(0.25_0.02_160/0.35)] focus:outline-none sm:p-8"
+          className="fixed left-1/2 top-1/2 z-[81] max-h-[90vh] w-[calc(100vw-1.5rem)] max-w-2xl -translate-x-1/2 -translate-y-1/2 overflow-y-auto scroll-pt-20 rounded-[1.5rem] border border-cream-200 bg-cream-50 px-5 pb-5 shadow-[0_24px_60px_oklch(0.25_0.02_160/0.35)] focus:outline-none sm:px-8 sm:pb-8"
         >
-          <div className="mb-5 flex items-start justify-between gap-4">
-            <RadixDialog.Title className="font-display text-2xl font-bold text-ink-900">
+          <div className="sticky top-0 z-10 -mx-5 mb-4 flex items-start justify-between gap-4 border-b border-cream-200 bg-cream-50 px-5 py-4 sm:-mx-8 sm:px-8">
+            <RadixDialog.Title className="font-display text-xl font-bold text-ink-900 sm:text-2xl">
               {title}
             </RadixDialog.Title>
             <RadixDialog.Close
               aria-label="Close"
-              className="-mr-1 -mt-1 inline-flex min-h-9 min-w-9 items-center justify-center rounded-md text-2xl leading-none text-ink-600 transition-colors hover:text-ink-900"
+              className="-mr-1.5 inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-md text-2xl leading-none text-ink-600 transition-colors hover:text-ink-900"
             >
               ×
             </RadixDialog.Close>

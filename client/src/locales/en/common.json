@@ -158,13 +158,13 @@
       "phonePrefix": "Country code"
     },
     "occasions": {
-      "group": "Group night",
+      "group": "Group",
       "match_day": "Match day",
-      "stag_hen": "Stag / hen do",
+      "stag_hen": "Stag or hen",
       "birthday": "Birthday",
       "standard": "Just a table"
     },
-    "modalTitle": "Check table availability",
+    "modalTitle": "Ask us",
     "wa": {
       "message": "Hi Queen Vic 👋 I'd like to check table availability:\n• Name: {{name}}\n• People: {{partySize}}\n• Day: {{date}}{{time}}\n• Occasion: {{occasion}}{{requests}}",
       "notice": "Sending opens WhatsApp with your request ready to send. We'll confirm availability there.",

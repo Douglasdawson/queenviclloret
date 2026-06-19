@@ -158,13 +158,13 @@
       "phonePrefix": "Landcode"
     },
     "occasions": {
-      "group": "Groepsavond",
-      "match_day": "Wedstrijddag",
-      "stag_hen": "Vrijgezellenfeest",
+      "group": "Groep",
+      "match_day": "Wedstrijd",
+      "stag_hen": "Vrijgezel",
       "birthday": "Verjaardag",
-      "standard": "Gewoon een tafel"
+      "standard": "Een tafel"
     },
-    "modalTitle": "Tafelbeschikbaarheid checken",
+    "modalTitle": "Vraag het ons",
     "wa": {
       "message": "Hoi Queen Vic 👋 Ik wil graag de tafelbeschikbaarheid checken:\n• Naam: {{name}}\n• Personen: {{partySize}}\n• Dag: {{date}}{{time}}\n• Gelegenheid: {{occasion}}{{requests}}",
       "notice": "Bij verzenden opent WhatsApp met je aanvraag klaar om te versturen. Daar bevestigen we de beschikbaarheid.",
