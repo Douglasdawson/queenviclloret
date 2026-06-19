@@ -7,6 +7,9 @@ import { env, isProd } from "../env";
 import { cacheGet, cacheSet, TTL } from "../cache";
 import { buildDocument, type RenderedDoc } from "./html-template";
 import * as eventsDao from "../dao/events.dao";
+import * as postsDao from "../dao/posts.dao";
+import * as categoriesDao from "../dao/post-categories.dao";
+import { toPublicListItem, toPublicDetail, toPublicCategory } from "../lib/post-serialize";
 import { logger } from "../lib/logger";
 import { DEFAULT_LOCALE, LOCALES, type Locale } from "@shared/enums";
 
@@ -69,7 +72,33 @@ export function createSsrHandler(vite: ViteDevServer | null) {
         } catch (err) {
           logger.error({ err, url }, "[ssr] fixture fetch failed — rendering page without fixtures");
         }
-        const initialData = { events, worldCup };
+        const initialData: Record<string, unknown> = { events, worldCup };
+
+        // Blog routes need their own SSR-seeded data (categories + list/detail).
+        const pathNoLocale = url.replace(/^\/(en|es|ca|fr|nl)(?=\/|$)/, "").split("?")[0];
+        if (/^\/blog(\/|$)/.test(pathNoLocale)) {
+          try {
+            const cats = await categoriesDao.listCategories();
+            initialData.postCategories = cats.map(toPublicCategory);
+            const catMatch = pathNoLocale.match(/^\/blog\/category\/([^/]+)\/?$/);
+            const postMatch = pathNoLocale.match(/^\/blog\/([^/]+)\/?$/);
+            if (catMatch) {
+              const categoryId = cats.find((c) => c.slug === catMatch[1])?.id;
+              const rows = categoryId
+                ? await postsDao.listPublicPosts({ categoryId, limit: 50 })
+                : [];
+              initialData.posts = { category: catMatch[1], items: rows.map(toPublicListItem) };
+            } else if (postMatch && postMatch[1] !== "category") {
+              const p = await postsDao.getPublicPostBySlug(postMatch[1]);
+              if (p) initialData.post = { slug: postMatch[1], detail: toPublicDetail(p) };
+            } else {
+              const rows = await postsDao.listPublicPosts({ limit: 50 });
+              initialData.posts = { category: undefined, items: rows.map(toPublicListItem) };
+            }
+          } catch (err) {
+            logger.error({ err, url }, "[ssr] blog fetch failed — rendering without blog data");
+          }
+        }
 
         let render: RenderFn;
         if (isProd) {

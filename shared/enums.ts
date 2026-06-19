@@ -5,7 +5,7 @@ export const LOCALES = ["en", "es", "ca", "fr", "nl"] as const;
 export type Locale = (typeof LOCALES)[number];
 export const DEFAULT_LOCALE: Locale = "en";
 
-export const userRole = pgEnum("user_role", ["owner", "admin", "manager", "staff"]);
+export const userRole = pgEnum("user_role", ["owner", "admin", "manager", "staff", "editor"]);
 export type UserRole = (typeof userRole.enumValues)[number];
 
 export const leadStatus = pgEnum("lead_status", [
@@ -87,3 +87,6 @@ export const recipientStatus = pgEnum("recipient_status", [
 ]);
 
 export const noteEntityType = pgEnum("note_entity_type", ["lead", "reservation", "event"]);
+
+export const postStatus = pgEnum("post_status", ["draft", "published", "archived"]);
+export type PostStatus = (typeof postStatus.enumValues)[number];

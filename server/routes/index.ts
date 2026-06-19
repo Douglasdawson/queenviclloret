@@ -4,6 +4,8 @@ import { leadsRouter } from "./leads";
 import { eventsRouter } from "./events";
 import { reservationsRouter } from "./reservations";
 import { campaignsRouter } from "./campaigns";
+import { postsRouter } from "./posts";
+import { usersRouter } from "./users";
 import { publicRouter } from "./public";
 
 export const apiRouter: Router = Router();
@@ -18,3 +20,5 @@ apiRouter.use("/leads", leadsRouter);
 apiRouter.use("/events", eventsRouter);
 apiRouter.use("/reservations", reservationsRouter);
 apiRouter.use("/campaigns", campaignsRouter);
+apiRouter.use("/posts", postsRouter);
+apiRouter.use("/users", usersRouter);

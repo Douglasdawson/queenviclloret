@@ -191,6 +191,32 @@ export function worldCupItemListLd(
   };
 }
 
+export interface BlogPostingLdInput {
+  title: string;
+  description?: string;
+  slug: string;
+  datePublished?: string | null;
+  dateModified?: string | null;
+}
+
+/** A blog post as BlogPosting, authored & published by the venue entity. */
+export function blogPostingLd(siteUrl: string, locale: string, p: BlogPostingLdInput) {
+  const url = `${siteUrl}/${locale}/blog/${p.slug}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: p.title,
+    description: p.description ?? undefined,
+    inLanguage: locale,
+    ...(p.datePublished ? { datePublished: p.datePublished } : {}),
+    ...(p.dateModified ? { dateModified: p.dateModified } : {}),
+    author: { "@id": `${siteUrl}/#business` },
+    publisher: { "@id": `${siteUrl}/#business` },
+    mainEntityOfPage: url,
+    url,
+  };
+}
+
 export function faqLd(items: { q: string; a: string }[]) {
   return {
     "@context": "https://schema.org",

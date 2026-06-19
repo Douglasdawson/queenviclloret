@@ -1,6 +1,9 @@
-import { sql, eq, and } from "drizzle-orm";
+import { sql, eq, and, asc } from "drizzle-orm";
 import { db } from "../db";
 import { users, type NewUser, type User } from "@shared/schema";
+import type { UserRole } from "@shared/enums";
+import type { AuditContext } from "../middlewares/audit-context";
+import { softDelete, withUpdate, writeAudit } from "./base.dao";
 
 export async function findByEmail(email: string): Promise<User | undefined> {
   const rows = await db
@@ -45,3 +48,59 @@ export function publicUser(u: User) {
   return { id: u.id, email: u.email, name: u.name, role: u.role, isActive: u.isActive };
 }
 export type PublicUser = ReturnType<typeof publicUser>;
+
+/* ----------------------------------------------- admin user management */
+
+export async function listUsers(): Promise<User[]> {
+  return db
+    .select()
+    .from(users)
+    .where(eq(users.isDeleted, false))
+    .orderBy(asc(users.createdAt));
+}
+
+export async function createUserAudited(
+  values: NewUser,
+  ctx: AuditContext,
+): Promise<User> {
+  const row = await db.transaction(async (tx) => {
+    const [r] = await tx
+      .insert(users)
+      .values({ ...values, createdBy: ctx.actorId, updatedBy: ctx.actorId })
+      .returning();
+    await writeAudit(tx, ctx, { action: "user.create", entityType: "user", entityId: r.id });
+    return r;
+  });
+  return row;
+}
+
+export async function updateUser(
+  id: string,
+  patch: { name?: string; role?: UserRole; isActive?: boolean; passwordHash?: string },
+  ctx: AuditContext,
+): Promise<User | undefined> {
+  const row = await db.transaction(async (tx) => {
+    const [r] = await tx
+      .update(users)
+      .set(withUpdate(patch, ctx.actorId))
+      .where(and(eq(users.id, id), eq(users.isDeleted, false)))
+      .returning();
+    if (r)
+      await writeAudit(tx, ctx, {
+        action: "user.update",
+        entityType: "user",
+        entityId: id,
+        diff: { ...patch, passwordHash: patch.passwordHash ? "[redacted]" : undefined },
+      });
+    return r;
+  });
+  return row;
+}
+
+export async function removeUser(id: string, ctx: AuditContext): Promise<boolean> {
+  return db.transaction(async (tx) => {
+    const done = await softDelete(tx, users, id, ctx.actorId);
+    if (done) await writeAudit(tx, ctx, { action: "user.delete", entityType: "user", entityId: id });
+    return done;
+  });
+}

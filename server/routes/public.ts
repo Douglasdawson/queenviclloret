@@ -8,6 +8,9 @@ import * as leadsDao from "../dao/leads.dao";
 import * as reservationsDao from "../dao/reservations.dao";
 import * as eventsDao from "../dao/events.dao";
 import * as recipientsDao from "../dao/campaign-recipients.dao";
+import * as postsDao from "../dao/posts.dao";
+import * as categoriesDao from "../dao/post-categories.dao";
+import { toPublicListItem, toPublicDetail, toPublicCategory } from "../lib/post-serialize";
 import { cached, TTL } from "../cache";
 import type { ContactFormInput } from "@shared/validation/leads";
 import type { ReservationRequestInput } from "@shared/validation/reservations";
@@ -32,6 +35,35 @@ publicRouter.get("/events/:slug", async (req, res) => {
   const event = await eventsDao.getPublicEventBySlug((req.params.slug as string));
   if (!event) throw new AppError(404, "not_found", "Event not found");
   res.json({ event });
+});
+
+/* ------------------------------------------------------------- blog (public) */
+publicRouter.get("/post-categories", async (_req, res) => {
+  const categories = await cached("api:public:post-categories", TTL.MEDIUM, async () =>
+    (await categoriesDao.listCategories()).map(toPublicCategory),
+  );
+  res.json({ categories });
+});
+
+publicRouter.get("/posts", async (req, res) => {
+  const categorySlug = typeof req.query.category === "string" ? req.query.category : undefined;
+  const posts = await cached(`api:public:posts:${categorySlug ?? "all"}`, TTL.SHORT, async () => {
+    let categoryId: string | undefined;
+    if (categorySlug) {
+      const cats = await categoriesDao.listCategories();
+      categoryId = cats.find((c) => c.slug === categorySlug)?.id;
+      if (!categoryId) return [];
+    }
+    const rows = await postsDao.listPublicPosts({ categoryId, limit: 50 });
+    return rows.map(toPublicListItem);
+  });
+  res.json({ posts });
+});
+
+publicRouter.get("/posts/:slug", async (req, res) => {
+  const post = await postsDao.getPublicPostBySlug(req.params.slug as string);
+  if (!post) throw new AppError(404, "not_found", "Post not found");
+  res.json({ post: toPublicDetail(post) });
 });
 
 // One-click unsubscribe (marketing compliance). Idempotent.

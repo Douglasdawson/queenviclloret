@@ -19,6 +19,12 @@ export interface PageSeoInput {
   jsonLd?: Record<string, unknown>[];
   robots?: string;
   preload?: { href: string; as: string; type?: string }[];
+  /**
+   * Restrict hreflang alternates to these locales (e.g. a blog post only
+   * exists in the locales it has been translated into). Defaults to all LOCALES.
+   * The x-default points at the first of these (or "en" if it's present).
+   */
+  alternateLocales?: readonly Locale[];
 }
 
 /** Compute canonical + hreflang alternates from the site URL and apply SEO. */
@@ -26,10 +32,15 @@ export function usePageSeo(input: PageSeoInput) {
   const { siteUrl, locale } = useSite();
   const canonical = `${siteUrl}${localized(input.path, locale)}`;
 
-  const alternates = [
-    ...LOCALES.map((l) => ({ lang: l, href: `${siteUrl}${localized(input.path, l)}` })),
-    { lang: "x-default", href: `${siteUrl}${localized(input.path, "en")}` },
-  ];
+  const altLocales = input.alternateLocales ?? LOCALES;
+  const xDefault = altLocales.includes("en") ? "en" : (altLocales[0] ?? "en");
+  const alternates =
+    altLocales.length > 0
+      ? [
+          ...altLocales.map((l) => ({ lang: l, href: `${siteUrl}${localized(input.path, l)}` })),
+          { lang: "x-default", href: `${siteUrl}${localized(input.path, xDefault)}` },
+        ]
+      : [];
 
   useSeo({
     title: input.title,

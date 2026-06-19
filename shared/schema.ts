@@ -28,6 +28,8 @@ import {
   campaignStatus,
   recipientStatus,
   noteEntityType,
+  postStatus,
+  type Locale,
 } from "./enums";
 
 // Re-export enums so drizzle-kit (which reads this file) registers the pgEnum types.
@@ -199,6 +201,49 @@ export const events = pgTable(
   ],
 );
 
+/* ------------------------------------------------------------- blog posts */
+/** Per-locale content for a post / category. Stored in the `translations` jsonb. */
+export type PostTranslation = { title: string; excerpt?: string; body: string };
+export type PostTranslations = Partial<Record<Locale, PostTranslation>>;
+export type CategoryTranslation = { name: string };
+export type CategoryTranslations = Partial<Record<Locale, CategoryTranslation>>;
+
+export const postCategories = pgTable(
+  "post_categories",
+  {
+    id: uuid().primaryKey().defaultRandom(),
+    slug: text().notNull(),
+    translations: jsonb().$type<CategoryTranslations>().notNull(), // { en: {name}, es: {name}, ... }
+    sortOrder: integer().notNull().default(0),
+    ...base,
+  },
+  (t) => [uniqueIndex("post_categories_slug_uq").on(t.slug).where(notDeleted)],
+);
+
+export const posts = pgTable(
+  "posts",
+  {
+    id: uuid().primaryKey().defaultRandom(),
+    slug: text().notNull(), // shared across locales; URL is /{locale}/blog/{slug}
+    categoryId: uuid()
+      .notNull()
+      .references(() => postCategories.id),
+    status: postStatus().notNull().default("draft"),
+    defaultLocale: text().notNull().default("en"), // fallback locale (one of LOCALES)
+    isFeatured: boolean().notNull().default(false),
+    publishedAt: timestamp({ withTimezone: true }),
+    translations: jsonb().$type<PostTranslations>().notNull(), // { en: {title,excerpt,body}, es: {...}, ... }
+    authorId: uuid().references(() => users.id),
+    schemaOverrides: jsonb(),
+    ...base,
+  },
+  (t) => [
+    uniqueIndex("posts_slug_uq").on(t.slug).where(notDeleted),
+    index("posts_status_published_idx").on(t.status, t.publishedAt.desc()).where(notDeleted),
+    index("posts_category_idx").on(t.categoryId).where(notDeleted),
+  ],
+);
+
 /* --------------------------------------------------------- capacity slots */
 export const capacitySlots = pgTable(
   "capacity_slots",
@@ -362,6 +407,15 @@ export const campaignsRelations = relations(campaigns, ({ many }) => ({
   recipients: many(campaignRecipients),
 }));
 
+export const postCategoriesRelations = relations(postCategories, ({ many }) => ({
+  posts: many(posts),
+}));
+
+export const postsRelations = relations(posts, ({ one }) => ({
+  category: one(postCategories, { fields: [posts.categoryId], references: [postCategories.id] }),
+  author: one(users, { fields: [posts.authorId], references: [users.id] }),
+}));
+
 export const campaignRecipientsRelations = relations(campaignRecipients, ({ one }) => ({
   campaign: one(campaigns, {
     fields: [campaignRecipients.campaignId],
@@ -386,3 +440,7 @@ export type Campaign = typeof campaigns.$inferSelect;
 export type NewCampaign = typeof campaigns.$inferInsert;
 export type CampaignRecipient = typeof campaignRecipients.$inferSelect;
 export type AuditLogEntry = typeof auditLog.$inferSelect;
+export type Post = typeof posts.$inferSelect;
+export type NewPost = typeof posts.$inferInsert;
+export type PostCategory = typeof postCategories.$inferSelect;
+export type NewPostCategory = typeof postCategories.$inferInsert;

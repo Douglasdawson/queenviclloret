@@ -6,6 +6,8 @@ import { VENUE } from "@shared/venue";
 import { teamSlug, isIndexableTeam } from "@shared/wc-slug";
 import { COMPETITIONS } from "@shared/competitions";
 import * as eventsDao from "../dao/events.dao";
+import * as postsDao from "../dao/posts.dao";
+import * as categoriesDao from "../dao/post-categories.dao";
 
 export const seoRouter: Router = Router();
 
@@ -17,6 +19,7 @@ const STATIC_PATHS = [
   "sports-bar",
   "whats-on",
   "world-cup-2026",
+  "blog",
   "about",
   "reservations",
   "contact",
@@ -71,9 +74,11 @@ seoRouter.get("/robots.txt", (_req, res) => {
 
 seoRouter.get("/sitemap.xml", async (_req, res) => {
   const xml = await cached("seo:sitemap", TTL.MEDIUM, async () => {
-    const [wc, pub] = await Promise.all([
+    const [wc, pub, blogPosts, blogCats] = await Promise.all([
       eventsDao.listWorldCup(),
       eventsDao.listPublicUpcoming(200),
+      postsDao.listPublicPosts({ limit: 500 }),
+      categoriesDao.listCategories(),
     ]);
     const now = Date.now();
     // Freshness signal: only emit <lastmod> where we have a real one (the most
@@ -126,6 +131,18 @@ seoRouter.get("/sitemap.xml", async (_req, res) => {
     for (const c of COMPETITIONS) {
       for (const lang of LOCALES) {
         urls.push({ loc: `${BASE}/${lang}/watch/${c.slug}`, lastmod: pubMod, changefreq: "weekly", priority: "0.7" });
+      }
+    }
+    // Blog: per-category index + per-post pages.
+    for (const c of blogCats) {
+      for (const lang of LOCALES) {
+        urls.push({ loc: `${BASE}/${lang}/blog/category/${c.slug}`, changefreq: "weekly", priority: "0.5" });
+      }
+    }
+    for (const p of blogPosts) {
+      const lastmod = p.updatedAt ? new Date(p.updatedAt).toISOString() : undefined;
+      for (const lang of LOCALES) {
+        urls.push({ loc: `${BASE}/${lang}/blog/${p.slug}`, lastmod, changefreq: "weekly", priority: "0.6" });
       }
     }
 

@@ -1,24 +1,31 @@
 import { useEffect, type ReactNode } from "react";
 import { Link, useLocation, useRoute } from "wouter";
-import { useMe, useLogout } from "../../hooks/useAuth";
+import { useMe, useLogout, type AdminRole } from "../../hooks/useAuth";
 import { cn } from "../../lib/cn";
 
-const NAV = [
-  { href: "/", label: "Dashboard" },
-  { href: "/leads", label: "Leads / CRM" },
-  { href: "/events", label: "What's On" },
-  { href: "/reservations", label: "Reservations" },
-  { href: "/campaigns", label: "Marketing" },
+const NAV: { href: string; label: string; roles: AdminRole[] }[] = [
+  { href: "/", label: "Dashboard", roles: ["owner", "admin", "manager", "staff"] },
+  { href: "/leads", label: "Leads / CRM", roles: ["owner", "admin", "manager", "staff"] },
+  { href: "/events", label: "What's On", roles: ["owner", "admin", "manager", "staff"] },
+  { href: "/reservations", label: "Reservations", roles: ["owner", "admin", "manager", "staff"] },
+  { href: "/campaigns", label: "Marketing", roles: ["owner", "admin", "manager"] },
+  { href: "/blog", label: "Blog", roles: ["owner", "admin", "manager", "editor"] },
+  { href: "/users", label: "Users", roles: ["owner", "admin"] },
 ];
 
 export function AdminShell({ children }: { children: ReactNode }) {
   const { data: me, isLoading, isError } = useMe();
-  const [, navigate] = useLocation();
+  const [location, navigate] = useLocation();
   const logout = useLogout();
 
   useEffect(() => {
     if (isError) navigate("/login", { replace: true });
   }, [isError, navigate]);
+
+  // Editors only have the Blog section — send them there from the dashboard root.
+  useEffect(() => {
+    if (me?.role === "editor" && location === "/") navigate("/blog", { replace: true });
+  }, [me?.role, location, navigate]);
 
   if (isLoading) {
     return (
@@ -42,7 +49,7 @@ export function AdminShell({ children }: { children: ReactNode }) {
           <span className="label-caps mt-1.5 block text-[0.625rem] text-gold-400">CRM</span>
         </Link>
         <nav className="flex flex-col gap-1">
-          {NAV.map((item) => (
+          {NAV.filter((item) => item.roles.includes(me.role)).map((item) => (
             <NavLink key={item.href} href={item.href} label={item.label} />
           ))}
         </nav>

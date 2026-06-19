@@ -2,11 +2,13 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { apiGet, apiPost } from "../lib/api";
 import { queryKeys } from "../lib/query";
 
+export type AdminRole = "owner" | "admin" | "manager" | "staff" | "editor";
+
 export interface AdminUser {
   id: string;
   email: string;
   name: string;
-  role: "owner" | "admin" | "manager" | "staff";
+  role: AdminRole;
 }
 
 export function useMe() {

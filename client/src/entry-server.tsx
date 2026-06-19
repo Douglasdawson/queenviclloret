@@ -25,6 +25,17 @@ export async function render(url: string, ctx: RenderContext) {
   if (ctx.initialData?.worldCup) {
     queryClient.setQueryData(queryKeys.worldCup, ctx.initialData.worldCup);
   }
+  if (ctx.initialData?.postCategories) {
+    queryClient.setQueryData(queryKeys.postCategories, ctx.initialData.postCategories);
+  }
+  const blogList = ctx.initialData?.posts as { category?: string; items: unknown } | undefined;
+  if (blogList) {
+    queryClient.setQueryData(queryKeys.publicPosts(blogList.category), blogList.items);
+  }
+  const blogPost = ctx.initialData?.post as { slug: string; detail: unknown } | undefined;
+  if (blogPost) {
+    queryClient.setQueryData(queryKeys.post(blogPost.slug), blogPost.detail);
+  }
 
   const i18n = createI18n(ctx.lang ?? DEFAULT_LOCALE);
   const seoCollector: SeoCollector = { isServer: true, current: null };
