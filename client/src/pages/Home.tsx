@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
 import { formatInTimeZone } from "date-fns-tz";
 import { ButtonLink, Container, Eyebrow, LaurelSeal, Section } from "../components/ui";
+import { ReserveButton } from "../components/ReserveButton";
 import { FixtureTicket } from "../components/FixtureTicket";
 import { Picture, imagePreload } from "../components/Picture";
 import { SportsMontage } from "../components/SportsMontage";
@@ -70,9 +71,7 @@ export default function HomePage() {
           </p>
           <div className="reveal-3 mt-8 flex flex-wrap items-center gap-3">
             <ButtonLink href="/whats-on">{t("cta.seeWhatsOn")}</ButtonLink>
-            <ButtonLink href="/reservations" variant="outline">
-              {t("cta.bookTable")}
-            </ButtonLink>
+            <ReserveButton variant="outline" />
           </div>
           <p className="reveal-3 tnum mt-10 text-sm text-paper-dim/90">
             1,250 {t("home.stats.terrace")} · 15+ {t("home.stats.screens")} · 40{" "}
@@ -226,9 +225,7 @@ export default function HomePage() {
               {t("home.finalBody")}
             </p>
           </div>
-          <ButtonLink href="/reservations" className="shrink-0">
-            {t("cta.bookTable")}
-          </ButtonLink>
+          <ReserveButton className="shrink-0" />
         </Container>
       </Section>
     </>

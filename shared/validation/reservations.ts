@@ -15,8 +15,9 @@ const statusEnum = z.enum([
 export const reservationRequestSchema = z
   .object({
     name: z.string().trim().min(1).max(160),
-    email: emailSchema,
-    phone: phoneSchema,
+    // Optional: confirmation happens over WhatsApp, so these aren't required.
+    email: emailSchema.optional().or(z.literal("")),
+    phone: phoneSchema.optional().or(z.literal("")),
     partySize: z.coerce.number().int().min(1).max(500),
     reservationType: typeEnum.default("standard"),
     eventId: z.string().uuid().optional(),

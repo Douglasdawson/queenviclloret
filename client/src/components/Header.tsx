@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useRouter } from "wouter";
 import { useTranslation } from "react-i18next";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { useReservationModal } from "../app/reservation-modal";
 import type { Locale } from "../lib/locale";
 
 const NAV = [
@@ -19,6 +20,7 @@ export function Header() {
   const router = useRouter();
   const locale = (router.base.replace("/", "") || "en") as Locale;
   const [open, setOpen] = useState(false);
+  const { open: openReservation } = useReservationModal();
 
   return (
     <header className="sticky top-2 z-50 mb-2 px-2 sm:top-4 sm:mb-3 sm:px-4">
@@ -53,9 +55,13 @@ export function Header() {
           </div>
           <Link
             href="/reservations"
+            onClick={(e) => {
+              e.preventDefault();
+              openReservation();
+            }}
             className="inline-flex min-h-11 items-center justify-center whitespace-nowrap rounded-[10px] bg-gold-500 px-4 text-sm font-semibold text-ink-900 transition-colors duration-200 hover:bg-gold-600 hover:text-cream-50"
           >
-            {t("cta.bookTable")}
+            {t("cta.checkAvailabilityShort")}
           </Link>
           <button
             className="-mr-2 inline-flex min-h-11 min-w-11 items-center justify-center p-2 text-paper lg:hidden"
@@ -91,10 +97,14 @@ export function Header() {
               ))}
               <Link
                 href="/reservations"
-                onClick={() => setOpen(false)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setOpen(false);
+                  openReservation();
+                }}
                 className="mt-2 flex min-h-11 items-center justify-center rounded-[10px] bg-gold-500 px-4 text-center text-sm font-semibold text-ink-900"
               >
-                {t("cta.bookTable")}
+                {t("cta.checkAvailabilityShort")}
               </Link>
               <div className="mt-3 px-2">
                 <LanguageSwitcher current={locale} />

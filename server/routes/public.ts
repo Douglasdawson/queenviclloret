@@ -165,8 +165,8 @@ publicRouter.post(
     const lead = await leadsDao.createLead(
       {
         firstName: body.name,
-        email: body.email,
-        phone: body.phone,
+        email: body.email || null,
+        phone: body.phone || null,
         partySize: body.partySize,
         message: body.specialRequests ?? null,
         source: "reservation",
@@ -188,8 +188,8 @@ publicRouter.post(
         leadId: lead.id,
         eventId: body.eventId ?? null,
         name: body.name,
-        email: body.email,
-        phone: body.phone,
+        email: body.email || null,
+        phone: body.phone || null,
         partySize: body.partySize,
         reservationType: body.reservationType,
         date: body.date,

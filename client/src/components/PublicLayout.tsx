@@ -3,6 +3,7 @@ import { useLocation } from "wouter";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { CookieBanner } from "./CookieBanner";
+import { ReservationModal } from "./ReservationModal";
 import { Analytics } from "../analytics/Analytics";
 
 /** Client-side navigations land mid-page otherwise. Skips the first render so
@@ -37,6 +38,7 @@ export function PublicLayout({ children }: { children: ReactNode }) {
       </main>
       <Footer />
       <CookieBanner />
+      <ReservationModal />
     </div>
   );
 }

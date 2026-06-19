@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { ButtonAnchor, ButtonLink, Container, Eyebrow, LaurelSeal, Section } from "../components/ui";
+import { ReserveButton } from "../components/ReserveButton";
 import { FixtureTicket, groupByDay } from "../components/FixtureTicket";
 import { usePublicEvents } from "../hooks/usePublicEvents";
 import { usePageSeo } from "../seo/use-page-seo";
@@ -83,9 +84,7 @@ export default function WhatsOnPage() {
               {t("home.finalBody")}
             </p>
           </div>
-          <ButtonLink href="/reservations" className="shrink-0">
-            {t("cta.bookTable")}
-          </ButtonLink>
+          <ReserveButton className="shrink-0" />
         </div>
       </Container>
     </Section>

@@ -21,7 +21,9 @@
     "getInTouch": "Contacta'ns",
     "viewDetails": "Veure detalls",
     "fullProgramme": "Programa complet",
-    "whatsapp": "Escriu-nos per WhatsApp"
+    "whatsapp": "Escriu-nos per WhatsApp",
+    "checkAvailability": "Consultar disponibilitat",
+    "checkAvailabilityShort": "Demanar taula"
   },
   "home": {
     "kicker": "L'Original · Est. 1986",
@@ -152,7 +154,8 @@
       "type": "Ocasió",
       "requests": "Res que haguem de saber?",
       "submit": "Sol·licitar taula",
-      "success": "Sol·licitud rebuda. Et confirmarem la taula aviat, normalment el mateix dia."
+      "success": "Sol·licitud rebuda. Et confirmarem la taula aviat, normalment el mateix dia.",
+      "phonePrefix": "Prefix"
     },
     "occasions": {
       "group": "Nit en grup",
@@ -160,6 +163,14 @@
       "stag_hen": "Comiat",
       "birthday": "Aniversari",
       "standard": "Només una taula"
+    },
+    "modalTitle": "Consultar disponibilitat de taula",
+    "wa": {
+      "message": "Hola Queen Vic 👋 Vull consultar disponibilitat de taula:\n• Nom: {{name}}\n• Persones: {{partySize}}\n• Dia: {{date}}{{time}}\n• Ocasió: {{occasion}}{{requests}}",
+      "notice": "En enviar s'obre WhatsApp amb la teva sol·licitud llesta per enviar. Allà confirmem la disponibilitat.",
+      "successTitle": "Obrint WhatsApp…",
+      "successBody": "La teva sol·licitud és a WhatsApp — només dóna-li a enviar i et confirmem la taula. Si no s'ha obert, prem a sota.",
+      "openButton": "Obrir WhatsApp"
     }
   },
   "contact": {
@@ -198,7 +209,8 @@
   },
   "form": {
     "serverError": "Alguna cosa ha fallat en enviar-ho. Torna-ho a provar o escriu-nos per Instagram.",
-    "sending": "Enviant…"
+    "sending": "Enviant…",
+    "optional": "(opcional)"
   },
   "fixture": {
     "sport": {

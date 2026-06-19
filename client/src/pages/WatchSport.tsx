@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { useParams } from "wouter";
 import { formatInTimeZone } from "date-fns-tz";
 import { ButtonLink, Container, Eyebrow, FaqList, Section } from "../components/ui";
+import { ReserveButton } from "../components/ReserveButton";
 import { FixtureTicket, groupByDay } from "../components/FixtureTicket";
 import { usePublicEvents } from "../hooks/usePublicEvents";
 import { usePageSeo } from "../seo/use-page-seo";
@@ -84,7 +85,7 @@ export default function WatchSportPage() {
           {t("watchSport.lead", { competition: name })}
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <ButtonLink href="/reservations">{t("cta.bookTable")}</ButtonLink>
+          <ReserveButton />
           <ButtonLink href="/whats-on" variant="outline">
             {t("cta.seeWhatsOn")}
           </ButtonLink>

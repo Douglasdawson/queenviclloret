@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { Link, useParams } from "wouter";
 import { formatInTimeZone } from "date-fns-tz";
 import { ButtonLink, Container, Eyebrow, Section } from "../components/ui";
+import { ReserveButton } from "../components/ReserveButton";
 import { PostCard } from "../components/blog-ui";
 import { usePost, usePostCategories, pickTr } from "../hooks/usePosts";
 import { usePageSeo } from "../seo/use-page-seo";
@@ -164,9 +165,7 @@ export default function BlogPostPage() {
               {t("blogPost.ctaBody")}
             </p>
           </div>
-          <ButtonLink href="/reservations" className="shrink-0">
-            {t("cta.bookTable")}
-          </ButtonLink>
+          <ReserveButton className="shrink-0" />
         </div>
       </Container>
     </Section>

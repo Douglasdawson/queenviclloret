@@ -21,7 +21,9 @@
     "getInTouch": "Contactez-nous",
     "viewDetails": "Voir les détails",
     "fullProgramme": "Programme complet",
-    "whatsapp": "Écrivez-nous sur WhatsApp"
+    "whatsapp": "Écrivez-nous sur WhatsApp",
+    "checkAvailability": "Vérifier les disponibilités",
+    "checkAvailabilityShort": "Demander une table"
   },
   "home": {
     "kicker": "L'Original · Est. 1986",
@@ -152,7 +154,8 @@
       "type": "Occasion",
       "requests": "Quelque chose à savoir ?",
       "submit": "Demander une table",
-      "success": "Demande reçue. Nous confirmerons votre table rapidement, généralement le jour même."
+      "success": "Demande reçue. Nous confirmerons votre table rapidement, généralement le jour même.",
+      "phonePrefix": "Indicatif"
     },
     "occasions": {
       "group": "Soirée de groupe",
@@ -160,6 +163,14 @@
       "stag_hen": "Enterrement de vie",
       "birthday": "Anniversaire",
       "standard": "Juste une table"
+    },
+    "modalTitle": "Vérifier la disponibilité d'une table",
+    "wa": {
+      "message": "Bonjour Queen Vic 👋 Je voudrais vérifier la disponibilité d'une table :\n• Nom : {{name}}\n• Personnes : {{partySize}}\n• Jour : {{date}}{{time}}\n• Occasion : {{occasion}}{{requests}}",
+      "notice": "L'envoi ouvre WhatsApp avec votre demande prête à envoyer. Nous y confirmons la disponibilité.",
+      "successTitle": "Ouverture de WhatsApp…",
+      "successBody": "Votre demande est prête dans WhatsApp — envoyez-la et nous confirmerons votre table. Si rien ne s'ouvre, appuyez ci-dessous.",
+      "openButton": "Ouvrir WhatsApp"
     }
   },
   "contact": {
@@ -198,7 +209,8 @@
   },
   "form": {
     "serverError": "Une erreur est survenue lors de l'envoi. Réessayez ou écrivez-nous sur Instagram.",
-    "sending": "Envoi…"
+    "sending": "Envoi…",
+    "optional": "(facultatif)"
   },
   "fixture": {
     "sport": {

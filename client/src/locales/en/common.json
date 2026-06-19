@@ -21,7 +21,9 @@
     "getInTouch": "Get in touch",
     "viewDetails": "View details",
     "fullProgramme": "Full programme",
-    "whatsapp": "Chat on WhatsApp"
+    "whatsapp": "Chat on WhatsApp",
+    "checkAvailability": "Check availability",
+    "checkAvailabilityShort": "Request a table"
   },
   "home": {
     "kicker": "The Original · Est. 1986",
@@ -152,7 +154,8 @@
       "type": "Occasion",
       "requests": "Anything we should know?",
       "submit": "Request a table",
-      "success": "Request received. We'll confirm your table shortly, usually the same day."
+      "success": "Request received. We'll confirm your table shortly, usually the same day.",
+      "phonePrefix": "Country code"
     },
     "occasions": {
       "group": "Group night",
@@ -160,6 +163,14 @@
       "stag_hen": "Stag / hen do",
       "birthday": "Birthday",
       "standard": "Just a table"
+    },
+    "modalTitle": "Check table availability",
+    "wa": {
+      "message": "Hi Queen Vic 👋 I'd like to check table availability:\n• Name: {{name}}\n• People: {{partySize}}\n• Day: {{date}}{{time}}\n• Occasion: {{occasion}}{{requests}}",
+      "notice": "Sending opens WhatsApp with your request ready to send. We'll confirm availability there.",
+      "successTitle": "Opening WhatsApp…",
+      "successBody": "Your request is ready in WhatsApp — just hit send and we'll confirm your table. If it didn't open, tap below.",
+      "openButton": "Open WhatsApp"
     }
   },
   "contact": {
@@ -198,7 +209,8 @@
   },
   "form": {
     "serverError": "Something went wrong sending that. Try again, or message us on Instagram.",
-    "sending": "Sending…"
+    "sending": "Sending…",
+    "optional": "(optional)"
   },
   "fixture": {
     "sport": {

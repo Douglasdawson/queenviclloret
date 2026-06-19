@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
-import { ButtonLink, Container, Eyebrow, Section } from "../components/ui";
+import { Container, Eyebrow, Section } from "../components/ui";
+import { ReserveButton } from "../components/ReserveButton";
 import { usePageSeo } from "../seo/use-page-seo";
 import { useSite } from "../app/site-context";
 import { MENU, MENU_INTRO } from "../content/menu";
@@ -42,9 +43,7 @@ export default function MenuPage() {
         </div>
 
         <p className="mt-12 max-w-2xl text-sm leading-relaxed text-ink-600">{t("menu.note")}</p>
-        <ButtonLink href="/reservations" className="mt-6">
-          {t("cta.bookTable")}
-        </ButtonLink>
+        <ReserveButton className="mt-6" />
       </Container>
     </Section>
   );

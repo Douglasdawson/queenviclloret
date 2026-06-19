@@ -21,7 +21,9 @@
     "getInTouch": "Contáctanos",
     "viewDetails": "Ver detalles",
     "fullProgramme": "Programa completo",
-    "whatsapp": "Escríbenos por WhatsApp"
+    "whatsapp": "Escríbenos por WhatsApp",
+    "checkAvailability": "Consultar disponibilidad",
+    "checkAvailabilityShort": "Pedir mesa"
   },
   "home": {
     "kicker": "El Original · Est. 1986",
@@ -152,7 +154,8 @@
       "type": "Ocasión",
       "requests": "¿Algo que debamos saber?",
       "submit": "Solicitar mesa",
-      "success": "Solicitud recibida. Te confirmaremos la mesa en breve, normalmente el mismo día."
+      "success": "Solicitud recibida. Te confirmaremos la mesa en breve, normalmente el mismo día.",
+      "phonePrefix": "Prefijo"
     },
     "occasions": {
       "group": "Noche en grupo",
@@ -160,6 +163,14 @@
       "stag_hen": "Despedida",
       "birthday": "Cumpleaños",
       "standard": "Solo una mesa"
+    },
+    "modalTitle": "Consultar disponibilidad de mesa",
+    "wa": {
+      "message": "Hola Queen Vic 👋 Quiero consultar disponibilidad de mesa:\n• Nombre: {{name}}\n• Personas: {{partySize}}\n• Día: {{date}}{{time}}\n• Ocasión: {{occasion}}{{requests}}",
+      "notice": "Al enviar se abre WhatsApp con tu solicitud lista para mandar. Allí confirmamos la disponibilidad.",
+      "successTitle": "Abriendo WhatsApp…",
+      "successBody": "Tu solicitud está lista en WhatsApp — solo dale a enviar y te confirmamos la mesa. Si no se abrió, pulsa abajo.",
+      "openButton": "Abrir WhatsApp"
     }
   },
   "contact": {
@@ -198,7 +209,8 @@
   },
   "form": {
     "serverError": "Algo ha fallado al enviar. Inténtalo de nuevo o escríbenos por Instagram.",
-    "sending": "Enviando…"
+    "sending": "Enviando…",
+    "optional": "(opcional)"
   },
   "fixture": {
     "sport": {

@@ -21,7 +21,9 @@
     "getInTouch": "Neem contact op",
     "viewDetails": "Details bekijken",
     "fullProgramme": "Volledig programma",
-    "whatsapp": "Chat via WhatsApp"
+    "whatsapp": "Chat via WhatsApp",
+    "checkAvailability": "Beschikbaarheid checken",
+    "checkAvailabilityShort": "Tafel aanvragen"
   },
   "home": {
     "kicker": "Het Origineel · Est. 1986",
@@ -152,7 +154,8 @@
       "type": "Gelegenheid",
       "requests": "Iets dat we moeten weten?",
       "submit": "Tafel aanvragen",
-      "success": "Aanvraag ontvangen. We bevestigen je tafel snel, meestal dezelfde dag."
+      "success": "Aanvraag ontvangen. We bevestigen je tafel snel, meestal dezelfde dag.",
+      "phonePrefix": "Landcode"
     },
     "occasions": {
       "group": "Groepsavond",
@@ -160,6 +163,14 @@
       "stag_hen": "Vrijgezellenfeest",
       "birthday": "Verjaardag",
       "standard": "Gewoon een tafel"
+    },
+    "modalTitle": "Tafelbeschikbaarheid checken",
+    "wa": {
+      "message": "Hoi Queen Vic 👋 Ik wil graag de tafelbeschikbaarheid checken:\n• Naam: {{name}}\n• Personen: {{partySize}}\n• Dag: {{date}}{{time}}\n• Gelegenheid: {{occasion}}{{requests}}",
+      "notice": "Bij verzenden opent WhatsApp met je aanvraag klaar om te versturen. Daar bevestigen we de beschikbaarheid.",
+      "successTitle": "WhatsApp openen…",
+      "successBody": "Je aanvraag staat klaar in WhatsApp — verstuur hem en we bevestigen je tafel. Niet geopend? Tik hieronder.",
+      "openButton": "WhatsApp openen"
     }
   },
   "contact": {
@@ -198,7 +209,8 @@
   },
   "form": {
     "serverError": "Er ging iets mis bij het versturen. Probeer opnieuw of stuur ons een bericht op Instagram.",
-    "sending": "Versturen…"
+    "sending": "Versturen…",
+    "optional": "(optioneel)"
   },
   "fixture": {
     "sport": {
