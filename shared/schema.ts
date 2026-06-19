@@ -231,7 +231,9 @@ export const posts = pgTable(
     status: postStatus().notNull().default("draft"),
     defaultLocale: text().notNull().default("en"), // fallback locale (one of LOCALES)
     isFeatured: boolean().notNull().default(false),
+    featuredImageUrl: text(), // og:image + card/article hero (external https URL)
     publishedAt: timestamp({ withTimezone: true }),
+    scheduledAt: timestamp({ withTimezone: true }), // cron auto-publishes drafts at this time
     translations: jsonb().$type<PostTranslations>().notNull(), // { en: {title,excerpt,body}, es: {...}, ... }
     authorId: uuid().references(() => users.id),
     schemaOverrides: jsonb(),

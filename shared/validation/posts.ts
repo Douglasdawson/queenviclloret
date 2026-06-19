@@ -22,6 +22,8 @@ const postBase = z.object({
   status: postStatusEnum.default("draft"),
   defaultLocale: localeEnum.default("en"),
   isFeatured: z.boolean().default(false),
+  featuredImageUrl: z.string().url().max(1024).optional().or(z.literal("")),
+  scheduledAt: z.coerce.date().optional().nullable(),
   translations: z.record(localeEnum, postTranslationEntry),
 });
 

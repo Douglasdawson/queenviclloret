@@ -9,6 +9,7 @@ import { buildDocument, type RenderedDoc } from "./html-template";
 import * as eventsDao from "../dao/events.dao";
 import * as postsDao from "../dao/posts.dao";
 import * as categoriesDao from "../dao/post-categories.dao";
+import * as usersDao from "../dao/users.dao";
 import { toPublicListItem, toPublicDetail, toPublicCategory } from "../lib/post-serialize";
 import { logger } from "../lib/logger";
 import { DEFAULT_LOCALE, LOCALES, type Locale } from "@shared/enums";
@@ -76,7 +77,8 @@ export function createSsrHandler(vite: ViteDevServer | null) {
 
         // Blog routes need their own SSR-seeded data (categories + list/detail).
         const pathNoLocale = url.replace(/^\/(en|es|ca|fr|nl)(?=\/|$)/, "").split("?")[0];
-        if (/^\/blog(\/|$)/.test(pathNoLocale)) {
+        const isHome = pathNoLocale === "" || pathNoLocale === "/";
+        if (isHome || /^\/blog(\/|$)/.test(pathNoLocale)) {
           try {
             const cats = await categoriesDao.listCategories();
             initialData.postCategories = cats.map(toPublicCategory);
@@ -90,8 +92,21 @@ export function createSsrHandler(vite: ViteDevServer | null) {
               initialData.posts = { category: catMatch[1], items: rows.map(toPublicListItem) };
             } else if (postMatch && postMatch[1] !== "category") {
               const p = await postsDao.getPublicPostBySlug(postMatch[1]);
-              if (p) initialData.post = { slug: postMatch[1], detail: toPublicDetail(p) };
+              if (p) {
+                const [related, author] = await Promise.all([
+                  postsDao.listRelatedPosts(p.categoryId, p.id, 3),
+                  p.authorId ? usersDao.findById(p.authorId) : Promise.resolve(undefined),
+                ]);
+                initialData.post = {
+                  slug: postMatch[1],
+                  detail: toPublicDetail(p, {
+                    related,
+                    author: author ? { name: author.name } : null,
+                  }),
+                };
+              }
             } else {
+              // Home and blog index both seed the "all" published list.
               const rows = await postsDao.listPublicPosts({ limit: 50 });
               initialData.posts = { category: undefined, items: rows.map(toPublicListItem) };
             }

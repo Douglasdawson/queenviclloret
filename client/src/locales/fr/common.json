@@ -50,7 +50,10 @@
     "stampAlt": "Emblème timbre-poste de la Reine Victoria du Queen Vic, Lloret de Mar, fondé en 1986",
     "finalTitle": "Un grand match approche ?",
     "finalBody": "Les jours de match, les tables partent vite. Dites-nous quand vous venez et on vous garde une place en terrasse.",
-    "nextUp": "Bientôt à l'écran"
+    "nextUp": "Bientôt à l'écran",
+    "blogEyebrow": "Depuis le blog",
+    "blogTitle": "Les dernières du Vic",
+    "blogAll": "Tout voir"
   },
   "whatsOn": {
     "title": "Au programme au Queen Vic",
@@ -357,5 +360,12 @@
   "blogCategory": {
     "metaTitle": "{{category}} — Blog du Queen Vic | Lloret de Mar",
     "metaDescription": "{{category}} du Queen Vic Sports Bar, Lloret de Mar — résumés, avant-matchs et actualités."
+  },
+  "blogPost": {
+    "by": "Par {{name}}",
+    "readTime": "{{min}} min de lecture",
+    "relatedTitle": "À lire ensuite",
+    "ctaTitle": "Vous venez pour le prochain grand match ?",
+    "ctaBody": "Les tables partent vite les jours de match — réservez la vôtre en terrasse."
   }
 }

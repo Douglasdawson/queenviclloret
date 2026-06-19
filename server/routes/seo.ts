@@ -171,6 +171,32 @@ seoRouter.get("/sitemap.xml", async (_req, res) => {
   res.type("application/xml").send(xml);
 });
 
+// RSS 2.0 feed of the latest published blog posts (one item per post, in its
+// primary language). Syndication + aggregator/GEO discovery.
+seoRouter.get("/blog/feed.xml", async (_req, res) => {
+  const xml = await cached("seo:blogfeed", TTL.MEDIUM, async () => {
+    const posts = await postsDao.listPublicPosts({ limit: 50 });
+    const esc = (s: string) =>
+      s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    const items = posts
+      .map((p) => {
+        const t = (p.translations ?? {}) as Record<
+          string,
+          { title: string; excerpt?: string }
+        >;
+        const tr = t[p.defaultLocale] ?? Object.values(t)[0];
+        if (!tr) return "";
+        const link = `${BASE}/${p.defaultLocale}/blog/${p.slug}`;
+        const pub = p.publishedAt ? new Date(p.publishedAt).toUTCString() : "";
+        return `    <item>\n      <title>${esc(tr.title)}</title>\n      <link>${link}</link>\n      <guid isPermaLink="true">${link}</guid>\n${pub ? `      <pubDate>${pub}</pubDate>\n` : ""}${tr.excerpt ? `      <description>${esc(tr.excerpt)}</description>\n` : ""}    </item>`;
+      })
+      .filter(Boolean)
+      .join("\n");
+    return `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0">\n  <channel>\n    <title>Queen Vic Sports Bar — Blog</title>\n    <link>${BASE}/en/blog</link>\n    <description>Match recaps, previews and news from Queen Vic Sports Bar, Lloret de Mar.</description>\n${items}\n  </channel>\n</rss>\n`;
+  });
+  res.type("application/rss+xml").send(xml);
+});
+
 seoRouter.get("/llms.txt", async (_req, res) => {
   const body = await cached("seo:llms", TTL.MEDIUM, async () => {
     const now = Date.now();

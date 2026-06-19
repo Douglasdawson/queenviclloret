@@ -60,8 +60,17 @@ export function PostCard({
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className="group block rounded-2xl border border-paper/10 bg-paper/[0.04] p-6 transition-colors duration-150 hover:border-gold-500/40 hover:bg-paper/[0.07]"
+      className="group block overflow-hidden rounded-2xl border border-paper/10 bg-paper/[0.04] transition-colors duration-150 hover:border-gold-500/40 hover:bg-paper/[0.07]"
     >
+      {post.featuredImageUrl && (
+        <img
+          src={post.featuredImageUrl}
+          alt=""
+          loading="lazy"
+          className="aspect-[16/9] w-full object-cover"
+        />
+      )}
+      <div className="p-6">
       <div className="flex items-center gap-3">
         {categoryName && (
           <span className="label-caps text-[0.625rem] text-gold-400">{categoryName}</span>
@@ -78,6 +87,7 @@ export function PostCard({
       {tr?.excerpt && (
         <p className="mt-2 text-[0.9375rem] leading-relaxed text-paper-dim">{tr.excerpt}</p>
       )}
+      </div>
     </Link>
   );
 }

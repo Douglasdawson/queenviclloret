@@ -44,9 +44,11 @@ export function buildDocument(
   // Search Console verification — on every page (public, admin, error), gated
   // only on the token being set. Not consent-gated: it must be visible to the
   // verification crawler, unlike the analytics snippet.
-  const headTags = env.GSC_VERIFICATION
-    ? `<meta name="google-site-verification" content="${escAttr(env.GSC_VERIFICATION)}"/>\n    ${doc.headTags}`
-    : doc.headTags;
+  const feedLink = `<link rel="alternate" type="application/rss+xml" title="Queen Vic Blog" href="/blog/feed.xml"/>`;
+  const gsc = env.GSC_VERIFICATION
+    ? `<meta name="google-site-verification" content="${escAttr(env.GSC_VERIFICATION)}"/>\n    `
+    : "";
+  const headTags = `${feedLink}\n    ${gsc}${doc.headTags}`;
 
   return template
     .replace('<html lang="en"', `<html lang="${doc.lang}"`)

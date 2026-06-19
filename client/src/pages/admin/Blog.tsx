@@ -15,6 +15,8 @@ interface AdminPost {
   status: string;
   defaultLocale: string;
   isFeatured: boolean;
+  featuredImageUrl: string | null;
+  scheduledAt: string | null;
   publishedAt: string | null;
   updatedAt: string;
   translations: Translations;
@@ -38,11 +40,22 @@ interface EditorState {
   defaultLocale: string;
   status: string;
   isFeatured: boolean;
+  featuredImageUrl: string;
+  scheduledAt: string; // datetime-local value
   translations: Translations;
 }
 
 function emptyEditor(categoryId: string): EditorState {
-  return { id: null, categoryId, defaultLocale: "en", status: "draft", isFeatured: false, translations: {} };
+  return {
+    id: null,
+    categoryId,
+    defaultLocale: "en",
+    status: "draft",
+    isFeatured: false,
+    featuredImageUrl: "",
+    scheduledAt: "",
+    translations: {},
+  };
 }
 
 export default function AdminBlog() {
@@ -79,6 +92,8 @@ export default function AdminBlog() {
         defaultLocale: e.defaultLocale,
         status: e.status,
         isFeatured: e.isFeatured,
+        featuredImageUrl: e.featuredImageUrl || undefined,
+        scheduledAt: e.scheduledAt ? new Date(e.scheduledAt).toISOString() : null,
         translations,
       };
       return e.id ? apiPatch(`/posts/${e.id}`, payload) : apiPost("/posts", payload);
@@ -115,6 +130,8 @@ export default function AdminBlog() {
       defaultLocale: p.defaultLocale,
       status: p.status,
       isFeatured: p.isFeatured,
+      featuredImageUrl: p.featuredImageUrl ?? "",
+      scheduledAt: p.scheduledAt ? p.scheduledAt.slice(0, 16) : "",
       translations: { ...p.translations },
     });
     setActiveLoc(p.defaultLocale);
@@ -286,6 +303,26 @@ function PostEditor(props: {
               </option>
             ))}
           </Select>
+        </div>
+      </div>
+
+      <div className="mt-4 grid gap-4 sm:grid-cols-2">
+        <div>
+          <FieldLabel>Featured image URL (optional)</FieldLabel>
+          <TextInput
+            type="url"
+            placeholder="https://…"
+            value={editor.featuredImageUrl}
+            onChange={(e) => setEditor((s) => (s ? { ...s, featuredImageUrl: e.target.value } : s))}
+          />
+        </div>
+        <div>
+          <FieldLabel>Schedule publish (optional)</FieldLabel>
+          <TextInput
+            type="datetime-local"
+            value={editor.scheduledAt}
+            onChange={(e) => setEditor((s) => (s ? { ...s, scheduledAt: e.target.value } : s))}
+          />
         </div>
       </div>
 

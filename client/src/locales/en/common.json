@@ -50,7 +50,10 @@
     "stampAlt": "Queen Vic's Queen Victoria postage stamp emblem, Lloret de Mar, established 1986",
     "finalTitle": "Big match coming up?",
     "finalBody": "Tables go fast on match days. Tell us when you're coming and we'll keep you a spot on the terrace.",
-    "nextUp": "Next up on the screen"
+    "nextUp": "Next up on the screen",
+    "blogEyebrow": "From the blog",
+    "blogTitle": "Latest from the Vic",
+    "blogAll": "All posts"
   },
   "whatsOn": {
     "title": "What's on at Queen Vic",
@@ -357,5 +360,12 @@
   "blogCategory": {
     "metaTitle": "{{category}} — Queen Vic Blog | Lloret de Mar",
     "metaDescription": "{{category}} from Queen Vic Sports Bar, Lloret de Mar — recaps, previews and news."
+  },
+  "blogPost": {
+    "by": "By {{name}}",
+    "readTime": "{{min}} min read",
+    "relatedTitle": "Read next",
+    "ctaTitle": "Coming for the next big match?",
+    "ctaBody": "Tables go fast on match days — book yours on the terrace."
   }
 }

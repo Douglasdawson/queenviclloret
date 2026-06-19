@@ -50,7 +50,10 @@
     "stampAlt": "Emblema de segell postal de la Reina Victòria de Queen Vic, Lloret de Mar, fundat el 1986",
     "finalTitle": "S'acosta un partit gran?",
     "finalBody": "Els dies de partit les taules volen. Digues-nos quan véns i et guardem lloc a la terrassa.",
-    "nextUp": "Properament a pantalla"
+    "nextUp": "Properament a pantalla",
+    "blogEyebrow": "Des del blog",
+    "blogTitle": "L'últim del Vic",
+    "blogAll": "Veure-ho tot"
   },
   "whatsOn": {
     "title": "Què fem al Queen Vic",
@@ -357,5 +360,12 @@
   "blogCategory": {
     "metaTitle": "{{category}} — Blog del Queen Vic | Lloret de Mar",
     "metaDescription": "{{category}} del Queen Vic Sports Bar, Lloret de Mar — resums, prèvies i novetats."
+  },
+  "blogPost": {
+    "by": "Per {{name}}",
+    "readTime": "{{min}} min de lectura",
+    "relatedTitle": "Continua llegint",
+    "ctaTitle": "Véns al pròxim partidàs?",
+    "ctaBody": "Les taules volen els dies de partit — reserva la teva a la terrassa."
   }
 }

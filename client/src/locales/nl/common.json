@@ -50,7 +50,10 @@
     "stampAlt": "Het Queen Victoria-postzegelembleem van Queen Vic, Lloret de Mar, opgericht in 1986",
     "finalTitle": "Grote wedstrijd op komst?",
     "finalBody": "Op wedstrijddagen gaan de tafels snel. Laat weten wanneer je komt en we houden een plek op het terras vrij.",
-    "nextUp": "Binnenkort op het scherm"
+    "nextUp": "Binnenkort op het scherm",
+    "blogEyebrow": "Vanuit de blog",
+    "blogTitle": "Het laatste van de Vic",
+    "blogAll": "Alles bekijken"
   },
   "whatsOn": {
     "title": "Programma bij Queen Vic",
@@ -357,5 +360,12 @@
   "blogCategory": {
     "metaTitle": "{{category}} — Queen Vic Blog | Lloret de Mar",
     "metaDescription": "{{category}} van Queen Vic Sports Bar, Lloret de Mar — samenvattingen, previews en nieuws."
+  },
+  "blogPost": {
+    "by": "Door {{name}}",
+    "readTime": "{{min}} min lezen",
+    "relatedTitle": "Lees verder",
+    "ctaTitle": "Kom je voor de volgende topwedstrijd?",
+    "ctaBody": "Tafels zijn snel vol op wedstrijddagen — reserveer de jouwe op het terras."
   }
 }

@@ -9,6 +9,7 @@ import { usePublicEvents } from "../hooks/usePublicEvents";
 import { usePageSeo } from "../seo/use-page-seo";
 import { useSite } from "../app/site-context";
 import { barOrPubLd, websiteLd } from "../seo/jsonld";
+import { LatestPosts } from "../components/LatestPosts";
 
 const TZ = "Europe/Madrid";
 
@@ -174,6 +175,9 @@ export default function HomePage() {
           </div>
         </Container>
       </Section>
+
+      {/* ── Latest blog posts ──────────────────────────────────────────── */}
+      <LatestPosts />
 
       {/* ── Heritage band: the stamp ───────────────────────────────────── */}
       <Section className="border-t border-cream-200 bg-cream-100 py-20 sm:py-24">

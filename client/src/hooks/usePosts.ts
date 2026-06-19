@@ -6,6 +6,7 @@ export interface PublicPostListItem {
   slug: string;
   categoryId: string;
   isFeatured: boolean;
+  featuredImageUrl: string | null;
   publishedAt: string | null;
   defaultLocale: string;
   locales: string[];
@@ -15,6 +16,8 @@ export interface PublicPostListItem {
 export interface PublicPostDetail extends PublicPostListItem {
   updatedAt: string | null;
   bodyHtml: Record<string, string>;
+  author: { name: string } | null;
+  related: PublicPostListItem[];
 }
 
 export interface PublicCategory {

@@ -1,4 +1,4 @@
-import { and, desc, eq, sql } from "drizzle-orm";
+import { and, desc, eq, ne, sql, isNotNull, lte } from "drizzle-orm";
 import { db } from "../db";
 import { posts, type Post, type PostTranslations } from "@shared/schema";
 import type { Locale } from "@shared/enums";
@@ -13,6 +13,8 @@ interface UpsertPost {
   status?: Post["status"];
   defaultLocale?: string;
   isFeatured?: boolean;
+  featuredImageUrl?: string | null;
+  scheduledAt?: Date | null;
   translations: PostTranslations;
 }
 
@@ -50,6 +52,43 @@ export async function listPublicPosts(opts: { categoryId?: string; limit?: numbe
     .where(and(...conds))
     .orderBy(desc(posts.publishedAt))
     .limit(opts.limit ?? 50);
+}
+
+/** Other published posts in the same category (for the "read next" block). */
+export async function listRelatedPosts(
+  categoryId: string,
+  excludeId: string,
+  limit = 3,
+): Promise<Post[]> {
+  return db
+    .select()
+    .from(posts)
+    .where(
+      and(
+        eq(posts.isDeleted, false),
+        eq(posts.status, "published"),
+        eq(posts.categoryId, categoryId),
+        ne(posts.id, excludeId),
+      ),
+    )
+    .orderBy(desc(posts.publishedAt))
+    .limit(limit);
+}
+
+/** Draft posts whose scheduled publish time has passed (used by the cron). */
+export async function listDueScheduledPosts(now: Date): Promise<Post[]> {
+  return db
+    .select()
+    .from(posts)
+    .where(
+      and(
+        eq(posts.isDeleted, false),
+        eq(posts.status, "draft"),
+        isNotNull(posts.scheduledAt),
+        lte(posts.scheduledAt, now),
+      ),
+    )
+    .limit(50);
 }
 
 export async function getPostById(id: string): Promise<Post | undefined> {
@@ -102,6 +141,8 @@ export async function createPost(input: UpsertPost, ctx: AuditContext): Promise<
             status,
             defaultLocale: locale,
             isFeatured: input.isFeatured ?? false,
+            featuredImageUrl: input.featuredImageUrl || null,
+            scheduledAt: input.scheduledAt ?? null,
             translations: input.translations,
             authorId: ctx.actorId,
             publishedAt: status === "published" ? new Date() : null,
@@ -130,6 +171,8 @@ export async function updatePost(
   if (patch.categoryId) set.categoryId = patch.categoryId;
   if (patch.defaultLocale) set.defaultLocale = patch.defaultLocale;
   if (patch.isFeatured !== undefined) set.isFeatured = patch.isFeatured;
+  if (patch.featuredImageUrl !== undefined) set.featuredImageUrl = patch.featuredImageUrl || null;
+  if (patch.scheduledAt !== undefined) set.scheduledAt = patch.scheduledAt;
   if (patch.slug) set.slug = await uniqueSlug(slugify(patch.slug), id);
   if (patch.status) {
     set.status = patch.status;

@@ -10,6 +10,7 @@ import * as eventsDao from "../dao/events.dao";
 import * as recipientsDao from "../dao/campaign-recipients.dao";
 import * as postsDao from "../dao/posts.dao";
 import * as categoriesDao from "../dao/post-categories.dao";
+import * as usersDao from "../dao/users.dao";
 import { toPublicListItem, toPublicDetail, toPublicCategory } from "../lib/post-serialize";
 import { cached, TTL } from "../cache";
 import type { ContactFormInput } from "@shared/validation/leads";
@@ -63,7 +64,13 @@ publicRouter.get("/posts", async (req, res) => {
 publicRouter.get("/posts/:slug", async (req, res) => {
   const post = await postsDao.getPublicPostBySlug(req.params.slug as string);
   if (!post) throw new AppError(404, "not_found", "Post not found");
-  res.json({ post: toPublicDetail(post) });
+  const [related, author] = await Promise.all([
+    postsDao.listRelatedPosts(post.categoryId, post.id, 3),
+    post.authorId ? usersDao.findById(post.authorId) : Promise.resolve(undefined),
+  ]);
+  res.json({
+    post: toPublicDetail(post, { related, author: author ? { name: author.name } : null }),
+  });
 });
 
 // One-click unsubscribe (marketing compliance). Idempotent.

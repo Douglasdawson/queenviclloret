@@ -197,9 +197,11 @@ export interface BlogPostingLdInput {
   slug: string;
   datePublished?: string | null;
   dateModified?: string | null;
+  image?: string | null;
+  authorName?: string | null;
 }
 
-/** A blog post as BlogPosting, authored & published by the venue entity. */
+/** A blog post as BlogPosting, published by the venue entity. */
 export function blogPostingLd(siteUrl: string, locale: string, p: BlogPostingLdInput) {
   const url = `${siteUrl}/${locale}/blog/${p.slug}`;
   return {
@@ -208,9 +210,12 @@ export function blogPostingLd(siteUrl: string, locale: string, p: BlogPostingLdI
     headline: p.title,
     description: p.description ?? undefined,
     inLanguage: locale,
+    ...(p.image ? { image: p.image } : {}),
     ...(p.datePublished ? { datePublished: p.datePublished } : {}),
     ...(p.dateModified ? { dateModified: p.dateModified } : {}),
-    author: { "@id": `${siteUrl}/#business` },
+    author: p.authorName
+      ? { "@type": "Person", name: p.authorName }
+      : { "@id": `${siteUrl}/#business` },
     publisher: { "@id": `${siteUrl}/#business` },
     mainEntityOfPage: url,
     url,

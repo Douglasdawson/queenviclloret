@@ -50,7 +50,10 @@
     "stampAlt": "Emblema de sello postal de la Reina Victoria de Queen Vic, Lloret de Mar, fundado en 1986",
     "finalTitle": "¿Se acerca un partido grande?",
     "finalBody": "Los días de partido las mesas vuelan. Dinos cuándo vienes y te guardamos sitio en la terraza.",
-    "nextUp": "Próximamente en pantalla"
+    "nextUp": "Próximamente en pantalla",
+    "blogEyebrow": "Desde el blog",
+    "blogTitle": "Lo último del Vic",
+    "blogAll": "Ver todo"
   },
   "whatsOn": {
     "title": "Qué echamos en Queen Vic",
@@ -357,5 +360,12 @@
   "blogCategory": {
     "metaTitle": "{{category}} — Blog del Queen Vic | Lloret de Mar",
     "metaDescription": "{{category}} del Queen Vic Sports Bar, Lloret de Mar — resúmenes, previas y novedades."
+  },
+  "blogPost": {
+    "by": "Por {{name}}",
+    "readTime": "{{min}} min de lectura",
+    "relatedTitle": "Sigue leyendo",
+    "ctaTitle": "¿Vienes al próximo partidazo?",
+    "ctaBody": "Las mesas vuelan los días de partido — reserva la tuya en la terraza."
   }
 }
