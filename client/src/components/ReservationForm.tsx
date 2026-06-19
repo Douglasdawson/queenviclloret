@@ -144,13 +144,13 @@ export function ReservationForm({ onSuccess }: { onSuccess?: () => void }) {
   return (
     <form method="post" onSubmit={handleSubmit(onSubmit)} className="relative">
       <Honeypot register={register("company")} />
-      <div className="grid gap-x-5 gap-y-5 sm:grid-cols-2">
-        <div>
+      <div className="grid grid-cols-2 gap-x-4 gap-y-5">
+        <div className="col-span-2">
           <FieldLabel>{t("reservations.form.name")}</FieldLabel>
           <TextInput {...register("name")} autoComplete="name" />
           <FieldError message={errors.name?.message} />
         </div>
-        <div>
+        <div className="col-span-2">
           <FieldLabel>{`${t("reservations.form.phone")} ${t("form.optional")}`}</FieldLabel>
           <div className="flex gap-2">
             <Select
@@ -197,12 +197,12 @@ export function ReservationForm({ onSuccess }: { onSuccess?: () => void }) {
           <FieldLabel>{`${t("reservations.form.time")} ${t("form.optional")}`}</FieldLabel>
           <TextInput type="time" {...register("timeSlot")} />
         </div>
-        <div className="sm:col-span-2">
+        <div className="col-span-2">
           <FieldLabel>{`${t("reservations.form.email")} ${t("form.optional")}`}</FieldLabel>
           <TextInput type="email" {...register("email")} autoComplete="email" />
           <FieldError message={errors.email?.message} />
         </div>
-        <div className="sm:col-span-2">
+        <div className="col-span-2">
           <FieldLabel>{t("reservations.form.requests")}</FieldLabel>
           <TextArea {...register("specialRequests")} className="min-h-24" />
         </div>
