@@ -386,8 +386,8 @@
     "ctaBody": "Tafels zijn snel vol op wedstrijddagen — reserveer de jouwe op het terras."
   },
   "reviews": {
-    "aria": "Beoordeeld met {{value}} van de 5 op basis van {{count}} reviews",
-    "count": "{{count}} reviews op TripAdvisor"
+    "aria": "Beoordeeld met {{value}} van de 5 op basis van {{count}} reviews op {{source}}",
+    "count": "{{count}} reviews op {{source}}"
   },
   "newsletter": {
     "title": "Ontvang de grote wedstrijden in je inbox",

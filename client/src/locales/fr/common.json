@@ -386,8 +386,8 @@
     "ctaBody": "Les tables partent vite les jours de match — réservez la vôtre en terrasse."
   },
   "reviews": {
-    "aria": "Noté {{value}} sur 5 à partir de {{count}} avis",
-    "count": "{{count}} avis sur TripAdvisor"
+    "aria": "Noté {{value}} sur 5 à partir de {{count}} avis sur {{source}}",
+    "count": "{{count}} avis sur {{source}}"
   },
   "newsletter": {
     "title": "Recevez les grands matchs par e-mail",

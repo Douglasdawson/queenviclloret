@@ -53,13 +53,13 @@ export function barOrPubLd(siteUrl: string) {
     ],
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: VENUE.rating.value,
-      reviewCount: VENUE.rating.count,
+      ratingValue: VENUE.ratingGoogle.value,
+      reviewCount: VENUE.ratingGoogle.count,
       bestRating: 5,
       worstRating: 1,
-      url: VENUE.rating.url,
+      url: VENUE.ratingGoogle.url,
     },
-    sameAs: [...VENUE.socials],
+    sameAs: [...VENUE.socials, VENUE.ratingGoogle.url],
     amenityFeature: [
       { "@type": "LocationFeatureSpecification", name: "Giant outdoor screen (200-inch)", value: true },
       { "@type": "LocationFeatureSpecification", name: "Outdoor terrace (1,250 m²)", value: true },

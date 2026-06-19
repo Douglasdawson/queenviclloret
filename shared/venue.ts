@@ -35,10 +35,19 @@ export const VENUE = {
   terraceSqM: 1250,
   screens: { outdoorGiantInches: 200, outdoorTvs: 4, indoor: 10 },
 
+  // TripAdvisor rating (kept visible alongside Google).
   rating: {
     value: 4.1,
     count: 116,
     url: "https://www.tripadvisor.es/Attraction_Review-g494960-d5907912-Reviews-Queen_Vic_Lloret_de_mar-Lloret_de_Mar_Costa_Brava_Province_of_Girona_Catalonia.html",
+  },
+  // Google Business Profile rating (place_id ChIJb3lcLjwXuxIRnzWKkMG6HGs). This is
+  // the one used for the JSON-LD aggregateRating. Figures fetched 2026-06-19 from
+  // the Google listing (verify periodically — they drift).
+  ratingGoogle: {
+    value: 4.3,
+    count: 469,
+    url: "https://search.google.com/local/reviews?placeid=ChIJb3lcLjwXuxIRnzWKkMG6HGs",
   },
 
   languages: ["English", "Spanish", "Catalan", "French", "Dutch"],

@@ -386,8 +386,8 @@
     "ctaBody": "Tables go fast on match days — book yours on the terrace."
   },
   "reviews": {
-    "aria": "Rated {{value}} out of 5 from {{count}} reviews",
-    "count": "{{count}} reviews on TripAdvisor"
+    "aria": "Rated {{value}} out of 5 from {{count}} reviews on {{source}}",
+    "count": "{{count}} reviews on {{source}}"
   },
   "newsletter": {
     "title": "Get the big fixtures in your inbox",

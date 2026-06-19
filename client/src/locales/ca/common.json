@@ -386,8 +386,8 @@
     "ctaBody": "Les taules volen els dies de partit — reserva la teva a la terrassa."
   },
   "reviews": {
-    "aria": "Valoració de {{value}} sobre 5 a partir de {{count}} ressenyes",
-    "count": "{{count}} ressenyes a TripAdvisor"
+    "aria": "Valoració de {{value}} sobre 5 a partir de {{count}} ressenyes a {{source}}",
+    "count": "{{count}} ressenyes a {{source}}"
   },
   "newsletter": {
     "title": "Rep els grans partits al teu correu",

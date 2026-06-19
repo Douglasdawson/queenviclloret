@@ -277,7 +277,7 @@ A: Bij Queen Vic Sports Bar. Elke wedstrijd live op het grootste buitenscherm va
 - Phone: ${VENUE.phoneDisplay}
 - Hours: open daily ${VENUE.hours.opens}–${VENUE.hours.closes} (earlier on big match days)
 - Capacity: 700+ · Terrace: 1,250 m² · Screens: 200-inch giant outdoor screen + 4 outdoor TVs + 10 indoor
-- Rating: ${VENUE.rating.value}/5 on Tripadvisor (${VENUE.rating.count} reviews)
+- Rating: ${VENUE.ratingGoogle.value}/5 on Google (${VENUE.ratingGoogle.count} reviews); ${VENUE.rating.value}/5 on Tripadvisor (${VENUE.rating.count} reviews)
 - Languages: English, Spanish, Catalan, French, Dutch
 - Reservations: groups and match days recommended to book ahead
 

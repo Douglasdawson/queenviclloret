@@ -386,8 +386,8 @@
     "ctaBody": "Las mesas vuelan los días de partido — reserva la tuya en la terraza."
   },
   "reviews": {
-    "aria": "Valoración de {{value}} sobre 5 a partir de {{count}} reseñas",
-    "count": "{{count}} reseñas en TripAdvisor"
+    "aria": "Valoración de {{value}} sobre 5 a partir de {{count}} reseñas en {{source}}",
+    "count": "{{count}} reseñas en {{source}}"
   },
   "newsletter": {
     "title": "Recibe los grandes partidos en tu correo",
