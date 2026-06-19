@@ -61,23 +61,25 @@ export default function HomePage() {
           aria-hidden="true"
         />
 
-        <Container className="pb-14 pt-40 sm:pb-20">
-          <p className="reveal label-caps mb-4 text-[0.8125rem] text-gold-400">{t("home.kicker")}</p>
-          <h1 className="reveal font-display display-1 max-w-3xl font-bold">
+        <Container className="pb-8 pt-20 sm:pb-20 sm:pt-40">
+          <p className="reveal label-caps mb-2 text-[0.8125rem] text-gold-400 sm:mb-4">
+            {t("home.kicker")}
+          </p>
+          <h1 className="reveal font-display max-w-3xl font-bold text-[clamp(2rem,7.5vw,2.625rem)] leading-[1.05] sm:text-[clamp(2.5rem,6.5vw,4.75rem)] sm:leading-[1.02]">
             {t("home.heroTitle")}
           </h1>
-          <p className="reveal-2 mt-5 max-w-xl text-lg leading-relaxed text-paper-dim">
+          <p className="reveal-2 mt-3 max-w-xl text-base leading-relaxed text-paper-dim sm:mt-5 sm:text-lg">
             {t("home.heroSubtitle")}
           </p>
-          <div className="reveal-3 mt-8 flex flex-wrap items-center gap-3">
+          <div className="reveal-3 mt-5 flex flex-wrap items-center gap-3 sm:mt-8">
             <ButtonLink href="/whats-on">{t("cta.seeWhatsOn")}</ButtonLink>
             <ReserveButton variant="outline" />
           </div>
-          <p className="reveal-3 tnum mt-10 text-sm text-paper-dim/90">
+          <p className="reveal-3 tnum mt-4 text-sm text-paper-dim/90 sm:mt-10">
             1,250 {t("home.stats.terrace")} · 15+ {t("home.stats.screens")} · 40{" "}
             {t("home.stats.years")}
           </p>
-          <div className="reveal-3 mt-4">
+          <div className="reveal-3 mt-3 sm:mt-4">
             <RatingBadge onGreen />
           </div>
         </Container>
