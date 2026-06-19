@@ -24,8 +24,8 @@ export const VENUE = {
     full: "Carrer de la Costa de Carbonell 1, 17310 Lloret de Mar, Costa Brava, Girona, Catalonia, Spain",
   },
 
-  // Geocoded (MapQuest, ~11 m precision). Verify against the Google Business Profile pin.
-  geo: { latitude: 41.7031, longitude: 2.8433 },
+  // Google Business Profile pin (place_id ChIJb3lcLjwXuxIRnzWKkMG6HGs), 2026-06-19.
+  geo: { latitude: 41.7001363, longitude: 2.8404936 },
   mapUrl: "https://maps.google.com/?q=Queen+Vic+Sports+Bar+Lloret+de+Mar",
 
   hours: { opens: "19:00", closes: "03:00", note: "earlier on big match days" },
