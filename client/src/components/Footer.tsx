@@ -100,7 +100,14 @@ export function Footer() {
           <p className="text-xs text-paper-dim">
             © {year} Queen Vic Sports Bar · Lloret de Mar. {t("footer.rights")}
           </p>
-          <p className="label-caps text-[0.625rem] text-paper-dim/80">The Original · Est. 1986</p>
+          {/* Discreet staff entrance — clicking the tagline opens the admin login. */}
+          <a
+            href="/admin/login"
+            aria-label="Staff login"
+            className="label-caps text-[0.625rem] text-paper-dim/80 transition-colors hover:text-gold-400"
+          >
+            The Original · Est. 1986
+          </a>
         </Container>
       </div>
     </footer>
