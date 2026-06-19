@@ -3,7 +3,7 @@ import { forwardRef } from "react";
 import { cn } from "../lib/cn";
 
 const baseInput =
-  "w-full rounded-[10px] border border-cream-300 bg-cream-100 px-4 py-3 text-[0.9375rem] text-ink-900 placeholder:text-ink-600/50 transition-colors duration-200 focus:border-gold-600";
+  "w-full rounded-[10px] border border-cream-300 bg-cream-100 px-4 py-3 text-base text-ink-900 placeholder:text-ink-600/50 transition-colors duration-200 focus:border-gold-600";
 
 export function FieldLabel({ children }: { children: ReactNode }) {
   return <span className="label-caps mb-1.5 block text-xs text-ink-600">{children}</span>;

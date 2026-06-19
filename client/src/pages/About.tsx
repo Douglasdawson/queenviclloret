@@ -21,7 +21,7 @@ export default function AboutPage() {
           <div className="grid items-start gap-12 lg:grid-cols-[1.2fr_auto] lg:gap-20">
             <div>
               <Eyebrow>{t("about.kicker")}</Eyebrow>
-              <h1 className="font-display max-w-2xl text-[clamp(2.25rem,5vw,3.5rem)] font-bold leading-tight text-ink-900">
+              <h1 className="font-display display-2 max-w-2xl font-bold text-ink-900">
                 {t("about.title")}
               </h1>
               <div className="mt-6 max-w-xl space-y-4 text-[1.0625rem] leading-relaxed text-ink-600">

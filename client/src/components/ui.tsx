@@ -114,6 +114,73 @@ export function ButtonAnchor({
   );
 }
 
+/** Pill link for entity navigation (team / competition chips). 44px tall for
+    comfortable thumb tapping; styled for green surfaces. */
+export function Chip({ href, children }: { href: string; children: ReactNode }) {
+  return (
+    <Link
+      href={href}
+      className="inline-flex min-h-11 items-center rounded-full border border-green-700 px-5 text-sm font-medium text-paper transition-colors duration-200 hover:border-gold-400 hover:text-gold-400"
+    >
+      {children}
+    </Link>
+  );
+}
+
+/** Shared GEO/FAQ accordion (programme-style `<details>`). Surface-aware so the
+    same component reads correctly on cream pages and green campaign surfaces.
+    44px summary tap target. */
+export function FaqList({
+  items,
+  surface = "paper",
+  className,
+}: {
+  items: { q: string; a: string }[];
+  surface?: "paper" | "green";
+  className?: string;
+}) {
+  const onGreen = surface === "green";
+  return (
+    <div
+      className={cn(
+        "max-w-2xl divide-y",
+        onGreen ? "divide-green-700" : "divide-cream-200",
+        className,
+      )}
+    >
+      {items.map((item) => (
+        <details key={item.q} className="group py-3">
+          <summary
+            className={cn(
+              "flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 font-display text-lg font-bold marker:hidden [&::-webkit-details-marker]:hidden",
+              onGreen ? "text-paper" : "text-ink-900",
+            )}
+          >
+            {item.q}
+            <span
+              aria-hidden="true"
+              className={cn(
+                "tnum select-none text-xl font-medium transition-transform duration-200 group-open:rotate-45 motion-reduce:transition-none",
+                onGreen ? "text-gold-400" : "text-gold-600",
+              )}
+            >
+              +
+            </span>
+          </summary>
+          <p
+            className={cn(
+              "mb-2 mt-2 max-w-2xl text-[0.9375rem] leading-relaxed",
+              onGreen ? "text-paper-dim" : "text-ink-600",
+            )}
+          >
+            {item.a}
+          </p>
+        </details>
+      ))}
+    </div>
+  );
+}
+
 /** The 40 · Est. 1986 laurel, used as a quiet badge. */
 export function LaurelSeal({ className }: { className?: string }) {
   return (

@@ -59,7 +59,7 @@ export default function HomePage() {
 
         <Container className="pb-14 pt-40 sm:pb-20">
           <p className="reveal label-caps mb-4 text-[0.8125rem] text-gold-400">{t("home.kicker")}</p>
-          <h1 className="reveal font-display max-w-3xl text-[clamp(2.5rem,6.5vw,4.75rem)] font-bold leading-[1.02]">
+          <h1 className="reveal font-display display-1 max-w-3xl font-bold">
             {t("home.heroTitle")}
           </h1>
           <p className="reveal-2 mt-5 max-w-xl text-lg leading-relaxed text-paper-dim">

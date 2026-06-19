@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { useParams } from "wouter";
 import { formatInTimeZone } from "date-fns-tz";
-import { ButtonLink, Container, Eyebrow, Section } from "../components/ui";
+import { ButtonLink, Container, Eyebrow, FaqList, Section } from "../components/ui";
 import { FixtureTicket, groupByDay } from "../components/FixtureTicket";
 import { usePublicEvents } from "../hooks/usePublicEvents";
 import { usePageSeo } from "../seo/use-page-seo";
@@ -77,7 +77,7 @@ export default function WatchSportPage() {
         <Eyebrow onGreen className="mb-0">
           {t("watchSport.eyebrow")}
         </Eyebrow>
-        <h1 className="font-display mt-5 max-w-3xl text-[clamp(2.25rem,6vw,4.25rem)] font-bold leading-[1.05]">
+        <h1 className="font-display display-2 mt-5 max-w-3xl font-bold">
           {t("watchSport.h1", { competition: name })}
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-paper-dim">
@@ -125,24 +125,7 @@ export default function WatchSportPage() {
         <h2 className="font-display text-3xl font-bold sm:text-4xl">
           {t("watchSport.faqHeading", { competition: name })}
         </h2>
-        <div className="mt-8 max-w-2xl divide-y divide-green-700">
-          {faq.map((item) => (
-            <details key={item.q} className="group py-5">
-              <summary className="flex cursor-pointer list-none items-baseline justify-between gap-4 font-display text-lg font-bold marker:hidden [&::-webkit-details-marker]:hidden">
-                {item.q}
-                <span
-                  aria-hidden="true"
-                  className="tnum select-none text-xl font-medium text-gold-400 transition-transform duration-200 group-open:rotate-45 motion-reduce:transition-none"
-                >
-                  +
-                </span>
-              </summary>
-              <p className="mt-2.5 max-w-xl text-[0.9375rem] leading-relaxed text-paper-dim">
-                {item.a}
-              </p>
-            </details>
-          ))}
-        </div>
+        <FaqList items={faq} surface="green" className="mt-8" />
       </Container>
     </Section>
   );

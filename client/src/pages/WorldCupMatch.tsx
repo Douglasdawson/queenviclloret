@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
-import { Link, useParams } from "wouter";
+import { useParams } from "wouter";
 import { formatInTimeZone } from "date-fns-tz";
-import { ButtonLink, Container, Eyebrow, Section } from "../components/ui";
+import { ButtonLink, Chip, Container, Eyebrow, FaqList, Section } from "../components/ui";
 import { FixtureTicket } from "../components/FixtureTicket";
 import { useWorldCupEvents } from "../hooks/useWorldCupEvents";
 import { usePageSeo } from "../seo/use-page-seo";
@@ -108,7 +108,7 @@ export default function WorldCupMatchPage() {
         <Eyebrow onGreen className="mb-0">
           {t("wcMatch.eyebrow")}
         </Eyebrow>
-        <h1 className="font-display mt-5 max-w-3xl text-[clamp(2.25rem,6vw,4rem)] font-bold leading-[1.05]">
+        <h1 className="font-display display-2 mt-5 max-w-3xl font-bold">
           {t("wcMatch.h1", { home, away })}
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-paper-dim">
@@ -137,13 +137,9 @@ export default function WorldCupMatchPage() {
         <Eyebrow onGreen>{t("wcMatch.followSub")}</Eyebrow>
         <div className="mt-4 flex flex-wrap gap-2.5">
           {[home, away].filter(Boolean).map((team) => (
-            <Link
-              key={team}
-              href={`/world-cup-2026/team/${teamSlug(team)}`}
-              className="rounded-full border border-green-700 px-4 py-1.5 text-sm font-medium text-paper transition-colors hover:border-gold-400 hover:text-gold-400"
-            >
+            <Chip key={team} href={`/world-cup-2026/team/${teamSlug(team)}`}>
               {t("wcMatch.followTeam", { team })}
-            </Link>
+            </Chip>
           ))}
         </div>
       </Container>
@@ -152,7 +148,7 @@ export default function WorldCupMatchPage() {
       {otherToday.length > 0 && (
         <Container className="mt-14">
           <Eyebrow onGreen>{t("wcMatch.otherTodaySub")}</Eyebrow>
-          <h2 className="font-display text-2xl font-bold sm:text-3xl">
+          <h2 className="font-display text-3xl font-bold sm:text-4xl">
             {t("wcMatch.otherToday")}
           </h2>
           <div className="mt-6 grid gap-3.5 lg:grid-cols-2">
@@ -169,24 +165,7 @@ export default function WorldCupMatchPage() {
         <h2 className="font-display text-3xl font-bold sm:text-4xl">
           {t("wcMatch.faqHeading", { home, away })}
         </h2>
-        <div className="mt-8 max-w-2xl divide-y divide-green-700">
-          {faq.map((item) => (
-            <details key={item.q} className="group py-5">
-              <summary className="flex cursor-pointer list-none items-baseline justify-between gap-4 font-display text-lg font-bold marker:hidden [&::-webkit-details-marker]:hidden">
-                {item.q}
-                <span
-                  aria-hidden="true"
-                  className="tnum select-none text-xl font-medium text-gold-400 transition-transform duration-200 group-open:rotate-45 motion-reduce:transition-none"
-                >
-                  +
-                </span>
-              </summary>
-              <p className="mt-2.5 max-w-xl text-[0.9375rem] leading-relaxed text-paper-dim">
-                {item.a}
-              </p>
-            </details>
-          ))}
-        </div>
+        <FaqList items={faq} surface="green" className="mt-8" />
       </Container>
     </Section>
   );

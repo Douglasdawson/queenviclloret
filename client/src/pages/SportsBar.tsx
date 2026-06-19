@@ -34,7 +34,7 @@ export default function SportsBarPage() {
       <Section className="py-16 sm:py-24">
         <Container>
           <Eyebrow>{t("sportsBar.kicker")}</Eyebrow>
-          <h1 className="font-display max-w-2xl text-[clamp(2.25rem,5vw,3.5rem)] font-bold leading-tight text-ink-900">
+          <h1 className="font-display display-2 max-w-2xl font-bold text-ink-900">
             {t("sportsBar.title")}
           </h1>
           <p className="mt-4 max-w-xl text-[1.0625rem] leading-relaxed text-ink-600">

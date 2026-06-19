@@ -30,7 +30,7 @@ export function CookieBanner() {
       className="fixed inset-x-0 bottom-0 z-[60] border-t-2 border-gold-500 bg-green-950 text-paper"
     >
       <Container className="flex flex-col items-start gap-4 py-4 sm:flex-row sm:items-center sm:justify-between">
-        <p className="max-w-2xl text-sm leading-relaxed text-paper-dim">{t("cookies.message")}</p>
+        <p className="max-w-2xl text-sm leading-relaxed text-paper-dim sm:text-[0.9375rem]">{t("cookies.message")}</p>
         <div className="flex shrink-0 gap-2.5">
           <Button variant="outline" onClick={() => decide("essential")}>
             {t("cookies.reject")}

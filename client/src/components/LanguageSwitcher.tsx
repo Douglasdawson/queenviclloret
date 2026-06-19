@@ -27,8 +27,8 @@ export function LanguageSwitcher({ current }: { current: Locale }) {
           aria-current={l === current ? "true" : undefined}
           className={
             l === current
-              ? "rounded px-1.5 py-2 text-gold-400"
-              : "rounded px-1.5 py-2 text-paper-dim/70 transition-colors hover:text-paper"
+              ? "inline-flex min-h-11 items-center rounded px-2.5 text-gold-400"
+              : "inline-flex min-h-11 items-center rounded px-2.5 text-paper-dim/70 transition-colors hover:text-paper"
           }
         >
           {LABELS[l]}

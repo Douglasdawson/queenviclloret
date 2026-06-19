@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next";
-import { Link } from "wouter";
 import { formatInTimeZone } from "date-fns-tz";
-import { ButtonLink, Container, Eyebrow, Section } from "../components/ui";
+import { ButtonLink, Chip, Container, Eyebrow, FaqList, Section } from "../components/ui";
 import { Picture } from "../components/Picture";
 import { FixtureTicket, groupByDay } from "../components/FixtureTicket";
 import { useWorldCupEvents } from "../hooks/useWorldCupEvents";
@@ -56,7 +55,7 @@ export default function WorldCupPage() {
             {t("worldCup.facts")}
           </Eyebrow>
         </div>
-        <h1 className="font-display mt-6 max-w-3xl text-[clamp(2.5rem,7vw,5rem)] font-bold leading-[1.0]">
+        <h1 className="font-display display-1 mt-6 max-w-3xl font-bold">
           {t("worldCup.title")}
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-paper-dim">
@@ -115,13 +114,9 @@ export default function WorldCupPage() {
           </h2>
           <div className="mt-6 flex flex-wrap gap-2.5">
             {teamLinks.map((tm) => (
-              <Link
-                key={tm.slug}
-                href={`/world-cup-2026/team/${tm.slug}`}
-                className="rounded-full border border-green-700 px-4 py-1.5 text-sm font-medium text-paper transition-colors hover:border-gold-400 hover:text-gold-400"
-              >
+              <Chip key={tm.slug} href={`/world-cup-2026/team/${tm.slug}`}>
                 {tm.name}
-              </Link>
+              </Chip>
             ))}
           </div>
         </Container>
@@ -165,24 +160,7 @@ export default function WorldCupPage() {
       <Container className="mt-20">
         <Eyebrow onGreen>{t("worldCup.faqTitle")}</Eyebrow>
         <h2 className="font-display text-3xl font-bold sm:text-4xl">{t("worldCup.faqHeading")}</h2>
-        <div className="mt-8 max-w-2xl divide-y divide-green-700">
-          {faq.map((item) => (
-            <details key={item.q} className="group py-5">
-              <summary className="flex cursor-pointer list-none items-baseline justify-between gap-4 font-display text-lg font-bold marker:hidden [&::-webkit-details-marker]:hidden">
-                {item.q}
-                <span
-                  aria-hidden="true"
-                  className="tnum select-none text-xl font-medium text-gold-400 transition-transform duration-200 group-open:rotate-45 motion-reduce:transition-none"
-                >
-                  +
-                </span>
-              </summary>
-              <p className="mt-2.5 max-w-xl text-[0.9375rem] leading-relaxed text-paper-dim">
-                {item.a}
-              </p>
-            </details>
-          ))}
-        </div>
+        <FaqList items={faq} surface="green" className="mt-8" />
       </Container>
     </Section>
   );

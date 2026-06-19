@@ -103,6 +103,17 @@ h3 {
   letter-spacing: -0.02em;
 }
 
+/* Shared display scale — one fluid clamp per tier so every hero matches.
+   .display-1 = primary hubs (Home, World Cup); .display-2 = every other hero. */
+.display-1 {
+  font-size: clamp(2.5rem, 6.5vw, 4.75rem);
+  line-height: 1.02;
+}
+.display-2 {
+  font-size: clamp(2.25rem, 5vw, 3.6rem);
+  line-height: 1.06;
+}
+
 /* Short all-caps labels (tickets, eyebrows) */
 .label-caps {
   text-transform: uppercase;

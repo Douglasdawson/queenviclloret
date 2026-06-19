@@ -51,12 +51,12 @@ export function Header() {
           </div>
           <Link
             href="/reservations"
-            className="whitespace-nowrap rounded-[10px] bg-gold-500 px-3 py-2 text-[0.8125rem] font-semibold text-ink-900 transition-colors duration-200 hover:bg-gold-600 hover:text-cream-50 sm:px-4 sm:text-sm"
+            className="inline-flex min-h-11 items-center justify-center whitespace-nowrap rounded-[10px] bg-gold-500 px-4 text-sm font-semibold text-ink-900 transition-colors duration-200 hover:bg-gold-600 hover:text-cream-50"
           >
             {t("cta.bookTable")}
           </Link>
           <button
-            className="-mr-2 p-2 text-paper lg:hidden"
+            className="-mr-2 inline-flex min-h-11 min-w-11 items-center justify-center p-2 text-paper lg:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
@@ -82,7 +82,7 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="rounded-md px-2 py-2.5 text-base font-medium text-paper-dim hover:bg-green-800 hover:text-paper"
+                  className="flex min-h-11 items-center rounded-md px-2 text-base font-medium text-paper-dim hover:bg-green-800 hover:text-paper"
                 >
                   {t(item.key)}
                 </Link>
@@ -90,7 +90,7 @@ export function Header() {
               <Link
                 href="/reservations"
                 onClick={() => setOpen(false)}
-                className="mt-2 rounded-[10px] bg-gold-500 px-4 py-2.5 text-center text-sm font-semibold text-ink-900"
+                className="mt-2 flex min-h-11 items-center justify-center rounded-[10px] bg-gold-500 px-4 text-center text-sm font-semibold text-ink-900"
               >
                 {t("cta.bookTable")}
               </Link>

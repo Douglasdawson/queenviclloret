@@ -33,7 +33,7 @@ export default function WhatsOnPage() {
     <Section surface="green" className="min-h-[70svh] py-16 sm:py-20">
       <Container>
         <Eyebrow onGreen>{t("whatsOn.board")}</Eyebrow>
-        <h1 className="font-display max-w-2xl text-[clamp(2.25rem,5vw,3.5rem)] font-bold leading-tight">
+        <h1 className="font-display display-2 max-w-2xl font-bold">
           {t("whatsOn.title")}
         </h1>
         <p className="mt-3 max-w-xl text-[1.0625rem] leading-relaxed text-paper-dim">

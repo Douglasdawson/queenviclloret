@@ -58,13 +58,13 @@ export function Footer() {
 
         <nav aria-label="Footer">
           <p className="label-caps mb-4 text-xs text-gold-400">{t("footer.follow")}</p>
-          <ul className="space-y-2.5 text-[0.9375rem]">
+          <ul className="space-y-1 text-[0.9375rem]">
             {SOCIAL.map((s) => (
               <li key={s.label}>
                 <a
                   href={s.href}
                   rel="noopener noreferrer"
-                  className="text-paper-dim transition-colors hover:text-gold-400"
+                  className="inline-block py-1.5 text-paper-dim transition-colors hover:text-gold-400"
                 >
                   {s.label}
                 </a>
@@ -74,7 +74,7 @@ export function Footer() {
         </nav>
 
         <div className="flex flex-col justify-between gap-6">
-          <ul className="space-y-2.5 text-[0.9375rem]">
+          <ul className="space-y-1 text-[0.9375rem]">
             {[
               { href: "/reservations", key: "nav.reservations" },
               { href: "/faq", key: "nav.faq" },
@@ -85,7 +85,7 @@ export function Footer() {
               { href: "/accessibility", key: "footer.accessibility" },
             ].map((l) => (
               <li key={l.href}>
-                <Link href={l.href} className="text-paper-dim transition-colors hover:text-gold-400">
+                <Link href={l.href} className="inline-block py-1.5 text-paper-dim transition-colors hover:text-gold-400">
                   {t(l.key)}
                 </Link>
               </li>
