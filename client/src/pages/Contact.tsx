@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { z } from "zod";
 import { Button, Container, Eyebrow, LaurelSeal, Section } from "../components/ui";
 import { FieldError, FieldLabel, Honeypot, TextArea, TextInput } from "../components/Field";
+import { VENUE } from "@shared/venue";
 import { emailSchema } from "@shared/validation/common";
 import { apiPost } from "../lib/api";
 import { collectAttribution } from "../lib/attribution";
@@ -38,6 +39,10 @@ export default function ContactPage() {
     path: "/contact",
   });
 
+  const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(
+    `${VENUE.name}, ${VENUE.address.full}`,
+  )}&output=embed`;
+
   async function onSubmit(values: FormValues) {
     setServerError(false);
     try {
@@ -59,15 +64,17 @@ export default function ContactPage() {
           {t("contact.subtitle")}
         </p>
 
+        <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1fr] lg:gap-16">
+          <div>
         {sent ? (
-          <div className="mt-12 flex max-w-xl flex-col items-start gap-5 rounded-2xl border border-cream-200 bg-cream-100 p-8">
+          <div className="flex max-w-xl flex-col items-start gap-5 rounded-2xl border border-cream-200 bg-cream-100 p-8">
             <LaurelSeal className="w-[88px]" />
             <p className="text-[1.0625rem] leading-relaxed text-ink-900">
               {t("contact.form.success")}
             </p>
           </div>
         ) : (
-          <form method="post" onSubmit={handleSubmit(onSubmit)} className="relative mt-12 max-w-xl space-y-6">
+          <form method="post" onSubmit={handleSubmit(onSubmit)} className="relative max-w-xl space-y-6">
             <Honeypot register={register("company")} />
             <div>
               <FieldLabel>{t("contact.form.name")}</FieldLabel>
@@ -99,6 +106,52 @@ export default function ContactPage() {
             </Button>
           </form>
         )}
+          </div>
+
+          {/* Practical info + map */}
+          <aside className="lg:pt-1">
+            <ul className="space-y-3 text-[0.9375rem] leading-relaxed text-ink-600">
+              <li>
+                <a href={VENUE.mapUrl} rel="noopener noreferrer" className="hover:text-gold-700">
+                  {VENUE.address.streetAddress} · {VENUE.address.postalCode}{" "}
+                  {VENUE.address.addressLocality}
+                </a>
+              </li>
+              <li>
+                <a href={`tel:${VENUE.phoneE164}`} className="tnum hover:text-gold-700">
+                  {VENUE.phoneDisplay}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`https://wa.me/${VENUE.whatsappDigits}`}
+                  rel="noopener noreferrer"
+                  className="hover:text-gold-700"
+                >
+                  {t("cta.whatsapp")}
+                </a>
+              </li>
+              <li className="tnum text-ink-600">{t("footer.hours")}</li>
+            </ul>
+
+            <div className="mt-6 overflow-hidden rounded-2xl border border-cream-200">
+              <iframe
+                src={mapSrc}
+                title={t("contact.mapTitle")}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="aspect-[4/3] w-full"
+              />
+            </div>
+            <a
+              href={VENUE.mapUrl}
+              rel="noopener noreferrer"
+              className="label-caps mt-4 inline-block text-xs text-gold-700 underline-offset-4 hover:underline"
+            >
+              {t("contact.directions")} →
+            </a>
+          </aside>
+        </div>
       </Container>
     </Section>
   );

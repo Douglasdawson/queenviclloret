@@ -10,7 +10,9 @@
     "reservations": "Reserves",
     "contact": "Contacte",
     "faq": "Preguntes",
-    "blog": "Blog"
+    "blog": "Blog",
+    "menu": "Carta",
+    "gallery": "Galeria"
   },
   "cta": {
     "watchSport": "Veure esport",
@@ -18,7 +20,8 @@
     "seeWhatsOn": "Veure què fem",
     "getInTouch": "Contacta'ns",
     "viewDetails": "Veure detalls",
-    "fullProgramme": "Programa complet"
+    "fullProgramme": "Programa complet",
+    "whatsapp": "Escriu-nos per WhatsApp"
   },
   "home": {
     "kicker": "L'Original · Est. 1986",
@@ -169,7 +172,9 @@
       "consent": "Accepto que em contacteu sobre la meva consulta.",
       "submit": "Enviar missatge",
       "success": "Missatge en camí. Et respondrem al més aviat possible."
-    }
+    },
+    "mapTitle": "Mapa amb la ubicació del Queen Vic Sports Bar a Lloret de Mar",
+    "directions": "Com arribar"
   },
   "faq": {
     "title": "Preguntes freqüents"
@@ -367,5 +372,32 @@
     "relatedTitle": "Continua llegint",
     "ctaTitle": "Véns al pròxim partidàs?",
     "ctaBody": "Les taules volen els dies de partit — reserva la teva a la terrassa."
+  },
+  "reviews": {
+    "aria": "Valoració de {{value}} sobre 5 a partir de {{count}} ressenyes",
+    "count": "{{count}} ressenyes a TripAdvisor"
+  },
+  "newsletter": {
+    "title": "Rep els grans partits al teu correu",
+    "placeholder": "El teu email",
+    "cta": "Subscriure'm",
+    "consent": "Accepto rebre novetats i ofertes del Queen Vic. Em puc donar de baixa quan vulgui.",
+    "ok": "Ja hi ets — ens veiem al Vic! 🍺"
+  },
+  "menu": {
+    "title": "Menjar i beure",
+    "metaDescription": "Cerveses, còctels i menjar de bar al Queen Vic Sports Bar, Lloret de Mar — servits a la terrassa durant cada partit.",
+    "note": "Carta de mostra — els plats i els preus poden variar. Pregunta al nostre equip pels suggeriments del dia i la informació d'al·lèrgens."
+  },
+  "gallery": {
+    "title": "Galeria",
+    "metaDescription": "Fotos del Queen Vic Sports Bar a Lloret de Mar — la terrassa, la pantalla gegant i les nits de partit.",
+    "intro": "La terrassa, la pantalla gegant i l'ambient en una gran nit de partit.",
+    "cap1": "La terrassa del Queen Vic al capvespre, amb la pantalla gegant encesa sobre el públic",
+    "cap2": "Terrassa plena sota les veles veient el partit a la pantalla gran",
+    "cap3": "Nit de Mundial a la terrassa de 1.250 m², aficionats sota la pantalla gegant",
+    "cap4": "La terrassa de nit durant un partit en directe al Queen Vic",
+    "cap5": "Nit de festa al Queen Vic amb el DJ resident",
+    "cap6": "Públic en nit de partit animant a la terrassa del Queen Vic"
   }
 }

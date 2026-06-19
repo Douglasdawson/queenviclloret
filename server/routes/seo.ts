@@ -21,6 +21,8 @@ const STATIC_PATHS = [
   "world-cup-2026",
   "blog",
   "about",
+  "menu",
+  "gallery",
   "reservations",
   "contact",
   "faq",

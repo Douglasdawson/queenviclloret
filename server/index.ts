@@ -61,6 +61,8 @@ async function bootstrap() {
           fontSrc: ["'self'", "data:"],
           objectSrc: ["'none'"],
           baseUri: ["'self'"],
+          // Allow the keyless Google Maps embed iframe on the contact page.
+          frameSrc: ["https://www.google.com"],
           frameAncestors: ["'none'"],
           upgradeInsecureRequests: isProd ? [] : null,
         },
@@ -68,6 +70,15 @@ async function bootstrap() {
       crossOriginEmbedderPolicy: false,
     }),
   );
+
+  // Permissions-Policy: deny powerful features helmet doesn't disable by default.
+  app.use((_req, res, next) => {
+    res.setHeader(
+      "Permissions-Policy",
+      "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+    );
+    next();
+  });
 
   app.use(compression());
 

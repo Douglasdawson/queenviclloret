@@ -4,7 +4,12 @@ import { usePageSeo } from "../seo/use-page-seo";
 
 export default function NotFoundPage() {
   const { t } = useTranslation();
-  usePageSeo({ title: "Page not found | Queen Vic", path: "/404", robots: "noindex, follow" });
+  usePageSeo({
+    title: "Page not found | Queen Vic",
+    path: "/404",
+    robots: "noindex, follow",
+    status: 404,
+  });
   return (
     <Section surface="green" className="py-24 sm:py-32">
       <Container>

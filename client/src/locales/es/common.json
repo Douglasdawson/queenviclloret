@@ -10,7 +10,9 @@
     "reservations": "Reservas",
     "contact": "Contacto",
     "faq": "Preguntas",
-    "blog": "Blog"
+    "blog": "Blog",
+    "menu": "Carta",
+    "gallery": "Galería"
   },
   "cta": {
     "watchSport": "Ver deporte",
@@ -18,7 +20,8 @@
     "seeWhatsOn": "Ver qué echamos",
     "getInTouch": "Contáctanos",
     "viewDetails": "Ver detalles",
-    "fullProgramme": "Programa completo"
+    "fullProgramme": "Programa completo",
+    "whatsapp": "Escríbenos por WhatsApp"
   },
   "home": {
     "kicker": "El Original · Est. 1986",
@@ -169,7 +172,9 @@
       "consent": "Acepto que me contactéis sobre mi consulta.",
       "submit": "Enviar mensaje",
       "success": "Mensaje en camino. Te responderemos lo antes posible."
-    }
+    },
+    "mapTitle": "Mapa con la ubicación del Queen Vic Sports Bar en Lloret de Mar",
+    "directions": "Cómo llegar"
   },
   "faq": {
     "title": "Preguntas frecuentes"
@@ -367,5 +372,32 @@
     "relatedTitle": "Sigue leyendo",
     "ctaTitle": "¿Vienes al próximo partidazo?",
     "ctaBody": "Las mesas vuelan los días de partido — reserva la tuya en la terraza."
+  },
+  "reviews": {
+    "aria": "Valoración de {{value}} sobre 5 a partir de {{count}} reseñas",
+    "count": "{{count}} reseñas en TripAdvisor"
+  },
+  "newsletter": {
+    "title": "Recibe los grandes partidos en tu correo",
+    "placeholder": "Tu email",
+    "cta": "Suscribirme",
+    "consent": "Acepto recibir novedades y ofertas del Queen Vic. Puedo darme de baja cuando quiera.",
+    "ok": "¡Ya estás dentro — nos vemos en el Vic! 🍺"
+  },
+  "menu": {
+    "title": "Comida y bebida",
+    "metaDescription": "Cervezas, cócteles y comida de bar en el Queen Vic Sports Bar, Lloret de Mar — servidos en la terraza durante cada partido.",
+    "note": "Carta de muestra — los platos y precios pueden variar. Pregunta a nuestro equipo por las sugerencias del día y la información de alérgenos."
+  },
+  "gallery": {
+    "title": "Galería",
+    "metaDescription": "Fotos del Queen Vic Sports Bar en Lloret de Mar — la terraza, la pantalla gigante y las noches de partido.",
+    "intro": "La terraza, la pantalla gigante y el ambiente en una gran noche de partido.",
+    "cap1": "La terraza del Queen Vic al atardecer, con la pantalla gigante encendida sobre el público",
+    "cap2": "Terraza llena bajo las velas viendo el partido en la pantalla grande",
+    "cap3": "Noche de Mundial en la terraza de 1.250 m², aficionados bajo la pantalla gigante",
+    "cap4": "La terraza de noche durante un partido en directo en el Queen Vic",
+    "cap5": "Noche de fiesta en el Queen Vic con el DJ residente",
+    "cap6": "Público en noche de partido animando en la terraza del Queen Vic"
   }
 }

@@ -11,6 +11,8 @@ import BlogIndexPage from "../pages/Blog";
 import BlogCategoryPage from "../pages/BlogCategory";
 import BlogPostPage from "../pages/BlogPost";
 import AboutPage from "../pages/About";
+import MenuPage from "../pages/Menu";
+import GalleryPage from "../pages/Gallery";
 import ReservationsPage from "../pages/Reservations";
 import ContactPage from "../pages/Contact";
 import FaqPage from "../pages/Faq";
@@ -38,6 +40,8 @@ export function PublicApp() {
         <Route path="/blog/category/:categorySlug" component={BlogCategoryPage} />
         <Route path="/blog/:postSlug" component={BlogPostPage} />
         <Route path="/about" component={AboutPage} />
+        <Route path="/menu" component={MenuPage} />
+        <Route path="/gallery" component={GalleryPage} />
         <Route path="/reservations" component={ReservationsPage} />
         <Route path="/contact" component={ContactPage} />
         <Route path="/faq" component={FaqPage} />

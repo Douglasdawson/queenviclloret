@@ -11,7 +11,14 @@ export interface SeoData {
   alternates?: SeoAlternate[];
   ogType?: string;
   ogImage?: string;
+  /** Intrinsic dimensions of the share image (lets crawlers reserve space). */
+  ogImageWidth?: number;
+  ogImageHeight?: number;
+  ogImageType?: string;
+  ogImageAlt?: string;
   robots?: string;
+  /** HTTP status the SSR handler should send (e.g. 404 for the not-found page). */
+  status?: number;
   /** Resource hints rendered as <link rel="preload"> (e.g. the LCP hero image). */
   preload?: {
     href: string;

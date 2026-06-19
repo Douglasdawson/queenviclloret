@@ -10,7 +10,9 @@
     "reservations": "Reservations",
     "contact": "Contact",
     "faq": "FAQ",
-    "blog": "Blog"
+    "blog": "Blog",
+    "menu": "Menu",
+    "gallery": "Gallery"
   },
   "cta": {
     "watchSport": "Watch sport",
@@ -18,7 +20,8 @@
     "seeWhatsOn": "See what's on",
     "getInTouch": "Get in touch",
     "viewDetails": "View details",
-    "fullProgramme": "Full programme"
+    "fullProgramme": "Full programme",
+    "whatsapp": "Chat on WhatsApp"
   },
   "home": {
     "kicker": "The Original · Est. 1986",
@@ -169,7 +172,9 @@
       "consent": "I'm happy to be contacted about my enquiry.",
       "submit": "Send message",
       "success": "Message on its way. We'll reply as soon as we can."
-    }
+    },
+    "mapTitle": "Map showing Queen Vic Sports Bar in Lloret de Mar",
+    "directions": "Get directions"
   },
   "faq": {
     "title": "Frequently asked questions"
@@ -367,5 +372,32 @@
     "relatedTitle": "Read next",
     "ctaTitle": "Coming for the next big match?",
     "ctaBody": "Tables go fast on match days — book yours on the terrace."
+  },
+  "reviews": {
+    "aria": "Rated {{value}} out of 5 from {{count}} reviews",
+    "count": "{{count}} reviews on TripAdvisor"
+  },
+  "newsletter": {
+    "title": "Get the big fixtures in your inbox",
+    "placeholder": "Your email",
+    "cta": "Subscribe",
+    "consent": "I agree to receive news and offers from Queen Vic. Unsubscribe anytime.",
+    "ok": "You're in — see you at the Vic. 🍺"
+  },
+  "menu": {
+    "title": "Food & drinks",
+    "metaDescription": "Beers, cocktails and bar food at Queen Vic Sports Bar, Lloret de Mar — served on the terrace through every match.",
+    "note": "Sample menu — items and prices may vary. Ask our staff for today's specials and allergen information."
+  },
+  "gallery": {
+    "title": "Gallery",
+    "metaDescription": "Photos of Queen Vic Sports Bar in Lloret de Mar — the terrace, the giant screen and big match nights.",
+    "intro": "The terrace, the giant screen and the atmosphere on a big match night.",
+    "cap1": "Queen Vic's terrace at dusk, giant screen lit up over a packed crowd",
+    "cap2": "Full terrace under sail shades watching the match on the big screen",
+    "cap3": "World Cup night on the 1,250 m² terrace, fans under the giant screen",
+    "cap4": "The terrace at night during a live match at Queen Vic",
+    "cap5": "Party night at Queen Vic with the resident DJ",
+    "cap6": "Match night crowd cheering on the terrace at Queen Vic"
   }
 }

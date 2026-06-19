@@ -20,6 +20,17 @@ export const contactFormSchema = z
   .merge(attributionSchema);
 export type ContactFormInput = z.infer<typeof contactFormSchema>;
 
+/** Newsletter signup — just an email + explicit marketing consent. */
+export const newsletterSchema = z
+  .object({
+    email: emailSchema,
+    consentEmail: z.boolean().refine((v) => v, "Consent required"),
+    // honeypot — must be empty
+    company: z.string().max(0).optional(),
+  })
+  .merge(attributionSchema);
+export type NewsletterInput = z.infer<typeof newsletterSchema>;
+
 export const leadStatusSchema = z.enum(["new", "contacted", "qualified", "won", "lost"]);
 
 export const updateLeadSchema = z.object({

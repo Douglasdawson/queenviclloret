@@ -5,6 +5,8 @@ export interface RenderedDoc {
   headTags: string;
   dehydratedState: unknown;
   lang: string;
+  /** HTTP status the SSR handler should send (200, or 404 for the not-found page). */
+  status: number;
 }
 
 /** Escape a string for use inside a double-quoted HTML attribute. */

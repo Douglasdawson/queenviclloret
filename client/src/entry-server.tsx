@@ -56,5 +56,6 @@ export async function render(url: string, ctx: RenderContext) {
 
   const headTags = seoCollector.current ? renderHeadTags(seoCollector.current) : "";
   const dehydratedState = dehydrate(queryClient);
-  return { appHtml, headTags, dehydratedState };
+  const status = seoCollector.current?.status ?? 200;
+  return { appHtml, headTags, dehydratedState, status };
 }

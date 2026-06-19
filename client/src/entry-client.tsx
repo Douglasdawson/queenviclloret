@@ -2,6 +2,7 @@ import { hydrateRoot } from "react-dom/client";
 import { hydrate } from "@tanstack/react-query";
 import "./styles.css";
 import { AppProviders } from "./app/providers";
+import { ClientErrorBoundary } from "./components/ClientErrorBoundary";
 import { resolveRoot } from "./app/root";
 import { createI18n } from "./i18n";
 import { makeQueryClient } from "./lib/query";
@@ -21,14 +22,16 @@ const seoCollector: SeoCollector = { isServer: false, current: null };
 
 hydrateRoot(
   document.getElementById("root")!,
-  <AppProviders
-    base={base}
-    siteUrl={window.location.origin}
-    locale={locale}
-    queryClient={queryClient}
-    i18n={i18n}
-    seoCollector={seoCollector}
-  >
-    {element}
-  </AppProviders>,
+  <ClientErrorBoundary>
+    <AppProviders
+      base={base}
+      siteUrl={window.location.origin}
+      locale={locale}
+      queryClient={queryClient}
+      i18n={i18n}
+      seoCollector={seoCollector}
+    >
+      {element}
+    </AppProviders>
+  </ClientErrorBoundary>,
 );

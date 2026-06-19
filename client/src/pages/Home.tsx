@@ -5,6 +5,7 @@ import { ButtonLink, Container, Eyebrow, LaurelSeal, Section } from "../componen
 import { FixtureTicket } from "../components/FixtureTicket";
 import { Picture, imagePreload } from "../components/Picture";
 import { SportsMontage } from "../components/SportsMontage";
+import { RatingBadge } from "../components/RatingBadge";
 import { usePublicEvents } from "../hooks/usePublicEvents";
 import { usePageSeo } from "../seo/use-page-seo";
 import { useSite } from "../app/site-context";
@@ -33,7 +34,8 @@ export default function HomePage() {
     description:
       "Watch live sport on the biggest outdoor screen in Lloret de Mar. Premier League, World Cup 2026, F1, MotoGP. 1,250 m² terrace and a resident DJ, since 1986.",
     path: "/",
-    ogImage: `${siteUrl}/images/terrace-dusk-1280.webp`,
+    // ogImage omitted on purpose: the terrace-dusk default already applies and
+    // carries its intrinsic dimensions + alt (better social unfurls).
     preload: [imagePreload("terrace-dusk")],
     jsonLd: [barOrPubLd(siteUrl), websiteLd(siteUrl)],
   });
@@ -76,6 +78,9 @@ export default function HomePage() {
             1,250 {t("home.stats.terrace")} · 15+ {t("home.stats.screens")} · 40{" "}
             {t("home.stats.years")}
           </p>
+          <div className="reveal-3 mt-4">
+            <RatingBadge onGreen />
+          </div>
         </Container>
       </section>
 

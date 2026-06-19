@@ -8,6 +8,7 @@ const NAV = [
   { href: "/whats-on", key: "nav.whatsOn" },
   { href: "/sports-bar", key: "nav.sportsBar" },
   { href: "/world-cup-2026", key: "nav.worldCup" },
+  { href: "/menu", key: "nav.menu" },
   { href: "/blog", key: "nav.blog" },
   { href: "/about", key: "nav.about" },
   { href: "/contact", key: "nav.contact" },

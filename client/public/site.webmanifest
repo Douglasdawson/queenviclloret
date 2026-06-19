@@ -1,0 +1,21 @@
+{
+  "name": "Queen Vic Sports Bar",
+  "short_name": "Queen Vic",
+  "description": "The original sports bar in Lloret de Mar since 1986 — Lloret's biggest outdoor screen and a 1,250 m² terrace.",
+  "lang": "en",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#16261f",
+  "background_color": "#f4efe3",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

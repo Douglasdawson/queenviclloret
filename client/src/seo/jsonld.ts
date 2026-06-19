@@ -40,6 +40,7 @@ export function barOrPubLd(siteUrl: string) {
       longitude: VENUE.geo.longitude,
     },
     hasMap: VENUE.mapUrl,
+    hasMenu: `${siteUrl}/menu`,
     telephone: VENUE.phoneE164,
     maximumAttendeeCapacity: VENUE.capacity,
     openingHoursSpecification: [

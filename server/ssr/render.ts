@@ -20,7 +20,7 @@ const ROOT = path.resolve(__dirname, "../..");
 export type RenderFn = (
   url: string,
   ctx: { lang: Locale; siteUrl: string; initialData: Record<string, unknown> },
-) => Promise<{ appHtml: string; headTags: string; dehydratedState: unknown }>;
+) => Promise<{ appHtml: string; headTags: string; dehydratedState: unknown; status: number }>;
 
 function localeFromPath(url: string): Locale {
   const seg = url.split("/").filter(Boolean)[0];
@@ -130,6 +130,7 @@ export function createSsrHandler(vite: ViteDevServer | null) {
           headTags: out.headTags,
           dehydratedState: out.dehydratedState,
           lang,
+          status: out.status,
         };
         // Store the React render + the (already transformed) template together (prod only).
         if (isProd) {
@@ -140,7 +141,7 @@ export function createSsrHandler(vite: ViteDevServer | null) {
 
       const html = buildDocument(template, rendered, nonce, { isAdmin: url.startsWith("/admin") });
       res
-        .status(200)
+        .status(rendered.status ?? 200)
         .set("Content-Type", "text/html; charset=utf-8")
         .set("Cache-Control", "public, max-age=0, s-maxage=60")
         .end(html);

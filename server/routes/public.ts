@@ -2,7 +2,7 @@ import { Router } from "express";
 import { validate } from "../middlewares/validate";
 import { publicFormLimiter } from "../middlewares/rate-limit";
 import { AppError } from "../middlewares/error-handler";
-import { contactFormSchema } from "@shared/validation/leads";
+import { contactFormSchema, newsletterSchema } from "@shared/validation/leads";
 import { reservationRequestSchema } from "@shared/validation/reservations";
 import * as leadsDao from "../dao/leads.dao";
 import * as reservationsDao from "../dao/reservations.dao";
@@ -13,7 +13,7 @@ import * as categoriesDao from "../dao/post-categories.dao";
 import * as usersDao from "../dao/users.dao";
 import { toPublicListItem, toPublicDetail, toPublicCategory } from "../lib/post-serialize";
 import { cached, TTL } from "../cache";
-import type { ContactFormInput } from "@shared/validation/leads";
+import type { ContactFormInput, NewsletterInput } from "@shared/validation/leads";
 import type { ReservationRequestInput } from "@shared/validation/reservations";
 
 export const publicRouter: Router = Router();
@@ -119,6 +119,39 @@ publicRouter.post("/contact", publicFormLimiter, validate(contactFormSchema), as
   );
   res.status(201).json({ ok: true, id: lead.id });
 });
+
+// Newsletter signup — captures a consented marketing lead (no migration: the
+// "newsletter" intent is recorded via source:"other" + a marker message, since
+// lead_source has no dedicated value). Email delivery is wired later (Resend).
+publicRouter.post(
+  "/subscribe",
+  publicFormLimiter,
+  validate(newsletterSchema),
+  async (req, res) => {
+    const body = req.body as NewsletterInput;
+    if (body.company) throw new AppError(400, "spam_detected", "Rejected"); // honeypot
+
+    const lead = await leadsDao.createLead(
+      {
+        email: body.email,
+        source: "other",
+        message: "Newsletter signup",
+        consentEmail: true,
+        consentWhatsapp: false,
+        consentUpdatedAt: new Date(),
+        utmSource: body.utmSource,
+        utmMedium: body.utmMedium,
+        utmCampaign: body.utmCampaign,
+        utmTerm: body.utmTerm,
+        utmContent: body.utmContent,
+        referrer: body.referrer,
+        landingPage: body.landingPage,
+      },
+      req.audit,
+    );
+    res.status(201).json({ ok: true, id: lead.id });
+  },
+);
 
 publicRouter.post(
   "/reservation",

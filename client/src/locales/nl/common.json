@@ -10,7 +10,9 @@
     "reservations": "Reserveringen",
     "contact": "Contact",
     "faq": "FAQ",
-    "blog": "Blog"
+    "blog": "Blog",
+    "menu": "Menu",
+    "gallery": "Galerij"
   },
   "cta": {
     "watchSport": "Sport kijken",
@@ -18,7 +20,8 @@
     "seeWhatsOn": "Bekijk het programma",
     "getInTouch": "Neem contact op",
     "viewDetails": "Details bekijken",
-    "fullProgramme": "Volledig programma"
+    "fullProgramme": "Volledig programma",
+    "whatsapp": "Chat via WhatsApp"
   },
   "home": {
     "kicker": "Het Origineel · Est. 1986",
@@ -169,7 +172,9 @@
       "consent": "Ik ga ermee akkoord dat jullie contact opnemen over mijn vraag.",
       "submit": "Bericht versturen",
       "success": "Bericht onderweg. We antwoorden zo snel mogelijk."
-    }
+    },
+    "mapTitle": "Kaart met de locatie van Queen Vic Sports Bar in Lloret de Mar",
+    "directions": "Routebeschrijving"
   },
   "faq": {
     "title": "Veelgestelde vragen"
@@ -367,5 +372,32 @@
     "relatedTitle": "Lees verder",
     "ctaTitle": "Kom je voor de volgende topwedstrijd?",
     "ctaBody": "Tafels zijn snel vol op wedstrijddagen — reserveer de jouwe op het terras."
+  },
+  "reviews": {
+    "aria": "Beoordeeld met {{value}} van de 5 op basis van {{count}} reviews",
+    "count": "{{count}} reviews op TripAdvisor"
+  },
+  "newsletter": {
+    "title": "Ontvang de grote wedstrijden in je inbox",
+    "placeholder": "Je e-mail",
+    "cta": "Aanmelden",
+    "consent": "Ik ga akkoord met nieuws en aanbiedingen van Queen Vic. Altijd uitschrijfbaar.",
+    "ok": "Je bent erbij — tot bij de Vic! 🍺"
+  },
+  "menu": {
+    "title": "Eten & drinken",
+    "metaDescription": "Bieren, cocktails en barvoer bij Queen Vic Sports Bar, Lloret de Mar — geserveerd op het terras tijdens elke wedstrijd.",
+    "note": "Voorbeeldmenu — gerechten en prijzen kunnen variëren. Vraag ons team naar de specials van de dag en allergeneninformatie."
+  },
+  "gallery": {
+    "title": "Galerij",
+    "metaDescription": "Foto's van Queen Vic Sports Bar in Lloret de Mar — het terras, het reuzenscherm en grote wedstrijdavonden.",
+    "intro": "Het terras, het reuzenscherm en de sfeer op een grote wedstrijdavond.",
+    "cap1": "Het terras van Queen Vic in de schemering, het reuzenscherm verlicht boven een volle menigte",
+    "cap2": "Vol terras onder de schaduwdoeken kijkend naar de wedstrijd op het grote scherm",
+    "cap3": "WK-avond op het terras van 1.250 m², fans onder het reuzenscherm",
+    "cap4": "Het terras 's avonds tijdens een live wedstrijd bij Queen Vic",
+    "cap5": "Feestavond bij Queen Vic met de vaste DJ",
+    "cap6": "Publiek op een wedstrijdavond juicht op het terras van Queen Vic"
   }
 }

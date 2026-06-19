@@ -2,8 +2,11 @@ import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
 import { VENUE } from "@shared/venue";
 import { Container, LaurelSeal } from "./ui";
+import { RatingBadge } from "./RatingBadge";
+import { NewsletterSignup } from "./NewsletterSignup";
 
 const SOCIAL = [
+  { href: `https://wa.me/${VENUE.whatsappDigits}`, label: "WhatsApp" },
   { href: VENUE.mapUrl, label: "Google Maps" },
   { href: "https://www.instagram.com/queenviclloret/", label: "Instagram" },
   { href: "https://www.facebook.com/QueenVicLloretdemar/", label: "Facebook" },
@@ -54,6 +57,9 @@ export function Footer() {
             </p>
             <p className="tnum pt-1 text-paper-dim/90">{t("footer.hours")}</p>
           </address>
+          <div className="mt-4">
+            <RatingBadge onGreen />
+          </div>
         </div>
 
         <nav aria-label="Footer">
@@ -76,6 +82,8 @@ export function Footer() {
         <div className="flex flex-col justify-between gap-6">
           <ul className="space-y-1 text-[0.9375rem]">
             {[
+              { href: "/menu", key: "nav.menu" },
+              { href: "/gallery", key: "nav.gallery" },
               { href: "/reservations", key: "nav.reservations" },
               { href: "/faq", key: "nav.faq" },
               { href: "/privacy", key: "footer.privacy" },
@@ -94,6 +102,14 @@ export function Footer() {
           <LaurelSeal className="w-[96px] opacity-90" />
         </div>
       </Container>
+
+      <div className="border-t border-green-800">
+        <Container className="py-8">
+          <div className="max-w-md">
+            <NewsletterSignup />
+          </div>
+        </Container>
+      </div>
 
       <div className="border-t border-green-800">
         <Container className="flex flex-wrap items-center justify-between gap-2 py-5">

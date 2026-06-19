@@ -35,16 +35,32 @@ export function renderHeadTags(data: SeoData): string {
   }
 
   // Open Graph / Twitter
+  tags.push(`<meta property="og:site_name" content="Queen Vic Sports Bar"/>`);
   tags.push(`<meta property="og:title" content="${esc(data.title)}"/>`);
   if (data.description)
     tags.push(`<meta property="og:description" content="${esc(data.description)}"/>`);
   tags.push(`<meta property="og:type" content="${esc(data.ogType ?? "website")}"/>`);
   tags.push(`<meta property="og:locale" content="${esc(data.locale)}"/>`);
   if (data.canonical) tags.push(`<meta property="og:url" content="${esc(data.canonical)}"/>`);
-  if (data.ogImage) tags.push(`<meta property="og:image" content="${esc(data.ogImage)}"/>`);
+  if (data.ogImage) {
+    tags.push(`<meta property="og:image" content="${esc(data.ogImage)}"/>`);
+    if (data.ogImageType)
+      tags.push(`<meta property="og:image:type" content="${esc(data.ogImageType)}"/>`);
+    if (data.ogImageWidth)
+      tags.push(`<meta property="og:image:width" content="${data.ogImageWidth}"/>`);
+    if (data.ogImageHeight)
+      tags.push(`<meta property="og:image:height" content="${data.ogImageHeight}"/>`);
+    if (data.ogImageAlt)
+      tags.push(`<meta property="og:image:alt" content="${esc(data.ogImageAlt)}"/>`);
+  }
   tags.push(
     `<meta name="twitter:card" content="${data.ogImage ? "summary_large_image" : "summary"}"/>`,
   );
+  if (data.ogImage) {
+    tags.push(`<meta name="twitter:image" content="${esc(data.ogImage)}"/>`);
+    if (data.ogImageAlt)
+      tags.push(`<meta name="twitter:image:alt" content="${esc(data.ogImageAlt)}"/>`);
+  }
 
   for (const obj of data.jsonLd ?? []) tags.push(jsonLdScript(obj));
 
