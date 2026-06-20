@@ -3,6 +3,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { apiGet, apiPost, apiPatch, apiDelete, ApiRequestError } from "../../lib/api";
 import { useMe, type AdminRole } from "../../hooks/useAuth";
 import { Button } from "../../components/ui";
+import { Dialog } from "../../components/Dialog";
 import { FieldLabel, TextInput, Select } from "../../components/Field";
 
 interface UserRow {
@@ -25,6 +26,12 @@ export default function AdminUsers() {
 
   const [form, setForm] = useState({ email: "", name: "", role: "editor" as AdminRole, password: "" });
 
+  // Change-password modal state.
+  const [pwTarget, setPwTarget] = useState<UserRow | null>(null);
+  const [pwValue, setPwValue] = useState("");
+  const [pwShow, setPwShow] = useState(false);
+  const [pwDone, setPwDone] = useState<string | null>(null);
+
   const create = useMutation({
     mutationFn: () => apiPost("/users", form),
     onSuccess: () => {
@@ -33,10 +40,34 @@ export default function AdminUsers() {
     },
   });
   const update = useMutation({
-    mutationFn: (v: { id: string; patch: Partial<{ role: AdminRole; isActive: boolean }> }) =>
-      apiPatch(`/users/${v.id}`, v.patch),
+    mutationFn: (v: {
+      id: string;
+      patch: Partial<{ role: AdminRole; isActive: boolean; password: string }>;
+    }) => apiPatch(`/users/${v.id}`, v.patch),
     onSuccess: () => qc.invalidateQueries({ queryKey: ["admin-users"] }),
   });
+
+  const setPassword = useMutation({
+    mutationFn: (v: { id: string; password: string }) =>
+      apiPatch(`/users/${v.id}`, { password: v.password }),
+    onSuccess: (_data, v) => {
+      const name = pwTarget?.name ?? "";
+      setPwTarget(null);
+      setPwValue("");
+      setPwShow(false);
+      setPwDone(name);
+      qc.invalidateQueries({ queryKey: ["admin-users"] });
+      void v;
+    },
+  });
+
+  function openPw(u: UserRow) {
+    setPwValue("");
+    setPwShow(false);
+    setPwDone(null);
+    setPassword.reset();
+    setPwTarget(u);
+  }
   const remove = useMutation({
     mutationFn: (id: string) => apiDelete(`/users/${id}`),
     onSuccess: () => qc.invalidateQueries({ queryKey: ["admin-users"] }),
@@ -145,16 +176,24 @@ export default function AdminUsers() {
                     </button>
                   </td>
                   <td className="px-4 py-3 text-right">
-                    {!self && (
+                    <div className="flex items-center justify-end gap-4">
                       <button
-                        onClick={() => {
-                          if (confirm(`Delete ${u.email}?`)) remove.mutate(u.id);
-                        }}
-                        className="text-xs font-semibold text-red-700 hover:underline"
+                        onClick={() => openPw(u)}
+                        className="text-xs font-semibold text-gold-700 hover:underline"
                       >
-                        Delete
+                        Password
                       </button>
-                    )}
+                      {!self && (
+                        <button
+                          onClick={() => {
+                            if (confirm(`Delete ${u.email}?`)) remove.mutate(u.id);
+                          }}
+                          className="text-xs font-semibold text-red-700 hover:underline"
+                        >
+                          Delete
+                        </button>
+                      )}
+                    </div>
                   </td>
                 </tr>
               );
@@ -162,6 +201,61 @@ export default function AdminUsers() {
           </tbody>
         </table>
       </div>
+
+      {pwDone && (
+        <p className="mt-4 text-sm font-medium text-green-700">Password updated for {pwDone}.</p>
+      )}
+
+      <Dialog
+        open={!!pwTarget}
+        onOpenChange={(o) => {
+          if (!o) {
+            setPwTarget(null);
+            setPwValue("");
+          }
+        }}
+        title={pwTarget ? `Set password — ${pwTarget.name}` : "Set password"}
+      >
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            if (pwTarget && pwValue.length >= 8) {
+              setPassword.mutate({ id: pwTarget.id, password: pwValue });
+            }
+          }}
+          className="space-y-4"
+        >
+          <div>
+            <FieldLabel>New password</FieldLabel>
+            <div className="flex gap-2">
+              <TextInput
+                type={pwShow ? "text" : "password"}
+                value={pwValue}
+                onChange={(e) => setPwValue(e.target.value)}
+                minLength={8}
+                autoComplete="new-password"
+                autoFocus
+                className="flex-1"
+              />
+              <Button
+                type="button"
+                variant="outline-green"
+                onClick={() => setPwShow((v) => !v)}
+                className="shrink-0"
+              >
+                {pwShow ? "Hide" : "Show"}
+              </Button>
+            </div>
+            <p className="mt-1.5 text-xs text-ink-600">At least 8 characters.</p>
+          </div>
+          {setPassword.error instanceof ApiRequestError && (
+            <p className="text-sm text-red-700">{setPassword.error.message}</p>
+          )}
+          <Button type="submit" disabled={pwValue.length < 8 || setPassword.isPending}>
+            {setPassword.isPending ? "Saving…" : "Set password"}
+          </Button>
+        </form>
+      </Dialog>
     </div>
   );
 }
