@@ -16,11 +16,16 @@ import { webhooksRouter } from "./routes/webhooks";
 import { createSsrHandler } from "./ssr/render";
 import { DEFAULT_LOCALE, LOCALES } from "@shared/enums";
 import { registerCron } from "./cron";
+import { ensureSchema } from "./lib/ensure-schema";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 
 async function bootstrap() {
+  // Self-heal the runtime schema (session + additive blog migrations) in case the
+  // managed DB was reset to an earlier point. Idempotent; never throws.
+  await ensureSchema();
+
   const app = express();
   app.set("trust proxy", 1);
 
