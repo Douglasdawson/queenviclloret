@@ -12,7 +12,8 @@
     "faq": "Preguntes",
     "blog": "Blog",
     "menu": "Carta",
-    "gallery": "Galeria"
+    "gallery": "Galeria",
+    "watchFootball": "Veure futbol"
   },
   "cta": {
     "watchSport": "Veure esport",
@@ -58,7 +59,9 @@
     "nextUp": "Properament a pantalla",
     "blogEyebrow": "Des del blog",
     "blogTitle": "L'últim del Vic",
-    "blogAll": "Veure-ho tot"
+    "blogAll": "Veure-ho tot",
+    "metaTitle": "Queen Vic — Sports bar a Lloret de Mar | Veure futbol en directe i Mundial 2026",
+    "metaDescription": "El sports bar original de Lloret de Mar des de 1986. Veure el futbol en directe, el Mundial 2026, Premier League, F1 i MotoGP a la pantalla exterior més gran — terrassa de 1.250 m² per a 700+ aficionats."
   },
   "whatsOn": {
     "title": "Què fem al Queen Vic",
@@ -67,7 +70,8 @@
     "empty": "Encara no hi ha res publicat",
     "emptyNote": "El programa setmanal surt primer a Instagram. Segueix-nos, o demana'ns que posem el teu partit.",
     "featured": "Destacat",
-    "live": "En directe"
+    "live": "En directe",
+    "metaTitle": "Programació — on veure el futbol i l'esport en directe a Lloret de Mar | Queen Vic"
   },
   "worldCup": {
     "title": "On veure el Mundial 2026 a Lloret de Mar",
@@ -124,7 +128,9 @@
     "s3t": "Pantalles a dins",
     "s3b": "Deu més cobrint cada racó del bar. Els horaris solapats són benvinguts.",
     "showTitle": "Què fem",
-    "showSub": "Si importa, està posat. Avisa'ns amb antelació i farem el possible per confirmar el teu partit."
+    "showSub": "Si importa, està posat. Avisa'ns amb antelació i farem el possible per confirmar el teu partit.",
+    "metaTitle": "Sports bar a Lloret de Mar — on veure el futbol en directe | Queen Vic",
+    "metaDescription": "On veure el futbol i l'esport en directe a Lloret de Mar: pantalla gegant exterior, 4 TVs a la terrassa i 10 pantalles dins amb Premier League, Mundial 2026, F1, MotoGP, rugbi i GAA. Des de 1986."
   },
   "about": {
     "kicker": "Est. 1986 · De tota la vida a Lloret",
@@ -360,6 +366,18 @@
       {
         "q": "Quins idiomes parleu?",
         "a": "L'equip i el públic són internacionals: anglès, espanyol, català, francès i neerlandès són habituals al Vic."
+      },
+      {
+        "q": "On veure el futbol a Lloret de Mar?",
+        "a": "Al Queen Vic, el sports bar original de Lloret des de 1986. Tots els partits importants en directe a la pantalla exterior més gran, en una terrassa de 1.250 m² i amb comentaris en anglès als grans partits."
+      },
+      {
+        "q": "El Queen Vic és un bar britànic?",
+        "a": "Sí: un sports bar d'ambient britànic i irlandès, punt de trobada d'aficionats britànics i irlandesos a la Costa Brava des de fa quaranta anys, amb equip, públic i comentaris internacionals."
+      },
+      {
+        "q": "Teniu terrassa exterior per veure el partit?",
+        "a": "Sí: una terrassa a l'aire lliure de 1.250 m², la més gran de Lloret, amb pantalla exterior de 200 polzades i llums de verbena. La millor terrassa per veure el partit al sol."
       }
     ]
   },
@@ -387,7 +405,10 @@
   },
   "reviews": {
     "aria": "Valoració de {{value}} sobre 5 a partir de {{count}} ressenyes a {{source}}",
-    "count": "{{count}} ressenyes a {{source}}"
+    "count": "{{count}} ressenyes a {{source}}",
+    "askTitle": "Has gaudit del partit al Vic?",
+    "askBody": "Una ressenya ràpida a Google ajuda altres aficionats a trobar-nos — només et porta 20 segons.",
+    "askCta": "Deixar una ressenya a Google"
   },
   "newsletter": {
     "title": "Rep els grans partits al teu correu",
@@ -411,5 +432,29 @@
     "cap4": "La terrassa de nit durant un partit en directe al Queen Vic",
     "cap5": "Nit de festa al Queen Vic amb el DJ resident",
     "cap6": "Públic en nit de partit animant a la terrassa del Queen Vic"
+  },
+  "watchFootball": {
+    "metaTitle": "On veure el futbol a Lloret de Mar | Queen Vic Sports Bar",
+    "metaDescription": "On veure el futbol en directe a Lloret de Mar: tots els partits a la pantalla exterior més gran, una terrassa de 1.250 m² per a 700+ aficionats i comentaris en anglès. Mundial 2026, Premier League, Champions i més.",
+    "eyebrow": "Futbol en directe · On veure",
+    "crumb": "Veure futbol",
+    "h1": "On veure el futbol a Lloret de Mar",
+    "lead": "Tots els partits importants, en directe a la pantalla exterior més gran de Lloret — una terrassa de 1.250 m² amb aforament per a 700+ aficionats i comentaris en anglès als grans partits. El sports bar original de la ciutat des de 1986.",
+    "compsTitle": "Totes les competicions, en directe",
+    "compsBody": "Del Mundial a la Premier League, aquí tens on veure-ho tot al Queen Vic.",
+    "faq": [
+      {
+        "q": "Quin és el millor lloc per veure el futbol a Lloret de Mar?",
+        "a": "El Queen Vic Sports Bar — l'original des de 1986, amb la pantalla exterior més gran de la ciutat, una terrassa de 1.250 m² per a 700+ aficionats i comentaris en anglès als grans partits."
+      },
+      {
+        "q": "Quin futbol puc veure al Queen Vic?",
+        "a": "El Mundial 2026 (tots els partits), la Premier League, la Champions i les grans cites de seleccions — tot en directe, amb comentaris en anglès als partits importants."
+      },
+      {
+        "q": "Cal reservar per veure un partit?",
+        "a": "Als grans partits i per a grups, es recomana reservar. Digues-nos quan i quants sou i et guardem lloc a la terrassa."
+      }
+    ]
   }
 }

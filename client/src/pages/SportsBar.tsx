@@ -16,9 +16,8 @@ const COMPETITIONS = [
 export default function SportsBarPage() {
   const { t } = useTranslation();
   usePageSeo({
-    title: "Sports Bar in Lloret de Mar · Premier League, F1, MotoGP | Queen Vic",
-    description:
-      "Giant outdoor screen, 4 terrace TVs and 10 screens inside showing Premier League, Rugby League, F1, MotoGP and GAA in Lloret de Mar since 1986.",
+    title: t("sportsBar.metaTitle"),
+    description: t("sportsBar.metaDescription"),
     path: "/sports-bar",
   });
 

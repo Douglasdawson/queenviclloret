@@ -16,7 +16,7 @@ export default function WhatsOnPage() {
   const days = groupByDay(list);
 
   usePageSeo({
-    title: `${t("whatsOn.title")} | Queen Vic Lloret de Mar`,
+    title: t("whatsOn.metaTitle"),
     description: t("whatsOn.subtitle"),
     path: "/whats-on",
     jsonLd: list.slice(0, 25).map((e) =>

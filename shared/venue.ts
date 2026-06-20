@@ -49,6 +49,8 @@ export const VENUE = {
     count: 469,
     url: "https://search.google.com/local/reviews?placeid=ChIJb3lcLjwXuxIRnzWKkMG6HGs",
   },
+  // Deep link that opens the Google "write a review" dialog for the GBP listing.
+  reviewUrl: "https://search.google.com/local/writereview?placeid=ChIJb3lcLjwXuxIRnzWKkMG6HGs",
 
   languages: ["English", "Spanish", "Catalan", "French", "Dutch"],
 

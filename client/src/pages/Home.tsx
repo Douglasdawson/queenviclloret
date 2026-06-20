@@ -31,9 +31,8 @@ export default function HomePage() {
   const nextUp = tonight.length === 0 ? all.slice(0, 2) : [];
 
   usePageSeo({
-    title: `Queen Vic Sports Bar · Lloret de Mar | ${t("tagline")}`,
-    description:
-      "Watch live sport on the biggest outdoor screen in Lloret de Mar. Premier League, World Cup 2026, F1, MotoGP. 1,250 m² terrace and a resident DJ, since 1986.",
+    title: t("home.metaTitle"),
+    description: t("home.metaDescription"),
     path: "/",
     // ogImage omitted on purpose: the terrace-dusk default already applies and
     // carries its intrinsic dimensions + alt (better social unfurls).

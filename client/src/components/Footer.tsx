@@ -82,6 +82,7 @@ export function Footer() {
         <div className="flex flex-col justify-between gap-6">
           <ul className="space-y-1 text-[0.9375rem]">
             {[
+              { href: "/watch-football", key: "nav.watchFootball" },
               { href: "/menu", key: "nav.menu" },
               { href: "/gallery", key: "nav.gallery" },
               { href: "/reservations", key: "nav.reservations" },

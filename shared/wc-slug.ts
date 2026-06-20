@@ -35,6 +35,11 @@ export const INDEXABLE_TEAMS = [
   "Argentina",
   "Portugal",
   "Germany",
+  "Belgium",
+  "Italy",
+  "USA",
+  "Morocco",
+  "Mexico",
 ] as const;
 
 const INDEXABLE_SLUGS = new Set(INDEXABLE_TEAMS.map(teamSlug));

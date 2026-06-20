@@ -9,6 +9,7 @@ import { emailSchema } from "@shared/validation/common";
 import { apiPost } from "../lib/api";
 import { collectAttribution } from "../lib/attribution";
 import { buildReservationWaUrl } from "../lib/whatsapp";
+import { ReviewCta } from "./ReviewCta";
 import { useSite } from "../app/site-context";
 import type { Locale } from "../lib/locale";
 
@@ -138,6 +139,9 @@ export function ReservationForm({ onSuccess }: { onSuccess?: () => void }) {
             {t("reservations.wa.openButton")}
           </a>
         )}
+        <div className="w-full">
+          <ReviewCta />
+        </div>
       </div>
     );
   }

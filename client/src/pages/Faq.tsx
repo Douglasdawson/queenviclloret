@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { Container, Eyebrow, FaqList, Section } from "../components/ui";
+import { ReviewCta } from "../components/ReviewCta";
 import { usePageSeo } from "../seo/use-page-seo";
 import { faqLd } from "../seo/jsonld";
 
@@ -21,6 +22,9 @@ export default function FaqPage() {
           {t("faq.title")}
         </h1>
         <FaqList items={FAQ} className="mt-10" />
+        <div className="mt-12 max-w-2xl">
+          <ReviewCta />
+        </div>
       </Container>
     </Section>
   );

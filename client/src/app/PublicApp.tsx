@@ -7,6 +7,7 @@ import WorldCupPage from "../pages/WorldCup";
 import WorldCupTeamPage from "../pages/WorldCupTeam";
 import WorldCupMatchPage from "../pages/WorldCupMatch";
 import WatchSportPage from "../pages/WatchSport";
+import WatchFootballPage from "../pages/WatchFootball";
 import BlogIndexPage from "../pages/Blog";
 import BlogCategoryPage from "../pages/BlogCategory";
 import BlogPostPage from "../pages/BlogPost";
@@ -35,6 +36,7 @@ export function PublicApp() {
         <Route path="/world-cup-2026" component={WorldCupPage} />
         <Route path="/world-cup-2026/team/:teamSlug" component={WorldCupTeamPage} />
         <Route path="/world-cup-2026/:matchSlug" component={WorldCupMatchPage} />
+        <Route path="/watch-football" component={WatchFootballPage} />
         <Route path="/watch/:competitionSlug" component={WatchSportPage} />
         <Route path="/blog" component={BlogIndexPage} />
         <Route path="/blog/category/:categorySlug" component={BlogCategoryPage} />

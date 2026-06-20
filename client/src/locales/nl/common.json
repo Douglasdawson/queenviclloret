@@ -12,7 +12,8 @@
     "faq": "FAQ",
     "blog": "Blog",
     "menu": "Menu",
-    "gallery": "Galerij"
+    "gallery": "Galerij",
+    "watchFootball": "Voetbal kijken"
   },
   "cta": {
     "watchSport": "Sport kijken",
@@ -58,7 +59,9 @@
     "nextUp": "Binnenkort op het scherm",
     "blogEyebrow": "Vanuit de blog",
     "blogTitle": "Het laatste van de Vic",
-    "blogAll": "Alles bekijken"
+    "blogAll": "Alles bekijken",
+    "metaTitle": "Queen Vic — Sportsbar in Lloret de Mar | Live voetbal & WK 2026 kijken",
+    "metaDescription": "De originele sportsbar in Lloret de Mar sinds 1986. Kijk live voetbal, het WK 2026, Premier League, F1 en MotoGP op het grootste buitenscherm — terras van 1.250 m² voor 700+ fans."
   },
   "whatsOn": {
     "title": "Programma bij Queen Vic",
@@ -67,7 +70,8 @@
     "empty": "Nog niets gepubliceerd",
     "emptyNote": "Het weekprogramma verschijnt eerst op Instagram. Volg ons, of vraag ons jouw wedstrijd op te zetten.",
     "featured": "Uitgelicht",
-    "live": "Nu live"
+    "live": "Nu live",
+    "metaTitle": "Programma — waar voetbal & live sport kijken in Lloret de Mar | Queen Vic"
   },
   "worldCup": {
     "title": "Waar kijk je het WK 2026 in Lloret de Mar",
@@ -124,7 +128,9 @@
     "s3t": "Schermen binnen",
     "s3b": "Tien extra die elke hoek van de bar dekken. Overlappende aftrap? Geen probleem.",
     "showTitle": "Wat we tonen",
-    "showSub": "Als het ertoe doet, staat het op. Laat het vooraf weten en we doen ons best jouw wedstrijd te bevestigen."
+    "showSub": "Als het ertoe doet, staat het op. Laat het vooraf weten en we doen ons best jouw wedstrijd te bevestigen.",
+    "metaTitle": "Sportsbar in Lloret de Mar — waar live voetbal kijken | Queen Vic",
+    "metaDescription": "Waar je live voetbal en sport kijkt in Lloret de Mar: groot buitenscherm, 4 tv's op het terras en 10 schermen binnen met Premier League, WK 2026, F1, MotoGP, rugby en GAA. Sinds 1986."
   },
   "about": {
     "kicker": "Est. 1986 · Een begrip in Lloret",
@@ -360,6 +366,18 @@
       {
         "q": "Welke talen spreken jullie?",
         "a": "Het team en het publiek zijn internationaal: Engels, Spaans, Catalaans, Frans en Nederlands zijn allemaal gangbaar in de Vic."
+      },
+      {
+        "q": "Waar kun je voetbal kijken in Lloret de Mar?",
+        "a": "Bij Queen Vic, de originele sportsbar in de stad sinds 1986. Elke grote wedstrijd live op het grootste buitenscherm, op een terras van 1.250 m², met Engels commentaar bij de topwedstrijden."
+      },
+      {
+        "q": "Is Queen Vic een Britse bar?",
+        "a": "Ja: een sportsbar met een Britse en Ierse sfeer, al veertig jaar de thuisbasis van Britse en Ierse fans aan de Costa Brava, met een internationaal team, publiek en commentaar."
+      },
+      {
+        "q": "Hebben jullie een buitenterras om de wedstrijd te kijken?",
+        "a": "Ja: een openluchtterras van 1.250 m², het grootste van Lloret, met een buitenscherm van 200 inch en sfeerverlichting. De beste beer garden van de stad om de wedstrijd in de zon te kijken."
       }
     ]
   },
@@ -387,7 +405,10 @@
   },
   "reviews": {
     "aria": "Beoordeeld met {{value}} van de 5 op basis van {{count}} reviews op {{source}}",
-    "count": "{{count}} reviews op {{source}}"
+    "count": "{{count}} reviews op {{source}}",
+    "askTitle": "Genoten van de wedstrijd bij de Vic?",
+    "askBody": "Een snelle Google-review helpt andere fans ons te vinden — het kost 20 seconden.",
+    "askCta": "Laat een Google-review achter"
   },
   "newsletter": {
     "title": "Ontvang de grote wedstrijden in je inbox",
@@ -411,5 +432,29 @@
     "cap4": "Het terras 's avonds tijdens een live wedstrijd bij Queen Vic",
     "cap5": "Feestavond bij Queen Vic met de vaste DJ",
     "cap6": "Publiek op een wedstrijdavond juicht op het terras van Queen Vic"
+  },
+  "watchFootball": {
+    "metaTitle": "Waar voetbal kijken in Lloret de Mar | Queen Vic Sports Bar",
+    "metaDescription": "Waar je live voetbal kijkt in Lloret de Mar: elke grote wedstrijd op het grootste buitenscherm, een terras van 1.250 m² voor 700+ fans en Engels commentaar. WK 2026, Premier League, Champions League en meer.",
+    "eyebrow": "Live voetbal · Waar kijken",
+    "crumb": "Voetbal kijken",
+    "h1": "Waar voetbal kijken in Lloret de Mar",
+    "lead": "Elke grote wedstrijd, live op het grootste buitenscherm van Lloret — een terras van 1.250 m² met plaats voor 700+ fans en Engels commentaar bij de topwedstrijden. De originele sportsbar in de stad sinds 1986.",
+    "compsTitle": "Elke competitie, live",
+    "compsBody": "Van het WK tot de Premier League, hier kijk je alles bij Queen Vic.",
+    "faq": [
+      {
+        "q": "Wat is de beste plek om voetbal te kijken in Lloret de Mar?",
+        "a": "Queen Vic Sports Bar — de originele sinds 1986, met het grootste buitenscherm van de stad, een terras van 1.250 m² voor 700+ fans en Engels commentaar bij de grote wedstrijden."
+      },
+      {
+        "q": "Welk voetbal kan ik kijken bij Queen Vic?",
+        "a": "Het WK 2026 (elke wedstrijd), de Premier League, de Champions League en de grote interlands — allemaal live, met Engels commentaar bij de belangrijke wedstrijden."
+      },
+      {
+        "q": "Moet ik reserveren om een wedstrijd te kijken?",
+        "a": "Voor grote wedstrijden en groepen is reserveren aan te raden. Laat ons weten wanneer en met hoeveel je komt en we houden een plek vrij op het terras."
+      }
+    ]
   }
 }
