@@ -6,6 +6,7 @@ import AdminEvents from "../pages/admin/Events";
 import AdminReservations from "../pages/admin/Reservations";
 import AdminCampaigns from "../pages/admin/Campaigns";
 import AdminBlog from "../pages/admin/Blog";
+import AdminCrawlers from "../pages/admin/Crawlers";
 import AdminUsers from "../pages/admin/Users";
 import { AdminShell } from "../components/admin/AdminShell";
 
@@ -22,6 +23,7 @@ export function AdminApp() {
             <Route path="/reservations" component={AdminReservations} />
             <Route path="/campaigns" component={AdminCampaigns} />
             <Route path="/blog" component={AdminBlog} />
+            <Route path="/crawlers" component={AdminCrawlers} />
             <Route path="/users" component={AdminUsers} />
             <Route>
               <div className="p-8 text-ink-soft">Not found</div>

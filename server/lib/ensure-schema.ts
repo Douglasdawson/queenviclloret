@@ -24,7 +24,11 @@ CREATE INDEX IF NOT EXISTS "IDX_session_expire" ON "session" ("expire");
 
 // Additive migrations applied by hand today (no drizzle journal / migrate runner).
 // They are all IF-NOT-EXISTS / ADD VALUE IF NOT EXISTS, so re-running is a no-op.
-const ADDITIVE_MIGRATIONS = ["drizzle/0002_blog.sql", "drizzle/0003_blog_extras.sql"];
+const ADDITIVE_MIGRATIONS = [
+  "drizzle/0002_blog.sql",
+  "drizzle/0003_blog_extras.sql",
+  "drizzle/0004_bot_hits.sql",
+];
 
 /**
  * Idempotently ensure the runtime schema on boot. If the managed database is ever

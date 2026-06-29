@@ -373,6 +373,30 @@ export const auditLog = pgTable(
   ],
 );
 
+/* -------------------------------------------------------------- bot_hits */
+// Append-only telemetry of AI/answer-engine + search-crawler requests. Not a
+// CRM entity: no soft-delete, no audit columns (like audit_log, it's a log).
+// The daily cleanup cron prunes old rows so the table stays bounded. Written
+// fire-and-forget by the bot-tracking middleware; never on the request's
+// critical path. casing:"snake_case" maps botName→bot_name etc.
+export const botHits = pgTable(
+  "bot_hits",
+  {
+    id: uuid().primaryKey().defaultRandom(),
+    botName: text().notNull(),
+    category: text().notNull(),
+    path: text().notNull(),
+    statusCode: smallint(),
+    ip: text(),
+    userAgent: text(),
+    createdAt: timestamp({ withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    index("bot_hits_bot_created_idx").on(t.botName, t.createdAt.desc()),
+    index("bot_hits_created_idx").on(t.createdAt.desc()),
+  ],
+);
+
 /* ------------------------------------------------------------- relations */
 export const usersRelations = relations(users, ({ many }) => ({
   ownedLeads: many(leads),
@@ -442,6 +466,8 @@ export type Campaign = typeof campaigns.$inferSelect;
 export type NewCampaign = typeof campaigns.$inferInsert;
 export type CampaignRecipient = typeof campaignRecipients.$inferSelect;
 export type AuditLogEntry = typeof auditLog.$inferSelect;
+export type BotHit = typeof botHits.$inferSelect;
+export type NewBotHit = typeof botHits.$inferInsert;
 export type Post = typeof posts.$inferSelect;
 export type NewPost = typeof posts.$inferInsert;
 export type PostCategory = typeof postCategories.$inferSelect;

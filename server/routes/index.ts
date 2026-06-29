@@ -7,6 +7,7 @@ import { campaignsRouter } from "./campaigns";
 import { postsRouter } from "./posts";
 import { usersRouter } from "./users";
 import { publicRouter } from "./public";
+import { crawlersRouter } from "./bot-hits";
 
 export const apiRouter: Router = Router();
 
@@ -22,3 +23,4 @@ apiRouter.use("/reservations", reservationsRouter);
 apiRouter.use("/campaigns", campaignsRouter);
 apiRouter.use("/posts", postsRouter);
 apiRouter.use("/users", usersRouter);
+apiRouter.use("/crawlers", crawlersRouter);

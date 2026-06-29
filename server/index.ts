@@ -8,6 +8,7 @@ import { env, isProd, isDev } from "./env";
 import { logger } from "./lib/logger";
 import { sessionMiddleware } from "./session";
 import { auditContext } from "./middlewares/audit-context";
+import { botTracking } from "./middlewares/bot-tracking";
 import { globalLimiter } from "./middlewares/rate-limit";
 import { errorHandler, notFound } from "./middlewares/error-handler";
 import { apiRouter } from "./routes";
@@ -99,6 +100,10 @@ async function bootstrap() {
     }
     next();
   });
+
+  // 2c. Crawler telemetry: record AI/search bot hits (fire-and-forget, never
+  // blocks). Before SEO/SSR so it sees robots.txt/llms.txt/sitemap + pages.
+  app.use(botTracking);
 
   // 3. SEO endpoints (served as-is, no locale prefix)
   app.use(seoRouter);

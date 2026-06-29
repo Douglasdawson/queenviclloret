@@ -10,6 +10,7 @@ const NAV: { href: string; label: string; roles: AdminRole[] }[] = [
   { href: "/reservations", label: "Reservations", roles: ["owner", "admin", "manager", "staff"] },
   { href: "/campaigns", label: "Marketing", roles: ["owner", "admin", "manager"] },
   { href: "/blog", label: "Blog", roles: ["owner", "admin", "manager", "editor"] },
+  { href: "/crawlers", label: "AI & Crawlers", roles: ["owner", "admin", "manager", "staff"] },
   { href: "/users", label: "Users", roles: ["owner", "admin"] },
 ];
 
