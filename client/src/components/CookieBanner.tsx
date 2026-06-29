@@ -17,7 +17,9 @@ export function CookieBanner() {
     localStorage.setItem(KEY, JSON.stringify({ value, at: Date.now() }));
     setVisible(false);
     // Notify the analytics loader in the same tab (the `storage` event does not
-    // fire in the tab that wrote the value). It boots GA4 when value === "all".
+    // fire in the tab that wrote the value). Under Consent Mode the tag is
+    // already loaded; this flips analytics_storage to granted ("all") or leaves
+    // it denied ("essential") via gtag('consent','update', …).
     window.dispatchEvent(new CustomEvent("qv:consent", { detail: { value } }));
   }
 

@@ -21,25 +21,50 @@ function hasAnalyticsConsent(): boolean {
   }
 }
 
-/** Injects the GA4 loader + base config exactly once. */
-function bootGa4(id: string) {
+/** Injects the GA4 loader + base config exactly once, under Consent Mode v2.
+ *  The tag loads on every public page regardless of opt-in; storage starts
+ *  `denied`, so GA4 sends cookieless pings (no cookie set) that it models into
+ *  aggregate sessions. Granting consent later upgrades to full measurement. */
+function bootGa4(id: string, granted: boolean) {
   if (booted) return;
   booted = true;
+
+  window.gtag = gtag;
+
+  // Consent Mode defaults MUST be pushed before `config` processes. `denied`
+  // analytics_storage keeps us cookieless (GDPR posture for an EU venue) while
+  // still letting GA4 model behavioural pings. wait_for_update gives the banner
+  // a moment to flip consent before the first hit, avoiding a denied/granted race.
+  gtag("consent", "default", {
+    ad_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied",
+    analytics_storage: granted ? "granted" : "denied",
+    wait_for_update: 500,
+  });
+
+  gtag("js", new Date());
+  // send_page_view fires the initial pageview; SPA route changes are tracked
+  // manually below. anonymize_ip is a no-op in GA4 (always anonymized) but kept
+  // as an explicit signal of intent.
+  gtag("config", id, { send_page_view: true, anonymize_ip: true });
 
   const s = document.createElement("script");
   s.async = true;
   s.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(id)}`;
   document.head.appendChild(s);
+}
 
-  window.gtag = gtag;
-  gtag("js", new Date());
-  // anonymize_ip: GDPR posture for an EU venue. send_page_view fires the
-  // initial pageview; SPA route changes are tracked manually below.
-  gtag("config", id, { send_page_view: true, anonymize_ip: true });
+/** Flip analytics consent on an already-booted tag (no reload). */
+function updateConsent(granted: boolean) {
+  if (!booted || !window.gtag) return;
+  window.gtag("consent", "update", {
+    analytics_storage: granted ? "granted" : "denied",
+  });
 }
 
 /**
- * Consent-gated GA4. Renders nothing. Mounted only inside PublicLayout, so the
+ * Consent Mode v2 GA4. Renders nothing. Mounted only inside PublicLayout, so the
  * admin app (AdminShell) is never tracked. The id arrives via window.__GA4_ID__,
  * which the server injects only for public pages in prod when configured — so in
  * dev / on /admin / without env the id is absent and this is a no-op.
@@ -48,15 +73,17 @@ export function Analytics() {
   const [location] = useLocation();
   const firstPageview = useRef(true);
 
-  // Boot when consent is (or becomes) granted, without a page reload.
+  // Boot on mount regardless of opt-in: Consent Mode handles privacy, loading
+  // denied-by-default and sending cookieless modeled pings until the visitor
+  // accepts. The consent event then upgrades (or keeps denied), without reload.
   useEffect(() => {
     const id = window.__GA4_ID__;
     if (!id) return;
 
-    if (hasAnalyticsConsent()) bootGa4(id);
+    bootGa4(id, hasAnalyticsConsent());
 
     function onConsent(e: Event) {
-      if ((e as CustomEvent<{ value?: string }>).detail?.value === "all") bootGa4(id!);
+      updateConsent((e as CustomEvent<{ value?: string }>).detail?.value === "all");
     }
     window.addEventListener(CONSENT_EVENT, onConsent);
     return () => window.removeEventListener(CONSENT_EVENT, onConsent);
