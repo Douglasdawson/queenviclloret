@@ -102,6 +102,14 @@ Legal (LSSI-CE), Terms of Use and Accessibility statement. Content lives in
 `client/src/content/legal.ts`; fiscal identity (TURALIA SL · CIF B17113374 · S.L. · fiscal
 domicile Paseo Agustí Font 12 · legal contact administracion@turalia.org) is the single source
 of truth in `shared/venue.ts` `legal` block, hosted on Replit (LucusHost = DNS only).
+Analytics live: GA4 (`G-RB2T3WBR6X`) + GSC (meta-tag verified). GA4 uses **Google Consent
+Mode v2** (`client/src/analytics/Analytics.tsx`) — the tag loads on every public page with
+`analytics_storage` denied by default (cookieless modeled pings) and upgrades to granted on
+"accept all"; `ad_*` stay denied. AI/search **crawler telemetry**: `bot_hits` table +
+`server/middlewares/bot-tracking.ts` (fire-and-forget, UA detector in `shared/bots.ts`) feed
+`/admin/crawlers` (category totals, daily chart, per-bot + top-paths). GA4 can't see crawlers
+(bots run no JS), so this is the only place they're visible. `bot_hits` self-creates on boot via
+`ensure-schema` (`drizzle/0004`); daily cleanup cron prunes >90d.
 
 ## Next (CRM, agreed punto-por-punto sequence)
 1. ~~Load real fixtures~~ ✅ automated (TheSportsDB sync).
