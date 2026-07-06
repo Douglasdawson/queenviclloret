@@ -94,7 +94,7 @@ Foundation + full heritage redesign complete: SSR + i18n (5 locales) + SEO/GEO, 
 (leads/events/reservations/campaigns + providers + crons), public site redesigned via the full
 impeccable cycle (shape → craft → critique ×2 agents → audit → polish). Lighthouse mobile:
 A11y 100 · Best Practices 100 · SEO 100. Anti-slop verdict: pass. Real venue data live
-(Carrer de la Costa de Carbonell 1 · +34 674 46 12 20 · daily 19:00–03:00) in footer,
+(Carrer de la Costa de Carbonell 1 · +34 610 21 71 15 · daily 19:00–03:00) in footer,
 BarOrPub JSON-LD and llms.txt; venue-own WP photos migrated (press/stock excluded — licensing);
 heritage admin re-skin; fixtures auto-import verified against the live API.
 Legal pages complete (5 locales, in footer + sitemap): Privacy + Cookie policies, plus Aviso

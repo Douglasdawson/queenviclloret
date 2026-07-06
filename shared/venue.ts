@@ -8,12 +8,10 @@ export const VENUE = {
   foundingDate: "1986",
 
   // NAP — keep both phone formats from one origin (E.164 for tel:/schema, spaced for prose).
-  phoneE164: "+34674461220",
-  phoneDisplay: "+34 674 46 12 20",
+  phoneE164: "+34610217115",
+  phoneDisplay: "+34 610 21 71 15",
   // WhatsApp click-to-chat target (digits only, no "+", for wa.me links).
-  // TODO(owner): confirm this number is WhatsApp-enabled; change if the venue
-  // uses a different WhatsApp line.
-  whatsappDigits: "34674461220",
+  whatsappDigits: "34610217115",
 
   address: {
     streetAddress: "Carrer de la Costa de Carbonell, 1",
