@@ -85,7 +85,6 @@ export function Footer() {
               { href: "/watch-football", key: "nav.watchFootball" },
               { href: "/menu", key: "nav.menu" },
               { href: "/gallery", key: "nav.gallery" },
-              { href: "/reservations", key: "nav.reservations" },
               { href: "/faq", key: "nav.faq" },
               { href: "/privacy", key: "footer.privacy" },
               { href: "/cookies", key: "footer.cookies" },

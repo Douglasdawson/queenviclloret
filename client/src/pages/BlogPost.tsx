@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { Link, useParams } from "wouter";
 import { formatInTimeZone } from "date-fns-tz";
 import { ButtonLink, Container, Eyebrow, Section } from "../components/ui";
-import { ReserveButton } from "../components/ReserveButton";
+import { WhatsAppCta } from "../components/WhatsAppCta";
 import { PostCard } from "../components/blog-ui";
 import { usePost, usePostCategories, pickTr } from "../hooks/usePosts";
 import { usePageSeo } from "../seo/use-page-seo";
@@ -156,7 +156,7 @@ export default function BlogPostPage() {
         </Container>
       )}
 
-      {/* Reservations CTA */}
+      {/* WhatsApp CTA */}
       <Container className="mt-16">
         <div className="mx-auto flex max-w-4xl flex-col items-start justify-between gap-5 rounded-2xl bg-paper/[0.06] p-8 sm:flex-row sm:items-center">
           <div>
@@ -165,7 +165,7 @@ export default function BlogPostPage() {
               {t("blogPost.ctaBody")}
             </p>
           </div>
-          <ReserveButton className="shrink-0" />
+          <WhatsAppCta className="shrink-0" />
         </div>
       </Container>
     </Section>

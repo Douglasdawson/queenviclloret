@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { ButtonAnchor, ButtonLink, Container, Eyebrow, LaurelSeal, Section } from "../components/ui";
-import { ReserveButton } from "../components/ReserveButton";
+import { WhatsAppCta } from "../components/WhatsAppCta";
 import { FixtureTicket, groupByDay } from "../components/FixtureTicket";
 import { usePublicEvents } from "../hooks/usePublicEvents";
 import { usePageSeo } from "../seo/use-page-seo";
@@ -84,7 +84,7 @@ export default function WhatsOnPage() {
               {t("home.finalBody")}
             </p>
           </div>
-          <ReserveButton className="shrink-0" />
+          <WhatsAppCta className="shrink-0" />
         </div>
       </Container>
     </Section>

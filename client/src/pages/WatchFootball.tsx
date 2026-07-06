@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
 import { ButtonLink, Container, Eyebrow, FaqList, Section } from "../components/ui";
-import { ReserveButton } from "../components/ReserveButton";
+import { WhatsAppCta } from "../components/WhatsAppCta";
 import { usePageSeo } from "../seo/use-page-seo";
 import { useSite } from "../app/site-context";
 import { barOrPubLd, breadcrumbLd, faqLd } from "../seo/jsonld";
@@ -51,7 +51,7 @@ export default function WatchFootballPage() {
           {t("watchFootball.lead")}
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <ReserveButton />
+          <WhatsAppCta />
           <ButtonLink href="/whats-on" variant="outline">
             {t("cta.seeWhatsOn")}
           </ButtonLink>

@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { Container, Eyebrow, Section } from "../components/ui";
-import { ReserveButton } from "../components/ReserveButton";
+import { WhatsAppCta } from "../components/WhatsAppCta";
 import { usePageSeo } from "../seo/use-page-seo";
 import { useSite } from "../app/site-context";
 import { MENU, MENU_INTRO } from "../content/menu";
@@ -43,7 +43,7 @@ export default function MenuPage() {
         </div>
 
         <p className="mt-12 max-w-2xl text-sm leading-relaxed text-ink-600">{t("menu.note")}</p>
-        <ReserveButton className="mt-6" />
+        <WhatsAppCta className="mt-6" />
       </Container>
     </Section>
   );

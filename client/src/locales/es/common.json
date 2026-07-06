@@ -7,7 +7,6 @@
     "whatsOn": "Qué echamos",
     "worldCup": "Mundial 2026",
     "about": "Nuestra historia",
-    "reservations": "Reservas",
     "contact": "Contacto",
     "faq": "Preguntas",
     "blog": "Blog",
@@ -17,14 +16,11 @@
   },
   "cta": {
     "watchSport": "Ver deporte",
-    "bookTable": "Reservar mesa",
     "seeWhatsOn": "Ver qué echamos",
     "getInTouch": "Contáctanos",
     "viewDetails": "Ver detalles",
     "fullProgramme": "Programa completo",
-    "whatsapp": "Escríbenos por WhatsApp",
-    "checkAvailability": "Consultar disponibilidad",
-    "checkAvailabilityShort": "Consultar"
+    "whatsapp": "Escríbenos por WhatsApp"
   },
   "home": {
     "kicker": "El Original · Est. 1986",
@@ -55,7 +51,7 @@
     "heritageBody": "Queen Vic abrió el verano en que Maradona levantó el Mundial y no se ha perdido una temporada. Cuarenta años de finales, desayunos ingleses y goles en el descuento en la misma terraza de Lloret de Mar.",
     "stampAlt": "Emblema de sello postal de la Reina Victoria de Queen Vic, Lloret de Mar, fundado en 1986",
     "finalTitle": "¿Se acerca un partido grande?",
-    "finalBody": "Los días de partido las mesas vuelan. Dinos cuándo vienes y te guardamos sitio en la terraza.",
+    "finalBody": "Los días de partido las mesas vuelan — ven pronto y coge sitio en la terraza. ¿Dudas? Escríbenos por WhatsApp.",
     "nextUp": "Próximamente en pantalla",
     "blogEyebrow": "Desde el blog",
     "blogTitle": "Lo último del Vic",
@@ -88,7 +84,7 @@
     "tipsTitle": "Guía del día de partido",
     "tip1": "El programa día a día se publica en Instagram durante el torneo.",
     "tip2": "Llega entre 30 y 45 minutos antes en los partidos grandes. La terraza se llena rápido.",
-    "tip3": "Los grupos pueden reservar para las noches de eliminatorias. Usa la página de reservas.",
+    "tip3": "No hay reservas: es por orden de llegada. Ven pronto las noches de eliminatorias para pillar buen sitio.",
     "scheduleTitle": "Calendario y resultados",
     "scheduleSub": "Cada partido, en directo",
     "empty": "Los partidos aparecen en cuanto se confirman. Vuelve pronto o síguenos en Instagram.",
@@ -109,7 +105,7 @@
       },
       {
         "q": "¿Hay que reservar mesa para el Mundial?",
-        "a": "Recomendamos reservar con antelación para los partidos grandes y los grupos. Reserva desde la página de reservas."
+        "a": "No — el Queen Vic no acepta reservas de mesa. Es por orden de llegada, así que ven pronto los días de partido grande y las finales. Con aforo para más de 700 personas casi siempre hay sitio."
       },
       {
         "q": "¿Cuánta gente cabe en el Queen Vic?",
@@ -146,38 +142,6 @@
     "tl3t": "Llega la pantalla gigante exterior. Los días de partido se mudan fuera, bajo las luces de verbena.",
     "tl4y": "2026",
     "tl4t": "Cuarenta años bien llevados y un verano de Mundial por delante. Nos vemos en la terraza."
-  },
-  "reservations": {
-    "title": "Reserva para grupos y días de partido",
-    "subtitle": "¿Partido grande, despedida o una buena noche en grupo? Dinos cuándo y cuántos, y del resto nos encargamos.",
-    "form": {
-      "name": "Tu nombre",
-      "email": "Email",
-      "phone": "Teléfono",
-      "partySize": "Nº de personas",
-      "date": "Fecha",
-      "time": "Hora",
-      "type": "Ocasión",
-      "requests": "¿Algo que debamos saber?",
-      "submit": "Solicitar mesa",
-      "success": "Solicitud recibida. Te confirmaremos la mesa en breve, normalmente el mismo día.",
-      "phonePrefix": "Prefijo"
-    },
-    "occasions": {
-      "group": "Grupo",
-      "match_day": "Partido",
-      "stag_hen": "Despedida",
-      "birthday": "Cumpleaños",
-      "standard": "Una mesa"
-    },
-    "modalTitle": "Pregúntanos",
-    "wa": {
-      "message": "Hola Queen Vic 👋 Quiero consultar disponibilidad de mesa:\n• Nombre: {{name}}\n• Personas: {{partySize}}\n• Día: {{date}}{{time}}\n• Ocasión: {{occasion}}{{requests}}",
-      "notice": "Al enviar se abre WhatsApp con tu solicitud lista para mandar. Allí confirmamos la disponibilidad.",
-      "successTitle": "Abriendo WhatsApp…",
-      "successBody": "Tu solicitud está lista en WhatsApp — solo dale a enviar y te confirmamos la mesa. Si no se abrió, pulsa abajo.",
-      "openButton": "Abrir WhatsApp"
-    }
   },
   "contact": {
     "title": "Contacto",
@@ -270,7 +234,7 @@
       },
       {
         "q": "¿Hay que reservar para {{home}} v {{away}}?",
-        "a": "Recomendamos reservar para los partidos grandes y los grupos. Reserva en la página de reservas; si no, por orden de llegada."
+        "a": "No — no aceptamos reservas. Es por orden de llegada: ven pronto para los partidos grandes. Con aforo para más de 700 personas casi siempre hay sitio."
       }
     ]
   },
@@ -299,7 +263,7 @@
       },
       {
         "q": "¿Hay que reservar para ver a {{team}}?",
-        "a": "Para los partidos grandes de {{team}} y los grupos recomendamos reservar en la página de reservas. Si no, por orden de llegada."
+        "a": "No — no aceptamos reservas. Para los partidos grandes de {{team}} ven pronto; es por orden de llegada, con aforo para más de 700 personas."
       }
     ]
   },
@@ -328,12 +292,12 @@
       },
       {
         "q": "¿Hay que reservar para ver {{competition}}?",
-        "a": "Para los partidos grandes y los grupos recomendamos reservar en la página de reservas. Si no, por orden de llegada."
+        "a": "No — no aceptamos reservas. Es por orden de llegada: ven pronto para los partidos grandes de {{competition}}. Con aforo para más de 700 personas casi siempre hay sitio."
       }
     ]
   },
   "faqPage": {
-    "metaDescription": "Horario, reservas, qué partidos ponemos, el DJ y más: todo lo que necesitas saber sobre el Queen Vic Sports Bar en Lloret de Mar.",
+    "metaDescription": "Horario, qué partidos ponemos, el DJ y más: todo lo que necesitas saber sobre el Queen Vic Sports Bar en Lloret de Mar.",
     "items": [
       {
         "q": "¿Dónde puedo ver el Mundial 2026 en Lloret de Mar?",
@@ -349,7 +313,7 @@
       },
       {
         "q": "¿Hay que reservar mesa?",
-        "a": "Para los partidos grandes y los grupos recomendamos reservar en la página de reservas. Si no, por orden de llegada. Llega pronto para las finales."
+        "a": "No — no aceptamos reservas. Es por orden de llegada, con aforo para más de 700 personas entre el bar y la terraza. Llega pronto los días de partido grande y las finales."
       },
       {
         "q": "¿Podéis poner un partido concreto?",
@@ -401,7 +365,7 @@
     "readTime": "{{min}} min de lectura",
     "relatedTitle": "Sigue leyendo",
     "ctaTitle": "¿Vienes al próximo partidazo?",
-    "ctaBody": "Las mesas vuelan los días de partido — reserva la tuya en la terraza."
+    "ctaBody": "Las mesas vuelan los días de partido — ven pronto y coge sitio en la terraza."
   },
   "reviews": {
     "aria": "Valoración de {{value}} sobre 5 a partir de {{count}} reseñas en {{source}}",
@@ -453,7 +417,7 @@
       },
       {
         "q": "¿Hace falta reservar para ver un partido?",
-        "a": "En los grandes partidos y para grupos, se recomienda reservar. Dinos cuándo y cuántos sois y te guardamos sitio en la terraza."
+        "a": "No — no aceptamos reservas. Es por orden de llegada: ven pronto los días de partido grande y coge sitio en la terraza."
       }
     ]
   }

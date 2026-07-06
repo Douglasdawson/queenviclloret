@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { useParams } from "wouter";
 import { formatInTimeZone } from "date-fns-tz";
 import { ButtonLink, Chip, Container, Eyebrow, FaqList, Section } from "../components/ui";
-import { ReserveButton } from "../components/ReserveButton";
+import { WhatsAppCta } from "../components/WhatsAppCta";
 import { FixtureTicket } from "../components/FixtureTicket";
 import { useWorldCupEvents } from "../hooks/useWorldCupEvents";
 import { usePageSeo } from "../seo/use-page-seo";
@@ -119,7 +119,7 @@ export default function WorldCupMatchPage() {
           {t("wcMatch.kickoff", { date: dateLabel, time: timeLabel, commentary })}
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <ReserveButton />
+          <WhatsAppCta />
           <ButtonLink href="/world-cup-2026" variant="outline">
             {t("wcMatch.backToHub")}
           </ButtonLink>

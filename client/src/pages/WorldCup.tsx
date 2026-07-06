@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { formatInTimeZone } from "date-fns-tz";
 import { ButtonLink, Chip, Container, Eyebrow, FaqList, Section } from "../components/ui";
-import { ReserveButton } from "../components/ReserveButton";
+import { WhatsAppCta } from "../components/WhatsAppCta";
 import { Picture } from "../components/Picture";
 import { FixtureTicket, groupByDay } from "../components/FixtureTicket";
 import { useWorldCupEvents } from "../hooks/useWorldCupEvents";
@@ -63,7 +63,7 @@ export default function WorldCupPage() {
           {t("worldCup.subtitle")}
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <ReserveButton />
+          <WhatsAppCta />
           <ButtonLink href="/whats-on" variant="outline">
             {t("cta.seeWhatsOn")}
           </ButtonLink>

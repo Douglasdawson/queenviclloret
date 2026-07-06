@@ -7,7 +7,6 @@
     "whatsOn": "Programma",
     "worldCup": "WK 2026",
     "about": "Ons verhaal",
-    "reservations": "Reserveringen",
     "contact": "Contact",
     "faq": "FAQ",
     "blog": "Blog",
@@ -17,14 +16,11 @@
   },
   "cta": {
     "watchSport": "Sport kijken",
-    "bookTable": "Tafel reserveren",
     "seeWhatsOn": "Bekijk het programma",
     "getInTouch": "Neem contact op",
     "viewDetails": "Details bekijken",
     "fullProgramme": "Volledig programma",
-    "whatsapp": "Chat via WhatsApp",
-    "checkAvailability": "Beschikbaarheid checken",
-    "checkAvailabilityShort": "Checken"
+    "whatsapp": "Chat via WhatsApp"
   },
   "home": {
     "kicker": "Het Origineel · Est. 1986",
@@ -55,7 +51,7 @@
     "heritageBody": "Queen Vic opende in de zomer dat Maradona de wereldbeker omhoog hield en heeft sindsdien geen seizoen gemist. Veertig jaar finales, ontbijtjes en goals in blessuretijd op hetzelfde terras in Lloret de Mar.",
     "stampAlt": "Het Queen Victoria-postzegelembleem van Queen Vic, Lloret de Mar, opgericht in 1986",
     "finalTitle": "Grote wedstrijd op komst?",
-    "finalBody": "Op wedstrijddagen gaan de tafels snel. Laat weten wanneer je komt en we houden een plek op het terras vrij.",
+    "finalBody": "Op wedstrijddagen gaan de tafels snel — kom vroeg en pak je plek op het terras. Vragen? Stuur ons een berichtje op WhatsApp.",
     "nextUp": "Binnenkort op het scherm",
     "blogEyebrow": "Vanuit de blog",
     "blogTitle": "Het laatste van de Vic",
@@ -88,7 +84,7 @@
     "tipsTitle": "Wedstrijddag-gids",
     "tip1": "Het dagprogramma verschijnt tijdens het toernooi op Instagram.",
     "tip2": "Kom 30 tot 45 minuten eerder bij grote wedstrijden. Het terras loopt snel vol.",
-    "tip3": "Groepen kunnen vooraf reserveren voor knock-outavonden. Gebruik de reserveringspagina.",
+    "tip3": "Geen reserveringen: vol is vol. Kom vroeg op knock-outavonden voor een goede plek.",
     "scheduleTitle": "Programma & uitslagen",
     "scheduleSub": "Elke wedstrijd, live",
     "empty": "Wedstrijden verschijnen zodra ze bevestigd zijn. Kom terug of volg ons op Instagram.",
@@ -109,7 +105,7 @@
       },
       {
         "q": "Moet ik een tafel reserveren voor het WK?",
-        "a": "Voor grote wedstrijden en groepen raden we aan vooraf te reserveren. Reserveer via de reserveringspagina."
+        "a": "Nee — Queen Vic neemt geen tafelreserveringen aan. Vol is vol, dus kom vroeg op grote wedstrijddagen en bij finales. Met plek voor 700+ mensen is er bijna altijd ruimte."
       },
       {
         "q": "Hoeveel mensen kunnen er in Queen Vic?",
@@ -146,38 +142,6 @@
     "tl3t": "Het reuzenscherm buiten komt aan. Wedstrijddagen verhuizen naar buiten, onder de lichtsnoeren.",
     "tl4y": "2026",
     "tl4t": "Veertig jaar jong, met een WK-zomer voor de boeg. Tot op het terras."
-  },
-  "reservations": {
-    "title": "Reserveer voor groepen en wedstrijddagen",
-    "subtitle": "Grote wedstrijd, vrijgezellenfeest of een goed avondje uit? Zeg wanneer en met hoeveel, en wij regelen de rest.",
-    "form": {
-      "name": "Je naam",
-      "email": "E-mail",
-      "phone": "Telefoon",
-      "partySize": "Aantal personen",
-      "date": "Datum",
-      "time": "Tijd",
-      "type": "Gelegenheid",
-      "requests": "Iets dat we moeten weten?",
-      "submit": "Tafel aanvragen",
-      "success": "Aanvraag ontvangen. We bevestigen je tafel snel, meestal dezelfde dag.",
-      "phonePrefix": "Landcode"
-    },
-    "occasions": {
-      "group": "Groep",
-      "match_day": "Wedstrijd",
-      "stag_hen": "Vrijgezel",
-      "birthday": "Verjaardag",
-      "standard": "Een tafel"
-    },
-    "modalTitle": "Vraag het ons",
-    "wa": {
-      "message": "Hoi Queen Vic 👋 Ik wil graag de tafelbeschikbaarheid checken:\n• Naam: {{name}}\n• Personen: {{partySize}}\n• Dag: {{date}}{{time}}\n• Gelegenheid: {{occasion}}{{requests}}",
-      "notice": "Bij verzenden opent WhatsApp met je aanvraag klaar om te versturen. Daar bevestigen we de beschikbaarheid.",
-      "successTitle": "WhatsApp openen…",
-      "successBody": "Je aanvraag staat klaar in WhatsApp — verstuur hem en we bevestigen je tafel. Niet geopend? Tik hieronder.",
-      "openButton": "WhatsApp openen"
-    }
   },
   "contact": {
     "title": "Contact",
@@ -270,7 +234,7 @@
       },
       {
         "q": "Moet ik reserveren voor {{home}} v {{away}}?",
-        "a": "Reserveren wordt aangeraden voor grote wedstrijden en groepen. Reserveer via de reserveringspagina; anders geldt: vol is vol."
+        "a": "Nee — we nemen geen reserveringen aan. Vol is vol: kom vroeg voor de grote wedstrijden. Met plek voor 700+ mensen is er bijna altijd ruimte."
       }
     ]
   },
@@ -299,7 +263,7 @@
       },
       {
         "q": "Moet ik reserveren om {{team}} te kijken?",
-        "a": "Voor grote wedstrijden van {{team}} en groepen raden we aan te reserveren via de reserveringspagina. Anders geldt: vol is vol."
+        "a": "Nee — we nemen geen reserveringen aan. Kom vroeg voor grote wedstrijden van {{team}}; vol is vol, met plek voor 700+ mensen."
       }
     ]
   },
@@ -328,12 +292,12 @@
       },
       {
         "q": "Moet ik reserveren om {{competition}} te kijken?",
-        "a": "Voor grote wedstrijden en groepen raden we aan te reserveren via de reserveringspagina. Anders geldt: vol is vol."
+        "a": "Nee — we nemen geen reserveringen aan. Vol is vol: kom vroeg voor de grote wedstrijden van {{competition}}. Met plek voor 700+ mensen is er bijna altijd ruimte."
       }
     ]
   },
   "faqPage": {
-    "metaDescription": "Openingstijden, reserveringen, welke wedstrijden we laten zien, de DJ en meer: alles wat je moet weten over Queen Vic Sports Bar in Lloret de Mar.",
+    "metaDescription": "Openingstijden, welke wedstrijden we laten zien, de DJ en meer: alles wat je moet weten over Queen Vic Sports Bar in Lloret de Mar.",
     "items": [
       {
         "q": "Waar kan ik het WK 2026 kijken in Lloret de Mar?",
@@ -349,7 +313,7 @@
       },
       {
         "q": "Moet ik een tafel reserveren?",
-        "a": "Voor grote wedstrijddagen en groepen raden we aan vooraf te reserveren via de reserveringspagina. Anders geldt: vol is vol. Kom vroeg voor de finales."
+        "a": "Nee — we nemen geen reserveringen aan. Vol is vol, met plek voor 700+ mensen tussen de bar en het terras. Kom vroeg op grote wedstrijddagen en bij finales."
       },
       {
         "q": "Kunnen jullie een specifieke wedstrijd laten zien?",
@@ -401,7 +365,7 @@
     "readTime": "{{min}} min lezen",
     "relatedTitle": "Lees verder",
     "ctaTitle": "Kom je voor de volgende topwedstrijd?",
-    "ctaBody": "Tafels zijn snel vol op wedstrijddagen — reserveer de jouwe op het terras."
+    "ctaBody": "Tafels zijn snel vol op wedstrijddagen — kom vroeg en pak je plek op het terras."
   },
   "reviews": {
     "aria": "Beoordeeld met {{value}} van de 5 op basis van {{count}} reviews op {{source}}",
@@ -453,7 +417,7 @@
       },
       {
         "q": "Moet ik reserveren om een wedstrijd te kijken?",
-        "a": "Voor grote wedstrijden en groepen is reserveren aan te raden. Laat ons weten wanneer en met hoeveel je komt en we houden een plek vrij op het terras."
+        "a": "Nee — we nemen geen reserveringen aan. Vol is vol: kom vroeg voor de grote wedstrijden en pak een plek op het terras."
       }
     ]
   }

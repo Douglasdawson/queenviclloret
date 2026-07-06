@@ -14,7 +14,6 @@ import BlogPostPage from "../pages/BlogPost";
 import AboutPage from "../pages/About";
 import MenuPage from "../pages/Menu";
 import GalleryPage from "../pages/Gallery";
-import ReservationsPage from "../pages/Reservations";
 import ContactPage from "../pages/Contact";
 import FaqPage from "../pages/Faq";
 import {
@@ -44,7 +43,6 @@ export function PublicApp() {
         <Route path="/about" component={AboutPage} />
         <Route path="/menu" component={MenuPage} />
         <Route path="/gallery" component={GalleryPage} />
-        <Route path="/reservations" component={ReservationsPage} />
         <Route path="/contact" component={ContactPage} />
         <Route path="/faq" component={FaqPage} />
         <Route path="/privacy" component={PrivacyPage} />

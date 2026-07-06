@@ -42,6 +42,8 @@ export function barOrPubLd(siteUrl: string) {
     hasMap: VENUE.mapUrl,
     hasMenu: `${siteUrl}/menu`,
     telephone: VENUE.phoneE164,
+    // Walk-in only — the venue takes no table reservations (owner, 2026-07).
+    acceptsReservations: "False",
     maximumAttendeeCapacity: VENUE.capacity,
     openingHoursSpecification: [
       {

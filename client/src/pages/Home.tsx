@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
 import { formatInTimeZone } from "date-fns-tz";
 import { ButtonLink, Container, Eyebrow, LaurelSeal, Section } from "../components/ui";
-import { ReserveButton } from "../components/ReserveButton";
+import { WhatsAppCta } from "../components/WhatsAppCta";
 import { FixtureTicket } from "../components/FixtureTicket";
 import { Picture, imagePreload } from "../components/Picture";
 import { SportsMontage } from "../components/SportsMontage";
@@ -72,7 +72,7 @@ export default function HomePage() {
           </p>
           <div className="reveal-3 mt-5 flex flex-wrap items-center gap-3 sm:mt-8">
             <ButtonLink href="/whats-on">{t("cta.seeWhatsOn")}</ButtonLink>
-            <ReserveButton variant="outline" />
+            <WhatsAppCta variant="outline" />
           </div>
           <p className="reveal-3 tnum mt-4 text-sm text-paper-dim/90 sm:mt-10">
             1,250 {t("home.stats.terrace")} · 15+ {t("home.stats.screens")} · 40{" "}
@@ -226,7 +226,7 @@ export default function HomePage() {
               {t("home.finalBody")}
             </p>
           </div>
-          <ReserveButton className="shrink-0" />
+          <WhatsAppCta className="shrink-0" />
         </Container>
       </Section>
     </>

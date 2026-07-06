@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { Container, Eyebrow, LaurelSeal, Section } from "../components/ui";
-import { ReserveButton } from "../components/ReserveButton";
+import { WhatsAppCta } from "../components/WhatsAppCta";
 import { Picture } from "../components/Picture";
 import { usePageSeo } from "../seo/use-page-seo";
 
@@ -63,7 +63,7 @@ export default function AboutPage() {
             ))}
           </ol>
               <div className="mt-12">
-                <ReserveButton />
+                <WhatsAppCta />
               </div>
             </div>
             <Picture

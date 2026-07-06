@@ -123,6 +123,14 @@ Mode v2** (`client/src/analytics/Analytics.tsx`) — the tag loads on every publ
 4. Activate real email via Resend (owner must create account, verify the domain's DNS
    records, and provide the API key for `.env` + Replit Secrets).
 
-Later: capacity slots logic; enable AI provider (`AI_PROVIDER=anthropic`); TheSportsDB Patreon
+**No reservations (owner decision, 2026-07-06):** the venue is walk-in only and "never will"
+take table bookings. Removed from the public site: /reservations page + route (301 → /contact),
+ReserveButton/ReservationModal/ReservationForm, `POST /api/public/reservation`, sitemap entry,
+`reservations.*` locale keys; CTAs replaced by `WhatsAppCta` (wa.me); FAQ/llms.txt copy now says
+first-come-first-served; JSON-LD has `acceptsReservations: "False"`; legal pages rewritten.
+The **admin** reservations module (DAO, routes, cron, schema) remains but can no longer receive
+public submissions — don't resurrect public booking UI without an explicit owner request.
+
+Later: enable AI provider (`AI_PROVIDER=anthropic`); TheSportsDB Patreon
 key for full fixture lists; production deploy (Replit secrets, db:push, db:seed, 301s from old
 WP URLs).

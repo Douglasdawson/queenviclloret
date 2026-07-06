@@ -7,7 +7,6 @@
     "whatsOn": "What's On",
     "worldCup": "World Cup 2026",
     "about": "Our Story",
-    "reservations": "Reservations",
     "contact": "Contact",
     "faq": "FAQ",
     "blog": "Blog",
@@ -17,14 +16,11 @@
   },
   "cta": {
     "watchSport": "Watch sport",
-    "bookTable": "Book a table",
     "seeWhatsOn": "See what's on",
     "getInTouch": "Get in touch",
     "viewDetails": "View details",
     "fullProgramme": "Full programme",
-    "whatsapp": "Chat on WhatsApp",
-    "checkAvailability": "Check availability",
-    "checkAvailabilityShort": "Check"
+    "whatsapp": "Chat on WhatsApp"
   },
   "home": {
     "kicker": "The Original · Est. 1986",
@@ -55,7 +51,7 @@
     "heritageBody": "Queen Vic opened when Maradona lifted the World Cup, and it hasn't missed a season since. Forty years of finals, fry-ups and last-minute winners on the same terrace in Lloret de Mar.",
     "stampAlt": "Queen Vic's Queen Victoria postage stamp emblem, Lloret de Mar, established 1986",
     "finalTitle": "Big match coming up?",
-    "finalBody": "Tables go fast on match days. Tell us when you're coming and we'll keep you a spot on the terrace.",
+    "finalBody": "Tables go fast on match days — arrive early and grab your spot on the terrace. Questions? Message us on WhatsApp.",
     "nextUp": "Next up on the screen",
     "blogEyebrow": "From the blog",
     "blogTitle": "Latest from the Vic",
@@ -88,7 +84,7 @@
     "tipsTitle": "Matchday form guide",
     "tip1": "The day-by-day programme is published on Instagram during the tournament.",
     "tip2": "Arrive 30 to 45 minutes early for the big fixtures. The terrace fills fast.",
-    "tip3": "Groups can reserve ahead for knockout nights. Use the reservations page.",
+    "tip3": "No reservations — it's first come, first served. Arrive early on knockout nights to grab a good spot.",
     "scheduleTitle": "Schedule & results",
     "scheduleSub": "Every match, kept live",
     "empty": "Fixtures appear as soon as they're confirmed. Check back, or follow us on Instagram.",
@@ -109,7 +105,7 @@
       },
       {
         "q": "Do I need to book a table for the World Cup?",
-        "a": "Booking ahead is recommended for big match days and groups. Reserve via the reservations page."
+        "a": "No — Queen Vic doesn't take table reservations. It's first come, first served, so arrive early for big match days and finals. With room for 700+ there's almost always a spot."
       },
       {
         "q": "How many people does Queen Vic hold?",
@@ -146,38 +142,6 @@
     "tl3t": "The giant outdoor screen arrives. Match days move outside, under the festoon lights.",
     "tl4y": "2026",
     "tl4t": "Forty years young, and a World Cup summer on the way. See you on the terrace."
-  },
-  "reservations": {
-    "title": "Reserve for groups and match days",
-    "subtitle": "Big fixture, stag or hen do, or a proper night out? Tell us when and how many, and we'll sort the rest.",
-    "form": {
-      "name": "Your name",
-      "email": "Email",
-      "phone": "Phone",
-      "partySize": "Party size",
-      "date": "Date",
-      "time": "Time",
-      "type": "Occasion",
-      "requests": "Anything we should know?",
-      "submit": "Request a table",
-      "success": "Request received. We'll confirm your table shortly, usually the same day.",
-      "phonePrefix": "Country code"
-    },
-    "occasions": {
-      "group": "Group",
-      "match_day": "Match day",
-      "stag_hen": "Stag or hen",
-      "birthday": "Birthday",
-      "standard": "Just a table"
-    },
-    "modalTitle": "Ask us",
-    "wa": {
-      "message": "Hi Queen Vic 👋 I'd like to check table availability:\n• Name: {{name}}\n• People: {{partySize}}\n• Day: {{date}}{{time}}\n• Occasion: {{occasion}}{{requests}}",
-      "notice": "Sending opens WhatsApp with your request ready to send. We'll confirm availability there.",
-      "successTitle": "Opening WhatsApp…",
-      "successBody": "Your request is ready in WhatsApp — just hit send and we'll confirm your table. If it didn't open, tap below.",
-      "openButton": "Open WhatsApp"
-    }
   },
   "contact": {
     "title": "Get in touch",
@@ -270,7 +234,7 @@
       },
       {
         "q": "Do I need to book for {{home}} v {{away}}?",
-        "a": "Booking ahead is recommended for big fixtures and groups. Reserve via the reservations page; otherwise it's first come, first served."
+        "a": "No — we don't take reservations. It's first come, first served, so arrive early for the big fixtures. With room for 700+ there's almost always a spot."
       }
     ]
   },
@@ -299,7 +263,7 @@
       },
       {
         "q": "Do I need to book to watch {{team}}?",
-        "a": "For big {{team}} matches and groups we recommend booking ahead via the reservations page. Otherwise it's first come, first served."
+        "a": "No — we don't take reservations. For big {{team}} matches arrive early; it's first come, first served, with room for 700+."
       }
     ]
   },
@@ -328,12 +292,12 @@
       },
       {
         "q": "Do I need to book to watch {{competition}}?",
-        "a": "For big fixtures and groups we recommend booking ahead via the reservations page. Otherwise it's first come, first served."
+        "a": "No — we don't take reservations. It's first come, first served, so arrive early for the big {{competition}} fixtures. With room for 700+ there's almost always a spot."
       }
     ]
   },
   "faqPage": {
-    "metaDescription": "Opening hours, reservations, which matches we show, the DJ and more: everything you need to know about Queen Vic Sports Bar in Lloret de Mar.",
+    "metaDescription": "Opening hours, which matches we show, the DJ and more: everything you need to know about Queen Vic Sports Bar in Lloret de Mar.",
     "items": [
       {
         "q": "Where can I watch the World Cup 2026 in Lloret de Mar?",
@@ -349,7 +313,7 @@
       },
       {
         "q": "Do I need to reserve a table?",
-        "a": "For big match days and groups we recommend booking ahead via the reservations page. Otherwise it's first come, first served. Arrive early for finals."
+        "a": "No — we don't take reservations. It's first come, first served, with room for 700+ between the bar and the terrace. Arrive early for big match days and finals."
       },
       {
         "q": "Can you show a specific game?",
@@ -401,7 +365,7 @@
     "readTime": "{{min}} min read",
     "relatedTitle": "Read next",
     "ctaTitle": "Coming for the next big match?",
-    "ctaBody": "Tables go fast on match days — book yours on the terrace."
+    "ctaBody": "Tables go fast on match days — arrive early and grab your spot on the terrace."
   },
   "reviews": {
     "aria": "Rated {{value}} out of 5 from {{count}} reviews on {{source}}",
@@ -453,7 +417,7 @@
       },
       {
         "q": "Do I need to book to watch a match?",
-        "a": "For big games and groups, booking ahead is recommended. Tell us when and how many and we'll save you a spot on the terrace."
+        "a": "No — we don't take reservations. It's first come, first served, so arrive early for the big games and grab a spot on the terrace."
       }
     ]
   }

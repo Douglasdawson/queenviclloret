@@ -26,10 +26,10 @@ const PRIVACY: Record<Locale, LegalDoc> = {
       "This policy explains how Queen Vic Sports Bar (Lloret de Mar, Spain) handles personal data collected through this website, in line with the EU GDPR and Spanish data-protection law.",
     sections: [
       { h: "Who we are", p: "The data controller is Queen Vic Sports Bar, Lloret de Mar, Girona, Spain. For privacy requests, contact us via the contact form on this site." },
-      { h: "What we collect", p: "Data you submit through our contact and reservation forms (name, email, phone, party size, message) and basic attribution data (UTM parameters, referring page) to understand how visitors find us." },
-      { h: "Why we use it", p: "To answer your enquiries, manage table and group reservations, and — only with your explicit consent — to send you information about upcoming events and offers." },
-      { h: "Legal basis", p: "Performance of your request and pre-contractual steps (reservations), and your consent for marketing communications. You can withdraw consent at any time." },
-      { h: "Retention", p: "We keep enquiry and reservation data only as long as necessary for the purpose and our legitimate administrative needs, then delete or anonymise it." },
+      { h: "What we collect", p: "Data you submit through our contact and newsletter forms (name, email, phone, message) and basic attribution data (UTM parameters, referring page) to understand how visitors find us." },
+      { h: "Why we use it", p: "To answer your enquiries and — only with your explicit consent — to send you information about upcoming events and offers." },
+      { h: "Legal basis", p: "Our legitimate interest in answering your enquiries, and your consent for marketing communications. You can withdraw consent at any time." },
+      { h: "Retention", p: "We keep enquiry data only as long as necessary for the purpose and our legitimate administrative needs, then delete or anonymise it." },
       { h: "Your rights", p: "You may access, rectify, erase, restrict or port your data and object to its processing, and lodge a complaint with the Spanish Data Protection Agency (AEPD). Use the contact form to exercise these rights." },
       { h: "Sharing", p: "We use trusted processors (email and messaging providers) solely to deliver communications you have consented to. We do not sell personal data." },
     ],
@@ -41,10 +41,10 @@ const PRIVACY: Record<Locale, LegalDoc> = {
       "Esta política explica cómo Queen Vic Sports Bar (Lloret de Mar, España) trata los datos personales recogidos a través de esta web, conforme al RGPD de la UE y a la normativa española de protección de datos.",
     sections: [
       { h: "Quiénes somos", p: "El responsable del tratamiento es Queen Vic Sports Bar, Lloret de Mar, Girona, España. Para solicitudes de privacidad, contáctanos mediante el formulario de la web." },
-      { h: "Qué recogemos", p: "Los datos que envías por los formularios de contacto y reserva (nombre, email, teléfono, número de personas, mensaje) y datos básicos de atribución (parámetros UTM, página de procedencia) para entender cómo nos encuentran los visitantes." },
-      { h: "Para qué los usamos", p: "Para responder a tus consultas, gestionar reservas de mesas y grupos y —solo con tu consentimiento explícito— enviarte información sobre próximos eventos y ofertas." },
-      { h: "Base jurídica", p: "La ejecución de tu solicitud y medidas precontractuales (reservas), y tu consentimiento para las comunicaciones comerciales. Puedes retirar el consentimiento en cualquier momento." },
-      { h: "Conservación", p: "Conservamos los datos de consultas y reservas solo el tiempo necesario para la finalidad y nuestras necesidades administrativas legítimas; después los eliminamos o anonimizamos." },
+      { h: "Qué recogemos", p: "Los datos que envías por los formularios de contacto y newsletter (nombre, email, teléfono, mensaje) y datos básicos de atribución (parámetros UTM, página de procedencia) para entender cómo nos encuentran los visitantes." },
+      { h: "Para qué los usamos", p: "Para responder a tus consultas y —solo con tu consentimiento explícito— enviarte información sobre próximos eventos y ofertas." },
+      { h: "Base jurídica", p: "Nuestro interés legítimo en responder a tus consultas y tu consentimiento para las comunicaciones comerciales. Puedes retirar el consentimiento en cualquier momento." },
+      { h: "Conservación", p: "Conservamos los datos de consultas solo el tiempo necesario para la finalidad y nuestras necesidades administrativas legítimas; después los eliminamos o anonimizamos." },
       { h: "Tus derechos", p: "Puedes acceder, rectificar, suprimir, limitar o portar tus datos y oponerte a su tratamiento, así como reclamar ante la Agencia Española de Protección de Datos (AEPD). Usa el formulario de contacto para ejercerlos." },
       { h: "Cesiones", p: "Usamos encargados de confianza (proveedores de email y mensajería) únicamente para enviar las comunicaciones que has consentido. No vendemos datos personales." },
     ],
@@ -56,9 +56,9 @@ const PRIVACY: Record<Locale, LegalDoc> = {
       "Aquesta política explica com Queen Vic Sports Bar (Lloret de Mar, Espanya) tracta les dades personals recollides a través d'aquest web, d'acord amb el RGPD de la UE i la normativa espanyola de protecció de dades.",
     sections: [
       { h: "Qui som", p: "El responsable del tractament és Queen Vic Sports Bar, Lloret de Mar, Girona, Espanya. Per a sol·licituds de privacitat, contacta'ns mitjançant el formulari del web." },
-      { h: "Què recollim", p: "Les dades que ens envies pels formularis de contacte i reserva (nom, email, telèfon, nombre de persones, missatge) i dades bàsiques d'atribució (paràmetres UTM, pàgina de procedència)." },
-      { h: "Per a què les fem servir", p: "Per respondre les teves consultes, gestionar reserves de taules i grups i —només amb el teu consentiment explícit— enviar-te informació sobre propers esdeveniments i ofertes." },
-      { h: "Base jurídica", p: "L'execució de la teva sol·licitud i mesures precontractuals (reserves), i el teu consentiment per a les comunicacions comercials. Pots retirar el consentiment en qualsevol moment." },
+      { h: "Què recollim", p: "Les dades que ens envies pels formularis de contacte i newsletter (nom, email, telèfon, missatge) i dades bàsiques d'atribució (paràmetres UTM, pàgina de procedència)." },
+      { h: "Per a què les fem servir", p: "Per respondre les teves consultes i —només amb el teu consentiment explícit— enviar-te informació sobre propers esdeveniments i ofertes." },
+      { h: "Base jurídica", p: "El nostre interès legítim a respondre les teves consultes i el teu consentiment per a les comunicacions comercials. Pots retirar el consentiment en qualsevol moment." },
       { h: "Conservació", p: "Conservem les dades només el temps necessari per a la finalitat i les nostres necessitats administratives legítimes; després les eliminem o anonimitzem." },
       { h: "Els teus drets", p: "Pots accedir, rectificar, suprimir, limitar o portar les teves dades i oposar-te al seu tractament, i reclamar davant l'Agència Espanyola de Protecció de Dades (AEPD)." },
       { h: "Cessions", p: "Fem servir encarregats de confiança (proveïdors d'email i missatgeria) únicament per enviar les comunicacions que has consentit. No venem dades personals." },
@@ -71,9 +71,9 @@ const PRIVACY: Record<Locale, LegalDoc> = {
       "Cette politique explique comment Queen Vic Sports Bar (Lloret de Mar, Espagne) traite les données personnelles collectées via ce site, conformément au RGPD de l'UE et à la loi espagnole sur la protection des données.",
     sections: [
       { h: "Qui nous sommes", p: "Le responsable du traitement est Queen Vic Sports Bar, Lloret de Mar, Gérone, Espagne. Pour toute demande, contactez-nous via le formulaire du site." },
-      { h: "Ce que nous collectons", p: "Les données que vous envoyez via nos formulaires de contact et de réservation (nom, e-mail, téléphone, nombre de personnes, message) et des données d'attribution de base (paramètres UTM, page d'origine)." },
-      { h: "Pourquoi", p: "Pour répondre à vos demandes, gérer les réservations de tables et de groupes et — uniquement avec votre consentement explicite — vous envoyer des informations sur les événements à venir." },
-      { h: "Base légale", p: "L'exécution de votre demande et les mesures précontractuelles (réservations), et votre consentement pour les communications marketing. Vous pouvez le retirer à tout moment." },
+      { h: "Ce que nous collectons", p: "Les données que vous envoyez via nos formulaires de contact et de newsletter (nom, e-mail, téléphone, message) et des données d'attribution de base (paramètres UTM, page d'origine)." },
+      { h: "Pourquoi", p: "Pour répondre à vos demandes et — uniquement avec votre consentement explicite — vous envoyer des informations sur les événements à venir." },
+      { h: "Base légale", p: "Notre intérêt légitime à répondre à vos demandes, et votre consentement pour les communications marketing. Vous pouvez le retirer à tout moment." },
       { h: "Conservation", p: "Nous conservons les données uniquement le temps nécessaire à la finalité, puis les supprimons ou les anonymisons." },
       { h: "Vos droits", p: "Vous pouvez accéder, rectifier, effacer, limiter ou porter vos données et vous opposer à leur traitement, et déposer une réclamation auprès de l'AEPD espagnole." },
       { h: "Partage", p: "Nous utilisons des sous-traitants de confiance (fournisseurs d'e-mail et de messagerie) uniquement pour les communications que vous avez acceptées. Nous ne vendons pas de données." },
@@ -86,9 +86,9 @@ const PRIVACY: Record<Locale, LegalDoc> = {
       "Dit beleid legt uit hoe Queen Vic Sports Bar (Lloret de Mar, Spanje) omgaat met persoonsgegevens die via deze website worden verzameld, conform de EU-AVG en de Spaanse privacywetgeving.",
     sections: [
       { h: "Wie we zijn", p: "De verwerkingsverantwoordelijke is Queen Vic Sports Bar, Lloret de Mar, Girona, Spanje. Neem voor privacyverzoeken contact op via het formulier op de site." },
-      { h: "Wat we verzamelen", p: "Gegevens die je via onze contact- en reserveringsformulieren verstuurt (naam, e-mail, telefoon, groepsgrootte, bericht) en basis-attributiegegevens (UTM-parameters, verwijzende pagina)." },
-      { h: "Waarvoor", p: "Om je vragen te beantwoorden, tafel- en groepsreserveringen te beheren en — alleen met je uitdrukkelijke toestemming — je te informeren over komende evenementen." },
-      { h: "Rechtsgrond", p: "De uitvoering van je verzoek en precontractuele stappen (reserveringen), en je toestemming voor marketing. Je kunt toestemming altijd intrekken." },
+      { h: "Wat we verzamelen", p: "Gegevens die je via onze contact- en nieuwsbriefformulieren verstuurt (naam, e-mail, telefoon, bericht) en basis-attributiegegevens (UTM-parameters, verwijzende pagina)." },
+      { h: "Waarvoor", p: "Om je vragen te beantwoorden en — alleen met je uitdrukkelijke toestemming — je te informeren over komende evenementen." },
+      { h: "Rechtsgrond", p: "Ons gerechtvaardigd belang om je vragen te beantwoorden, en je toestemming voor marketing. Je kunt toestemming altijd intrekken." },
       { h: "Bewaring", p: "We bewaren gegevens alleen zo lang als nodig voor het doel en verwijderen of anonimiseren ze daarna." },
       { h: "Je rechten", p: "Je kunt je gegevens inzien, corrigeren, wissen, beperken of overdragen en bezwaar maken, en een klacht indienen bij de Spaanse toezichthouder (AEPD)." },
       { h: "Delen", p: "We gebruiken vertrouwde verwerkers (e-mail- en berichtenproviders) uitsluitend voor communicatie waarvoor je toestemming hebt gegeven. We verkopen geen gegevens." },
@@ -170,7 +170,7 @@ const LEGAL_NOTICE: Record<Locale, LegalDoc> = {
       "This legal notice sets out the conditions governing the use of this website, in compliance with Spanish Law 34/2002 on Information Society Services and E-Commerce (LSSI-CE).",
     sections: [
       { h: "Site owner", p: `Owner: ${L.businessName} (trading as ${L.tradeName}). Legal form: ${L.legalForm}. Tax ID (NIF/CIF): ${L.taxId}. Registered address: ${L.registeredAddress}. Phone: ${PHONE}. Email: ${L.contactEmail}.` },
-      { h: "Purpose", p: "This website presents the venue, its sports broadcasts and events, and lets visitors send enquiries and request table or group reservations. It does not sell products or process online payments." },
+      { h: "Purpose", p: "This website presents the venue, its sports broadcasts and events, and lets visitors send enquiries. It does not sell products, take reservations or process online payments." },
       { h: "Hosting", p: `This site is hosted by ${L.hostingProvider}.` },
       { h: "Intellectual property", p: "The contents of this site (texts, images, logos, design and source code) are owned by the site owner or used under licence and are protected by intellectual-property law. Reproduction without authorisation is not permitted." },
       { h: "Liability", p: "We take reasonable care to keep the information accurate and up to date, but do not guarantee it is free of errors. We are not liable for the use you make of the site or for third-party sites we link to." },
@@ -187,7 +187,7 @@ const LEGAL_NOTICE: Record<Locale, LegalDoc> = {
       "Este aviso legal regula las condiciones de uso de este sitio web, en cumplimiento de la Ley 34/2002 de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE).",
     sections: [
       { h: "Titular del sitio", p: `Titular: ${L.businessName} (nombre comercial ${L.tradeName}). Forma jurídica: ${L.legalForm}. NIF/CIF: ${L.taxId}. Domicilio: ${L.registeredAddress}. Teléfono: ${PHONE}. Email: ${L.contactEmail}.` },
-      { h: "Objeto", p: "Este sitio presenta el local, sus retransmisiones deportivas y eventos, y permite a los visitantes enviar consultas y solicitar reservas de mesa o de grupo. No vende productos ni procesa pagos en línea." },
+      { h: "Objeto", p: "Este sitio presenta el local, sus retransmisiones deportivas y eventos, y permite a los visitantes enviar consultas. No vende productos, no gestiona reservas ni procesa pagos en línea." },
       { h: "Alojamiento", p: `Este sitio está alojado en ${L.hostingProvider}.` },
       { h: "Propiedad intelectual", p: "Los contenidos de este sitio (textos, imágenes, logotipos, diseño y código fuente) son titularidad del titular del sitio o se usan bajo licencia y están protegidos por la normativa de propiedad intelectual. No se permite su reproducción sin autorización." },
       { h: "Responsabilidad", p: "Procuramos mantener la información exacta y actualizada, pero no garantizamos la ausencia de errores. No nos hacemos responsables del uso que hagas del sitio ni de los sitios de terceros a los que enlazamos." },
@@ -204,7 +204,7 @@ const LEGAL_NOTICE: Record<Locale, LegalDoc> = {
       "Aquest avís legal regula les condicions d'ús d'aquest lloc web, en compliment de la Llei 34/2002 de Serveis de la Societat de la Informació i de Comerç Electrònic (LSSI-CE).",
     sections: [
       { h: "Titular del lloc", p: `Titular: ${L.businessName} (nom comercial ${L.tradeName}). Forma jurídica: ${L.legalForm}. NIF/CIF: ${L.taxId}. Domicili: ${L.registeredAddress}. Telèfon: ${PHONE}. Email: ${L.contactEmail}.` },
-      { h: "Objecte", p: "Aquest lloc presenta el local, les seves retransmissions esportives i esdeveniments, i permet als visitants enviar consultes i sol·licitar reserves de taula o de grup. No ven productes ni processa pagaments en línia." },
+      { h: "Objecte", p: "Aquest lloc presenta el local, les seves retransmissions esportives i esdeveniments, i permet als visitants enviar consultes. No ven productes, no gestiona reserves ni processa pagaments en línia." },
       { h: "Allotjament", p: `Aquest lloc està allotjat a ${L.hostingProvider}.` },
       { h: "Propietat intel·lectual", p: "Els continguts d'aquest lloc (textos, imatges, logotips, disseny i codi font) són titularitat del titular del lloc o s'usen sota llicència i estan protegits per la normativa de propietat intel·lectual. No se'n permet la reproducció sense autorització." },
       { h: "Responsabilitat", p: "Procurem mantenir la informació exacta i actualitzada, però no garantim l'absència d'errors. No ens fem responsables de l'ús que facis del lloc ni dels llocs de tercers que enllacem." },
@@ -221,7 +221,7 @@ const LEGAL_NOTICE: Record<Locale, LegalDoc> = {
       "Les présentes mentions légales définissent les conditions d'utilisation de ce site web, conformément à la loi espagnole 34/2002 sur les services de la société de l'information et le commerce électronique (LSSI-CE).",
     sections: [
       { h: "Titulaire du site", p: `Titulaire : ${L.businessName} (nom commercial ${L.tradeName}). Forme juridique : ${L.legalForm}. NIF/CIF : ${L.taxId}. Adresse : ${L.registeredAddress}. Téléphone : ${PHONE}. E-mail : ${L.contactEmail}.` },
-      { h: "Objet", p: "Ce site présente l'établissement, ses retransmissions sportives et ses événements, et permet aux visiteurs d'envoyer des demandes et de réserver une table ou un groupe. Il ne vend pas de produits et ne traite pas de paiements en ligne." },
+      { h: "Objet", p: "Ce site présente l'établissement, ses retransmissions sportives et ses événements, et permet aux visiteurs d'envoyer des demandes. Il ne vend pas de produits, ne prend pas de réservations et ne traite pas de paiements en ligne." },
       { h: "Hébergement", p: `Ce site est hébergé par ${L.hostingProvider}.` },
       { h: "Propriété intellectuelle", p: "Les contenus de ce site (textes, images, logos, design et code source) appartiennent au titulaire du site ou sont utilisés sous licence et sont protégés par le droit de la propriété intellectuelle. Toute reproduction sans autorisation est interdite." },
       { h: "Responsabilité", p: "Nous veillons à maintenir les informations exactes et à jour, mais ne garantissons pas l'absence d'erreurs. Nous ne sommes pas responsables de l'usage que vous faites du site ni des sites tiers vers lesquels nous renvoyons." },
@@ -238,7 +238,7 @@ const LEGAL_NOTICE: Record<Locale, LegalDoc> = {
       "Deze juridische kennisgeving regelt de gebruiksvoorwaarden van deze website, conform de Spaanse wet 34/2002 inzake diensten van de informatiemaatschappij en elektronische handel (LSSI-CE).",
     sections: [
       { h: "Eigenaar van de site", p: `Eigenaar: ${L.businessName} (handelsnaam ${L.tradeName}). Rechtsvorm: ${L.legalForm}. Fiscaal nummer (NIF/CIF): ${L.taxId}. Adres: ${L.registeredAddress}. Telefoon: ${PHONE}. E-mail: ${L.contactEmail}.` },
-      { h: "Doel", p: "Deze site presenteert de zaak, haar sportuitzendingen en evenementen, en laat bezoekers vragen sturen en een tafel of groep reserveren. Er worden geen producten verkocht en geen online betalingen verwerkt." },
+      { h: "Doel", p: "Deze site presenteert de zaak, haar sportuitzendingen en evenementen, en laat bezoekers vragen sturen. Er worden geen producten verkocht, geen reserveringen aangenomen en geen online betalingen verwerkt." },
       { h: "Hosting", p: `Deze site wordt gehost door ${L.hostingProvider}.` },
       { h: "Intellectueel eigendom", p: "De inhoud van deze site (teksten, afbeeldingen, logo's, ontwerp en broncode) is eigendom van de eigenaar of wordt onder licentie gebruikt en is beschermd door het recht inzake intellectueel eigendom. Reproductie zonder toestemming is niet toegestaan." },
       { h: "Aansprakelijkheid", p: "We doen ons best om de informatie juist en actueel te houden, maar garanderen niet dat deze vrij van fouten is. We zijn niet aansprakelijk voor het gebruik dat u van de site maakt, noch voor sites van derden waarnaar we linken." },
@@ -250,7 +250,7 @@ const LEGAL_NOTICE: Record<Locale, LegalDoc> = {
   },
 };
 
-/** Terms of use — covers site use and the reservation/contact request flow. */
+/** Terms of use — covers site use and the contact/enquiry flow. */
 const TERMS: Record<Locale, LegalDoc> = {
   en: {
     title: "Terms of Use",
@@ -260,7 +260,7 @@ const TERMS: Record<Locale, LegalDoc> = {
     sections: [
       { h: "Acceptance", p: "Using this website means you accept these terms and our Privacy and Cookie policies. If you do not agree, please do not use the site." },
       { h: "Use of the site", p: "You agree to use the site lawfully and not to interfere with its operation, attempt unauthorised access, or submit false or third-party data without permission." },
-      { h: "Reservations", p: "Reservation and contact forms are requests, not confirmed bookings. A reservation is only confirmed once we reply. Group bookings may be subject to capacity, minimum spend or specific conditions communicated at the time. Big-match days may have special arrangements." },
+      { h: "Enquiries and seating", p: "Contact forms are enquiries only. The venue does not take table reservations: seating is first come, first served, subject to capacity. On big-match days special conditions may apply on the day." },
       { h: "Accuracy of your data", p: "You are responsible for the accuracy of the information you provide. We may be unable to process a request made with incorrect contact details." },
       { h: "Intellectual property", p: "All site content is protected. You may not copy, distribute or reuse it without authorisation, beyond normal personal browsing." },
       { h: "Liability", p: "The site is provided 'as is'. We are not liable for temporary unavailability, errors in the content, or damages arising from its use, to the extent permitted by law." },
@@ -276,7 +276,7 @@ const TERMS: Record<Locale, LegalDoc> = {
     sections: [
       { h: "Aceptación", p: "Usar este sitio implica que aceptas estos términos y nuestras políticas de Privacidad y Cookies. Si no estás de acuerdo, no uses el sitio." },
       { h: "Uso del sitio", p: "Te comprometes a usar el sitio de forma lícita y a no interferir en su funcionamiento, intentar accesos no autorizados ni enviar datos falsos o de terceros sin permiso." },
-      { h: "Reservas", p: "Los formularios de reserva y contacto son solicitudes, no reservas confirmadas. Una reserva solo queda confirmada cuando te respondemos. Las reservas de grupo pueden estar sujetas a aforo, consumo mínimo o condiciones específicas comunicadas en su momento. Los días de partidos importantes pueden tener condiciones especiales." },
+      { h: "Consultas y aforo", p: "Los formularios de contacto son solo consultas. El local no acepta reservas de mesa: el sitio es por orden de llegada, sujeto al aforo. Los días de partidos importantes pueden aplicarse condiciones especiales en el propio local." },
       { h: "Veracidad de los datos", p: "Eres responsable de la exactitud de la información que facilitas. Es posible que no podamos atender una solicitud con datos de contacto incorrectos." },
       { h: "Propiedad intelectual", p: "Todo el contenido del sitio está protegido. No puedes copiarlo, distribuirlo ni reutilizarlo sin autorización, más allá de la navegación personal normal." },
       { h: "Responsabilidad", p: "El sitio se ofrece «tal cual». No nos hacemos responsables de indisponibilidades temporales, errores en el contenido ni daños derivados de su uso, en la medida permitida por la ley." },
@@ -292,7 +292,7 @@ const TERMS: Record<Locale, LegalDoc> = {
     sections: [
       { h: "Acceptació", p: "Usar aquest lloc implica que acceptes aquests termes i les nostres polítiques de Privacitat i Cookies. Si no hi estàs d'acord, no usis el lloc." },
       { h: "Ús del lloc", p: "Et compromets a usar el lloc de manera lícita i a no interferir en el seu funcionament, intentar accessos no autoritzats ni enviar dades falses o de tercers sense permís." },
-      { h: "Reserves", p: "Els formularis de reserva i contacte són sol·licituds, no reserves confirmades. Una reserva només queda confirmada quan et responem. Les reserves de grup poden estar subjectes a aforament, consum mínim o condicions específiques comunicades en el seu moment. Els dies de partits importants poden tenir condicions especials." },
+      { h: "Consultes i aforament", p: "Els formularis de contacte són només consultes. El local no accepta reserves de taula: el lloc és per ordre d'arribada, subjecte a l'aforament. Els dies de partits importants poden aplicar-se condicions especials al mateix local." },
       { h: "Veracitat de les dades", p: "Ets responsable de l'exactitud de la informació que facilites. És possible que no puguem atendre una sol·licitud amb dades de contacte incorrectes." },
       { h: "Propietat intel·lectual", p: "Tot el contingut del lloc està protegit. No el pots copiar, distribuir ni reutilitzar sense autorització, més enllà de la navegació personal normal." },
       { h: "Responsabilitat", p: "El lloc s'ofereix «tal qual». No ens fem responsables d'indisponibilitats temporals, errors en el contingut ni danys derivats del seu ús, en la mesura permesa per la llei." },
@@ -308,7 +308,7 @@ const TERMS: Record<Locale, LegalDoc> = {
     sections: [
       { h: "Acceptation", p: "Utiliser ce site signifie que vous acceptez ces conditions et nos politiques de confidentialité et de cookies. Si vous n'êtes pas d'accord, n'utilisez pas le site." },
       { h: "Utilisation du site", p: "Vous vous engagez à utiliser le site de manière licite et à ne pas perturber son fonctionnement, tenter d'accès non autorisés ou envoyer des données fausses ou de tiers sans autorisation." },
-      { h: "Réservations", p: "Les formulaires de réservation et de contact sont des demandes, et non des réservations confirmées. Une réservation n'est confirmée qu'après notre réponse. Les réservations de groupe peuvent être soumises à la capacité, à un minimum de consommation ou à des conditions spécifiques communiquées le moment venu. Les jours de grands matchs peuvent faire l'objet de conditions particulières." },
+      { h: "Demandes et places", p: "Les formulaires de contact sont de simples demandes. L'établissement ne prend pas de réservations de table : les places sont attribuées par ordre d'arrivée, dans la limite de la capacité. Les jours de grands matchs, des conditions particulières peuvent s'appliquer sur place." },
       { h: "Exactitude des données", p: "Vous êtes responsable de l'exactitude des informations fournies. Nous pourrions ne pas pouvoir traiter une demande comportant des coordonnées incorrectes." },
       { h: "Propriété intellectuelle", p: "Tout le contenu du site est protégé. Vous ne pouvez pas le copier, le distribuer ou le réutiliser sans autorisation, au-delà d'une navigation personnelle normale." },
       { h: "Responsabilité", p: "Le site est fourni « en l'état ». Nous ne sommes pas responsables des indisponibilités temporaires, des erreurs de contenu ni des dommages liés à son utilisation, dans la limite permise par la loi." },
@@ -324,7 +324,7 @@ const TERMS: Record<Locale, LegalDoc> = {
     sections: [
       { h: "Aanvaarding", p: "Het gebruik van deze site betekent dat u deze voorwaarden en ons Privacy- en Cookiebeleid accepteert. Gebruik de site niet als u niet akkoord gaat." },
       { h: "Gebruik van de site", p: "U gaat ermee akkoord de site rechtmatig te gebruiken en de werking ervan niet te verstoren, geen ongeautoriseerde toegang te proberen en geen valse gegevens of gegevens van derden zonder toestemming te versturen." },
-      { h: "Reserveringen", p: "Reserverings- en contactformulieren zijn verzoeken, geen bevestigde reserveringen. Een reservering is pas bevestigd zodra we reageren. Groepsreserveringen kunnen onderworpen zijn aan capaciteit, een minimumbesteding of specifieke voorwaarden die op dat moment worden meegedeeld. Op dagen met grote wedstrijden kunnen bijzondere voorwaarden gelden." },
+      { h: "Vragen en plaatsen", p: "Contactformulieren zijn alleen bedoeld voor vragen. De zaak neemt geen tafelreserveringen aan: plaatsen worden toegewezen op volgorde van binnenkomst, afhankelijk van de capaciteit. Op dagen met grote wedstrijden kunnen ter plaatse bijzondere voorwaarden gelden." },
       { h: "Juistheid van uw gegevens", p: "U bent verantwoordelijk voor de juistheid van de verstrekte informatie. Mogelijk kunnen we een verzoek met onjuiste contactgegevens niet verwerken." },
       { h: "Intellectueel eigendom", p: "Alle inhoud van de site is beschermd. U mag deze niet kopiëren, verspreiden of hergebruiken zonder toestemming, buiten normaal persoonlijk gebruik." },
       { h: "Aansprakelijkheid", p: "De site wordt 'as is' aangeboden. We zijn niet aansprakelijk voor tijdelijke onbeschikbaarheid, fouten in de inhoud of schade die voortvloeit uit het gebruik ervan, voor zover toegestaan door de wet." },

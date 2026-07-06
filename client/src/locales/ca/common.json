@@ -7,7 +7,6 @@
     "whatsOn": "Què fem",
     "worldCup": "Mundial 2026",
     "about": "La nostra història",
-    "reservations": "Reserves",
     "contact": "Contacte",
     "faq": "Preguntes",
     "blog": "Blog",
@@ -17,14 +16,11 @@
   },
   "cta": {
     "watchSport": "Veure esport",
-    "bookTable": "Reservar taula",
     "seeWhatsOn": "Veure què fem",
     "getInTouch": "Contacta'ns",
     "viewDetails": "Veure detalls",
     "fullProgramme": "Programa complet",
-    "whatsapp": "Escriu-nos per WhatsApp",
-    "checkAvailability": "Consultar disponibilitat",
-    "checkAvailabilityShort": "Consultar"
+    "whatsapp": "Escriu-nos per WhatsApp"
   },
   "home": {
     "kicker": "L'Original · Est. 1986",
@@ -55,7 +51,7 @@
     "heritageBody": "Queen Vic va obrir l'estiu que Maradona va aixecar el Mundial i no s'ha perdut cap temporada. Quaranta anys de finals, esmorzars anglesos i gols al descompte a la mateixa terrassa de Lloret de Mar.",
     "stampAlt": "Emblema de segell postal de la Reina Victòria de Queen Vic, Lloret de Mar, fundat el 1986",
     "finalTitle": "S'acosta un partit gran?",
-    "finalBody": "Els dies de partit les taules volen. Digues-nos quan véns i et guardem lloc a la terrassa.",
+    "finalBody": "Els dies de partit les taules volen — vine aviat i agafa lloc a la terrassa. Dubtes? Escriu-nos per WhatsApp.",
     "nextUp": "Properament a pantalla",
     "blogEyebrow": "Des del blog",
     "blogTitle": "L'últim del Vic",
@@ -88,7 +84,7 @@
     "tipsTitle": "Guia del dia de partit",
     "tip1": "El programa dia a dia es publica a Instagram durant el torneig.",
     "tip2": "Arriba entre 30 i 45 minuts abans als partits grans. La terrassa s'omple ràpid.",
-    "tip3": "Els grups poden reservar per a les nits d'eliminatòries. Fes servir la pàgina de reserves.",
+    "tip3": "No hi ha reserves: és per ordre d'arribada. Vine aviat les nits d'eliminatòries per agafar bon lloc.",
     "scheduleTitle": "Calendari i resultats",
     "scheduleSub": "Cada partit, en directe",
     "empty": "Els partits apareixen tan bon punt es confirmen. Torna aviat o segueix-nos a Instagram.",
@@ -109,7 +105,7 @@
       },
       {
         "q": "Cal reservar taula per al Mundial?",
-        "a": "Recomanem reservar amb antelació per als partits grans i els grups. Reserva des de la pàgina de reserves."
+        "a": "No — el Queen Vic no accepta reserves de taula. És per ordre d'arribada, així que vine aviat els dies de partit gran i les finals. Amb aforament per a més de 700 persones gairebé sempre hi ha lloc."
       },
       {
         "q": "Quanta gent cap al Queen Vic?",
@@ -146,38 +142,6 @@
     "tl3t": "Arriba la pantalla gegant exterior. Els dies de partit es muden a fora, sota els llums de revetlla.",
     "tl4y": "2026",
     "tl4t": "Quaranta anys ben portats i un estiu de Mundial per davant. Ens veiem a la terrassa."
-  },
-  "reservations": {
-    "title": "Reserva per a grups i dies de partit",
-    "subtitle": "Partit gran, comiat o una bona nit en grup? Digues-nos quan i quants, i de la resta ens n'encarreguem.",
-    "form": {
-      "name": "El teu nom",
-      "email": "Email",
-      "phone": "Telèfon",
-      "partySize": "Nombre de persones",
-      "date": "Data",
-      "time": "Hora",
-      "type": "Ocasió",
-      "requests": "Res que haguem de saber?",
-      "submit": "Sol·licitar taula",
-      "success": "Sol·licitud rebuda. Et confirmarem la taula aviat, normalment el mateix dia.",
-      "phonePrefix": "Prefix"
-    },
-    "occasions": {
-      "group": "Grup",
-      "match_day": "Partit",
-      "stag_hen": "Comiat",
-      "birthday": "Aniversari",
-      "standard": "Una taula"
-    },
-    "modalTitle": "Pregunta'ns",
-    "wa": {
-      "message": "Hola Queen Vic 👋 Vull consultar disponibilitat de taula:\n• Nom: {{name}}\n• Persones: {{partySize}}\n• Dia: {{date}}{{time}}\n• Ocasió: {{occasion}}{{requests}}",
-      "notice": "En enviar s'obre WhatsApp amb la teva sol·licitud llesta per enviar. Allà confirmem la disponibilitat.",
-      "successTitle": "Obrint WhatsApp…",
-      "successBody": "La teva sol·licitud és a WhatsApp — només dóna-li a enviar i et confirmem la taula. Si no s'ha obert, prem a sota.",
-      "openButton": "Obrir WhatsApp"
-    }
   },
   "contact": {
     "title": "Contacte",
@@ -270,7 +234,7 @@
       },
       {
         "q": "Cal reservar per a {{home}} v {{away}}?",
-        "a": "Recomanem reservar per als partits grans i els grups. Reserva a la pàgina de reserves; si no, per ordre d'arribada."
+        "a": "No — no acceptem reserves. És per ordre d'arribada: vine aviat per als partits grans. Amb aforament per a més de 700 persones gairebé sempre hi ha lloc."
       }
     ]
   },
@@ -299,7 +263,7 @@
       },
       {
         "q": "Cal reservar per veure {{team}}?",
-        "a": "Per als partits grans de {{team}} i els grups recomanem reservar a la pàgina de reserves. Si no, per ordre d'arribada."
+        "a": "No — no acceptem reserves. Per als partits grans de {{team}} vine aviat; és per ordre d'arribada, amb aforament per a més de 700 persones."
       }
     ]
   },
@@ -328,12 +292,12 @@
       },
       {
         "q": "Cal reservar per veure {{competition}}?",
-        "a": "Per als partits grans i els grups recomanem reservar a la pàgina de reserves. Si no, per ordre d'arribada."
+        "a": "No — no acceptem reserves. És per ordre d'arribada: vine aviat per als partits grans de {{competition}}. Amb aforament per a més de 700 persones gairebé sempre hi ha lloc."
       }
     ]
   },
   "faqPage": {
-    "metaDescription": "Horari, reserves, quins partits posem, el DJ i més: tot el que necessites saber sobre el Queen Vic Sports Bar a Lloret de Mar.",
+    "metaDescription": "Horari, quins partits posem, el DJ i més: tot el que necessites saber sobre el Queen Vic Sports Bar a Lloret de Mar.",
     "items": [
       {
         "q": "On puc veure el Mundial 2026 a Lloret de Mar?",
@@ -349,7 +313,7 @@
       },
       {
         "q": "Cal reservar taula?",
-        "a": "Per als partits grans i els grups recomanem reservar a la pàgina de reserves. Si no, per ordre d'arribada. Arriba aviat per a les finals."
+        "a": "No — no acceptem reserves. És per ordre d'arribada, amb aforament per a més de 700 persones entre el bar i la terrassa. Arriba aviat els dies de partit gran i les finals."
       },
       {
         "q": "Podeu posar un partit concret?",
@@ -401,7 +365,7 @@
     "readTime": "{{min}} min de lectura",
     "relatedTitle": "Continua llegint",
     "ctaTitle": "Véns al pròxim partidàs?",
-    "ctaBody": "Les taules volen els dies de partit — reserva la teva a la terrassa."
+    "ctaBody": "Les taules volen els dies de partit — vine aviat i agafa lloc a la terrassa."
   },
   "reviews": {
     "aria": "Valoració de {{value}} sobre 5 a partir de {{count}} ressenyes a {{source}}",
@@ -453,7 +417,7 @@
       },
       {
         "q": "Cal reservar per veure un partit?",
-        "a": "Als grans partits i per a grups, es recomana reservar. Digues-nos quan i quants sou i et guardem lloc a la terrassa."
+        "a": "No — no acceptem reserves. És per ordre d'arribada: vine aviat els dies de partit gran i agafa lloc a la terrassa."
       }
     ]
   }

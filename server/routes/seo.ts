@@ -13,6 +13,12 @@ export const seoRouter: Router = Router();
 
 const BASE = env.PUBLIC_BASE_URL.replace(/\/$/, "");
 
+// The venue stopped taking reservations (2026-07): the page is gone, so send
+// old links (search results, directories) to the contact page instead of a 404.
+seoRouter.get(/^\/(en|es|ca|fr|nl)\/reservations\/?$/, (req, res) => {
+  res.redirect(301, `/${req.params[0]}/contact`);
+});
+
 // Static public paths (without locale prefix).
 const STATIC_PATHS = [
   "",
@@ -24,7 +30,6 @@ const STATIC_PATHS = [
   "about",
   "menu",
   "gallery",
-  "reservations",
   "contact",
   "faq",
   "privacy",
@@ -233,7 +238,7 @@ Q: How many people does Queen Vic hold?
 A: 700+ across the indoor bar and the 1,250 m² outdoor terrace.
 
 Q: Do I need to book for World Cup match days?
-A: Booking ahead is recommended for big match days and groups: ${BASE}/en/reservations
+A: No — Queen Vic doesn't take table reservations. It's first come, first served, so arrive early for big match days and finals. With room for 700+ there's almost always a spot.
 
 Q: Where can I watch England at the World Cup in Lloret de Mar?
 A: At Queen Vic Sports Bar. Every England match is shown live on the biggest outdoor screen in town, with full English commentary. Fixtures and times: ${BASE}/en/world-cup-2026/team/england
@@ -291,7 +296,7 @@ A: Bij Queen Vic Sports Bar. Elke wedstrijd live op het grootste buitenscherm va
 - Capacity: 700+ · Terrace: 1,250 m² · Screens: 200-inch giant outdoor screen + 4 outdoor TVs + 10 indoor
 - Rating: ${VENUE.ratingGoogle.value}/5 on Google (${VENUE.ratingGoogle.count} reviews); ${VENUE.rating.value}/5 on Tripadvisor (${VENUE.rating.count} reviews)
 - Languages: English, Spanish, Catalan, French, Dutch
-- Reservations: groups and match days recommended to book ahead
+- Reservations: none — walk-in only, first come, first served (arrive early on big match days)
 
 ## Key pages
 - Home: ${BASE}/en
@@ -299,7 +304,6 @@ A: Bij Queen Vic Sports Bar. Elke wedstrijd live op het grootste buitenscherm va
 - World Cup 2026: ${BASE}/en/world-cup-2026
 - Watch Premier League: ${BASE}/en/watch/premier-league
 - What's On (fixtures): ${BASE}/en/whats-on
-- Reservations: ${BASE}/en/reservations
 - Contact: ${BASE}/en/contact
 `;
   });

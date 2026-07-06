@@ -7,7 +7,6 @@
     "whatsOn": "Au programme",
     "worldCup": "Coupe du Monde 2026",
     "about": "Notre histoire",
-    "reservations": "Réservations",
     "contact": "Contact",
     "faq": "FAQ",
     "blog": "Blog",
@@ -17,14 +16,11 @@
   },
   "cta": {
     "watchSport": "Voir le sport",
-    "bookTable": "Réserver une table",
     "seeWhatsOn": "Voir le programme",
     "getInTouch": "Contactez-nous",
     "viewDetails": "Voir les détails",
     "fullProgramme": "Programme complet",
-    "whatsapp": "Écrivez-nous sur WhatsApp",
-    "checkAvailability": "Vérifier les disponibilités",
-    "checkAvailabilityShort": "Vérifier"
+    "whatsapp": "Écrivez-nous sur WhatsApp"
   },
   "home": {
     "kicker": "L'Original · Est. 1986",
@@ -55,7 +51,7 @@
     "heritageBody": "Le Queen Vic a ouvert l'été où Maradona soulevait la Coupe du Monde, et n'a pas manqué une saison depuis. Quarante ans de finales, de breakfasts et de buts à la dernière minute sur la même terrasse de Lloret de Mar.",
     "stampAlt": "Emblème timbre-poste de la Reine Victoria du Queen Vic, Lloret de Mar, fondé en 1986",
     "finalTitle": "Un grand match approche ?",
-    "finalBody": "Les jours de match, les tables partent vite. Dites-nous quand vous venez et on vous garde une place en terrasse.",
+    "finalBody": "Les jours de match, les tables partent vite — arrivez tôt et prenez votre place en terrasse. Une question ? Écrivez-nous sur WhatsApp.",
     "nextUp": "Bientôt à l'écran",
     "blogEyebrow": "Depuis le blog",
     "blogTitle": "Les dernières du Vic",
@@ -88,7 +84,7 @@
     "tipsTitle": "Guide du jour de match",
     "tip1": "Le programme jour par jour est publié sur Instagram pendant le tournoi.",
     "tip2": "Arrivez 30 à 45 minutes en avance pour les grandes affiches. La terrasse se remplit vite.",
-    "tip3": "Les groupes peuvent réserver pour les soirées à élimination directe. Passez par la page réservations.",
+    "tip3": "Pas de réservations : premier arrivé, premier servi. Arrivez tôt les soirs à élimination directe pour avoir une bonne place.",
     "scheduleTitle": "Calendrier et résultats",
     "scheduleSub": "Chaque match, en direct",
     "empty": "Les matchs s'affichent dès qu'ils sont confirmés. Revenez bientôt ou suivez-nous sur Instagram.",
@@ -109,7 +105,7 @@
       },
       {
         "q": "Faut-il réserver une table pour la Coupe du Monde ?",
-        "a": "Nous recommandons de réserver à l'avance pour les grandes affiches et les groupes. Réservez via la page réservations."
+        "a": "Non — le Queen Vic ne prend pas de réservations de table. C'est premier arrivé, premier servi : arrivez tôt pour les grandes affiches et les finales. Avec plus de 700 places, il y a presque toujours de la place."
       },
       {
         "q": "Combien de personnes le Queen Vic peut-il accueillir ?",
@@ -146,38 +142,6 @@
     "tl3t": "L'écran géant extérieur arrive. Les jours de match passent dehors, sous les guirlandes.",
     "tl4y": "2026",
     "tl4t": "Quarante ans bien portés, et un été de Coupe du Monde en vue. Rendez-vous en terrasse."
-  },
-  "reservations": {
-    "title": "Réservez pour les groupes et les jours de match",
-    "subtitle": "Grande affiche, enterrement de vie de garçon ou de jeune fille, ou belle soirée de groupe ? Dites-nous quand et combien, on s'occupe du reste.",
-    "form": {
-      "name": "Votre nom",
-      "email": "E-mail",
-      "phone": "Téléphone",
-      "partySize": "Nombre de personnes",
-      "date": "Date",
-      "time": "Heure",
-      "type": "Occasion",
-      "requests": "Quelque chose à savoir ?",
-      "submit": "Demander une table",
-      "success": "Demande reçue. Nous confirmerons votre table rapidement, généralement le jour même.",
-      "phonePrefix": "Indicatif"
-    },
-    "occasions": {
-      "group": "Groupe",
-      "match_day": "Match",
-      "stag_hen": "EVG / EVJF",
-      "birthday": "Anniversaire",
-      "standard": "Une table"
-    },
-    "modalTitle": "Demande-nous",
-    "wa": {
-      "message": "Bonjour Queen Vic 👋 Je voudrais vérifier la disponibilité d'une table :\n• Nom : {{name}}\n• Personnes : {{partySize}}\n• Jour : {{date}}{{time}}\n• Occasion : {{occasion}}{{requests}}",
-      "notice": "L'envoi ouvre WhatsApp avec votre demande prête à envoyer. Nous y confirmons la disponibilité.",
-      "successTitle": "Ouverture de WhatsApp…",
-      "successBody": "Votre demande est prête dans WhatsApp — envoyez-la et nous confirmerons votre table. Si rien ne s'ouvre, appuyez ci-dessous.",
-      "openButton": "Ouvrir WhatsApp"
-    }
   },
   "contact": {
     "title": "Contact",
@@ -270,7 +234,7 @@
       },
       {
         "q": "Faut-il réserver pour {{home}} v {{away}} ?",
-        "a": "La réservation est conseillée pour les grands matchs et les groupes. Réservez via la page réservations ; sinon, premier arrivé, premier servi."
+        "a": "Non — nous ne prenons pas de réservations. C'est premier arrivé, premier servi : arrivez tôt pour les grands matchs. Avec plus de 700 places, il y a presque toujours de la place."
       }
     ]
   },
@@ -299,7 +263,7 @@
       },
       {
         "q": "Faut-il réserver pour regarder {{team}} ?",
-        "a": "Pour les grands matchs de {{team}} et les groupes, nous conseillons de réserver via la page réservations. Sinon, premier arrivé, premier servi."
+        "a": "Non — nous ne prenons pas de réservations. Pour les grands matchs de {{team}}, arrivez tôt ; premier arrivé, premier servi, avec plus de 700 places."
       }
     ]
   },
@@ -328,12 +292,12 @@
       },
       {
         "q": "Faut-il réserver pour regarder {{competition}} ?",
-        "a": "Pour les grands matchs et les groupes, nous conseillons de réserver via la page réservations. Sinon, premier arrivé, premier servi."
+        "a": "Non — nous ne prenons pas de réservations. C'est premier arrivé, premier servi : arrivez tôt pour les grands matchs de {{competition}}. Avec plus de 700 places, il y a presque toujours de la place."
       }
     ]
   },
   "faqPage": {
-    "metaDescription": "Horaires, réservations, quels matchs nous diffusons, le DJ et plus : tout ce qu'il faut savoir sur le Queen Vic Sports Bar à Lloret de Mar.",
+    "metaDescription": "Horaires, quels matchs nous diffusons, le DJ et plus : tout ce qu'il faut savoir sur le Queen Vic Sports Bar à Lloret de Mar.",
     "items": [
       {
         "q": "Où puis-je regarder la Coupe du monde 2026 à Lloret de Mar ?",
@@ -349,7 +313,7 @@
       },
       {
         "q": "Faut-il réserver une table ?",
-        "a": "Pour les grands matchs et les groupes, nous conseillons de réserver via la page réservations. Sinon, premier arrivé, premier servi. Arrivez tôt pour les finales."
+        "a": "Non — nous ne prenons pas de réservations. C'est premier arrivé, premier servi, avec plus de 700 places entre le bar et la terrasse. Arrivez tôt pour les grands matchs et les finales."
       },
       {
         "q": "Pouvez-vous diffuser un match précis ?",
@@ -401,7 +365,7 @@
     "readTime": "{{min}} min de lecture",
     "relatedTitle": "À lire ensuite",
     "ctaTitle": "Vous venez pour le prochain grand match ?",
-    "ctaBody": "Les tables partent vite les jours de match — réservez la vôtre en terrasse."
+    "ctaBody": "Les tables partent vite les jours de match — arrivez tôt et prenez votre place en terrasse."
   },
   "reviews": {
     "aria": "Noté {{value}} sur 5 à partir de {{count}} avis sur {{source}}",
@@ -453,7 +417,7 @@
       },
       {
         "q": "Faut-il réserver pour regarder un match ?",
-        "a": "Pour les grands matchs et les groupes, la réservation est conseillée. Dites-nous quand et combien vous êtes et on vous garde une place en terrasse."
+        "a": "Non — nous ne prenons pas de réservations. C'est premier arrivé, premier servi : arrivez tôt pour les grands matchs et prenez place en terrasse."
       }
     ]
   }
