@@ -48,7 +48,7 @@
     },
     "heritageKicker": "Notre histoire",
     "heritageTitle": "La Reine tient le score ici depuis 1986",
-    "heritageBody": "Le Queen Vic a ouvert l'été où Maradona soulevait la Coupe du Monde, et n'a pas manqué une saison depuis. Quarante ans de finales, de breakfasts et de buts à la dernière minute sur la même terrasse de Lloret de Mar.",
+    "heritageBody": "Le Queen Vic a ouvert l'été où Maradona soulevait la Coupe du Monde, et n'a pas manqué une saison depuis. Quarante ans de finales et de buts à la dernière minute sur la même terrasse de Lloret de Mar.",
     "stampAlt": "Emblème timbre-poste de la Reine Victoria du Queen Vic, Lloret de Mar, fondé en 1986",
     "finalTitle": "Un grand match approche ?",
     "finalBody": "Les jours de match, les tables partent vite — arrivez tôt et prenez votre place en terrasse. Une question ? Écrivez-nous sur WhatsApp.",
@@ -61,7 +61,7 @@
   },
   "whatsOn": {
     "title": "Au programme au Queen Vic",
-    "subtitle": "Tous les matchs sur l'écran géant extérieur de Lloret de Mar.",
+    "subtitle": "Tous les matchs du soir sur l'écran géant extérieur de Lloret de Mar — à partir de 20 h.",
     "board": "Le programme",
     "empty": "Rien de publié pour l'instant",
     "emptyNote": "Le programme hebdomadaire sort d'abord sur Instagram. Suivez-nous, ou demandez-nous de passer votre match.",
@@ -71,9 +71,9 @@
   },
   "worldCup": {
     "title": "Où regarder la Coupe du Monde 2026 à Lloret de Mar",
-    "subtitle": "Chaque match sur le plus grand écran extérieur de Lloret, avec 1 250 m² de terrasse et de la place pour 700+ personnes. La meilleure place de la Coupe du Monde à Lloret, comme en 1986.",
+    "subtitle": "Chaque match du soir sur le plus grand écran extérieur de Lloret, avec 1 250 m² de terrasse et de la place pour 700+ personnes. La meilleure place de la Coupe du Monde à Lloret, comme en 1986.",
     "facts": "104 matchs · 48 équipes · 39 jours",
-    "p1t": "Chaque match, en grand",
+    "p1t": "Chaque match du soir, en grand",
     "p1b": "De la phase de groupes à la finale sur le plus grand écran extérieur de la ville. Chaque but, plus grand que nulle part ailleurs.",
     "p2t": "Commentaire intégral en anglais",
     "p2b": "Pas un mot des commentateurs ne se perd sur les grandes affiches.",
@@ -86,18 +86,18 @@
     "tip2": "Arrivez 30 à 45 minutes en avance pour les grandes affiches. La terrasse se remplit vite.",
     "tip3": "Pas de réservations : premier arrivé, premier servi. Arrivez tôt les soirs à élimination directe pour avoir une bonne place.",
     "scheduleTitle": "Calendrier et résultats",
-    "scheduleSub": "Chaque match, en direct",
+    "scheduleSub": "Les matchs du soir, en direct",
     "empty": "Les matchs s'affichent dès qu'ils sont confirmés. Revenez bientôt ou suivez-nous sur Instagram.",
     "faqTitle": "Questions",
     "faqHeading": "Où regarder la Coupe du Monde à Lloret de Mar",
     "faq": [
       {
         "q": "Où puis-je regarder la Coupe du Monde 2026 à Lloret de Mar ?",
-        "a": "Au Queen Vic Sports Bar, Carrer de la Costa de Carbonell 1. Chaque match de la Coupe du Monde 2026 est diffusé en direct sur le plus grand écran extérieur de la ville, sur une terrasse de 1 250 m² pouvant accueillir 700+ personnes."
+        "a": "Au Queen Vic Sports Bar, Carrer de la Costa de Carbonell 1. Chaque match du soir de la Coupe du Monde 2026 — coup d'envoi à partir de 20 h, fin de soirée incluse — est diffusé en direct sur le plus grand écran extérieur de la ville, sur une terrasse de 1 250 m² pouvant accueillir 700+ personnes."
       },
       {
         "q": "Le Queen Vic diffuse-t-il tous les matchs de la Coupe du Monde ?",
-        "a": "Oui, tous les matchs de la Coupe du Monde 2026 en direct, avec commentaire intégral en anglais sur les grandes affiches."
+        "a": "Nous diffusons tous les matchs dont le coup d'envoi est à partir de 20 h — fin de soirée incluse — en direct, avec commentaire intégral en anglais sur les grandes affiches."
       },
       {
         "q": "À quelle heure ouvre le Queen Vic les jours de match ?",
@@ -243,10 +243,10 @@
     "hubSub": "Suivez votre nation",
     "hubTitle": "Où regarder votre équipe à Lloret",
     "h1": "Où regarder {{team}} à Lloret de Mar",
-    "lead": "Tous les matchs de {{team}} à la Coupe du monde 2026, en direct au Queen Vic : le plus grand écran extérieur de Lloret, une terrasse de 1 250 m² pour plus de 700 personnes, avec commentaire anglais sur les grands matchs.",
+    "lead": "Tous les matchs du soir de {{team}} à la Coupe du monde 2026, en direct au Queen Vic : le plus grand écran extérieur de Lloret, une terrasse de 1 250 m² pour plus de 700 personnes, avec commentaire anglais sur les grands matchs.",
     "nextFixture": "Prochain : {{match}} · {{date}} à {{time}}, heure de Lloret de Mar",
     "metaTitle": "Où regarder {{team}} à Lloret de Mar — Coupe du monde 2026 | Queen Vic",
-    "metaDescription": "Où regarder {{team}} à la Coupe du monde 2026 à Lloret de Mar : tous les matchs en direct sur le plus grand écran extérieur du Queen Vic Sports Bar, terrasse pour 700+.",
+    "metaDescription": "Où regarder {{team}} à la Coupe du monde 2026 à Lloret de Mar : tous les matchs du soir en direct sur le plus grand écran extérieur du Queen Vic Sports Bar, terrasse pour 700+.",
     "scheduleSub": "{{team}} à la Coupe du monde",
     "scheduleTitle": "Matchs et résultats",
     "faqHeading": "Regarder {{team}} — vos questions",
@@ -255,11 +255,11 @@
     "faq": [
       {
         "q": "Où puis-je regarder {{team}} à Lloret de Mar ?",
-        "a": "Au Queen Vic Sports Bar. Tous les matchs de {{team}} en direct sur le plus grand écran extérieur de la ville, sur une terrasse de 1 250 m² pouvant accueillir plus de 700 personnes."
+        "a": "Au Queen Vic Sports Bar. Tous les matchs du soir de {{team}} en direct sur le plus grand écran extérieur de la ville, sur une terrasse de 1 250 m² pouvant accueillir plus de 700 personnes."
       },
       {
         "q": "Le Queen Vic diffuse-t-il tous les matchs de {{team}} ?",
-        "a": "Oui — tous les matchs de {{team}} à la Coupe du monde 2026, en direct, avec commentaire anglais sur les grands matchs."
+        "a": "Tous les matchs de {{team}} dont le coup d'envoi est à partir de 20 h — fin de soirée incluse — en direct, avec commentaire anglais sur les grands matchs."
       },
       {
         "q": "Faut-il réserver pour regarder {{team}} ?",
@@ -301,7 +301,7 @@
     "items": [
       {
         "q": "Où puis-je regarder la Coupe du monde 2026 à Lloret de Mar ?",
-        "a": "Ici même, au Queen Vic. Tous les matchs de la Coupe du monde 2026 en direct sur le plus grand écran extérieur de la ville, sur notre terrasse de 1 250 m² pouvant accueillir plus de 700 personnes."
+        "a": "Ici même, au Queen Vic. Tous les matchs du soir de la Coupe du monde 2026 (coup d'envoi à partir de 20 h, fin de soirée incluse) en direct sur le plus grand écran extérieur de la ville, sur notre terrasse de 1 250 m² pouvant accueillir plus de 700 personnes."
       },
       {
         "q": "Combien de personnes le Queen Vic peut-il accueillir ?",
@@ -413,7 +413,7 @@
       },
       {
         "q": "Quel football puis-je regarder au Queen Vic ?",
-        "a": "La Coupe du Monde 2026 (tous les matchs), la Premier League, la Champions League et les grandes rencontres internationales — le tout en direct, avec commentaires en anglais sur les matchs importants."
+        "a": "La Coupe du Monde 2026 (tous les matchs du soir), la Premier League, la Champions League et les grandes rencontres internationales — le tout en direct, avec commentaires en anglais sur les matchs importants."
       },
       {
         "q": "Faut-il réserver pour regarder un match ?",

@@ -123,6 +123,14 @@ Mode v2** (`client/src/analytics/Analytics.tsx`) — the tag loads on every publ
 4. Activate real email via Resend (owner must create account, verify the domain's DNS
    records, and provide the API key for `.env` + Replit Secrets).
 
+**No sport before 20:00 (owner decision, 2026-07-11):** the public site never advertises
+fixtures kicking off before 20:00 Europe/Madrid; late-night kick-offs (00:00–02:59, World Cup
+games from the Americas) stay visible. Enforced once in `server/dao/events.dao.ts`
+(`advertisableHours`, applied to the three public reads → API, SSR, sitemap, llms.txt — admin
+sees everything). "Every match / todos los partidos" marketing claims were softened to
+"evening matches (from 20:00)" across the 5 locales + seo.ts GEO answers. Same date: removed
+the "fry-ups" mention from `heritageBody` in all locales.
+
 **No reservations (owner decision, 2026-07-06):** the venue is walk-in only and "never will"
 take table bookings. Removed from the public site: /reservations page + route (301 → /contact),
 ReserveButton/ReservationModal/ReservationForm, `POST /api/public/reservation`, sitemap entry,

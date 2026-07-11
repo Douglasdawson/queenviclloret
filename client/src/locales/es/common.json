@@ -48,7 +48,7 @@
     },
     "heritageKicker": "Nuestra historia",
     "heritageTitle": "La Reina lleva el marcador aquí desde 1986",
-    "heritageBody": "Queen Vic abrió el verano en que Maradona levantó el Mundial y no se ha perdido una temporada. Cuarenta años de finales, desayunos ingleses y goles en el descuento en la misma terraza de Lloret de Mar.",
+    "heritageBody": "Queen Vic abrió el verano en que Maradona levantó el Mundial y no se ha perdido una temporada. Cuarenta años de finales y goles en el descuento en la misma terraza de Lloret de Mar.",
     "stampAlt": "Emblema de sello postal de la Reina Victoria de Queen Vic, Lloret de Mar, fundado en 1986",
     "finalTitle": "¿Se acerca un partido grande?",
     "finalBody": "Los días de partido las mesas vuelan — ven pronto y coge sitio en la terraza. ¿Dudas? Escríbenos por WhatsApp.",
@@ -61,7 +61,7 @@
   },
   "whatsOn": {
     "title": "Qué echamos en Queen Vic",
-    "subtitle": "Todos los partidos en la pantalla gigante exterior de Lloret de Mar.",
+    "subtitle": "Todos los partidos de la noche en la pantalla gigante exterior de Lloret de Mar — desde las 20:00.",
     "board": "El programa",
     "empty": "Aún no hay nada publicado",
     "emptyNote": "El programa semanal sale primero en Instagram. Síguenos, o pídenos que pongamos tu partido.",
@@ -71,9 +71,9 @@
   },
   "worldCup": {
     "title": "Dónde ver el Mundial 2026 en Lloret de Mar",
-    "subtitle": "Todos los partidos en la mayor pantalla exterior de Lloret, con 1.250 m² de terraza y aforo para 700+ personas. El mejor asiento del Mundial en Lloret, igual que en 1986.",
+    "subtitle": "Todos los partidos de la noche en la mayor pantalla exterior de Lloret, con 1.250 m² de terraza y aforo para 700+ personas. El mejor asiento del Mundial en Lloret, igual que en 1986.",
     "facts": "104 partidos · 48 selecciones · 39 días",
-    "p1t": "Todos los partidos, a lo grande",
+    "p1t": "Los partidos de la noche, a lo grande",
     "p1b": "De la fase de grupos a la final en la pantalla exterior más grande de la ciudad. Cada gol, más grande que en ningún sitio.",
     "p2t": "Comentario íntegro en inglés",
     "p2b": "En los partidos grandes no se pierde ni una palabra de los comentaristas.",
@@ -86,18 +86,18 @@
     "tip2": "Llega entre 30 y 45 minutos antes en los partidos grandes. La terraza se llena rápido.",
     "tip3": "No hay reservas: es por orden de llegada. Ven pronto las noches de eliminatorias para pillar buen sitio.",
     "scheduleTitle": "Calendario y resultados",
-    "scheduleSub": "Cada partido, en directo",
+    "scheduleSub": "Los partidos de la noche, en directo",
     "empty": "Los partidos aparecen en cuanto se confirman. Vuelve pronto o síguenos en Instagram.",
     "faqTitle": "Preguntas",
     "faqHeading": "Dónde ver el Mundial en Lloret de Mar",
     "faq": [
       {
         "q": "¿Dónde puedo ver el Mundial 2026 en Lloret de Mar?",
-        "a": "En el Queen Vic Sports Bar, Carrer de la Costa de Carbonell 1. Todos los partidos del Mundial 2026 se ven en directo en la mayor pantalla exterior de la ciudad, en una terraza de 1.250 m² con aforo para 700+ personas."
+        "a": "En el Queen Vic Sports Bar, Carrer de la Costa de Carbonell 1. Todos los partidos de noche del Mundial 2026 — desde las 20:00, madrugada incluida — se ven en directo en la mayor pantalla exterior de la ciudad, en una terraza de 1.250 m² con aforo para 700+ personas."
       },
       {
         "q": "¿El Queen Vic pone todos los partidos del Mundial?",
-        "a": "Sí, todos los partidos del Mundial 2026 en directo, con comentario íntegro en inglés en los partidos grandes."
+        "a": "Ponemos todos los partidos que empiezan a partir de las 20:00 — madrugada incluida — en directo, con comentario íntegro en inglés en los partidos grandes."
       },
       {
         "q": "¿A qué hora abre el Queen Vic los días de partido?",
@@ -243,10 +243,10 @@
     "hubSub": "Sigue a tu selección",
     "hubTitle": "Dónde ver a tu equipo en Lloret",
     "h1": "Dónde ver a {{team}} en Lloret de Mar",
-    "lead": "Todos los partidos de {{team}} en el Mundial 2026, en directo en el Queen Vic: la mayor pantalla exterior de Lloret, 1.250 m² de terraza para 700+ y comentarios en inglés en los partidos grandes.",
+    "lead": "Todos los partidos de noche de {{team}} en el Mundial 2026, en directo en el Queen Vic: la mayor pantalla exterior de Lloret, 1.250 m² de terraza para 700+ y comentarios en inglés en los partidos grandes.",
     "nextFixture": "Próximo: {{match}} · {{date}} a las {{time}}, hora de Lloret de Mar",
     "metaTitle": "Dónde ver a {{team}} en Lloret de Mar — Mundial 2026 | Queen Vic",
-    "metaDescription": "Dónde ver a {{team}} en el Mundial 2026 en Lloret de Mar: todos los partidos en directo en la mayor pantalla exterior del Queen Vic Sports Bar, terraza para 700+.",
+    "metaDescription": "Dónde ver a {{team}} en el Mundial 2026 en Lloret de Mar: todos los partidos de noche en directo en la mayor pantalla exterior del Queen Vic Sports Bar, terraza para 700+.",
     "scheduleSub": "{{team}} en el Mundial",
     "scheduleTitle": "Partidos y resultados",
     "faqHeading": "Ver a {{team}} — tus preguntas",
@@ -255,11 +255,11 @@
     "faq": [
       {
         "q": "¿Dónde puedo ver a {{team}} en Lloret de Mar?",
-        "a": "En el Queen Vic Sports Bar. Todos los partidos de {{team}} en directo en la mayor pantalla exterior de la ciudad, en una terraza de 1.250 m² con aforo para 700+."
+        "a": "En el Queen Vic Sports Bar. Todos los partidos de noche de {{team}} en directo en la mayor pantalla exterior de la ciudad, en una terraza de 1.250 m² con aforo para 700+."
       },
       {
         "q": "¿El Queen Vic pone todos los partidos de {{team}}?",
-        "a": "Sí — todos los partidos de {{team}} del Mundial 2026, en directo, con comentarios en inglés en los grandes."
+        "a": "Todos los partidos de {{team}} que empiezan a partir de las 20:00 — madrugada incluida — en directo, con comentarios en inglés en los grandes."
       },
       {
         "q": "¿Hay que reservar para ver a {{team}}?",
@@ -301,7 +301,7 @@
     "items": [
       {
         "q": "¿Dónde puedo ver el Mundial 2026 en Lloret de Mar?",
-        "a": "Aquí mismo, en el Queen Vic. Todos los partidos del Mundial 2026 en directo en la mayor pantalla exterior de la ciudad, en nuestra terraza de 1.250 m² con aforo para 700+."
+        "a": "Aquí mismo, en el Queen Vic. Todos los partidos de noche del Mundial 2026 (desde las 20:00, madrugada incluida) en directo en la mayor pantalla exterior de la ciudad, en nuestra terraza de 1.250 m² con aforo para 700+."
       },
       {
         "q": "¿Cuánta gente cabe en el Queen Vic?",
@@ -413,7 +413,7 @@
       },
       {
         "q": "¿Qué fútbol puedo ver en el Queen Vic?",
-        "a": "El Mundial 2026 (todos los partidos), la Premier League, la Champions y las grandes citas de selecciones — todo en directo, con comentarios en inglés en los partidos importantes."
+        "a": "El Mundial 2026 (todos los partidos de noche), la Premier League, la Champions y las grandes citas de selecciones — todo en directo, con comentarios en inglés en los partidos importantes."
       },
       {
         "q": "¿Hace falta reservar para ver un partido?",

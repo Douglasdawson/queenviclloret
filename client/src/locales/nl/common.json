@@ -48,7 +48,7 @@
     },
     "heritageKicker": "Ons verhaal",
     "heritageTitle": "De Koningin houdt hier de stand bij sinds 1986",
-    "heritageBody": "Queen Vic opende in de zomer dat Maradona de wereldbeker omhoog hield en heeft sindsdien geen seizoen gemist. Veertig jaar finales, ontbijtjes en goals in blessuretijd op hetzelfde terras in Lloret de Mar.",
+    "heritageBody": "Queen Vic opende in de zomer dat Maradona de wereldbeker omhoog hield en heeft sindsdien geen seizoen gemist. Veertig jaar finales en goals in blessuretijd op hetzelfde terras in Lloret de Mar.",
     "stampAlt": "Het Queen Victoria-postzegelembleem van Queen Vic, Lloret de Mar, opgericht in 1986",
     "finalTitle": "Grote wedstrijd op komst?",
     "finalBody": "Op wedstrijddagen gaan de tafels snel — kom vroeg en pak je plek op het terras. Vragen? Stuur ons een berichtje op WhatsApp.",
@@ -61,7 +61,7 @@
   },
   "whatsOn": {
     "title": "Programma bij Queen Vic",
-    "subtitle": "Elke wedstrijd op het reuzenscherm buiten in Lloret de Mar.",
+    "subtitle": "Elke avondwedstrijd op het reuzenscherm buiten in Lloret de Mar — aftrap vanaf 20:00.",
     "board": "Het programma",
     "empty": "Nog niets gepubliceerd",
     "emptyNote": "Het weekprogramma verschijnt eerst op Instagram. Volg ons, of vraag ons jouw wedstrijd op te zetten.",
@@ -71,9 +71,9 @@
   },
   "worldCup": {
     "title": "Waar kijk je het WK 2026 in Lloret de Mar",
-    "subtitle": "Elke wedstrijd op het grootste buitenscherm van Lloret, met 1.250 m² terras en plek voor 700+ fans. De beste WK-plek in Lloret, net als in 1986.",
+    "subtitle": "Elke avondwedstrijd op het grootste buitenscherm van Lloret, met 1.250 m² terras en plek voor 700+ fans. De beste WK-plek in Lloret, net als in 1986.",
     "facts": "104 wedstrijden · 48 teams · 39 dagen",
-    "p1t": "Elke wedstrijd, op z'n groots",
+    "p1t": "Elke avondwedstrijd, op z'n groots",
     "p1b": "Van groepsfase tot finale op het grootste buitenscherm van de stad. Elke goal groter dan waar dan ook.",
     "p2t": "Volledig Engels commentaar",
     "p2b": "Bij de grote wedstrijden mis je geen woord van de commentatoren.",
@@ -86,18 +86,18 @@
     "tip2": "Kom 30 tot 45 minuten eerder bij grote wedstrijden. Het terras loopt snel vol.",
     "tip3": "Geen reserveringen: vol is vol. Kom vroeg op knock-outavonden voor een goede plek.",
     "scheduleTitle": "Programma & uitslagen",
-    "scheduleSub": "Elke wedstrijd, live",
+    "scheduleSub": "De avondwedstrijden, live",
     "empty": "Wedstrijden verschijnen zodra ze bevestigd zijn. Kom terug of volg ons op Instagram.",
     "faqTitle": "Vragen",
     "faqHeading": "Waar kijk je het WK in Lloret de Mar",
     "faq": [
       {
         "q": "Waar kan ik het WK 2026 kijken in Lloret de Mar?",
-        "a": "Bij Queen Vic Sports Bar, Carrer de la Costa de Carbonell 1. Elke WK-wedstrijd van 2026 is live te zien op het grootste buitenscherm van de stad, op een terras van 1.250 m² met plek voor 700+ fans."
+        "a": "Bij Queen Vic Sports Bar, Carrer de la Costa de Carbonell 1. Elke WK-avondwedstrijd van 2026 — aftrap vanaf 20:00, ook de late wedstrijden — is live te zien op het grootste buitenscherm van de stad, op een terras van 1.250 m² met plek voor 700+ fans."
       },
       {
         "q": "Laat Queen Vic elke WK-wedstrijd zien?",
-        "a": "Ja, alle WK-wedstrijden van 2026 live, met volledig Engels commentaar bij de grote wedstrijden."
+        "a": "We laten elke wedstrijd zien die vanaf 20:00 begint — ook de late wedstrijden — live, met volledig Engels commentaar bij de grote wedstrijden."
       },
       {
         "q": "Hoe laat opent Queen Vic op wedstrijddagen?",
@@ -243,10 +243,10 @@
     "hubSub": "Volg je land",
     "hubTitle": "Waar je jouw team kunt kijken in Lloret",
     "h1": "Waar kun je {{team}} kijken in Lloret de Mar",
-    "lead": "Alle wedstrijden van {{team}} op het WK 2026, live bij Queen Vic: het grootste buitenscherm van Lloret, een terras van 1.250 m² voor 700+ fans, met Engels commentaar bij de grote wedstrijden.",
+    "lead": "Alle avondwedstrijden van {{team}} op het WK 2026, live bij Queen Vic: het grootste buitenscherm van Lloret, een terras van 1.250 m² voor 700+ fans, met Engels commentaar bij de grote wedstrijden.",
     "nextFixture": "Volgende: {{match}} · {{date}} om {{time}}, tijd van Lloret de Mar",
     "metaTitle": "Waar je {{team}} kunt kijken in Lloret de Mar — WK 2026 | Queen Vic",
-    "metaDescription": "Waar je {{team}} op het WK 2026 kunt kijken in Lloret de Mar: elke wedstrijd live op het grootste buitenscherm bij Queen Vic Sports Bar, terras voor 700+.",
+    "metaDescription": "Waar je {{team}} op het WK 2026 kunt kijken in Lloret de Mar: elke avondwedstrijd live op het grootste buitenscherm bij Queen Vic Sports Bar, terras voor 700+.",
     "scheduleSub": "{{team}} op het WK",
     "scheduleTitle": "Wedstrijden en uitslagen",
     "faqHeading": "{{team}} kijken — jouw vragen",
@@ -255,11 +255,11 @@
     "faq": [
       {
         "q": "Waar kan ik {{team}} kijken in Lloret de Mar?",
-        "a": "Bij Queen Vic Sports Bar. Elke wedstrijd van {{team}} live op het grootste buitenscherm van de stad, op een terras van 1.250 m² met plaats voor 700+ fans."
+        "a": "Bij Queen Vic Sports Bar. Elke avondwedstrijd van {{team}} live op het grootste buitenscherm van de stad, op een terras van 1.250 m² met plaats voor 700+ fans."
       },
       {
         "q": "Laat Queen Vic elke wedstrijd van {{team}} zien?",
-        "a": "Ja — elke wedstrijd van {{team}} op het WK 2026, live, met Engels commentaar bij de grote wedstrijden."
+        "a": "Elke wedstrijd van {{team}} die vanaf 20:00 begint — ook de late wedstrijden — live, met Engels commentaar bij de grote wedstrijden."
       },
       {
         "q": "Moet ik reserveren om {{team}} te kijken?",
@@ -301,7 +301,7 @@
     "items": [
       {
         "q": "Waar kan ik het WK 2026 kijken in Lloret de Mar?",
-        "a": "Hier bij Queen Vic. Elke WK 2026-wedstrijd live op het grootste buitenscherm van de stad, op ons terras van 1.250 m² met plaats voor 700+ fans."
+        "a": "Hier bij Queen Vic. Elke WK 2026-avondwedstrijd (aftrap vanaf 20:00, ook de late wedstrijden) live op het grootste buitenscherm van de stad, op ons terras van 1.250 m² met plaats voor 700+ fans."
       },
       {
         "q": "Hoeveel mensen kunnen er in Queen Vic?",
@@ -413,7 +413,7 @@
       },
       {
         "q": "Welk voetbal kan ik kijken bij Queen Vic?",
-        "a": "Het WK 2026 (elke wedstrijd), de Premier League, de Champions League en de grote interlands — allemaal live, met Engels commentaar bij de belangrijke wedstrijden."
+        "a": "Het WK 2026 (elke avondwedstrijd), de Premier League, de Champions League en de grote interlands — allemaal live, met Engels commentaar bij de belangrijke wedstrijden."
       },
       {
         "q": "Moet ik reserveren om een wedstrijd te kijken?",

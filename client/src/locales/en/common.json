@@ -48,7 +48,7 @@
     },
     "heritageKicker": "Our story",
     "heritageTitle": "The Queen has kept score here since 1986",
-    "heritageBody": "Queen Vic opened when Maradona lifted the World Cup, and it hasn't missed a season since. Forty years of finals, fry-ups and last-minute winners on the same terrace in Lloret de Mar.",
+    "heritageBody": "Queen Vic opened when Maradona lifted the World Cup, and it hasn't missed a season since. Forty years of finals and last-minute winners on the same terrace in Lloret de Mar.",
     "stampAlt": "Queen Vic's Queen Victoria postage stamp emblem, Lloret de Mar, established 1986",
     "finalTitle": "Big match coming up?",
     "finalBody": "Tables go fast on match days — arrive early and grab your spot on the terrace. Questions? Message us on WhatsApp.",
@@ -61,7 +61,7 @@
   },
   "whatsOn": {
     "title": "What's on at Queen Vic",
-    "subtitle": "Every fixture on the giant outdoor screen in Lloret de Mar.",
+    "subtitle": "Every evening fixture on the giant outdoor screen in Lloret de Mar — kick-offs from 20:00.",
     "board": "The programme",
     "empty": "Nothing published just yet",
     "emptyNote": "The weekly programme lands on Instagram first. Follow us, or ask us to put your match on.",
@@ -71,9 +71,9 @@
   },
   "worldCup": {
     "title": "Watch World Cup 2026 in Lloret de Mar",
-    "subtitle": "Every match on Lloret's biggest outdoor screen, with a 1,250 m² terrace and room for 700+ fans. The best World Cup seat in Lloret, same as 1986.",
+    "subtitle": "Every evening match on Lloret's biggest outdoor screen, with a 1,250 m² terrace and room for 700+ fans. The best World Cup seat in Lloret, same as 1986.",
     "facts": "104 matches · 48 teams · 39 days",
-    "p1t": "Every match, the big way",
+    "p1t": "Every evening match, the big way",
     "p1b": "Group stage to final on the biggest outdoor screen in town. Every goal bigger than anywhere else.",
     "p2t": "Full English commentary",
     "p2b": "Not a word missed from the pundits on the big fixtures.",
@@ -86,18 +86,18 @@
     "tip2": "Arrive 30 to 45 minutes early for the big fixtures. The terrace fills fast.",
     "tip3": "No reservations — it's first come, first served. Arrive early on knockout nights to grab a good spot.",
     "scheduleTitle": "Schedule & results",
-    "scheduleSub": "Every match, kept live",
+    "scheduleSub": "Evening kick-offs, kept live",
     "empty": "Fixtures appear as soon as they're confirmed. Check back, or follow us on Instagram.",
     "faqTitle": "Questions",
     "faqHeading": "Where to watch the World Cup in Lloret",
     "faq": [
       {
         "q": "Where can I watch the World Cup 2026 in Lloret de Mar?",
-        "a": "At Queen Vic Sports Bar, Carrer de la Costa de Carbonell 1. Every FIFA World Cup 2026 match is shown live on the biggest outdoor screen in town, on a 1,250 m² terrace with room for 700+ fans."
+        "a": "At Queen Vic Sports Bar, Carrer de la Costa de Carbonell 1. Every evening FIFA World Cup 2026 match — kick-offs from 20:00, late-night games included — is shown live on the biggest outdoor screen in town, on a 1,250 m² terrace with room for 700+ fans."
       },
       {
         "q": "Does Queen Vic show every World Cup match?",
-        "a": "Yes — all FIFA World Cup 2026 matches, live, with full English commentary on the major fixtures."
+        "a": "We show every match kicking off from 20:00 — late-night games included — live, with full English commentary on the major fixtures."
       },
       {
         "q": "What time does Queen Vic open on match days?",
@@ -243,10 +243,10 @@
     "hubSub": "Follow your nation",
     "hubTitle": "Where to watch your team in Lloret",
     "h1": "Where to watch {{team}} in Lloret de Mar",
-    "lead": "Every {{team}} match at the World Cup 2026, live at Queen Vic — Lloret's biggest outdoor screen, a 1,250 m² terrace for 700+ fans, with full English commentary on the big games.",
+    "lead": "Every evening {{team}} match at the World Cup 2026, live at Queen Vic — Lloret's biggest outdoor screen, a 1,250 m² terrace for 700+ fans, with full English commentary on the big games.",
     "nextFixture": "Next up: {{match}} · {{date}} at {{time}}, Lloret de Mar time",
     "metaTitle": "Watch {{team}} in Lloret de Mar — World Cup 2026 | Queen Vic",
-    "metaDescription": "Where to watch {{team}} at the World Cup 2026 in Lloret de Mar: every match live on the biggest outdoor screen at Queen Vic Sports Bar, terrace for 700+.",
+    "metaDescription": "Where to watch {{team}} at the World Cup 2026 in Lloret de Mar: every evening match live on the biggest outdoor screen at Queen Vic Sports Bar, terrace for 700+.",
     "scheduleSub": "{{team}} at the World Cup",
     "scheduleTitle": "Fixtures & results",
     "faqHeading": "Watching {{team}} — your questions",
@@ -255,11 +255,11 @@
     "faq": [
       {
         "q": "Where can I watch {{team}} in Lloret de Mar?",
-        "a": "At Queen Vic Sports Bar. Every {{team}} match is shown live on the biggest outdoor screen in town, on a 1,250 m² terrace with room for 700+ fans."
+        "a": "At Queen Vic Sports Bar. Every evening {{team}} match is shown live on the biggest outdoor screen in town, on a 1,250 m² terrace with room for 700+ fans."
       },
       {
         "q": "Does Queen Vic show every {{team}} match?",
-        "a": "Yes — every {{team}} fixture at the World Cup 2026, live, with full English commentary on the major games."
+        "a": "Every {{team}} fixture kicking off from 20:00 — late-night games included — live, with full English commentary on the major games."
       },
       {
         "q": "Do I need to book to watch {{team}}?",
@@ -301,7 +301,7 @@
     "items": [
       {
         "q": "Where can I watch the World Cup 2026 in Lloret de Mar?",
-        "a": "Right here at Queen Vic. Every FIFA World Cup 2026 match is shown live on the biggest outdoor screen in town, on our 1,250 m² terrace with room for 700+ fans."
+        "a": "Right here at Queen Vic. Every evening FIFA World Cup 2026 match (kick-offs from 20:00, late-night games included) is shown live on the biggest outdoor screen in town, on our 1,250 m² terrace with room for 700+ fans."
       },
       {
         "q": "How many people does Queen Vic hold?",
@@ -413,7 +413,7 @@
       },
       {
         "q": "Which football can I watch at Queen Vic?",
-        "a": "The World Cup 2026 (every match), the Premier League, the Champions League and the big internationals — all live, with English commentary on the major fixtures."
+        "a": "The World Cup 2026 (every evening match), the Premier League, the Champions League and the big internationals — all live, with English commentary on the major fixtures."
       },
       {
         "q": "Do I need to book to watch a match?",

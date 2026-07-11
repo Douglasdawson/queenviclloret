@@ -28,6 +28,15 @@ export async function listEvents(filter: ListEventsFilter) {
   return { rows, total: count, limit, offset };
 }
 
+/**
+ * Owner rule (2026-07-11): never advertise fixtures kicking off before 20:00
+ * local time. Late-night kick-offs (00:00–02:59, e.g. World Cup games played in
+ * the Americas) still fall inside opening hours (19:00–03:00) and stay visible.
+ * Applies to every public surface (API, SSR, sitemap, llms.txt); admin sees all.
+ */
+const madridHour = sql<number>`extract(hour from ${events.startsAt} at time zone 'Europe/Madrid')`;
+const advertisableHours = sql`(${madridHour} >= 20 or ${madridHour} < 3)`;
+
 /** Published & upcoming events for the public site (cached at route level). */
 export async function listPublicUpcoming(limitN = 50): Promise<Event[]> {
   return db
@@ -38,6 +47,7 @@ export async function listPublicUpcoming(limitN = 50): Promise<Event[]> {
         eq(events.isDeleted, false),
         inArray(events.status, ["published", "live"]),
         gte(events.startsAt, new Date(Date.now() - 6 * 3600_000)),
+        advertisableHours,
       ),
     )
     .orderBy(asc(events.startsAt))
@@ -59,6 +69,7 @@ export async function listWorldCup(limitN = 130): Promise<Event[]> {
         eq(events.isDeleted, false),
         inArray(events.status, ["published", "live", "finished"]),
         ilike(events.competition, "%World Cup%"),
+        advertisableHours,
       ),
     )
     .orderBy(asc(events.startsAt))
@@ -83,6 +94,7 @@ export async function getPublicEventBySlug(slug: string): Promise<Event | undefi
         eq(events.slug, slug),
         eq(events.isDeleted, false),
         inArray(events.status, ["published", "live", "finished"]),
+        advertisableHours,
       ),
     )
     .limit(1);
