@@ -33,7 +33,10 @@ export const TRACKED_BOTS: BotDef[] = [
   { name: "OAI-SearchBot", token: "OAI-SearchBot", category: "ai-search" },
   { name: "Perplexity-User", token: "Perplexity-User", category: "ai-search" },
   { name: "PerplexityBot", token: "PerplexityBot", category: "ai-search" },
+  { name: "Claude-SearchBot", token: "Claude-SearchBot", category: "ai-search" },
   { name: "Claude-User", token: "Claude-User", category: "ai-search" },
+  { name: "MistralAI-User", token: "MistralAI-User", category: "ai-search" },
+  { name: "Meta-ExternalFetcher", token: "Meta-ExternalFetcher", category: "ai-search" },
 
   // ── AI · training / dataset crawlers ──
   { name: "GPTBot", token: "GPTBot", category: "ai-training" },

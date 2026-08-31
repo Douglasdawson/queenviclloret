@@ -49,13 +49,14 @@ const AI_BOTS = [
   "PerplexityBot",
   "Perplexity-User",
   "ClaudeBot",
+  "Claude-SearchBot",
   "Claude-User",
-  "anthropic-ai",
+  "MistralAI-User",
+  "Meta-ExternalFetcher",
   "Google-Extended",
   "Applebot-Extended",
   "Amazonbot",
   "Meta-ExternalAgent",
-  "cohere-ai",
   "CCBot",
 ];
 
