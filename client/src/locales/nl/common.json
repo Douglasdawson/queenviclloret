@@ -101,7 +101,7 @@
       },
       {
         "q": "Hoe laat opent Queen Vic op wedstrijddagen?",
-        "a": "Dagelijks vanaf 19:00, en eerder bij grote wedstrijden. Bekijk de Programma-pagina voor het weekprogramma."
+        "a": "Vrijdag t/m zondag vanaf 13:00 en maandag t/m donderdag vanaf 19:00, en eerder bij grote wedstrijden. Bekijk de Programma-pagina voor het weekprogramma."
       },
       {
         "q": "Moet ik een tafel reserveren voor het WK?",
@@ -169,7 +169,7 @@
     "terms": "Voorwaarden",
     "accessibility": "Toegankelijkheid",
     "address": "Lloret de Mar · Costa Brava · Spanje",
-    "hours": "Dagelijks open van 19:00 tot 03:00 · eerder op grote wedstrijddagen"
+    "hours": "Open maandag t/m donderdag van 19:00 tot 03:00 · vrijdag t/m zondag van 13:00 tot 03:00 · eerder op grote wedstrijddagen"
   },
   "cookies": {
     "message": "We gebruiken een paar cookies om de site te laten werken en, alleen als jij het toestaat, om ons verkeer te begrijpen. Jij beslist.",
@@ -230,7 +230,7 @@
       },
       {
         "q": "Hoe laat is {{home}} v {{away}}?",
-        "a": "De aftrap is {{date}} om {{time}}, tijd van Lloret de Mar, met {{commentary}}. Dagelijks open vanaf 19:00, eerder op grote wedstrijddagen."
+        "a": "De aftrap is {{date}} om {{time}}, tijd van Lloret de Mar, met {{commentary}}. Open maandag t/m donderdag vanaf 19:00 en vrijdag t/m zondag vanaf 13:00, eerder op grote wedstrijddagen."
       },
       {
         "q": "Moet ik reserveren voor {{home}} v {{away}}?",
@@ -309,7 +309,7 @@
       },
       {
         "q": "Hoe laat openen jullie?",
-        "a": "Dagelijks van 19:00 tot 03:00, en eerder op grote wedstrijddagen. Bekijk onze Instagram en Facebook voor het programma van deze week."
+        "a": "Maandag t/m donderdag van 19:00 tot 03:00 en vrijdag t/m zondag van 13:00 tot 03:00, en eerder op grote wedstrijddagen. Bekijk onze Instagram en Facebook voor het programma van deze week."
       },
       {
         "q": "Moet ik een tafel reserveren?",

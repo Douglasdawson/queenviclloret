@@ -26,7 +26,15 @@ export const VENUE = {
   geo: { latitude: 41.7001363, longitude: 2.8404936 },
   mapUrl: "https://maps.google.com/?q=Queen+Vic+Sports+Bar+Lloret+de+Mar",
 
-  hours: { opens: "19:00", closes: "03:00", note: "earlier on big match days" },
+  // Two opening windows since 2026-09-19 (manager Alexis): the venue opens at
+  // lunchtime Fri–Sun (sport from 13:00) and in the evening Mon–Thu. Closes 03:00 daily.
+  hours: {
+    spec: [
+      { days: ["Monday", "Tuesday", "Wednesday", "Thursday"], opens: "19:00", closes: "03:00" },
+      { days: ["Friday", "Saturday", "Sunday"], opens: "13:00", closes: "03:00" },
+    ],
+    note: "earlier on big match days",
+  },
 
   // 700+ across the indoor bar and the open-air terrace.
   capacity: 700,

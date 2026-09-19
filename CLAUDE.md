@@ -127,12 +127,14 @@ Mode v2** (`client/src/analytics/Analytics.tsx`) — the tag loads on every publ
 20:00" of 2026-07-11):** the public site only advertises fixtures whose kick-off falls in
 Mon–Thu 18:30–00:00 / Fri–Sun 13:00–00:00 Europe/Madrid. Two consequences vs. the old rule:
 weekend afternoons are now advertisable, and the 00:00–02:59 late kick-offs are **not** any
-more. Monday wasn't in Alexis' message — it follows the midweek window (confirm with her, it's
-one `case when` in the DAO). Enforced once in `server/dao/events.dao.ts` (`advertisableHours`,
-`dow` + `HH24MI`, applied to the three public reads → API, SSR, sitemap, llms.txt — admin sees
-everything). Marketing copy across the 5 locales + seo.ts GEO answers states the two windows.
-⚠️ `VENUE.hours` still says the venue opens at 19:00 — inconsistent with showing sport from
-13:00 Fri–Sun; ask the venue for the real opening hours (it feeds the footer + JSON-LD).
+more. Monday isn't in Alexis' message but the owner confirmed it follows the midweek window.
+Enforced once in `server/dao/events.dao.ts` (`advertisableHours`, `dow` + `HH24MI`, applied to
+the three public reads → API, SSR, sitemap, llms.txt — admin sees everything). Marketing copy
+across the 5 locales + seo.ts GEO answers states the two windows.
+**Opening hours follow** (same date): the venue opens 13:00 Fri–Sun, 19:00 Mon–Thu, closing
+03:00 daily. `VENUE.hours` is now `spec: [{days, opens, closes}]` (two entries) — it feeds the
+JSON-LD `openingHoursSpecification` (one entry per window) and the llms.txt Hours line; the
+footer/FAQ strings say it in all 5 locales.
 2026-07-11 also removed the "fry-ups" mention from `heritageBody` in all locales.
 
 **No reservations (owner decision, 2026-07-06):** the venue is walk-in only and "never will"

@@ -294,7 +294,7 @@ Sport is shown from 18:30 Mon–Thu and from 13:00 Fri–Sun, local time; nothin
 ## Venue & practical
 - Address: ${VENUE.address.full}
 - Phone: ${VENUE.phoneDisplay}
-- Hours: open daily ${VENUE.hours.opens}–${VENUE.hours.closes} (earlier on big match days)
+- Hours: ${VENUE.hours.spec.map((s) => `${s.days[0].slice(0, 3)}–${s.days[s.days.length - 1].slice(0, 3)} ${s.opens}–${s.closes}`).join(", ")} (earlier on big match days)
 - Capacity: 700+ · Terrace: 1,250 m² · Screens: 200-inch giant outdoor screen + 4 outdoor TVs + 10 indoor
 - Rating: ${VENUE.ratingGoogle.value}/5 on Google (${VENUE.ratingGoogle.count} reviews); ${VENUE.rating.value}/5 on Tripadvisor (${VENUE.rating.count} reviews)
 - Languages: English, Spanish, Catalan, French, Dutch

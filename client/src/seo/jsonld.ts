@@ -45,14 +45,12 @@ export function barOrPubLd(siteUrl: string) {
     // Walk-in only — the venue takes no table reservations (owner, 2026-07).
     acceptsReservations: "False",
     maximumAttendeeCapacity: VENUE.capacity,
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        opens: VENUE.hours.opens,
-        closes: VENUE.hours.closes,
-      },
-    ],
+    openingHoursSpecification: VENUE.hours.spec.map((s) => ({
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: s.days,
+      opens: s.opens,
+      closes: s.closes,
+    })),
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: VENUE.ratingGoogle.value,

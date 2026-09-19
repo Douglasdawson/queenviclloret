@@ -101,7 +101,7 @@
       },
       {
         "q": "What time does Queen Vic open on match days?",
-        "a": "Daily from 19:00, and earlier on big match days. Check What's On for the weekly programme."
+        "a": "From 13:00 Fri–Sun and from 19:00 Mon–Thu, and earlier on big match days. Check What's On for the weekly programme."
       },
       {
         "q": "Do I need to book a table for the World Cup?",
@@ -169,7 +169,7 @@
     "terms": "Terms",
     "accessibility": "Accessibility",
     "address": "Lloret de Mar · Costa Brava · Spain",
-    "hours": "Open daily 19:00 – 03:00 · earlier on big match days"
+    "hours": "Open Mon–Thu 19:00–03:00 · Fri–Sun 13:00–03:00 · earlier on big match days"
   },
   "cookies": {
     "message": "We use a few cookies to make the site work and, only if you allow it, to understand our traffic. Your call.",
@@ -230,7 +230,7 @@
       },
       {
         "q": "What time is {{home}} v {{away}}?",
-        "a": "Kick-off is {{date}} at {{time}}, Lloret de Mar time, with {{commentary}}. Doors open daily from 19:00, earlier on big match days."
+        "a": "Kick-off is {{date}} at {{time}}, Lloret de Mar time, with {{commentary}}. Doors open from 19:00 Mon–Thu and from 13:00 Fri–Sun, earlier on big match days."
       },
       {
         "q": "Do I need to book for {{home}} v {{away}}?",
@@ -309,7 +309,7 @@
       },
       {
         "q": "What time do you open?",
-        "a": "Daily from 19:00 till 03:00, and earlier on big match days. Check our Instagram and Facebook for this week's programme."
+        "a": "Mon–Thu 19:00–03:00, Fri–Sun 13:00–03:00, and earlier on big match days. Check our Instagram and Facebook for this week's programme."
       },
       {
         "q": "Do I need to reserve a table?",

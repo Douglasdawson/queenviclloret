@@ -101,7 +101,7 @@
       },
       {
         "q": "À quelle heure ouvre le Queen Vic les jours de match ?",
-        "a": "Tous les jours dès 19h00, et plus tôt pour les grandes affiches. Consultez la page Au programme pour le programme de la semaine."
+        "a": "Du vendredi au dimanche dès 13h00 et du lundi au jeudi dès 19h00, et plus tôt pour les grandes affiches. Consultez la page Au programme pour le programme de la semaine."
       },
       {
         "q": "Faut-il réserver une table pour la Coupe du Monde ?",
@@ -169,7 +169,7 @@
     "terms": "Conditions",
     "accessibility": "Accessibilité",
     "address": "Lloret de Mar · Costa Brava · Espagne",
-    "hours": "Ouvert tous les jours de 19h00 à 3h00 · plus tôt les grands jours de match"
+    "hours": "Ouvert du lundi au jeudi de 19h00 à 3h00 · du vendredi au dimanche de 13h00 à 3h00 · plus tôt les grands jours de match"
   },
   "cookies": {
     "message": "Nous utilisons quelques cookies pour faire fonctionner le site et, seulement si vous l'autorisez, pour comprendre le trafic. À vous de voir.",
@@ -230,7 +230,7 @@
       },
       {
         "q": "À quelle heure est {{home}} v {{away}} ?",
-        "a": "Le coup d'envoi est le {{date}} à {{time}}, heure de Lloret de Mar, avec {{commentary}}. Ouverture tous les jours dès 19h00, plus tôt les jours de grand match."
+        "a": "Le coup d'envoi est le {{date}} à {{time}}, heure de Lloret de Mar, avec {{commentary}}. Ouverture du lundi au jeudi dès 19h00 et du vendredi au dimanche dès 13h00, plus tôt les jours de grand match."
       },
       {
         "q": "Faut-il réserver pour {{home}} v {{away}} ?",
@@ -309,7 +309,7 @@
       },
       {
         "q": "À quelle heure ouvrez-vous ?",
-        "a": "Tous les jours de 19h00 à 03h00, et plus tôt les jours de grand match. Consultez notre Instagram et Facebook pour le programme de la semaine."
+        "a": "Du lundi au jeudi de 19h00 à 03h00 et du vendredi au dimanche de 13h00 à 03h00, et plus tôt les jours de grand match. Consultez notre Instagram et Facebook pour le programme de la semaine."
       },
       {
         "q": "Faut-il réserver une table ?",

@@ -101,7 +101,7 @@
       },
       {
         "q": "¿A qué hora abre el Queen Vic los días de partido?",
-        "a": "Cada día desde las 19:00, y antes en los partidos grandes. Consulta la página Qué hay para el programa de la semana."
+        "a": "De viernes a domingo desde las 13:00 y de lunes a jueves desde las 19:00, y antes en los partidos grandes. Consulta la página Qué hay para el programa de la semana."
       },
       {
         "q": "¿Hay que reservar mesa para el Mundial?",
@@ -169,7 +169,7 @@
     "terms": "Términos",
     "accessibility": "Accesibilidad",
     "address": "Lloret de Mar · Costa Brava · España",
-    "hours": "Abierto cada día de 19:00 a 03:00 · antes en partidos grandes"
+    "hours": "Abierto de lunes a jueves de 19:00 a 03:00 · de viernes a domingo de 13:00 a 03:00 · antes en partidos grandes"
   },
   "cookies": {
     "message": "Usamos unas pocas cookies para que la web funcione y, solo si lo permites, para entender el tráfico. Tú decides.",
@@ -230,7 +230,7 @@
       },
       {
         "q": "¿A qué hora es {{home}} v {{away}}?",
-        "a": "El partido empieza el {{date}} a las {{time}}, hora de Lloret de Mar, con {{commentary}}. Abrimos cada día desde las 19:00, antes en días de partido grande."
+        "a": "El partido empieza el {{date}} a las {{time}}, hora de Lloret de Mar, con {{commentary}}. Abrimos de lunes a jueves desde las 19:00 y de viernes a domingo desde las 13:00, antes en días de partido grande."
       },
       {
         "q": "¿Hay que reservar para {{home}} v {{away}}?",
@@ -309,7 +309,7 @@
       },
       {
         "q": "¿A qué hora abrís?",
-        "a": "Cada día de 19:00 a 03:00, y antes en días de partido grande. Mira nuestro Instagram y Facebook para la programación de la semana."
+        "a": "De lunes a jueves de 19:00 a 03:00 y de viernes a domingo de 13:00 a 03:00, y antes en días de partido grande. Mira nuestro Instagram y Facebook para la programación de la semana."
       },
       {
         "q": "¿Hay que reservar mesa?",
