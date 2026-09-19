@@ -25,20 +25,24 @@ static assets. This was required for SEO + GEO (a Vite SPA renders an empty shel
   full navigation (SEO-friendly, avoids router base churn).
 
 ## Workflow
-Mac terminal (Claude Code) → `git push origin main` → in Replit Git tab → Pull → Deployments → Redeploy.
-**No Vercel/Netlify/Cloudflare.** Production runs via `tsx` (no tsc server build) to avoid ESM
-extension issues on Replit.
+**Moving off Replit to the Hetzner+Coolify VPS (started 2026-09-19).** Half done — read this
+before shipping:
 
-⚠️ **This repo is NOT on the Hetzner+Coolify VPS**, unlike most of the other sites — the push
-does **not** deploy anything on its own. Re-checked 2026-09-19, because it's an easy thing to
-misremember; three commands settle it in seconds:
-```bash
-bash ~/.claude/skills/vps/vps.sh uuid          # "No encuentro ninguna app" — not in Coolify
-gh api repos/Douglasdawson/queenviclloret/hooks   # empty — no webhook, so no push-to-deploy
-curl -sI https://queenviclloret.es/ | grep -i server   # "Google Frontend" = Replit, not 65.109.128.70
-```
-So every ship ends the same way: push, then **the owner does Pull + Redeploy in Replit**, and only
-then is production actually updated. Verify with a content artefact, never with the push alone.
+- ✅ The app **already runs on the VPS** as Coolify app `queenviclloret`
+  (`0icopnt4ufrwk9ufppwsdglj`, nixpacks, port 3000), live at
+  https://queenviclloret.apps.dawsonwebs.com, with **push-to-deploy working** (a push to main
+  encolates a build by itself — verified) and a health check on `/api/health`.
+- ⏳ **`queenviclloret.es` still points at Replit** (apex A → `34.111.179.208`, TTL 14400).
+  Until the owner changes that A record to **65.109.128.70** in the LucusHost cPanel Zone
+  Editor, production is still served by Replit and still needs the manual Pull + Redeploy.
+  Only the apex A changes: leave MX (`mail.queenviclloret.es`) and the Bing verification CNAME
+  alone. Afterwards: `vps.sh dominios`, `PUBLIC_BASE_URL=https://queenviclloret.es`, deploy.
+- Both can run at once without stepping on each other: they share the same Neon database, the
+  crons take Postgres advisory locks, and nothing is written to local disk (no volume needed).
+
+Build commands in Coolify are **pnpm, not npm**: `npm ci` dies in the container with
+`Exit handler never called!`, the same npm bug this project hits on the Mac. Production runs
+via `tsx` (no tsc server build), so **`tsx` is a runtime dependency**, not a dev one.
 
 ## Patterns (don't change without strong reason)
 - DAO layer in `server/dao/*` — routes never touch `db` directly.
