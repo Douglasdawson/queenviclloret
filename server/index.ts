@@ -152,6 +152,19 @@ async function bootstrap() {
     res.redirect(307, `/${match}`);
   });
 
+  // 6-bis. A missing file must 404, never fall through to SSR. A browser holding a
+  // stale HTML asks for a hashed chunk that the new build no longer has; answering
+  // 200 with HTML where it expects JavaScript leaves a blank page until a hard
+  // reload. Safe as a blanket rule: slugify() strips every dot, so no public route
+  // has an extension, and /llms.txt & friends are served by seoRouter further up.
+  app.use((req, res, next) => {
+    if (/\.[a-z0-9]+$/i.test(req.path)) {
+      res.status(404).type("txt").send("Not found");
+      return;
+    }
+    next();
+  });
+
   // 7. SSR for everything else (GET HTML)
   app.use(createSsrHandler(vite));
 
