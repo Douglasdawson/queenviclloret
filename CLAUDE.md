@@ -29,6 +29,17 @@ Mac terminal (Claude Code) → `git push origin main` → in Replit Git tab → 
 **No Vercel/Netlify/Cloudflare.** Production runs via `tsx` (no tsc server build) to avoid ESM
 extension issues on Replit.
 
+⚠️ **This repo is NOT on the Hetzner+Coolify VPS**, unlike most of the other sites — the push
+does **not** deploy anything on its own. Re-checked 2026-09-19, because it's an easy thing to
+misremember; three commands settle it in seconds:
+```bash
+bash ~/.claude/skills/vps/vps.sh uuid          # "No encuentro ninguna app" — not in Coolify
+gh api repos/Douglasdawson/queenviclloret/hooks   # empty — no webhook, so no push-to-deploy
+curl -sI https://queenviclloret.es/ | grep -i server   # "Google Frontend" = Replit, not 65.109.128.70
+```
+So every ship ends the same way: push, then **the owner does Pull + Redeploy in Replit**, and only
+then is production actually updated. Verify with a content artefact, never with the push alone.
+
 ## Patterns (don't change without strong reason)
 - DAO layer in `server/dao/*` — routes never touch `db` directly.
 - Soft deletes on every table (`isDeleted/deletedAt/deletedBy`) except `audit_log` (append-only) and `session`.

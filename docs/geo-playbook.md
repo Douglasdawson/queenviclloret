@@ -55,9 +55,10 @@ y **corregir el teléfono de Yelp** (filas de Ryan), que son ahora lo decisivo.
   + páginas por partido (`SportsEvent` JSON-LD) gracias a los **155 fixtures** importados.
 - ⚠️ **`PUBLIC_BASE_URL=https://queenviclloret.es` debe estar en los Secrets de Replit** o todo el
   SEO/GEO emite `localhost`.
-- ⏳ **Pendiente de Republish en Replit** (el push a GitHub no despliega solo): `llms.txt` dinámico
-  con los partidos reales + `ItemList` del hub (`786fe1f`) y **GA4 + meta de verificación GSC**
-  (`2012901`). Hasta el Republish, el `llms.txt` vivo aún muestra el placeholder genérico.
+- ✅ **Ya desplegado** (verificado en producción el 19/09/2026): `llms.txt` dinámico con los
+  partidos reales + `ItemList` del hub (`786fe1f`) y **GA4 + meta de verificación GSC**
+  (`2012901`) responden en vivo. El ledger de "pendiente de Republish" queda a cero hasta
+  `64ab5e1`; lo único posterior es lo que se pushee después.
 - Flujo: Replit → Git tab → Pull → Deployments → Redeploy.
 
 ---
