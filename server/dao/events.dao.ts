@@ -29,13 +29,16 @@ export async function listEvents(filter: ListEventsFilter) {
 }
 
 /**
- * Owner rule (2026-07-11): never advertise fixtures kicking off before 20:00
- * local time. Late-night kick-offs (00:00–02:59, e.g. World Cup games played in
- * the Americas) still fall inside opening hours (19:00–03:00) and stay visible.
+ * Owner rule (Alexis, 2026-09-19, supersedes the flat 20:00 rule of 2026-07-11):
+ * sport is advertised inside a per-weekday kick-off window, Europe/Madrid —
+ * Mon–Thu from 18:30, Fri–Sun from 13:00, nothing past midnight (so the
+ * 00:00–02:59 late kick-offs that used to be visible no longer are).
+ * Monday isn't in Alexis' message; it follows the midweek window.
  * Applies to every public surface (API, SSR, sitemap, llms.txt); admin sees all.
  */
-const madridHour = sql<number>`extract(hour from ${events.startsAt} at time zone 'Europe/Madrid')`;
-const advertisableHours = sql`(${madridHour} >= 20 or ${madridHour} < 3)`;
+const madridHhmm = sql<number>`to_char(${events.startsAt} at time zone 'Europe/Madrid', 'HH24MI')::int`;
+const madridDow = sql<number>`extract(dow from ${events.startsAt} at time zone 'Europe/Madrid')`;
+const advertisableHours = sql`${madridHhmm} >= case when ${madridDow} in (0, 5, 6) then 1300 else 1830 end`;
 
 /** Published & upcoming events for the public site (cached at route level). */
 export async function listPublicUpcoming(limitN = 50): Promise<Event[]> {

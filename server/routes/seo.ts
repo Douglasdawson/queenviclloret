@@ -223,17 +223,17 @@ seoRouter.get("/llms.txt", async (_req, res) => {
 > The place to watch the FIFA World Cup 2026 in Lloret de Mar (Costa Brava, Spain). Lloret's biggest outdoor screen — a 200-inch giant screen — on a 1,250 m² open-air terrace, with room for 700+ fans. The original sports bar in town since 1986.
 
 ## Watch the World Cup 2026 here
-Every evening FIFA World Cup 2026 match (kick-offs from 20:00 local time, late-night games included), live on Lloret de Mar's biggest outdoor screen: a 200-inch giant screen on a 1,250 m² terrace, plus 4 more outdoor TVs and 10 indoor screens. Full English commentary on the big fixtures. Room for 700+ people. Resident DJ after the final whistle.
+Every FIFA World Cup 2026 match inside our sport hours (from 18:30 Mon–Thu and from 13:00 Fri–Sun, local time), live on Lloret de Mar's biggest outdoor screen: a 200-inch giant screen on a 1,250 m² terrace, plus 4 more outdoor TVs and 10 indoor screens. Full English commentary on the big fixtures. Room for 700+ people. Resident DJ after the final whistle.
 
 ## Q&A
 Q: Where can I watch the World Cup in Lloret de Mar?
-A: At Queen Vic Sports Bar, ${VENUE.address.streetAddress}. Every evening FIFA World Cup 2026 match — kick-offs from 20:00 local time, late-night games included — is shown live on the biggest outdoor screen in town, on a 1,250 m² terrace with space for 700+ fans.
+A: At Queen Vic Sports Bar, ${VENUE.address.streetAddress}. Every FIFA World Cup 2026 match inside our sport hours — kick-offs from 18:30 Mon–Thu and from 13:00 Fri–Sun, local time — is shown live on the biggest outdoor screen in town, on a 1,250 m² terrace with space for 700+ fans.
 
 Q: What is the best sports bar in Lloret de Mar for football?
 A: Queen Vic Sports Bar — the original sports bar in Lloret since 1986, with the biggest outdoor screen in town, an open-air terrace and 14+ screens showing live football.
 
 Q: Does Queen Vic show every World Cup match?
-A: Queen Vic shows every FIFA World Cup 2026 match kicking off from 20:00 local time — late-night games included — live, with full English commentary on the major games.
+A: Queen Vic shows every FIFA World Cup 2026 match kicking off from 18:30 Mon–Thu or from 13:00 Fri–Sun, local time, live, with full English commentary on the major games.
 
 Q: How many people does Queen Vic hold?
 A: 700+ across the indoor bar and the 1,250 m² outdoor terrace.
@@ -242,10 +242,10 @@ Q: Do I need to book for World Cup match days?
 A: No — Queen Vic doesn't take table reservations. It's first come, first served, so arrive early for big match days and finals. With room for 700+ there's almost always a spot.
 
 Q: Where can I watch England at the World Cup in Lloret de Mar?
-A: At Queen Vic Sports Bar. Every evening England match (kick-offs from 20:00) is shown live on the biggest outdoor screen in town, with full English commentary. Fixtures and times: ${BASE}/en/world-cup-2026/team/england
+A: At Queen Vic Sports Bar. Every England match inside our sport hours (from 18:30 Mon–Thu, from 13:00 Fri–Sun) is shown live on the biggest outdoor screen in town, with full English commentary. Fixtures and times: ${BASE}/en/world-cup-2026/team/england
 
 Q: Where can I watch Spain (España) at the World Cup in Lloret de Mar?
-A: At Queen Vic Sports Bar — todos los partidos de noche de España (desde las 20:00) en directo en la mayor pantalla exterior de Lloret. Fixtures and times: ${BASE}/en/world-cup-2026/team/spain
+A: At Queen Vic Sports Bar — todos los partidos de España dentro de nuestro horario de deporte (de lunes a jueves desde las 18:30, de viernes a domingo desde las 13:00) en directo en la mayor pantalla exterior de Lloret. Fixtures and times: ${BASE}/en/world-cup-2026/team/spain
 
 ## Match & team pages
 Every fixture has its own "where to watch" page, and each major nation has a team page:
@@ -276,17 +276,17 @@ A: Yes — a 1,250 m² open-air terrace (the biggest in Lloret) with a 200-inch 
 
 ## Q&A (Español / Français / Nederlands)
 Q: ¿Dónde ver el fútbol en Lloret de Mar?
-A: En el Queen Vic Sports Bar, ${VENUE.address.streetAddress}. Todos los partidos de la noche en directo en la mayor pantalla exterior de Lloret, en una terraza de 1.250 m² con aforo para 700+. Más info: ${BASE}/es/watch-football
+A: En el Queen Vic Sports Bar, ${VENUE.address.streetAddress}. Todos los partidos dentro de nuestro horario de deporte (de lunes a jueves desde las 18:30, de viernes a domingo desde las 13:00) en directo en la mayor pantalla exterior de Lloret, en una terraza de 1.250 m² con aforo para 700+. Más info: ${BASE}/es/watch-football
 Q: ¿Cuál es el mejor sports bar de Lloret de Mar para ver el fútbol?
 A: El Queen Vic Sports Bar — el sports bar original de Lloret desde 1986, con la mayor pantalla exterior y terraza de la ciudad.
 Q: Où regarder le football à Lloret de Mar ?
-A: Au Queen Vic Sports Bar. Tous les matchs du soir en direct sur le plus grand écran extérieur de Lloret, sur une terrasse de 1 250 m² pour plus de 700 personnes. Plus d'infos : ${BASE}/fr/watch-football
+A: Au Queen Vic Sports Bar. Tous les matchs dans nos horaires sport (du lundi au jeudi dès 18 h 30, du vendredi au dimanche dès 13 h) en direct sur le plus grand écran extérieur de Lloret, sur une terrasse de 1 250 m² pour plus de 700 personnes. Plus d'infos : ${BASE}/fr/watch-football
 Q: Waar kun je voetbal kijken in Lloret de Mar?
-A: Bij Queen Vic Sports Bar. Elke avondwedstrijd live op het grootste buitenscherm van Lloret, op een terras van 1.250 m² met plaats voor 700+ fans. Meer info: ${BASE}/nl/watch-football
+A: Bij Queen Vic Sports Bar. Elke wedstrijd binnen onze sporturen (maandag t/m donderdag vanaf 18:30, vrijdag t/m zondag vanaf 13:00) live op het grootste buitenscherm van Lloret, op een terras van 1.250 m² met plaats voor 700+ fans. Meer info: ${BASE}/nl/watch-football
 
 ## What we show
-Sport is shown from 20:00 local time onwards (late-night kick-offs included).
-- Football: Premier League and FIFA World Cup 2026 (every evening match)
+Sport is shown from 18:30 Mon–Thu and from 13:00 Fri–Sun, local time; nothing kicking off after midnight.
+- Football: Premier League and FIFA World Cup 2026 (every match inside those hours)
 - Formula 1 and MotoGP (selected races)
 - Rugby League
 - GAA

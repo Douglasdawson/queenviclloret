@@ -61,7 +61,7 @@
   },
   "whatsOn": {
     "title": "What's on at Queen Vic",
-    "subtitle": "Every evening fixture on the giant outdoor screen in Lloret de Mar — kick-offs from 20:00.",
+    "subtitle": "Live sport on the giant outdoor screen in Lloret de Mar — from 18:30 Mon–Thu, from 13:00 Fri–Sun.",
     "board": "The programme",
     "empty": "Nothing published just yet",
     "emptyNote": "The weekly programme lands on Instagram first. Follow us, or ask us to put your match on.",
@@ -93,11 +93,11 @@
     "faq": [
       {
         "q": "Where can I watch the World Cup 2026 in Lloret de Mar?",
-        "a": "At Queen Vic Sports Bar, Carrer de la Costa de Carbonell 1. Every evening FIFA World Cup 2026 match — kick-offs from 20:00, late-night games included — is shown live on the biggest outdoor screen in town, on a 1,250 m² terrace with room for 700+ fans."
+        "a": "At Queen Vic Sports Bar, Carrer de la Costa de Carbonell 1. Every FIFA World Cup 2026 match inside our sport hours — from 18:30 Mon–Thu, from 13:00 Fri–Sun — is shown live on the biggest outdoor screen in town, on a 1,250 m² terrace with room for 700+ fans."
       },
       {
         "q": "Does Queen Vic show every World Cup match?",
-        "a": "We show every match kicking off from 20:00 — late-night games included — live, with full English commentary on the major fixtures."
+        "a": "We show every match kicking off from 18:30 Mon–Thu or from 13:00 Fri–Sun, live, with full English commentary on the major fixtures."
       },
       {
         "q": "What time does Queen Vic open on match days?",
@@ -259,7 +259,7 @@
       },
       {
         "q": "Does Queen Vic show every {{team}} match?",
-        "a": "Every {{team}} fixture kicking off from 20:00 — late-night games included — live, with full English commentary on the major games."
+        "a": "Every {{team}} fixture kicking off from 18:30 Mon–Thu or from 13:00 Fri–Sun — live, with full English commentary on the major games."
       },
       {
         "q": "Do I need to book to watch {{team}}?",
@@ -301,7 +301,7 @@
     "items": [
       {
         "q": "Where can I watch the World Cup 2026 in Lloret de Mar?",
-        "a": "Right here at Queen Vic. Every evening FIFA World Cup 2026 match (kick-offs from 20:00, late-night games included) is shown live on the biggest outdoor screen in town, on our 1,250 m² terrace with room for 700+ fans."
+        "a": "Right here at Queen Vic. Every FIFA World Cup 2026 match inside our sport hours (from 18:30 Mon–Thu, from 13:00 Fri–Sun) is shown live on the biggest outdoor screen in town, on our 1,250 m² terrace with room for 700+ fans."
       },
       {
         "q": "How many people does Queen Vic hold?",

@@ -61,7 +61,7 @@
   },
   "whatsOn": {
     "title": "Programma bij Queen Vic",
-    "subtitle": "Elke avondwedstrijd op het reuzenscherm buiten in Lloret de Mar — aftrap vanaf 20:00.",
+    "subtitle": "Live sport op het reuzenscherm buiten in Lloret de Mar — maandag t/m donderdag vanaf 18:30 en vrijdag t/m zondag vanaf 13:00.",
     "board": "Het programma",
     "empty": "Nog niets gepubliceerd",
     "emptyNote": "Het weekprogramma verschijnt eerst op Instagram. Volg ons, of vraag ons jouw wedstrijd op te zetten.",
@@ -93,11 +93,11 @@
     "faq": [
       {
         "q": "Waar kan ik het WK 2026 kijken in Lloret de Mar?",
-        "a": "Bij Queen Vic Sports Bar, Carrer de la Costa de Carbonell 1. Elke WK-avondwedstrijd van 2026 — aftrap vanaf 20:00, ook de late wedstrijden — is live te zien op het grootste buitenscherm van de stad, op een terras van 1.250 m² met plek voor 700+ fans."
+        "a": "Bij Queen Vic Sports Bar, Carrer de la Costa de Carbonell 1. Elke WK-wedstrijd van 2026 binnen onze sporturen — maandag t/m donderdag vanaf 18:30 en vrijdag t/m zondag vanaf 13:00 — is live te zien op het grootste buitenscherm van de stad, op een terras van 1.250 m² met plek voor 700+ fans."
       },
       {
         "q": "Laat Queen Vic elke WK-wedstrijd zien?",
-        "a": "We laten elke wedstrijd zien die vanaf 20:00 begint — ook de late wedstrijden — live, met volledig Engels commentaar bij de grote wedstrijden."
+        "a": "We laten elke wedstrijd zien die maandag t/m donderdag vanaf 18:30 of vrijdag t/m zondag vanaf 13:00 begint, live, met volledig Engels commentaar bij de grote wedstrijden."
       },
       {
         "q": "Hoe laat opent Queen Vic op wedstrijddagen?",
@@ -259,7 +259,7 @@
       },
       {
         "q": "Laat Queen Vic elke wedstrijd van {{team}} zien?",
-        "a": "Elke wedstrijd van {{team}} die vanaf 20:00 begint — ook de late wedstrijden — live, met Engels commentaar bij de grote wedstrijden."
+        "a": "Elke wedstrijd van {{team}} die maandag t/m donderdag vanaf 18:30 of vrijdag t/m zondag vanaf 13:00 begint — live, met Engels commentaar bij de grote wedstrijden."
       },
       {
         "q": "Moet ik reserveren om {{team}} te kijken?",
@@ -301,7 +301,7 @@
     "items": [
       {
         "q": "Waar kan ik het WK 2026 kijken in Lloret de Mar?",
-        "a": "Hier bij Queen Vic. Elke WK 2026-avondwedstrijd (aftrap vanaf 20:00, ook de late wedstrijden) live op het grootste buitenscherm van de stad, op ons terras van 1.250 m² met plaats voor 700+ fans."
+        "a": "Hier bij Queen Vic. Elke WK 2026-wedstrijd binnen onze sporturen (maandag t/m donderdag vanaf 18:30, vrijdag t/m zondag vanaf 13:00) live op het grootste buitenscherm van de stad, op ons terras van 1.250 m² met plaats voor 700+ fans."
       },
       {
         "q": "Hoeveel mensen kunnen er in Queen Vic?",

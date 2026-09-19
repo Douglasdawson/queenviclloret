@@ -61,7 +61,7 @@
   },
   "whatsOn": {
     "title": "Què fem al Queen Vic",
-    "subtitle": "Tots els partits de la nit a la pantalla gegant exterior de Lloret de Mar — a partir de les 20:00.",
+    "subtitle": "Esport en directe a la pantalla gegant exterior de Lloret de Mar — de dilluns a dijous des de les 18:30 i de divendres a diumenge des de les 13:00.",
     "board": "El programa",
     "empty": "Encara no hi ha res publicat",
     "emptyNote": "El programa setmanal surt primer a Instagram. Segueix-nos, o demana'ns que posem el teu partit.",
@@ -93,11 +93,11 @@
     "faq": [
       {
         "q": "On puc veure el Mundial 2026 a Lloret de Mar?",
-        "a": "Al Queen Vic Sports Bar, Carrer de la Costa de Carbonell 1. Tots els partits de nit del Mundial 2026 — a partir de les 20:00, matinada inclosa — es veuen en directe a la pantalla exterior més gran de la ciutat, en una terrassa de 1.250 m² amb aforament per a 700+ persones."
+        "a": "Al Queen Vic Sports Bar, Carrer de la Costa de Carbonell 1. Tots els partits del Mundial 2026 dins del nostre horari d'esport — de dilluns a dijous des de les 18:30 i de divendres a diumenge des de les 13:00 — es veuen en directe a la pantalla exterior més gran de la ciutat, en una terrassa de 1.250 m² amb aforament per a 700+ persones."
       },
       {
         "q": "El Queen Vic posa tots els partits del Mundial?",
-        "a": "Posem tots els partits que comencen a partir de les 20:00 — matinada inclosa — en directe, amb comentari íntegre en anglès als partits grans."
+        "a": "Posem tots els partits que comencen a partir de les 18:30 de dilluns a dijous i de les 13:00 de divendres a diumenge, en directe, amb comentari íntegre en anglès als partits grans."
       },
       {
         "q": "A quina hora obre el Queen Vic els dies de partit?",
@@ -259,7 +259,7 @@
       },
       {
         "q": "El Queen Vic posa tots els partits de {{team}}?",
-        "a": "Tots els partits de {{team}} que comencen a partir de les 20:00 — matinada inclosa — en directe, amb comentaris en anglès als grans."
+        "a": "Tots els partits de {{team}} que comencen a partir de les 18:30 de dilluns a dijous o de les 13:00 de divendres a diumenge — en directe, amb comentaris en anglès als grans."
       },
       {
         "q": "Cal reservar per veure {{team}}?",
@@ -301,7 +301,7 @@
     "items": [
       {
         "q": "On puc veure el Mundial 2026 a Lloret de Mar?",
-        "a": "Aquí mateix, al Queen Vic. Tots els partits de nit del Mundial 2026 (a partir de les 20:00, matinada inclosa) en directe a la pantalla exterior més gran de la ciutat, a la nostra terrassa de 1.250 m² amb aforament per a 700+."
+        "a": "Aquí mateix, al Queen Vic. Tots els partits del Mundial 2026 dins del nostre horari d'esport (de dilluns a dijous des de les 18:30, de divendres a diumenge des de les 13:00) en directe a la pantalla exterior més gran de la ciutat, a la nostra terrassa de 1.250 m² amb aforament per a 700+."
       },
       {
         "q": "Quanta gent hi cap, al Queen Vic?",

@@ -123,13 +123,17 @@ Mode v2** (`client/src/analytics/Analytics.tsx`) — the tag loads on every publ
 4. Activate real email via Resend (owner must create account, verify the domain's DNS
    records, and provide the API key for `.env` + Replit Secrets).
 
-**No sport before 20:00 (owner decision, 2026-07-11):** the public site never advertises
-fixtures kicking off before 20:00 Europe/Madrid; late-night kick-offs (00:00–02:59, World Cup
-games from the Americas) stay visible. Enforced once in `server/dao/events.dao.ts`
-(`advertisableHours`, applied to the three public reads → API, SSR, sitemap, llms.txt — admin
-sees everything). "Every match / todos los partidos" marketing claims were softened to
-"evening matches (from 20:00)" across the 5 locales + seo.ts GEO answers. Same date: removed
-the "fry-ups" mention from `heritageBody` in all locales.
+**Sport hours window (manager Alexis, 2026-09-19 — replaces the flat "no sport before
+20:00" of 2026-07-11):** the public site only advertises fixtures whose kick-off falls in
+Mon–Thu 18:30–00:00 / Fri–Sun 13:00–00:00 Europe/Madrid. Two consequences vs. the old rule:
+weekend afternoons are now advertisable, and the 00:00–02:59 late kick-offs are **not** any
+more. Monday wasn't in Alexis' message — it follows the midweek window (confirm with her, it's
+one `case when` in the DAO). Enforced once in `server/dao/events.dao.ts` (`advertisableHours`,
+`dow` + `HH24MI`, applied to the three public reads → API, SSR, sitemap, llms.txt — admin sees
+everything). Marketing copy across the 5 locales + seo.ts GEO answers states the two windows.
+⚠️ `VENUE.hours` still says the venue opens at 19:00 — inconsistent with showing sport from
+13:00 Fri–Sun; ask the venue for the real opening hours (it feeds the footer + JSON-LD).
+2026-07-11 also removed the "fry-ups" mention from `heritageBody` in all locales.
 
 **No reservations (owner decision, 2026-07-06):** the venue is walk-in only and "never will"
 take table bookings. Removed from the public site: /reservations page + route (301 → /contact),

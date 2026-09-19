@@ -61,7 +61,7 @@
   },
   "whatsOn": {
     "title": "Au programme au Queen Vic",
-    "subtitle": "Tous les matchs du soir sur l'écran géant extérieur de Lloret de Mar — à partir de 20 h.",
+    "subtitle": "Sport en direct sur l'écran géant extérieur de Lloret de Mar — du lundi au jeudi dès 18 h 30 et du vendredi au dimanche dès 13 h.",
     "board": "Le programme",
     "empty": "Rien de publié pour l'instant",
     "emptyNote": "Le programme hebdomadaire sort d'abord sur Instagram. Suivez-nous, ou demandez-nous de passer votre match.",
@@ -93,11 +93,11 @@
     "faq": [
       {
         "q": "Où puis-je regarder la Coupe du Monde 2026 à Lloret de Mar ?",
-        "a": "Au Queen Vic Sports Bar, Carrer de la Costa de Carbonell 1. Chaque match du soir de la Coupe du Monde 2026 — coup d'envoi à partir de 20 h, fin de soirée incluse — est diffusé en direct sur le plus grand écran extérieur de la ville, sur une terrasse de 1 250 m² pouvant accueillir 700+ personnes."
+        "a": "Au Queen Vic Sports Bar, Carrer de la Costa de Carbonell 1. Chaque match de la Coupe du Monde 2026 dans nos horaires sport — du lundi au jeudi dès 18 h 30 et du vendredi au dimanche dès 13 h — est diffusé en direct sur le plus grand écran extérieur de la ville, sur une terrasse de 1 250 m² pouvant accueillir 700+ personnes."
       },
       {
         "q": "Le Queen Vic diffuse-t-il tous les matchs de la Coupe du Monde ?",
-        "a": "Nous diffusons tous les matchs dont le coup d'envoi est à partir de 20 h — fin de soirée incluse — en direct, avec commentaire intégral en anglais sur les grandes affiches."
+        "a": "Nous diffusons tous les matchs dont le coup d'envoi est à partir de 18 h 30 du lundi au jeudi et de 13 h du vendredi au dimanche, en direct, avec commentaire intégral en anglais sur les grandes affiches."
       },
       {
         "q": "À quelle heure ouvre le Queen Vic les jours de match ?",
@@ -259,7 +259,7 @@
       },
       {
         "q": "Le Queen Vic diffuse-t-il tous les matchs de {{team}} ?",
-        "a": "Tous les matchs de {{team}} dont le coup d'envoi est à partir de 20 h — fin de soirée incluse — en direct, avec commentaire anglais sur les grands matchs."
+        "a": "Tous les matchs de {{team}} dont le coup d'envoi est à partir de 18 h 30 du lundi au jeudi ou de 13 h du vendredi au dimanche — en direct, avec commentaire anglais sur les grands matchs."
       },
       {
         "q": "Faut-il réserver pour regarder {{team}} ?",
@@ -301,7 +301,7 @@
     "items": [
       {
         "q": "Où puis-je regarder la Coupe du monde 2026 à Lloret de Mar ?",
-        "a": "Ici même, au Queen Vic. Tous les matchs du soir de la Coupe du monde 2026 (coup d'envoi à partir de 20 h, fin de soirée incluse) en direct sur le plus grand écran extérieur de la ville, sur notre terrasse de 1 250 m² pouvant accueillir plus de 700 personnes."
+        "a": "Ici même, au Queen Vic. Tous les matchs de la Coupe du monde 2026 dans nos horaires sport (du lundi au jeudi dès 18 h 30, du vendredi au dimanche dès 13 h) en direct sur le plus grand écran extérieur de la ville, sur notre terrasse de 1 250 m² pouvant accueillir plus de 700 personnes."
       },
       {
         "q": "Combien de personnes le Queen Vic peut-il accueillir ?",
