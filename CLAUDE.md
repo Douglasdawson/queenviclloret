@@ -32,11 +32,16 @@ before shipping:
   (`0icopnt4ufrwk9ufppwsdglj`, nixpacks, port 3000), live at
   https://queenviclloret.apps.dawsonwebs.com, with **push-to-deploy working** (a push to main
   encolates a build by itself — verified) and a health check on `/api/health`.
-- ⏳ **`queenviclloret.es` still points at Replit** (apex A → `34.111.179.208`, TTL 14400).
-  Until the owner changes that A record to **65.109.128.70** in the LucusHost cPanel Zone
-  Editor, production is still served by Replit and still needs the manual Pull + Redeploy.
-  Only the apex A changes: leave MX (`mail.queenviclloret.es`) and the Bing verification CNAME
-  alone. Afterwards: `vps.sh dominios`, `PUBLIC_BASE_URL=https://queenviclloret.es`, deploy.
+- ⏳ **`queenviclloret.es` still points at Replit** (apex A → `34.111.179.208`, TTL 14400), so
+  production is still served by Replit and still needs the manual Pull + Redeploy. **Blocked as
+  of 24/09/2026: the LucusHost account is Ryan's (the client), and he has been asked for access
+  again.** Neither `panel.lucushost.com` nor the cPanel host has an open session here.
+  When access arrives, only the apex A changes to **65.109.128.70** — leave MX
+  (`mail.queenviclloret.es`) and the Bing verification CNAME alone — and then:
+  `vps.sh dominios queenviclloret queenviclloret.es,www.queenviclloret.es`,
+  `PUBLIC_BASE_URL=https://queenviclloret.es`, deploy (that's what issues the certificate), smoke.
+  ⚠️ Consequence while this waits: **Alexis' sport-hours change is not on the public site**
+  (unpublished since 19/09). One Pull + Redeploy in Replit publishes it without the DNS.
 - Both can run at once without stepping on each other: they share the same Neon database, the
   crons take Postgres advisory locks, and nothing is written to local disk (no volume needed).
 
